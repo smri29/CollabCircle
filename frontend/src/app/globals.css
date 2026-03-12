@@ -1,25 +1,27 @@
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --bg-base: #f8f2e8;
+  --surface-deep: #16323b;
+  --text-color: #19343d;
+  --text-muted: rgba(25, 52, 61, 0.72);
+  --text-subtle: rgba(25, 52, 61, 0.54);
+  --accent-strong: #a75830;
 }
 
 html,
 body {
   max-width: 100vw;
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  color: var(--text-color);
+  background:
+    radial-gradient(circle at top left, rgba(196, 111, 67, 0.18), transparent 18%),
+    radial-gradient(circle at top right, rgba(22, 50, 59, 0.12), transparent 22%),
+    linear-gradient(180deg, #fcfaf4 0%, var(--bg-base) 52%, #f3ede0 100%);
+  font-family: var(--font-sans), sans-serif;
+  line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -35,8 +37,67 @@ a {
   text-decoration: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+button {
+  font: inherit;
+}
+
+.siteShell {
+  min-height: 100vh;
+}
+
+.siteMain {
+  width: min(1180px, calc(100vw - 2rem));
+  margin: 0 auto;
+  padding-bottom: 4rem;
+}
+
+.section {
+  padding: 2rem 0;
+}
+
+.button,
+.buttonGhost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 3.1rem;
+  padding: 0.85rem 1.25rem;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  transition:
+    transform 180ms ease,
+    background-color 180ms ease,
+    border-color 180ms ease,
+    color 180ms ease;
+}
+
+.button {
+  background: linear-gradient(135deg, var(--surface-deep), #244854);
+  color: #f8f3ea;
+  box-shadow: 0 14px 30px rgba(16, 39, 48, 0.12);
+}
+
+.button:hover,
+.button:focus-visible,
+.buttonGhost:hover,
+.buttonGhost:focus-visible {
+  transform: translateY(-2px);
+}
+
+.buttonGhost {
+  border-color: rgba(22, 50, 59, 0.16);
+  background: rgba(255, 255, 255, 0.5);
+  color: var(--text-color);
+}
+
+.buttonGhost:hover,
+.buttonGhost:focus-visible {
+  background: rgba(255, 255, 255, 0.82);
+}
+
+@media (max-width: 720px) {
+  .siteMain {
+    width: min(1180px, calc(100vw - 1.2rem));
   }
 }
