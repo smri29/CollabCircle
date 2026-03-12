@@ -188,6 +188,47 @@ export const collaborationChecklist = [
   "Respect for documentation, ethics, and review feedback",
 ];
 
+export type TeamMember = {
+  name: string;
+  role: string;
+  imagePublicId: string | null;
+};
+
+export const executiveMembers: TeamMember[] = [
+  {
+    name: "Sumaiya Alam Shorna",
+    role: "Co-Founder",
+    imagePublicId: null,
+  },
+  {
+    name: "Shah Mohammad Rizvi",
+    role: "Founder & President",
+    imagePublicId: null,
+  },
+  {
+    name: "Rumi Akter",
+    role: "Co-Founder",
+    imagePublicId: null,
+  },
+  {
+    name: "Rimo Bhuiyan",
+    role: "Co-Founder",
+    imagePublicId: null,
+  },
+  {
+    name: "Md. Aman Uddin Siyam",
+    role: "Co-Founder",
+    imagePublicId: null,
+  },
+  {
+    name: "Sumaiya Islam Mily",
+    role: "Co-Founder",
+    imagePublicId: null,
+  },
+];
+
+export const currentResearchers: TeamMember[] = [];
+
 export const contactChannels = [
   {
     label: "Email",
