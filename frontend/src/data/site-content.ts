@@ -6,6 +6,13 @@ export const siteMeta = {
   email: "collabcircle.official@gmail.com",
 };
 
+const socialProfiles = {
+  linkedin: "https://www.linkedin.com/company/collabcircle-official/",
+  facebook: "https://www.facebook.com/collabcircle.official",
+  instagram: "https://www.instagram.com/collabcircle.official/",
+  youtube: "https://www.youtube.com/@collabcircle.official",
+};
+
 export const navigation = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
@@ -18,19 +25,19 @@ export const navigation = [
 export const socialLinks = [
   {
     label: "LinkedIn",
-    href: "https://www.linkedin.com/company/collabcircle-official/",
+    href: socialProfiles.linkedin,
   },
   {
     label: "Facebook",
-    href: "https://www.facebook.com/collabcircle.official",
+    href: socialProfiles.facebook,
   },
   {
     label: "Instagram",
-    href: "https://www.instagram.com/collabcircle.official",
+    href: socialProfiles.instagram,
   },
   {
     label: "YouTube",
-    href: "https://www.youtube.com/@collabcircle.official",
+    href: socialProfiles.youtube,
   },
 ];
 
@@ -191,13 +198,25 @@ export const contactChannels = [
   {
     label: "LinkedIn",
     value: "CollabCircle Official",
-    href: "https://www.linkedin.com/company/collabcircle-official/",
+    href: socialProfiles.linkedin,
     description: "Follow updates, initiatives, and public-facing research activity.",
+  },
+  {
+    label: "Facebook",
+    value: "collabcircle.official",
+    href: socialProfiles.facebook,
+    description: "Stay connected through CollabCircle's public community and updates.",
   },
   {
     label: "Instagram",
     value: "@collabcircle.official",
-    href: "https://www.instagram.com/collabcircle.official",
+    href: socialProfiles.instagram,
     description: "Visual snapshots of the organization and its research culture.",
+  },
+  {
+    label: "YouTube",
+    value: "@collabcircle.official",
+    href: socialProfiles.youtube,
+    description: "Follow video content, talks, and future research communication.",
   },
 ];
