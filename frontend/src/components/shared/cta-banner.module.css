@@ -1,0 +1,62 @@
+.banner {
+  display: grid;
+  grid-template-columns: 1.2fr auto;
+  gap: 1.5rem;
+  align-items: center;
+  padding: 2rem;
+  border: 1px solid rgba(22, 50, 59, 0.12);
+  border-radius: 1.8rem;
+  background:
+    radial-gradient(circle at top left, rgba(196, 111, 67, 0.2), transparent 35%),
+    linear-gradient(135deg, rgba(22, 50, 59, 0.92), rgba(33, 66, 74, 0.88));
+  color: #f9f7f0;
+  box-shadow: 0 24px 70px rgba(14, 34, 42, 0.18);
+}
+
+.banner p:first-child {
+  color: rgba(249, 247, 240, 0.78);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.banner h2 {
+  margin: 0.7rem 0;
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3.1rem);
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+}
+
+.banner p:last-child {
+  max-width: 36rem;
+  color: rgba(249, 247, 240, 0.78);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+.actions :global(.button) {
+  background: #f9f7f0;
+  color: var(--surface-deep);
+}
+
+.actions :global(.buttonGhost) {
+  border-color: rgba(249, 247, 240, 0.24);
+  color: #f9f7f0;
+}
+
+.actions :global(.buttonGhost:hover),
+.actions :global(.buttonGhost:focus-visible) {
+  background: rgba(249, 247, 240, 0.1);
+}
+
+@media (max-width: 820px) {
+  .banner {
+    grid-template-columns: 1fr;
+  }
+}

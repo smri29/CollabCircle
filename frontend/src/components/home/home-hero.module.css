@@ -1,0 +1,160 @@
+.hero {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 2rem;
+  align-items: center;
+  padding: 4rem 0 3rem;
+}
+
+.copy {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.eyebrow {
+  color: var(--accent-strong);
+  font-size: 0.84rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.copy h1 {
+  max-width: 11ch;
+  font-family: var(--font-display);
+  font-size: clamp(4rem, 7vw, 6.8rem);
+  line-height: 0.9;
+  letter-spacing: -0.07em;
+}
+
+.lead {
+  max-width: 38rem;
+  color: var(--text-muted);
+  font-size: 1.08rem;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+  padding-top: 0.5rem;
+}
+
+.ribbon {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  padding-top: 0.6rem;
+}
+
+.ribbon span {
+  padding: 0.55rem 0.8rem;
+  border: 1px solid rgba(22, 50, 59, 0.1);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.56);
+  color: var(--text-muted);
+  font-size: 0.92rem;
+}
+
+.visual {
+  position: relative;
+  display: grid;
+  gap: 1rem;
+  padding: 1.2rem 0 1.2rem 1.2rem;
+}
+
+.orbit {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: min(29rem, 100%);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at center, rgba(196, 111, 67, 0.22), transparent 30%),
+    radial-gradient(circle at 50% 50%, transparent 54%, rgba(22, 50, 59, 0.08) 55%, transparent 56%);
+  filter: blur(0.2px);
+  animation: floatOrbit 8s ease-in-out infinite;
+}
+
+.signalCard {
+  position: relative;
+  width: min(21rem, 100%);
+  padding: 1.4rem;
+  border: 1px solid rgba(22, 50, 59, 0.12);
+  border-radius: 1.5rem;
+  background: rgba(255, 255, 255, 0.7);
+  box-shadow: 0 22px 50px rgba(16, 39, 48, 0.1);
+  backdrop-filter: blur(10px);
+  animation: slideUp 700ms ease both;
+}
+
+.signalCard:nth-child(2) {
+  justify-self: start;
+}
+
+.signalCard:nth-child(3) {
+  justify-self: center;
+}
+
+.signalCard:nth-child(4) {
+  justify-self: end;
+}
+
+.signalCard p {
+  margin-bottom: 0.65rem;
+  color: var(--surface-deep);
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+.signalCard span {
+  color: var(--text-muted);
+}
+
+@keyframes floatOrbit {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 980px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+
+  .copy h1 {
+    max-width: 12ch;
+  }
+
+  .visual {
+    padding-left: 0;
+  }
+}
+
+@media (max-width: 720px) {
+  .copy h1 {
+    font-size: clamp(3rem, 18vw, 4.6rem);
+  }
+
+  .signalCard {
+    width: 100%;
+  }
+}

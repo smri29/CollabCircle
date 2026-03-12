@@ -1,0 +1,54 @@
+.hero {
+  position: relative;
+  overflow: clip;
+  padding: 4.25rem 0 1rem;
+}
+
+.backdrop {
+  position: absolute;
+  inset: 0;
+  border-radius: 2rem;
+  background:
+    radial-gradient(circle at 15% 20%, rgba(196, 111, 67, 0.18), transparent 30%),
+    radial-gradient(circle at 85% 25%, rgba(22, 50, 59, 0.14), transparent 30%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.45), rgba(255, 255, 255, 0));
+}
+
+.content {
+  position: relative;
+  display: grid;
+  gap: 1rem;
+  padding: 3rem;
+  border: 1px solid rgba(22, 50, 59, 0.1);
+  border-radius: 2rem;
+  background: rgba(255, 255, 255, 0.52);
+  box-shadow: 0 18px 50px rgba(16, 39, 48, 0.08);
+}
+
+.content p:first-child {
+  color: var(--accent-strong);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.content h1 {
+  max-width: 14ch;
+  font-family: var(--font-display);
+  font-size: clamp(3.4rem, 7vw, 6rem);
+  line-height: 0.92;
+  letter-spacing: -0.06em;
+}
+
+.content p:last-child {
+  max-width: 42rem;
+  color: var(--text-muted);
+  font-size: 1.05rem;
+}
+
+@media (max-width: 720px) {
+  .content {
+    padding: 2rem 1.4rem;
+  }
+}
