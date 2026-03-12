@@ -261,3 +261,49 @@ export const contactChannels = [
     description: "Follow video content, talks, and future research communication.",
   },
 ];
+
+export const contactPurposes = [
+  {
+    title: "Research collaboration",
+    description:
+      "Reach out if you want to discuss a paper idea, a shared research direction, or a contribution to an ongoing initiative.",
+  },
+  {
+    title: "Joining as a contributor",
+    description:
+      "Introduce your background, technical strengths, and the kind of work you can consistently own over time.",
+  },
+  {
+    title: "Partnerships and visibility",
+    description:
+      "Use the official channels for academic connections, organizational visibility, and future public-facing collaborations.",
+  },
+];
+
+export const contactProcess = [
+  {
+    step: "01",
+    title: "Choose the right channel",
+    description:
+      "Use email for direct and formal communication. Use the public social profiles for updates, visibility, and lightweight connection.",
+  },
+  {
+    step: "02",
+    title: "Keep the message specific",
+    description:
+      "State your intent clearly, identify the research area, and explain what kind of contribution or discussion you are proposing.",
+  },
+  {
+    step: "03",
+    title: "Make the next step obvious",
+    description:
+      "Mention whether you want to collaborate, ask a question, share relevant work, or request a follow-up discussion.",
+  },
+];
+
+export const contactMessageBlueprint = [
+  "A short introduction with your name and background",
+  "The reason you are contacting CollabCircle",
+  "Your relevant skills, experience, or research interest",
+  "A clear next step you want to discuss",
+];

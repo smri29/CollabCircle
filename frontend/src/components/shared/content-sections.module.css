@@ -67,6 +67,10 @@
   font-size: 1.8rem;
 }
 
+.panel .list {
+  color: rgba(247, 244, 236, 0.82);
+}
+
 .list {
   display: grid;
   gap: 0.85rem;
