@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
+import { CollabCircleLogo } from "@/components/brand/collabcircle-logo";
 import { navigation, siteMeta } from "@/data/site-content";
 import styles from "./site-header.module.css";
 
@@ -14,9 +15,7 @@ export function SiteHeader() {
     <header className={styles.header}>
       <div className={styles.shell}>
         <Link className={styles.brand} href="/" onClick={() => setIsMenuOpen(false)}>
-          <span className={styles.mark} aria-hidden="true">
-            <span />
-          </span>
+          <CollabCircleLogo className={styles.logo} height={44} priority width={44} />
           <span className={styles.brandText}>
             <strong>{siteMeta.name}</strong>
             <small>{siteMeta.tagline}</small>
@@ -41,9 +40,6 @@ export function SiteHeader() {
         </nav>
 
         <div className={styles.actions}>
-          <Link className="button" href="/contact" onClick={() => setIsMenuOpen(false)}>
-            Start a Conversation
-          </Link>
           <button
             aria-controls="mobile-navigation"
             aria-expanded={isMenuOpen}
@@ -75,9 +71,6 @@ export function SiteHeader() {
               </Link>
             );
           })}
-          <Link className="button" href="/contact" onClick={() => setIsMenuOpen(false)}>
-            Start a Conversation
-          </Link>
         </nav>
       </div>
     </header>
