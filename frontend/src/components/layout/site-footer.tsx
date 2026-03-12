@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { CollabCircleLogo } from "@/components/brand/collabcircle-logo";
 import { navigation, siteMeta, socialLinks } from "@/data/site-content";
 import styles from "./site-footer.module.css";
 
@@ -7,7 +8,10 @@ export function SiteFooter() {
     <footer className={styles.footer}>
       <div className={styles.inner}>
         <div className={styles.brandBlock}>
-          <p className={styles.eyebrow}>CollabCircle</p>
+          <div className={styles.brandRow}>
+            <CollabCircleLogo className={styles.logo} height={56} width={56} />
+            <p className={styles.eyebrow}>CollabCircle</p>
+          </div>
           <h2>Research systems built with clarity, discipline, and collaboration.</h2>
           <p>
             We design work that reads well, scales cleanly, and stays defensible from experiment

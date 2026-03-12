@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Fraunces, Manrope } from "next/font/google";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
+import { OrbitAssistant } from "@/components/orbit/orbit-assistant";
 import "./globals.css";
 
 const manrope = Manrope({
@@ -34,6 +35,7 @@ export default function RootLayout({
           <SiteHeader />
           <main className="siteMain">{children}</main>
           <SiteFooter />
+          <OrbitAssistant />
         </div>
       </body>
     </html>
