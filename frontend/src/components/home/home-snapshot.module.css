@@ -1,26 +1,30 @@
-.grid {
+.section {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1rem;
-  margin-top: 2rem;
+  gap: 0.9rem;
+  padding-top: 0.4rem;
 }
 
 .card {
   display: grid;
-  gap: 0.8rem;
-  padding: 1.2rem;
+  grid-template-columns: auto 1fr auto;
+  gap: 0.9rem;
+  align-items: center;
+  padding: 1rem 1.05rem;
   border: 1px solid var(--border-strong);
-  border-radius: 1.5rem;
-  background: rgba(255, 255, 255, 0.42);
+  border-radius: 1.35rem;
+  background: rgba(255, 255, 255, 0.38);
   box-shadow: var(--shadow-soft);
-  backdrop-filter: blur(18px);
+  backdrop-filter: blur(16px);
   transition:
     transform 180ms ease,
     border-color 180ms ease,
     box-shadow 180ms ease;
+  animation: fadeLift 700ms ease both;
 }
 
-.card:hover {
+.card:hover,
+.card:focus-visible {
   transform: translateY(-4px);
   border-color: rgba(47, 155, 255, 0.32);
   box-shadow: var(--shadow-strong);
@@ -30,39 +34,29 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 2rem;
-  height: 2rem;
+  width: 2.2rem;
+  height: 2.2rem;
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.62);
   color: var(--accent-strong);
 }
 
-.card h3 {
-  font-size: 1rem;
+.copy {
+  display: grid;
+  gap: 0.2rem;
 }
 
-.card p {
+.copy h2 {
+  font-size: 0.95rem;
+}
+
+.copy p {
   color: var(--text-muted);
-  font-size: 0.94rem;
-}
-
-.tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.6rem;
-}
-
-.tags span {
-  padding: 0.5rem 0.8rem;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.56);
-  border: 1px solid var(--border-soft);
-  color: var(--text-muted);
-  font-size: 0.82rem;
+  font-size: 0.84rem;
 }
 
 @media (max-width: 960px) {
-  .grid {
+  .section {
     grid-template-columns: 1fr;
   }
 }

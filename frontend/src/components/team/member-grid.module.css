@@ -1,8 +1,9 @@
 .header {
   display: grid;
   gap: 0.9rem;
-  max-width: 48rem;
+  max-width: 42rem;
   margin-bottom: 1.75rem;
+  animation: fadeLift 700ms ease both;
 }
 
 .header p:first-child {
@@ -15,8 +16,8 @@
 
 .header h2 {
   font-family: var(--font-display);
-  font-size: clamp(2.2rem, 4vw, 4rem);
-  line-height: 0.95;
+  font-size: clamp(1.9rem, 4vw, 3rem);
+  line-height: 1.02;
   letter-spacing: -0.05em;
 }
 
@@ -34,11 +35,24 @@
 .placeholderCard {
   display: grid;
   gap: 1rem;
-  padding: 1.25rem;
-  border: 1px solid rgba(22, 50, 59, 0.1);
+  padding: 1.1rem;
+  border: 1px solid var(--border-strong);
   border-radius: 1.5rem;
-  background: rgba(255, 255, 255, 0.62);
-  box-shadow: 0 18px 45px rgba(16, 39, 48, 0.08);
+  background: rgba(255, 255, 255, 0.42);
+  box-shadow: var(--shadow-soft);
+  backdrop-filter: blur(18px);
+  animation: fadeLift 700ms ease both;
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    border-color 180ms ease;
+}
+
+.card:hover,
+.placeholderCard:hover {
+  transform: translateY(-4px);
+  border-color: rgba(47, 155, 255, 0.3);
+  box-shadow: var(--shadow-strong);
 }
 
 .imageSlot,
@@ -52,8 +66,8 @@
 .imageSlot {
   background:
     radial-gradient(circle at top, rgba(255, 255, 255, 0.48), transparent 50%),
-    linear-gradient(155deg, rgba(22, 50, 59, 0.94), rgba(196, 111, 67, 0.86));
-  color: #f9f7f0;
+    linear-gradient(155deg, rgba(16, 49, 78, 0.94), rgba(47, 155, 255, 0.8));
+  color: #f8fbff;
 }
 
 .imageSlot span {
@@ -63,9 +77,9 @@
 }
 
 .placeholderImage {
-  border: 1px dashed rgba(22, 50, 59, 0.2);
+  border: 1px dashed rgba(47, 155, 255, 0.28);
   background:
-    linear-gradient(135deg, rgba(22, 50, 59, 0.04), rgba(196, 111, 67, 0.08));
+    linear-gradient(135deg, rgba(255, 255, 255, 0.46), rgba(143, 217, 255, 0.18));
 }
 
 .cardTop {
@@ -85,7 +99,8 @@
 .role {
   padding: 0.42rem 0.7rem;
   border-radius: 999px;
-  background: rgba(22, 50, 59, 0.07);
+  background: rgba(255, 255, 255, 0.56);
+  border: 1px solid var(--border-soft);
   color: var(--text-muted);
   font-size: 0.84rem;
 }
@@ -99,6 +114,7 @@
 .placeholderCard p,
 .emptyState > p {
   color: var(--text-muted);
+  font-size: 0.92rem;
 }
 
 .emptyState {

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Building2 } from "lucide-react";
 import { CtaBanner } from "@/components/shared/cta-banner";
 import styles from "@/components/shared/content-sections.module.css";
 import { PageHero } from "@/components/shared/page-hero";
@@ -13,6 +14,7 @@ export default function AboutPage() {
     <>
       <PageHero
         eyebrow="About CollabCircle"
+        icon={Building2}
         intro="We are building an organization where research quality comes from structure, collaboration, and repeatable execution rather than improvisation."
         title="A research culture designed to stay sharp as the work gets bigger."
       />

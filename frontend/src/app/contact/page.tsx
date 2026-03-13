@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { Mail } from "lucide-react";
 import contactStyles from "@/components/contact/contact-page.module.css";
 import styles from "@/components/shared/content-sections.module.css";
 import { PageHero } from "@/components/shared/page-hero";
@@ -21,6 +22,7 @@ export default function ContactPage() {
     <>
       <PageHero
         eyebrow="Contact"
+        icon={Mail}
         intro="The contact page should make it obvious how to reach CollabCircle, what to say, and which channel is best for a serious conversation."
         title="A clearer path for research inquiries, collaboration, and public connection."
       />

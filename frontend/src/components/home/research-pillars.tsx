@@ -1,19 +1,29 @@
+import { BrainCircuit, Database, Waypoints } from "lucide-react";
 import { SectionHeading } from "@/components/shared/section-heading";
 import { researchPillars } from "@/data/site-content";
 import styles from "./research-pillars.module.css";
+
+const pillarIcons = [Database, BrainCircuit, Waypoints];
 
 export function ResearchPillars() {
   return (
     <section className="section">
       <SectionHeading
         eyebrow="Research areas"
-        title="A focused set of themes that can grow into serious papers."
-        intro="We keep the scope intentional. Each direction is broad enough to support multiple projects, but specific enough to maintain standards."
+        icon={BrainCircuit}
+        title="Three core research directions."
+        intro="Each track is scoped to stay practical, readable, and publication-oriented."
       />
 
       <div className={styles.grid}>
-        {researchPillars.map((pillar) => (
+        {researchPillars.map((pillar, index) => {
+          const Icon = pillarIcons[index];
+
+          return (
           <article className={styles.card} key={pillar.title}>
+            <span className={styles.iconWrap}>
+              <Icon size={18} strokeWidth={2} />
+            </span>
             <h3>{pillar.title}</h3>
             <p>{pillar.description}</p>
             <div className={styles.tags}>
@@ -22,7 +32,8 @@ export function ResearchPillars() {
               ))}
             </div>
           </article>
-        ))}
+          );
+        })}
       </div>
     </section>
   );

@@ -1,4 +1,5 @@
 import { HomeHero } from "@/components/home/home-hero";
+import { HomeSnapshot } from "@/components/home/home-snapshot";
 import { InsightStrip } from "@/components/home/insight-strip";
 import { ResearchPillars } from "@/components/home/research-pillars";
 import { WorkflowSection } from "@/components/home/workflow-section";
@@ -8,18 +9,19 @@ export default function Home() {
   return (
     <>
       <HomeHero />
+      <HomeSnapshot />
       <ResearchPillars />
       <WorkflowSection />
       <InsightStrip />
       <section className="section">
         <CtaBanner
-          description="If you want to build CollabCircle as a serious research presence, the interface, structure, and project rhythm should all point in the same direction."
+          description="The public-facing experience should stay clear, calm, and aligned with the research system behind it."
           eyebrow="Next move"
           primaryHref="/team"
-          primaryLabel="See the team model"
+          primaryLabel="Meet the team"
           secondaryHref="/contact"
-          secondaryLabel="Open collaboration channels"
-          title="A polished research organization starts with a coherent system."
+          secondaryLabel="Contact CollabCircle"
+          title="A cleaner research presence starts with a coherent interface."
         />
       </section>
     </>

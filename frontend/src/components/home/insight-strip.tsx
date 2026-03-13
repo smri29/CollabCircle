@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ArrowRight, ShieldCheck, Sparkles } from "lucide-react";
 import { principles, publicationStandards } from "@/data/site-content";
 import styles from "./insight-strip.module.css";
 
@@ -6,8 +7,11 @@ export function InsightStrip() {
   return (
     <section className={styles.section}>
       <article className={styles.feature}>
-        <p>Design principle</p>
-        <h2>Front-facing polish should reflect backend discipline, not hide the lack of it.</h2>
+        <div className={styles.kicker}>
+          <ShieldCheck size={16} strokeWidth={2} />
+          <p>Operating principle</p>
+        </div>
+        <h2>Presentation should match the quality of the work behind it.</h2>
         <div className={styles.featureList}>
           {principles.map((principle) => (
             <div key={principle.title}>
@@ -21,10 +25,16 @@ export function InsightStrip() {
       <article className={styles.standards}>
         <div className={styles.topRow}>
           <div>
-            <p>Publication standard</p>
-            <h2>Outputs should look credible before they ask for attention.</h2>
+            <div className={styles.kicker}>
+              <Sparkles size={16} strokeWidth={2} />
+              <p>Publication model</p>
+            </div>
+            <h2>Outputs should be easy to trust at first glance.</h2>
           </div>
-          <Link href="/publications">See publication model</Link>
+          <Link href="/publications">
+            <span>See more</span>
+            <ArrowRight size={16} strokeWidth={2} />
+          </Link>
         </div>
 
         <div className={styles.standardList}>

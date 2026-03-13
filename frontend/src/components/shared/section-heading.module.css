@@ -1,12 +1,32 @@
 .heading {
   display: grid;
-  gap: 0.9rem;
-  max-width: 44rem;
+  gap: 0.85rem;
+  max-width: 40rem;
+  animation: fadeLift 700ms ease both;
+}
+
+.kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+
+.iconWrap {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.8rem;
+  height: 1.8rem;
+  border: 1px solid var(--border-strong);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.42);
+  color: var(--accent-strong);
+  backdrop-filter: blur(16px);
 }
 
 .eyebrow {
   color: var(--accent-strong);
-  font-size: 0.82rem;
+  font-size: 0.76rem;
   font-weight: 700;
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -14,13 +34,14 @@
 
 .heading h2 {
   font-family: var(--font-display);
-  font-size: clamp(2.2rem, 4vw, 4rem);
-  line-height: 0.95;
-  letter-spacing: -0.05em;
+  font-size: clamp(1.6rem, 3.2vw, 2.35rem);
+  line-height: 1.08;
+  letter-spacing: -0.04em;
+  font-weight: 650;
 }
 
 .heading p:last-child {
   color: var(--text-muted);
-  font-size: 1.02rem;
-  max-width: 38rem;
+  font-size: 0.92rem;
+  max-width: 31rem;
 }

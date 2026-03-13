@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { BookOpenText } from "lucide-react";
 import styles from "@/components/shared/content-sections.module.css";
 import { PageHero } from "@/components/shared/page-hero";
 import { outputFormats, publicationStandards, workflowSteps } from "@/data/site-content";
@@ -12,6 +13,7 @@ export default function PublicationsPage() {
     <>
       <PageHero
         eyebrow="Publications"
+        icon={BookOpenText}
         intro="We treat writing and presentation as part of the research process, not as an afterthought added at the end."
         title="A publication model built around clarity, evidence, and reviewer trust."
       />

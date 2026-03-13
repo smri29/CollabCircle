@@ -1,9 +1,10 @@
 .hero {
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
-  gap: 2rem;
+  gap: 1.5rem;
   align-items: center;
-  padding: 4rem 0 3rem;
+  padding: 2.8rem 0 1.4rem;
+  animation: fadeLift 700ms ease both;
 }
 
 .copy {
@@ -22,15 +23,16 @@
 .copy h1 {
   max-width: 11ch;
   font-family: var(--font-display);
-  font-size: clamp(4rem, 7vw, 6.8rem);
-  line-height: 0.9;
-  letter-spacing: -0.07em;
+  font-size: clamp(2.4rem, 4.8vw, 3.85rem);
+  line-height: 1;
+  letter-spacing: -0.04em;
+  font-weight: 650;
 }
 
 .lead {
-  max-width: 38rem;
+  max-width: 31rem;
   color: var(--text-muted);
-  font-size: 1.08rem;
+  font-size: 0.92rem;
 }
 
 .actions {
@@ -48,12 +50,12 @@
 }
 
 .ribbon span {
-  padding: 0.55rem 0.8rem;
-  border: 1px solid rgba(22, 50, 59, 0.1);
+  padding: 0.48rem 0.72rem;
+  border: 1px solid var(--border-soft);
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.56);
+  background: rgba(255, 255, 255, 0.48);
   color: var(--text-muted);
-  font-size: 0.92rem;
+  font-size: 0.82rem;
 }
 
 .visual {
@@ -71,22 +73,35 @@
   aspect-ratio: 1;
   border-radius: 50%;
   background:
-    radial-gradient(circle at center, rgba(196, 111, 67, 0.22), transparent 30%),
-    radial-gradient(circle at 50% 50%, transparent 54%, rgba(22, 50, 59, 0.08) 55%, transparent 56%);
+    radial-gradient(circle at center, rgba(143, 217, 255, 0.28), transparent 30%),
+    radial-gradient(circle at 50% 50%, transparent 54%, rgba(47, 155, 255, 0.12) 55%, transparent 56%);
   filter: blur(0.2px);
-  animation: floatOrbit 8s ease-in-out infinite;
+  animation: drift 8s ease-in-out infinite;
 }
 
 .signalCard {
   position: relative;
   width: min(21rem, 100%);
-  padding: 1.4rem;
-  border: 1px solid rgba(22, 50, 59, 0.12);
+  display: grid;
+  gap: 0.55rem;
+  padding: 0.95rem;
+  border: 1px solid var(--border-strong);
   border-radius: 1.5rem;
-  background: rgba(255, 255, 255, 0.7);
-  box-shadow: 0 22px 50px rgba(16, 39, 48, 0.1);
-  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.42);
+  box-shadow: var(--shadow-soft);
+  backdrop-filter: blur(18px);
   animation: slideUp 700ms ease both;
+}
+
+.iconWrap {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.58);
+  color: var(--accent-strong);
 }
 
 .signalCard:nth-child(2) {
@@ -102,25 +117,14 @@
 }
 
 .signalCard p {
-  margin-bottom: 0.65rem;
   color: var(--surface-deep);
-  font-size: 1.15rem;
+  font-size: 0.94rem;
   font-weight: 700;
 }
 
 .signalCard span {
   color: var(--text-muted);
-}
-
-@keyframes floatOrbit {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-
-  50% {
-    transform: translateY(-10px);
-  }
+  font-size: 0.84rem;
 }
 
 @keyframes slideUp {
@@ -151,7 +155,7 @@
 
 @media (max-width: 720px) {
   .copy h1 {
-    font-size: clamp(3rem, 18vw, 4.6rem);
+    font-size: clamp(2.1rem, 12vw, 3rem);
   }
 
   .signalCard {
