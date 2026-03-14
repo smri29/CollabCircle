@@ -1,0 +1,267 @@
+.hero {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(18rem, 0.85fr);
+  gap: 1rem;
+  padding: 2.35rem 0 1rem;
+}
+
+.heroPanel,
+.spotlightPanel,
+.storyPanel {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-lg);
+  background: rgba(255, 255, 255, 0.42);
+  box-shadow: var(--shadow-soft);
+  backdrop-filter: blur(22px);
+  animation: fadeLift 700ms ease both;
+}
+
+.heroPanel {
+  padding: 1.65rem;
+}
+
+.heroPanel::before,
+.spotlightPanel::before,
+.storyPanel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 18% 18%, rgba(143, 217, 255, 0.26), transparent 26%),
+    radial-gradient(circle at 78% 16%, rgba(47, 155, 255, 0.16), transparent 28%);
+  pointer-events: none;
+}
+
+.heroInner {
+  position: relative;
+  display: grid;
+  gap: 1.1rem;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  width: fit-content;
+  padding: 0.45rem 0.72rem;
+  border: 1px solid var(--border-strong);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.42);
+  color: var(--accent-strong);
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.heroPanel h1 {
+  max-width: 11ch;
+  font-family: var(--font-display);
+  font-size: clamp(2.15rem, 4.2vw, 3.5rem);
+  line-height: 0.98;
+  letter-spacing: -0.05em;
+  font-weight: 650;
+}
+
+.lead {
+  max-width: 40rem;
+  color: var(--text-muted);
+  font-size: 0.96rem;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+.microNote {
+  display: grid;
+  gap: 0.38rem;
+  color: var(--text-subtle);
+  font-size: 0.82rem;
+}
+
+.spotlightPanel {
+  display: grid;
+  gap: 0.85rem;
+  padding: 1.2rem;
+}
+
+.spotlightIntro {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 0.35rem;
+}
+
+.spotlightIntro p {
+  color: var(--accent-strong);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.spotlightIntro h2 {
+  font-family: var(--font-display);
+  font-size: 1.28rem;
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  font-weight: 650;
+}
+
+.spotlightCards {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 0.8rem;
+}
+
+.spotlightCard {
+  display: grid;
+  gap: 0.35rem;
+  padding: 0.95rem 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 1.2rem;
+  background: rgba(255, 255, 255, 0.48);
+}
+
+.spotlightCard span {
+  color: var(--accent-strong);
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.spotlightCard h3 {
+  font-size: 1rem;
+}
+
+.spotlightCard p {
+  color: var(--text-muted);
+  font-size: 0.84rem;
+}
+
+.section {
+  display: grid;
+  gap: 1.1rem;
+  padding: 1.4rem 0;
+}
+
+.sectionHeader {
+  display: grid;
+  gap: 0.45rem;
+  max-width: 42rem;
+}
+
+.sectionHeader p:first-child {
+  color: var(--accent-strong);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.sectionHeader h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  line-height: 1.06;
+  letter-spacing: -0.04em;
+  font-weight: 650;
+}
+
+.sectionHeader p:last-child {
+  color: var(--text-muted);
+  font-size: 0.92rem;
+}
+
+.storyPanel {
+  padding: 1.45rem;
+}
+
+.storyGrid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  gap: 1rem;
+  align-items: start;
+}
+
+.storyStack {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.storyStack h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.55rem, 3vw, 2.15rem);
+  line-height: 1.06;
+  letter-spacing: -0.04em;
+  font-weight: 650;
+}
+
+.storyStack p {
+  color: var(--text-muted);
+  font-size: 0.92rem;
+}
+
+.storyList {
+  display: grid;
+  gap: 0.8rem;
+  padding-left: 1rem;
+  color: var(--text-muted);
+  font-size: 0.88rem;
+}
+
+.storyAside {
+  padding: 1.1rem;
+  border: 1px solid rgba(255, 255, 255, 0.52);
+  border-radius: 1.35rem;
+  background: rgba(255, 255, 255, 0.44);
+}
+
+.storyAside h3 {
+  margin-bottom: 0.55rem;
+  font-size: 0.98rem;
+}
+
+.storyAside p {
+  color: var(--text-muted);
+  font-size: 0.86rem;
+}
+
+.linkInline {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin-top: 0.9rem;
+  color: var(--accent-strong);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+@media (max-width: 960px) {
+  .hero,
+  .storyGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 720px) {
+  .heroPanel,
+  .spotlightPanel,
+  .storyPanel {
+    padding-left: 1.05rem;
+    padding-right: 1.05rem;
+  }
+
+  .heroPanel h1 {
+    max-width: 10ch;
+  }
+}

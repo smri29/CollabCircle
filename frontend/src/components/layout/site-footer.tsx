@@ -1,27 +1,28 @@
 import Link from "next/link";
 import {
-  BookOpenText,
-  BrainCircuit,
+  ArrowRight,
+  Building2,
+  Compass,
+  Cpu,
   Facebook,
-  Home,
-  Info,
   Instagram,
   Linkedin,
   Mail,
-  UsersRound,
+  Microscope,
+  Sparkles,
   Youtube,
 } from "lucide-react";
 import { CollabCircleLogo } from "@/components/brand/collabcircle-logo";
-import { navigation, siteMeta, socialLinks } from "@/data/site-content";
+import { primaryNavigation, researchLabLinks } from "@/data/company-content";
+import { siteMeta, socialLinks } from "@/data/site-content";
 import styles from "./site-footer.module.css";
 
 const navIcons = {
-  "/": Home,
-  "/about": Info,
-  "/research": BrainCircuit,
-  "/publications": BookOpenText,
-  "/team": UsersRound,
-  "/contact": Mail,
+  "/about-us": Building2,
+  "/engineering-hub": Cpu,
+  "/impact-sector": Sparkles,
+  "/mission-vision": Compass,
+  "/research-lab": Microscope,
 } as const;
 
 const socialIcons = {
@@ -40,18 +41,28 @@ export function SiteFooter() {
             <CollabCircleLogo className={styles.logo} height={56} width={56} />
             <p className={styles.eyebrow}>CollabCircle</p>
           </div>
-          <h2>Research systems built with clarity, discipline, and collaboration.</h2>
+          <h2>Built to grow from a research lab into a thoughtful technology company.</h2>
           <p>
-            We design work that reads well, scales cleanly, and stays defensible from experiment
-            setup to manuscript submission.
+            The site now introduces CollabCircle as a broader institution while keeping the current
+            research experience organized under its own dedicated gateway.
           </p>
+          <Link className={styles.joinCta} href="/join-us">
+            <span>Join the journey</span>
+            <ArrowRight size={16} strokeWidth={2} />
+          </Link>
         </div>
 
         <div className={styles.linkColumns}>
           <div>
             <h3>Explore</h3>
             <ul>
-              {navigation.map((item) => {
+              <li>
+                <Link href="/">
+                  <Building2 size={16} strokeWidth={2} />
+                  <span>Home</span>
+                </Link>
+              </li>
+              {primaryNavigation.map((item) => {
                 const Icon = navIcons[item.href as keyof typeof navIcons];
 
                 return (
@@ -63,6 +74,20 @@ export function SiteFooter() {
                   </li>
                 );
               })}
+            </ul>
+          </div>
+
+          <div>
+            <h3>Research Lab</h3>
+            <ul>
+              {researchLabLinks.map((item) => (
+                <li key={item.href}>
+                  <Link href={item.href}>
+                    <Microscope size={16} strokeWidth={2} />
+                    <span>{item.label}</span>
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
@@ -94,7 +119,7 @@ export function SiteFooter() {
 
       <div className={styles.bottomBar}>
         <p>{siteMeta.tagline}</p>
-        <p>Designed for thoughtful iteration and long-term collaboration.</p>
+        <p>Designed for thoughtful iteration across research, engineering, and future impact.</p>
       </div>
     </footer>
   );

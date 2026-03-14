@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     default: "CollabCircle",
     template: "%s | CollabCircle",
   },
-  description: "Collaborative ML and DL research, designed for publication.",
+  description: "A future-ready organization shaped around research, engineering, and meaningful impact.",
 };
 
 export default function RootLayout({

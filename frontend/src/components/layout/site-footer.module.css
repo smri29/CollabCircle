@@ -56,7 +56,7 @@
 
 .linkColumns {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1.5rem;
 }
 
@@ -87,6 +87,16 @@
 .linkColumns a:hover,
 .linkColumns a:focus-visible {
   color: var(--text-color);
+}
+
+.joinCta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  width: fit-content;
+  color: var(--accent-strong);
+  font-size: 0.9rem;
+  font-weight: 700;
 }
 
 .bottomBar {
