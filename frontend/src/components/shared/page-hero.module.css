@@ -9,9 +9,9 @@
   inset: 0;
   border-radius: var(--radius-lg);
   background:
-    radial-gradient(circle at 20% 15%, rgba(143, 217, 255, 0.38), transparent 30%),
-    radial-gradient(circle at 84% 20%, rgba(47, 155, 255, 0.2), transparent 32%),
-    linear-gradient(180deg, rgba(255, 255, 255, 0.58), rgba(255, 255, 255, 0.1));
+    radial-gradient(circle at 20% 15%, color-mix(in srgb, var(--accent-soft) 36%, transparent), transparent 30%),
+    radial-gradient(circle at 84% 20%, color-mix(in srgb, var(--accent-strong) 18%, transparent), transparent 32%),
+    linear-gradient(180deg, color-mix(in srgb, var(--glass-surface-strong) 96%, transparent), color-mix(in srgb, var(--glass-surface) 40%, transparent));
   animation: drift 8s ease-in-out infinite;
 }
 
@@ -19,10 +19,10 @@
   position: relative;
   display: grid;
   gap: 0.95rem;
-  padding: 1.8rem;
+  padding: 1.55rem;
   border: 1px solid var(--border-strong);
   border-radius: var(--radius-lg);
-  background: rgba(255, 255, 255, 0.38);
+  background: var(--glass-surface);
   box-shadow: var(--shadow-soft);
   backdrop-filter: blur(22px);
   animation: fadeLift 700ms ease both;
@@ -42,7 +42,7 @@
   height: 1.95rem;
   border: 1px solid var(--border-strong);
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.48);
+  background: var(--glass-surface-strong);
   color: var(--accent-strong);
 }
 
@@ -57,16 +57,16 @@
 .content h1 {
   max-width: 12ch;
   font-family: var(--font-display);
-  font-size: clamp(2.15rem, 4.6vw, 3.25rem);
-  line-height: 1.04;
+  font-size: clamp(1.95rem, 4.1vw, 2.85rem);
+  line-height: 1.02;
   letter-spacing: -0.045em;
   font-weight: 650;
 }
 
 .content p:last-child {
-  max-width: 38rem;
+  max-width: 32rem;
   color: var(--text-muted);
-  font-size: 0.92rem;
+  font-size: 0.88rem;
 }
 
 @media (max-width: 720px) {

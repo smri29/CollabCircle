@@ -1,7 +1,4 @@
 :root {
-  --bg-base: #eef5ff;
-  --bg-soft: rgba(255, 255, 255, 0.5);
-  --bg-strong: rgba(255, 255, 255, 0.72);
   --surface-deep: #10314e;
   --surface-mid: #173f63;
   --text-color: #153756;
@@ -12,9 +9,90 @@
   --accent-glow: rgba(47, 155, 255, 0.18);
   --border-soft: rgba(130, 173, 214, 0.28);
   --border-strong: rgba(255, 255, 255, 0.54);
+  --glass-surface: rgba(255, 255, 255, 0.42);
+  --glass-surface-strong: rgba(255, 255, 255, 0.56);
+  --panel-start: rgba(16, 49, 78, 0.92);
+  --panel-end: rgba(29, 77, 118, 0.88);
+  --panel-text: #f5fbff;
+  --panel-text-muted: rgba(245, 251, 255, 0.76);
+  --bg-gradient:
+    radial-gradient(circle at 15% 10%, rgba(143, 217, 255, 0.32), transparent 18%),
+    radial-gradient(circle at 85% 5%, rgba(47, 155, 255, 0.18), transparent 20%),
+    radial-gradient(circle at 50% 55%, rgba(255, 255, 255, 0.62), transparent 24%),
+    linear-gradient(180deg, #f9fcff 0%, #eef5ff 48%, #e6f0fb 100%);
+  --orb-top: rgba(143, 217, 255, 0.24);
+  --orb-bottom: rgba(47, 155, 255, 0.16);
   --shadow-soft: 0 16px 42px rgba(13, 35, 58, 0.08);
   --shadow-strong: 0 24px 60px rgba(13, 35, 58, 0.16);
   --radius-lg: 1.9rem;
+}
+
+body[data-theme="landing"] {
+  --surface-mid: #1a4d80;
+  --text-color: #213952;
+  --text-muted: rgba(33, 57, 82, 0.72);
+  --text-subtle: rgba(33, 57, 82, 0.52);
+  --accent-strong: #1777d8;
+  --accent-soft: #f3b56b;
+  --border-soft: rgba(205, 165, 112, 0.26);
+  --glass-surface: rgba(255, 250, 242, 0.48);
+  --glass-surface-strong: rgba(255, 248, 237, 0.72);
+  --panel-start: rgba(23, 60, 96, 0.94);
+  --panel-end: rgba(213, 135, 61, 0.88);
+  --bg-gradient:
+    radial-gradient(circle at 12% 12%, rgba(243, 181, 107, 0.28), transparent 18%),
+    radial-gradient(circle at 84% 10%, rgba(23, 119, 216, 0.18), transparent 22%),
+    radial-gradient(circle at 54% 48%, rgba(255, 255, 255, 0.56), transparent 24%),
+    linear-gradient(180deg, #fffaf0 0%, #fff2df 42%, #e7f1ff 100%);
+  --orb-top: rgba(243, 181, 107, 0.22);
+  --orb-bottom: rgba(23, 119, 216, 0.16);
+}
+
+body[data-theme="research"] {
+  --surface-mid: #146a56;
+  --text-color: #16483b;
+  --text-muted: rgba(22, 72, 59, 0.72);
+  --text-subtle: rgba(22, 72, 59, 0.52);
+  --accent-strong: #139c74;
+  --accent-soft: #92e3b1;
+  --border-soft: rgba(61, 157, 117, 0.22);
+  --glass-surface: rgba(243, 255, 247, 0.46);
+  --glass-surface-strong: rgba(245, 255, 248, 0.66);
+  --panel-start: rgba(15, 72, 57, 0.94);
+  --panel-end: rgba(40, 146, 105, 0.88);
+  --bg-gradient:
+    radial-gradient(circle at 14% 11%, rgba(146, 227, 177, 0.28), transparent 18%),
+    radial-gradient(circle at 82% 8%, rgba(19, 156, 116, 0.16), transparent 22%),
+    radial-gradient(circle at 48% 56%, rgba(255, 255, 255, 0.54), transparent 24%),
+    linear-gradient(180deg, #f4fff8 0%, #e8f8ee 46%, #dcf1e4 100%);
+  --orb-top: rgba(146, 227, 177, 0.2);
+  --orb-bottom: rgba(19, 156, 116, 0.14);
+}
+
+body[data-theme="engineering"] {
+  --surface-mid: #7a2d17;
+  --text-color: #f9efe8;
+  --text-muted: rgba(249, 239, 232, 0.74);
+  --text-subtle: rgba(249, 239, 232, 0.5);
+  --accent-strong: #ff7b39;
+  --accent-soft: #ffd166;
+  --border-soft: rgba(255, 123, 57, 0.22);
+  --border-strong: rgba(255, 198, 160, 0.16);
+  --glass-surface: rgba(34, 18, 13, 0.58);
+  --glass-surface-strong: rgba(56, 28, 20, 0.74);
+  --panel-start: rgba(23, 12, 9, 0.96);
+  --panel-end: rgba(97, 42, 24, 0.92);
+  --panel-text: #fff4ec;
+  --panel-text-muted: rgba(255, 244, 236, 0.76);
+  --shadow-soft: 0 18px 48px rgba(2, 8, 20, 0.32);
+  --shadow-strong: 0 28px 72px rgba(2, 8, 20, 0.46);
+  --bg-gradient:
+    radial-gradient(circle at 14% 10%, rgba(255, 123, 57, 0.18), transparent 18%),
+    radial-gradient(circle at 82% 12%, rgba(255, 209, 102, 0.12), transparent 18%),
+    radial-gradient(circle at 50% 54%, rgba(93, 40, 25, 0.28), transparent 24%),
+    linear-gradient(180deg, #120906 0%, #21100d 44%, #341812 100%);
+  --orb-top: rgba(255, 123, 57, 0.16);
+  --orb-bottom: rgba(255, 209, 102, 0.12);
 }
 
 html,
@@ -26,15 +104,14 @@ body {
 
 body {
   color: var(--text-color);
-  background:
-    radial-gradient(circle at 15% 10%, rgba(143, 217, 255, 0.32), transparent 18%),
-    radial-gradient(circle at 85% 5%, rgba(47, 155, 255, 0.18), transparent 20%),
-    radial-gradient(circle at 50% 55%, rgba(255, 255, 255, 0.62), transparent 24%),
-    linear-gradient(180deg, #f9fcff 0%, #eef5ff 48%, #e6f0fb 100%);
+  background: var(--bg-gradient);
   font-family: var(--font-sans), sans-serif;
-  line-height: 1.55;
+  line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  transition:
+    background 260ms ease,
+    color 260ms ease;
 }
 
 * {
@@ -73,7 +150,7 @@ button {
   right: -6rem;
   width: 18rem;
   height: 18rem;
-  background: rgba(143, 217, 255, 0.24);
+  background: var(--orb-top);
 }
 
 .siteShell::after {
@@ -81,17 +158,17 @@ button {
   left: -5rem;
   width: 16rem;
   height: 16rem;
-  background: rgba(47, 155, 255, 0.16);
+  background: var(--orb-bottom);
 }
 
 .siteMain {
   width: min(1180px, calc(100vw - 2rem));
   margin: 0 auto;
-  padding-bottom: 6rem;
+  padding-bottom: 5rem;
 }
 
 .section {
-  padding: 2.5rem 0;
+  padding: 2rem 0;
 }
 
 .button,
@@ -103,10 +180,10 @@ button {
   justify-content: center;
   gap: 0.5rem;
   min-height: 2.95rem;
-  padding: 0.82rem 1.18rem;
+  padding: 0.78rem 1.12rem;
   border: 1px solid var(--border-soft);
   border-radius: 999px;
-  font-size: 0.94rem;
+  font-size: 0.9rem;
   font-weight: 700;
   transition:
     transform 180ms ease,
@@ -129,7 +206,7 @@ button {
 .button {
   background: linear-gradient(135deg, var(--surface-mid), var(--accent-strong));
   color: #f8fbff;
-  box-shadow: 0 16px 32px rgba(47, 155, 255, 0.18);
+  box-shadow: 0 16px 32px color-mix(in srgb, var(--accent-strong) 22%, transparent);
 }
 
 .button:hover,
@@ -141,15 +218,15 @@ button {
 }
 
 .buttonGhost {
-  background: rgba(255, 255, 255, 0.34);
+  background: var(--glass-surface);
   backdrop-filter: blur(18px);
   color: var(--text-color);
 }
 
 .buttonGhost:hover,
 .buttonGhost:focus-visible {
-  border-color: rgba(47, 155, 255, 0.28);
-  background: rgba(255, 255, 255, 0.52);
+  border-color: color-mix(in srgb, var(--accent-strong) 28%, transparent);
+  background: var(--glass-surface-strong);
 }
 
 @keyframes fadeLift {

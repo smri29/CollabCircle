@@ -4,8 +4,13 @@ import Link from "next/link";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
 import { CollabCircleLogo } from "@/components/brand/collabcircle-logo";
-import { navigation, siteMeta } from "@/data/site-content";
+import { primaryNavigation } from "@/data/company-content";
+import { siteMeta } from "@/data/site-content";
 import styles from "./site-header.module.css";
+
+function isActivePath(pathname: string, href: string, matches?: string[]) {
+  return [href, ...(matches ?? [])].some((path) => pathname === path || pathname.startsWith(`${path}/`));
+}
 
 export function SiteHeader() {
   const pathname = usePathname();
@@ -18,13 +23,12 @@ export function SiteHeader() {
           <CollabCircleLogo className={styles.logo} height={44} priority width={44} />
           <span className={styles.brandText}>
             <strong>{siteMeta.name}</strong>
-            <small>{siteMeta.tagline}</small>
           </span>
         </Link>
 
         <nav className={styles.desktopNav} aria-label="Primary">
-          {navigation.map((item) => {
-            const isActive = pathname === item.href;
+          {primaryNavigation.map((item) => {
+            const isActive = isActivePath(pathname, item.href, item.matches);
 
             return (
               <Link
@@ -40,6 +44,9 @@ export function SiteHeader() {
         </nav>
 
         <div className={styles.actions}>
+          <Link className={styles.joinLink} href="/join-us" onClick={() => setIsMenuOpen(false)}>
+            Join Us
+          </Link>
           <button
             aria-controls="mobile-navigation"
             aria-expanded={isMenuOpen}
@@ -57,8 +64,8 @@ export function SiteHeader() {
         id="mobile-navigation"
       >
         <nav className={styles.mobileNav} aria-label="Mobile">
-          {navigation.map((item) => {
-            const isActive = pathname === item.href;
+          {primaryNavigation.map((item) => {
+            const isActive = isActivePath(pathname, item.href, item.matches);
 
             return (
               <Link
@@ -71,6 +78,9 @@ export function SiteHeader() {
               </Link>
             );
           })}
+          <Link className={styles.mobileJoinLink} href="/join-us" onClick={() => setIsMenuOpen(false)}>
+            Join Us
+          </Link>
         </nav>
       </div>
     </header>

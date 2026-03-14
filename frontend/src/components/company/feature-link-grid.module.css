@@ -1,0 +1,88 @@
+.grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.threeUp {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.dense {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.card {
+  display: grid;
+  gap: 0.9rem;
+  padding: 1.15rem;
+  border: 1px solid var(--border-strong);
+  border-radius: 1.45rem;
+  background: var(--glass-surface);
+  box-shadow: var(--shadow-soft);
+  backdrop-filter: blur(18px);
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease;
+  animation: fadeLift 700ms ease both;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  border-color: color-mix(in srgb, var(--accent-strong) 32%, transparent);
+  box-shadow: var(--shadow-strong);
+}
+
+.topRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.85rem;
+}
+
+.title {
+  display: grid;
+  gap: 0.2rem;
+}
+
+.title h3 {
+  font-family: var(--font-display);
+  font-size: 1.06rem;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  font-weight: 650;
+}
+
+.iconWrap {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 1px solid var(--border-strong);
+  border-radius: 1rem;
+  background: var(--glass-surface-strong);
+  color: var(--accent-strong);
+}
+
+.card p {
+  color: var(--text-muted);
+  font-size: 0.88rem;
+}
+
+.link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.42rem;
+  width: fit-content;
+  color: var(--accent-strong);
+  font-size: 0.88rem;
+  font-weight: 700;
+}
+
+@media (max-width: 960px) {
+  .threeUp,
+  .dense {
+    grid-template-columns: 1fr;
+  }
+}

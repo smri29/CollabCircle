@@ -49,7 +49,7 @@ export function MemberGrid({
                 <span className={styles.role}>{member.role}</span>
               </div>
               <h3>{member.name}</h3>
-              <p>Image structure ready. Cloudinary source will be connected later.</p>
+              <p>Image slot ready for future Cloudinary integration.</p>
             </article>
           ))}
         </div>
@@ -62,7 +62,7 @@ export function MemberGrid({
                 <div className={styles.placeholderImage} aria-hidden="true" />
                 <div>
                   <h3>Researcher Profile</h3>
-                  <p>Profile card placeholder for future researcher data and Cloudinary image.</p>
+                  <p>Placeholder for future researcher data and image.</p>
                 </div>
               </article>
             ))}

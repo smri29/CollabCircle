@@ -7,12 +7,12 @@
 .featureCard {
   display: grid;
   gap: 1rem;
-  padding: 1.35rem;
+  padding: 1.15rem;
   border: 1px solid var(--border-strong);
   border-radius: 1.7rem;
   background:
-    radial-gradient(circle at top left, rgba(143, 217, 255, 0.22), transparent 36%),
-    rgba(255, 255, 255, 0.46);
+    radial-gradient(circle at top left, color-mix(in srgb, var(--accent-soft) 24%, transparent), transparent 36%),
+    var(--glass-surface);
   box-shadow: var(--shadow-soft);
   backdrop-filter: blur(18px);
   animation: fadeLift 700ms ease both;
@@ -28,7 +28,7 @@
 
 .featureCard h2 {
   font-family: var(--font-display);
-  font-size: clamp(1.4rem, 3vw, 2rem);
+  font-size: clamp(1.25rem, 2.8vw, 1.75rem);
   line-height: 1.08;
   letter-spacing: -0.04em;
   font-weight: 650;
@@ -36,7 +36,7 @@
 
 .featureCard p:last-of-type {
   color: var(--text-muted);
-  font-size: 0.94rem;
+  font-size: 0.88rem;
 }
 
 .featureActions {
@@ -48,17 +48,17 @@
 .primaryChannel {
   display: grid;
   gap: 1rem;
-  padding: 1.35rem;
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 1.15rem;
+  border: 1px solid color-mix(in srgb, var(--panel-text) 14%, transparent);
   border-radius: 1.7rem;
-  background: linear-gradient(160deg, rgba(16, 49, 78, 0.94), rgba(47, 155, 255, 0.88));
-  color: #f8fbff;
+  background: linear-gradient(160deg, var(--panel-start), var(--panel-end));
+  color: var(--panel-text);
   box-shadow: var(--shadow-strong);
   animation: fadeLift 700ms ease both;
 }
 
 .primaryChannel p:first-child {
-  color: rgba(248, 244, 235, 0.72);
+  color: var(--panel-text-muted);
   font-size: 0.82rem;
   font-weight: 700;
   letter-spacing: 0.14em;
@@ -67,15 +67,15 @@
 
 .primaryChannel h2 {
   font-family: var(--font-display);
-  font-size: clamp(1.4rem, 3vw, 2rem);
+  font-size: clamp(1.25rem, 2.8vw, 1.75rem);
   line-height: 1.08;
   letter-spacing: -0.04em;
   font-weight: 650;
 }
 
 .primaryChannel p:last-of-type {
-  color: rgba(248, 244, 235, 0.74);
-  font-size: 0.94rem;
+  color: var(--panel-text-muted);
+  font-size: 0.88rem;
 }
 
 .primaryLink {
@@ -107,7 +107,7 @@
 
 .sectionHeader h2 {
   font-family: var(--font-display);
-  font-size: clamp(1.5rem, 3vw, 2.15rem);
+  font-size: clamp(1.35rem, 2.8vw, 1.85rem);
   line-height: 1.08;
   letter-spacing: -0.05em;
   font-weight: 650;
@@ -115,7 +115,7 @@
 
 .sectionHeader p:last-child {
   color: var(--text-muted);
-  font-size: 0.95rem;
+  font-size: 0.88rem;
 }
 
 @media (max-width: 960px) {

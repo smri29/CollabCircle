@@ -1,8 +1,8 @@
 export const siteMeta = {
   name: "CollabCircle",
-  tagline: "Collaborative ML and DL research, designed for publication.",
+  tagline: "Research, engineering, and long-term impact.",
   description:
-    "CollabCircle is a research organization focused on collaborative machine learning and deep learning projects with strong execution, clear documentation, and publication-ready outcomes.",
+    "CollabCircle is a future-ready organization growing from a research foundation toward engineering and broader impact.",
   email: "collabcircle.official@gmail.com",
 };
 
@@ -44,35 +44,32 @@ export const socialLinks = [
 export const heroSignals = [
   {
     value: "Research-first",
-    label: "Every project begins with a defensible question, not a vague trend.",
+    label: "Clear questions before execution.",
   },
   {
-    value: "Documentation-led",
-    label: "Experiments, assumptions, and decisions are kept visible from day one.",
+    value: "Structured",
+    label: "Decisions stay visible.",
   },
   {
-    value: "Submission-ready",
-    label: "Work is shaped toward strong manuscripts, polished figures, and clear results.",
+    value: "Scalable",
+    label: "Built to grow into more.",
   },
 ];
 
 export const researchPillars = [
   {
     title: "Data-Centric Machine Learning",
-    description:
-      "We prioritize dataset quality, labeling strategy, and evaluation discipline before optimizing models.",
+    description: "Better data design before bigger models.",
     tags: ["benchmark design", "error analysis", "robust evaluation"],
   },
   {
     title: "Efficient Deep Learning Systems",
-    description:
-      "We explore architectures and training strategies that increase performance without wasting compute.",
+    description: "Sharper models with cleaner training decisions.",
     tags: ["parameter efficiency", "distillation", "training pipelines"],
   },
   {
     title: "Applied Intelligence Workflows",
-    description:
-      "We connect models to real decision systems through clear interfaces, reproducible code, and practical constraints.",
+    description: "Interfaces, systems, and applied model workflows.",
     tags: ["deployment framing", "monitoring", "human-in-the-loop"],
   },
 ];
@@ -81,103 +78,86 @@ export const workflowSteps = [
   {
     step: "01",
     title: "Frame the problem",
-    description:
-      "Define the question, novelty angle, success criteria, and evaluation boundaries before building.",
+    description: "Set the question and evaluation boundary.",
   },
   {
     step: "02",
     title: "Build the evidence",
-    description:
-      "Implement datasets, baselines, and experiments in a way that survives replication and review.",
+    description: "Run experiments that stay reviewable.",
   },
   {
     step: "03",
     title: "Shape the narrative",
-    description:
-      "Turn findings into a clear story with figures, tables, ablations, and limitations that reviewers can follow.",
+    description: "Turn results into a clean research story.",
   },
   {
     step: "04",
     title: "Submit with confidence",
-    description:
-      "Refine the manuscript through internal critique, venue fit review, and final quality checks.",
+    description: "Polish the work before submission.",
   },
 ];
 
 export const principles = [
   {
     title: "Small teams, strong accountability",
-    description:
-      "Compact teams make it easier to track ownership, preserve momentum, and keep quality standards high.",
+    description: "Clear ownership helps quality stay high.",
   },
   {
     title: "Readable systems win",
-    description:
-      "Codebases, experiment logs, and manuscript drafts should be understandable by another researcher without guesswork.",
+    description: "Work should stay understandable to others.",
   },
   {
     title: "Aesthetic clarity matters",
-    description:
-      "Research communication is part of the work. Layout, figure quality, and writing discipline are not optional extras.",
+    description: "Presentation is part of the standard.",
   },
 ];
 
 export const publicationStandards = [
   {
     title: "Original contribution",
-    description:
-      "Each project needs a clear reason to exist and a contribution that is easy to state without inflation.",
+    description: "A real contribution with a clear claim.",
   },
   {
     title: "Reproducible methodology",
-    description:
-      "Methods, settings, and data sources must be documented tightly enough to reproduce the result.",
+    description: "Methods should be easy to follow and repeat.",
   },
   {
     title: "Reviewer-ready presentation",
-    description:
-      "Strong structure, direct writing, and carefully designed visuals improve the odds of a fair reading.",
+    description: "Clean structure helps work earn trust.",
   },
 ];
 
 export const outputFormats = [
   {
     title: "Conference papers",
-    description:
-      "Fast-moving research with a clear experimental story, focused contribution, and strong comparisons.",
+    description: "Compact work with a sharp experimental story.",
   },
   {
     title: "Journal articles",
-    description:
-      "Extended studies with deeper analysis, broader context, and a more comprehensive discussion of results.",
+    description: "Longer studies with deeper analysis.",
   },
   {
     title: "Research assets",
-    description:
-      "Code, trained models, benchmarks, and technical notes that make our work easier to inspect and reuse.",
+    description: "Supporting assets that make the work reusable.",
   },
 ];
 
 export const teamRoles = [
   {
     title: "Research direction",
-    description:
-      "Sets the problem framing, project ambition, and submission strategy with a clear standard for quality.",
+    description: "Keeps scope, ambition, and standards aligned.",
   },
   {
     title: "Experiment ownership",
-    description:
-      "Designs baselines, runs model training, analyzes failures, and keeps the empirical evidence trustworthy.",
+    description: "Builds and validates the empirical side.",
   },
   {
     title: "Technical writing",
-    description:
-      "Builds the paper narrative, aligns sections with findings, and improves clarity for reviewers and readers.",
+    description: "Turns results into readable papers.",
   },
   {
     title: "Collaboration support",
-    description:
-      "Maintains documentation, sync rhythm, figure quality, and handoff discipline across the project lifecycle.",
+    description: "Keeps documentation and handoff clean.",
   },
 ];
 
@@ -240,43 +220,40 @@ export const contactChannels = [
     label: "LinkedIn",
     value: "CollabCircle Official",
     href: socialProfiles.linkedin,
-    description: "Follow updates, initiatives, and public-facing research activity.",
+    description: "Professional updates and public visibility.",
   },
   {
     label: "Facebook",
     value: "collabcircle.official",
     href: socialProfiles.facebook,
-    description: "Stay connected through CollabCircle's public community and updates.",
+    description: "Public updates and community presence.",
   },
   {
     label: "Instagram",
     value: "@collabcircle.official",
     href: socialProfiles.instagram,
-    description: "Visual snapshots of the organization and its research culture.",
+    description: "Visual snapshots and organization moments.",
   },
   {
     label: "YouTube",
     value: "@collabcircle.official",
     href: socialProfiles.youtube,
-    description: "Follow video content, talks, and future research communication.",
+    description: "Video content and future public communication.",
   },
 ];
 
 export const contactPurposes = [
   {
     title: "Research collaboration",
-    description:
-      "Reach out if you want to discuss a paper idea, a shared research direction, or a contribution to an ongoing initiative.",
+    description: "Discuss a paper idea or shared research direction.",
   },
   {
     title: "Joining as a contributor",
-    description:
-      "Introduce your background, technical strengths, and the kind of work you can consistently own over time.",
+    description: "Share your background and what you can own.",
   },
   {
     title: "Partnerships and visibility",
-    description:
-      "Use the official channels for academic connections, organizational visibility, and future public-facing collaborations.",
+    description: "Use official channels for partnerships and visibility.",
   },
 ];
 
@@ -284,20 +261,17 @@ export const contactProcess = [
   {
     step: "01",
     title: "Choose the right channel",
-    description:
-      "Use email for direct and formal communication. Use the public social profiles for updates, visibility, and lightweight connection.",
+    description: "Use email for serious outreach.",
   },
   {
     step: "02",
     title: "Keep the message specific",
-    description:
-      "State your intent clearly, identify the research area, and explain what kind of contribution or discussion you are proposing.",
+    description: "Say what you want clearly.",
   },
   {
     step: "03",
     title: "Make the next step obvious",
-    description:
-      "Mention whether you want to collaborate, ask a question, share relevant work, or request a follow-up discussion.",
+    description: "Make the next step easy to understand.",
   },
 ];
 
