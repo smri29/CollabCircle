@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { BrainCircuit } from "lucide-react";
 import styles from "@/components/shared/content-sections.module.css";
 import { PageHero } from "@/components/shared/page-hero";
 import { researchPillars } from "@/data/site-content";
@@ -19,6 +20,7 @@ export default function ResearchPage() {
     <>
       <PageHero
         eyebrow="Research"
+        icon={BrainCircuit}
         intro="We focus on machine learning and deep learning work that can support serious analysis, strong writing, and credible submission targets."
         title="Focused directions, disciplined methodology, and room for meaningful work."
       />

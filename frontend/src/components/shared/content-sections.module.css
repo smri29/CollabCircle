@@ -1,23 +1,26 @@
 .stack {
   display: grid;
-  gap: 1.25rem;
+  gap: 1.05rem;
+  animation: fadeLift 700ms ease both;
 }
 
 .stack h2 {
   font-family: var(--font-display);
-  font-size: clamp(2rem, 4vw, 3rem);
-  line-height: 0.98;
-  letter-spacing: -0.04em;
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  font-weight: 650;
 }
 
 .stack p {
   color: var(--text-muted);
+  font-size: 0.92rem;
 }
 
 .gridTwo {
   display: grid;
   grid-template-columns: 1.15fr 0.85fr;
-  gap: 1.5rem;
+  gap: 1rem;
   align-items: start;
 }
 
@@ -28,20 +31,33 @@
 }
 
 .card {
-  padding: 1.35rem;
-  border: 1px solid rgba(22, 50, 59, 0.1);
-  border-radius: 1.35rem;
-  background: rgba(255, 255, 255, 0.58);
-  box-shadow: 0 14px 34px rgba(16, 39, 48, 0.06);
+  padding: 1.15rem;
+  border: 1px solid var(--border-strong);
+  border-radius: 1.4rem;
+  background: rgba(255, 255, 255, 0.42);
+  box-shadow: var(--shadow-soft);
+  backdrop-filter: blur(18px);
+  animation: fadeLift 700ms ease both;
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(47, 155, 255, 0.32);
+  box-shadow: var(--shadow-strong);
 }
 
 .card h3 {
-  margin-bottom: 0.7rem;
-  font-size: 1.08rem;
+  margin-bottom: 0.55rem;
+  font-size: 0.96rem;
 }
 
 .card p {
   color: var(--text-muted);
+  font-size: 0.88rem;
 }
 
 .card a {
@@ -50,21 +66,26 @@
 }
 
 .panel {
-  padding: 1.5rem;
-  border: 1px solid rgba(22, 50, 59, 0.12);
+  padding: 1.45rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 1.5rem;
-  background: rgba(22, 50, 59, 0.94);
-  color: #f7f4ec;
+  background: linear-gradient(160deg, rgba(16, 49, 78, 0.9), rgba(29, 77, 118, 0.88));
+  color: #f5fbff;
+  box-shadow: var(--shadow-strong);
+  animation: fadeLift 700ms ease both;
 }
 
 .panel p {
-  color: rgba(247, 244, 236, 0.76);
+  color: rgba(245, 251, 255, 0.74);
+  font-size: 0.95rem;
 }
 
 .panel h3 {
   margin-bottom: 0.8rem;
   font-family: var(--font-display);
-  font-size: 1.8rem;
+  font-size: 1.28rem;
+  line-height: 1.08;
+  font-weight: 650;
 }
 
 .panel .list {
@@ -73,7 +94,7 @@
 
 .list {
   display: grid;
-  gap: 0.85rem;
+  gap: 0.75rem;
   padding-left: 1.1rem;
   color: var(--text-muted);
 }
@@ -88,27 +109,35 @@
   grid-template-columns: auto 1fr;
   gap: 1rem;
   align-items: start;
-  padding: 1rem 0;
-  border-top: 1px solid rgba(22, 50, 59, 0.08);
+  padding: 1rem 1.05rem;
+  border: 1px solid var(--border-strong);
+  border-radius: 1.25rem;
+  background: rgba(255, 255, 255, 0.38);
+  box-shadow: var(--shadow-soft);
+  backdrop-filter: blur(18px);
+  animation: fadeLift 700ms ease both;
 }
 
 .timelineItem:first-child {
-  padding-top: 0;
-  border-top: 0;
+  padding-top: 1rem;
 }
 
 .timelineItem h3 {
   margin-bottom: 0.35rem;
+  font-size: 0.94rem;
 }
 
 .timelineItem p {
   color: var(--text-muted);
+  font-size: 0.86rem;
 }
 
 .timelineLabel {
-  min-width: 3rem;
+  min-width: 2.5rem;
   color: var(--accent-strong);
   font-weight: 700;
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
 }
 
 .contactGrid {
@@ -126,9 +155,10 @@
 .pill {
   padding: 0.5rem 0.8rem;
   border-radius: 999px;
-  background: rgba(22, 50, 59, 0.07);
+  background: rgba(255, 255, 255, 0.56);
+  border: 1px solid var(--border-soft);
   color: var(--text-muted);
-  font-size: 0.92rem;
+  font-size: 0.84rem;
 }
 
 @media (max-width: 960px) {

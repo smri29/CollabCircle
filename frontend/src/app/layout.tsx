@@ -1,16 +1,16 @@
 import type { Metadata } from "next";
-import { Fraunces, Manrope } from "next/font/google";
+import { Plus_Jakarta_Sans, Sora } from "next/font/google";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
 import { OrbitAssistant } from "@/components/orbit/orbit-assistant";
 import "./globals.css";
 
-const manrope = Manrope({
+const jakarta = Plus_Jakarta_Sans({
   variable: "--font-sans",
   subsets: ["latin"],
 });
 
-const fraunces = Fraunces({
+const sora = Sora({
   variable: "--font-display",
   subsets: ["latin"],
 });
@@ -30,7 +30,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${manrope.variable} ${fraunces.variable}`}>
+      <body className={`${jakarta.variable} ${sora.variable}`}>
         <div className="siteShell">
           <SiteHeader />
           <main className="siteMain">{children}</main>

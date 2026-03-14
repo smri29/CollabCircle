@@ -7,13 +7,15 @@
 .featureCard {
   display: grid;
   gap: 1rem;
-  padding: 1.6rem;
-  border: 1px solid rgba(22, 50, 59, 0.1);
+  padding: 1.35rem;
+  border: 1px solid var(--border-strong);
   border-radius: 1.7rem;
   background:
-    radial-gradient(circle at top left, rgba(196, 111, 67, 0.16), transparent 36%),
-    rgba(255, 255, 255, 0.62);
-  box-shadow: 0 18px 45px rgba(16, 39, 48, 0.08);
+    radial-gradient(circle at top left, rgba(143, 217, 255, 0.22), transparent 36%),
+    rgba(255, 255, 255, 0.46);
+  box-shadow: var(--shadow-soft);
+  backdrop-filter: blur(18px);
+  animation: fadeLift 700ms ease both;
 }
 
 .featureCard p:first-child {
@@ -26,13 +28,15 @@
 
 .featureCard h2 {
   font-family: var(--font-display);
-  font-size: clamp(2rem, 4vw, 3rem);
-  line-height: 0.96;
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  line-height: 1.08;
   letter-spacing: -0.04em;
+  font-weight: 650;
 }
 
 .featureCard p:last-of-type {
   color: var(--text-muted);
+  font-size: 0.94rem;
 }
 
 .featureActions {
@@ -44,12 +48,13 @@
 .primaryChannel {
   display: grid;
   gap: 1rem;
-  padding: 1.6rem;
-  border: 1px solid rgba(22, 50, 59, 0.12);
+  padding: 1.35rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 1.7rem;
-  background: rgba(22, 50, 59, 0.95);
-  color: #f8f4eb;
-  box-shadow: 0 20px 52px rgba(16, 39, 48, 0.12);
+  background: linear-gradient(160deg, rgba(16, 49, 78, 0.94), rgba(47, 155, 255, 0.88));
+  color: #f8fbff;
+  box-shadow: var(--shadow-strong);
+  animation: fadeLift 700ms ease both;
 }
 
 .primaryChannel p:first-child {
@@ -62,23 +67,25 @@
 
 .primaryChannel h2 {
   font-family: var(--font-display);
-  font-size: clamp(2rem, 4vw, 3rem);
-  line-height: 0.96;
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  line-height: 1.08;
   letter-spacing: -0.04em;
+  font-weight: 650;
 }
 
 .primaryChannel p:last-of-type {
   color: rgba(248, 244, 235, 0.74);
+  font-size: 0.94rem;
 }
 
 .primaryLink {
   display: inline-flex;
   align-items: center;
   width: fit-content;
-  min-height: 3rem;
-  padding: 0.85rem 1rem;
+  min-height: 2.8rem;
+  padding: 0.75rem 0.95rem;
   border-radius: 999px;
-  background: #f8f4eb;
+  background: rgba(255, 255, 255, 0.94);
   color: var(--surface-deep);
   font-weight: 700;
 }
@@ -100,13 +107,15 @@
 
 .sectionHeader h2 {
   font-family: var(--font-display);
-  font-size: clamp(2rem, 4vw, 3.5rem);
-  line-height: 0.96;
+  font-size: clamp(1.5rem, 3vw, 2.15rem);
+  line-height: 1.08;
   letter-spacing: -0.05em;
+  font-weight: 650;
 }
 
 .sectionHeader p:last-child {
   color: var(--text-muted);
+  font-size: 0.95rem;
 }
 
 @media (max-width: 960px) {

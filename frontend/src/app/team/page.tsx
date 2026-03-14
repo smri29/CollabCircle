@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { UsersRound } from "lucide-react";
 import { CtaBanner } from "@/components/shared/cta-banner";
 import styles from "@/components/shared/content-sections.module.css";
 import { MemberGrid } from "@/components/team/member-grid";
@@ -14,6 +15,7 @@ export default function TeamPage() {
     <>
       <PageHero
         eyebrow="Team"
+        icon={UsersRound}
         intro="The team page is organized around the people leading CollabCircle and the structure that will later hold the broader researcher directory."
         title="An executive panel first, then a researcher directory built to scale cleanly."
       />

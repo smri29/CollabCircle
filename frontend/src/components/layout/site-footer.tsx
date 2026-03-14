@@ -1,7 +1,35 @@
 import Link from "next/link";
+import {
+  BookOpenText,
+  BrainCircuit,
+  Facebook,
+  Home,
+  Info,
+  Instagram,
+  Linkedin,
+  Mail,
+  UsersRound,
+  Youtube,
+} from "lucide-react";
 import { CollabCircleLogo } from "@/components/brand/collabcircle-logo";
 import { navigation, siteMeta, socialLinks } from "@/data/site-content";
 import styles from "./site-footer.module.css";
+
+const navIcons = {
+  "/": Home,
+  "/about": Info,
+  "/research": BrainCircuit,
+  "/publications": BookOpenText,
+  "/team": UsersRound,
+  "/contact": Mail,
+} as const;
+
+const socialIcons = {
+  LinkedIn: Linkedin,
+  Facebook: Facebook,
+  Instagram: Instagram,
+  YouTube: Youtube,
+} as const;
 
 export function SiteFooter() {
   return (
@@ -23,11 +51,18 @@ export function SiteFooter() {
           <div>
             <h3>Explore</h3>
             <ul>
-              {navigation.map((item) => (
-                <li key={item.href}>
-                  <Link href={item.href}>{item.label}</Link>
-                </li>
-              ))}
+              {navigation.map((item) => {
+                const Icon = navIcons[item.href as keyof typeof navIcons];
+
+                return (
+                  <li key={item.href}>
+                    <Link href={item.href}>
+                      <Icon size={16} strokeWidth={2} />
+                      <span>{item.label}</span>
+                    </Link>
+                  </li>
+                );
+              })}
             </ul>
           </div>
 
@@ -35,15 +70,23 @@ export function SiteFooter() {
             <h3>Connect</h3>
             <ul>
               <li>
-                <a href={`mailto:${siteMeta.email}`}>{siteMeta.email}</a>
+                <a href={`mailto:${siteMeta.email}`}>
+                  <Mail size={16} strokeWidth={2} />
+                  <span>{siteMeta.email}</span>
+                </a>
               </li>
-              {socialLinks.map((item) => (
-                <li key={item.href}>
-                  <a href={item.href} rel="noreferrer" target="_blank">
-                    {item.label}
-                  </a>
-                </li>
-              ))}
+              {socialLinks.map((item) => {
+                const Icon = socialIcons[item.label as keyof typeof socialIcons];
+
+                return (
+                  <li key={item.href}>
+                    <a href={item.href} rel="noreferrer" target="_blank">
+                      <Icon size={16} strokeWidth={2} />
+                      <span>{item.label}</span>
+                    </a>
+                  </li>
+                );
+              })}
             </ul>
           </div>
         </div>
