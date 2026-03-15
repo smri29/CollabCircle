@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import { BookOpenText } from "lucide-react";
+import { PublicationDirectory } from "@/components/publications/publication-directory";
 import styles from "@/components/shared/content-sections.module.css";
 import { PageHero } from "@/components/shared/page-hero";
-import { outputFormats, publicationStandards, workflowSteps } from "@/data/site-content";
+import { publicationStandards } from "@/data/site-content";
 
 export const metadata: Metadata = {
   title: "Publications",
@@ -14,8 +15,8 @@ export default function PublicationsPage() {
       <PageHero
         eyebrow="Publications"
         icon={BookOpenText}
-        intro="We treat writing and presentation as part of the research process, not as an afterthought added at the end."
-        title="A publication model built around clarity, evidence, and reviewer trust."
+        intro="This page is organized as a clean publication archive, with separate views for journal and conference records."
+        title="A structured publication directory for journal and conference work."
       />
 
       <section className="section">
@@ -30,28 +31,7 @@ export default function PublicationsPage() {
       </section>
 
       <section className="section">
-        <div className={styles.gridTwo}>
-          <div className={styles.timeline}>
-            {workflowSteps.map((step) => (
-              <article className={styles.timelineItem} key={step.step}>
-                <span className={styles.timelineLabel}>{step.step}</span>
-                <div>
-                  <h3>{step.title}</h3>
-                  <p>{step.description}</p>
-                </div>
-              </article>
-            ))}
-          </div>
-
-          <div className={styles.stack}>
-            {outputFormats.map((format) => (
-              <article className={styles.card} key={format.title}>
-                <h3>{format.title}</h3>
-                <p>{format.description}</p>
-              </article>
-            ))}
-          </div>
-        </div>
+        <PublicationDirectory />
       </section>
     </>
   );
