@@ -43,17 +43,12 @@
 }
 
 .brandText strong {
+  position: relative;
   font-size: 0.9rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-}
-
-.brandText small {
-  color: var(--text-muted);
-  font-size: 0.74rem;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  animation: brandFloat 3.8s ease-in-out infinite;
+  transform-origin: left center;
 }
 
 .desktopNav {
@@ -103,6 +98,35 @@
   gap: 0.7rem;
 }
 
+.joinLink,
+.mobileJoinLink {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.8rem;
+  padding: 0.78rem 1.05rem;
+  border: 1px solid rgba(47, 155, 255, 0.18);
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--surface-mid), var(--accent-strong));
+  color: #f8fbff;
+  font-size: 0.9rem;
+  font-weight: 700;
+  box-shadow: 0 16px 32px rgba(47, 155, 255, 0.16);
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    filter 180ms ease;
+}
+
+.joinLink:hover,
+.joinLink:focus-visible,
+.mobileJoinLink:hover,
+.mobileJoinLink:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-soft);
+  filter: saturate(1.04);
+}
+
 .menuButton {
   display: none;
   padding: 0.7rem 0.9rem;
@@ -129,6 +153,10 @@
 
   .menuButton {
     display: inline-flex;
+  }
+
+  .joinLink {
+    display: none;
   }
 
   .mobilePanel,
@@ -180,6 +208,10 @@
     color: var(--text-color);
     background: rgba(255, 255, 255, 0.56);
   }
+
+  .mobileJoinLink {
+    margin-top: 0.35rem;
+  }
 }
 
 @media (max-width: 720px) {
@@ -188,12 +220,21 @@
     padding: 0.8rem 0.85rem;
   }
 
-  .brandText small {
-    display: none;
-  }
-
   .mobilePanel,
   .mobilePanelOpen {
     width: min(1180px, calc(100vw - 1.2rem));
+  }
+}
+
+@keyframes brandFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.94;
+  }
+
+  50% {
+    transform: translateY(-1px);
+    opacity: 1;
   }
 }

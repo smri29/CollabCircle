@@ -1,8 +1,8 @@
 export const siteMeta = {
   name: "CollabCircle",
-  tagline: "Collaborative ML and DL research, designed for publication.",
+  tagline: "A future-ready research and engineering organization.",
   description:
-    "CollabCircle is a research organization focused on collaborative machine learning and deep learning projects with strong execution, clear documentation, and publication-ready outcomes.",
+    "CollabCircle is evolving into a future-ready organization with a research lab, an engineering hub, and a long-term focus on meaningful impact.",
   email: "collabcircle.official@gmail.com",
 };
 
@@ -12,15 +12,6 @@ const socialProfiles = {
   instagram: "https://www.instagram.com/collabcircle.official/",
   youtube: "https://www.youtube.com/@collabcircle.official",
 };
-
-export const navigation = [
-  { href: "/", label: "Home" },
-  { href: "/about", label: "About" },
-  { href: "/research", label: "Research" },
-  { href: "/publications", label: "Publications" },
-  { href: "/team", label: "Team" },
-  { href: "/contact", label: "Contact" },
-];
 
 export const socialLinks = [
   {
