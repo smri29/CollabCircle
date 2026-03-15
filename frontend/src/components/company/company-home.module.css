@@ -1,162 +1,160 @@
 .hero {
-  position: relative;
   display: grid;
-  grid-template-columns: minmax(0, 1.15fr) minmax(18rem, 0.85fr);
+  grid-template-columns: minmax(0, 1.08fr) minmax(20rem, 0.92fr);
   gap: 1rem;
-  padding: 2.35rem 0 1rem;
+  padding: 2.1rem 0 0.8rem;
 }
 
-.heroPanel,
-.spotlightPanel,
-.storyPanel {
+.panel,
+.aside,
+.note {
   position: relative;
   overflow: hidden;
   border: 1px solid var(--border-strong);
   border-radius: var(--radius-lg);
-  background: rgba(255, 255, 255, 0.42);
+  background: var(--glass-surface);
   box-shadow: var(--shadow-soft);
   backdrop-filter: blur(22px);
   animation: fadeLift 700ms ease both;
 }
 
-.heroPanel {
-  padding: 1.65rem;
+.panel {
+  padding: 1.5rem;
 }
 
-.heroPanel::before,
-.spotlightPanel::before,
-.storyPanel::before {
+.panel::before,
+.aside::before,
+.note::before {
   content: "";
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(circle at 18% 18%, rgba(143, 217, 255, 0.26), transparent 26%),
-    radial-gradient(circle at 78% 16%, rgba(47, 155, 255, 0.16), transparent 28%);
+    radial-gradient(circle at 16% 16%, color-mix(in srgb, var(--accent-soft) 32%, transparent), transparent 24%),
+    radial-gradient(circle at 82% 14%, color-mix(in srgb, var(--accent-strong) 18%, transparent), transparent 24%);
   pointer-events: none;
 }
 
-.heroInner {
+.panelInner,
+.asideInner,
+.noteInner {
   position: relative;
-  display: grid;
-  gap: 1.1rem;
+  z-index: 1;
 }
 
 .eyebrow {
   display: inline-flex;
   align-items: center;
-  gap: 0.55rem;
+  gap: 0.45rem;
   width: fit-content;
-  padding: 0.45rem 0.72rem;
+  padding: 0.42rem 0.68rem;
   border: 1px solid var(--border-strong);
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.42);
+  background: var(--glass-surface-strong);
   color: var(--accent-strong);
-  font-size: 0.74rem;
+  font-size: 0.72rem;
   font-weight: 800;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.15em;
   text-transform: uppercase;
 }
 
-.heroPanel h1 {
+.panelInner {
+  display: grid;
+  gap: 1rem;
+}
+
+.panel h1 {
   max-width: 11ch;
   font-family: var(--font-display);
-  font-size: clamp(2.15rem, 4.2vw, 3.5rem);
+  font-size: clamp(2rem, 4.2vw, 3.35rem);
   line-height: 0.98;
   letter-spacing: -0.05em;
   font-weight: 650;
 }
 
 .lead {
-  max-width: 40rem;
+  max-width: 36rem;
   color: var(--text-muted);
-  font-size: 0.96rem;
+  font-size: 0.92rem;
 }
 
 .actions {
   display: flex;
   flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.micro {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+}
+
+.micro span {
+  padding: 0.46rem 0.68rem;
+  border: 1px solid var(--border-soft);
+  border-radius: 999px;
+  background: var(--glass-surface-strong);
+  color: var(--text-muted);
+  font-size: 0.8rem;
+}
+
+.aside {
+  padding: 1.15rem;
+}
+
+.asideInner {
+  display: grid;
   gap: 0.8rem;
 }
 
-.microNote {
-  display: grid;
-  gap: 0.38rem;
-  color: var(--text-subtle);
-  font-size: 0.82rem;
-}
-
-.spotlightPanel {
-  display: grid;
-  gap: 0.85rem;
-  padding: 1.2rem;
-}
-
-.spotlightIntro {
-  position: relative;
-  z-index: 1;
-  display: grid;
-  gap: 0.35rem;
-}
-
-.spotlightIntro p {
+.asideLabel {
   color: var(--accent-strong);
   font-size: 0.72rem;
   font-weight: 800;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.15em;
   text-transform: uppercase;
 }
 
-.spotlightIntro h2 {
+.aside h2 {
   font-family: var(--font-display);
-  font-size: 1.28rem;
+  font-size: 1.18rem;
   line-height: 1.08;
   letter-spacing: -0.03em;
   font-weight: 650;
 }
 
-.spotlightCards {
-  position: relative;
-  z-index: 1;
+.asideCards {
   display: grid;
-  gap: 0.8rem;
+  gap: 0.72rem;
 }
 
-.spotlightCard {
-  display: grid;
-  gap: 0.35rem;
-  padding: 0.95rem 1rem;
-  border: 1px solid rgba(255, 255, 255, 0.5);
+.asideCard {
+  padding: 0.9rem 0.95rem;
+  border: 1px solid var(--border-strong);
   border-radius: 1.2rem;
-  background: rgba(255, 255, 255, 0.48);
+  background: var(--glass-surface-strong);
 }
 
-.spotlightCard span {
-  color: var(--accent-strong);
-  font-size: 0.7rem;
-  font-weight: 800;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
+.asideCard h3 {
+  font-size: 0.94rem;
+  margin-bottom: 0.24rem;
 }
 
-.spotlightCard h3 {
-  font-size: 1rem;
-}
-
-.spotlightCard p {
+.asideCard p {
   color: var(--text-muted);
-  font-size: 0.84rem;
+  font-size: 0.82rem;
 }
 
 .section {
   display: grid;
-  gap: 1.1rem;
-  padding: 1.4rem 0;
+  gap: 1rem;
+  padding: 1.2rem 0;
 }
 
 .sectionHeader {
   display: grid;
-  gap: 0.45rem;
-  max-width: 42rem;
+  gap: 0.4rem;
+  max-width: 38rem;
 }
 
 .sectionHeader p:first-child {
@@ -169,7 +167,7 @@
 
 .sectionHeader h2 {
   font-family: var(--font-display);
-  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  font-size: clamp(1.45rem, 3vw, 2rem);
   line-height: 1.06;
   letter-spacing: -0.04em;
   font-weight: 650;
@@ -177,91 +175,71 @@
 
 .sectionHeader p:last-child {
   color: var(--text-muted);
-  font-size: 0.92rem;
+  font-size: 0.9rem;
 }
 
-.storyPanel {
-  padding: 1.45rem;
+.note {
+  padding: 1.3rem;
 }
 
-.storyGrid {
-  position: relative;
-  z-index: 1;
+.noteInner {
   display: grid;
   grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
   gap: 1rem;
-  align-items: start;
 }
 
-.storyStack {
+.noteCopy {
   display: grid;
-  gap: 0.9rem;
+  gap: 0.8rem;
 }
 
-.storyStack h2 {
+.noteCopy h2 {
   font-family: var(--font-display);
-  font-size: clamp(1.55rem, 3vw, 2.15rem);
+  font-size: clamp(1.4rem, 3vw, 1.95rem);
   line-height: 1.06;
   letter-spacing: -0.04em;
   font-weight: 650;
 }
 
-.storyStack p {
+.noteCopy p,
+.noteAside p {
   color: var(--text-muted);
-  font-size: 0.92rem;
+  font-size: 0.9rem;
 }
 
-.storyList {
+.noteList {
   display: grid;
-  gap: 0.8rem;
+  gap: 0.65rem;
   padding-left: 1rem;
   color: var(--text-muted);
-  font-size: 0.88rem;
-}
-
-.storyAside {
-  padding: 1.1rem;
-  border: 1px solid rgba(255, 255, 255, 0.52);
-  border-radius: 1.35rem;
-  background: rgba(255, 255, 255, 0.44);
-}
-
-.storyAside h3 {
-  margin-bottom: 0.55rem;
-  font-size: 0.98rem;
-}
-
-.storyAside p {
-  color: var(--text-muted);
   font-size: 0.86rem;
+}
+
+.noteAside {
+  padding: 1rem;
+  border: 1px solid var(--border-strong);
+  border-radius: 1.2rem;
+  background: var(--glass-surface-strong);
+}
+
+.noteAside h3 {
+  margin-bottom: 0.42rem;
+  font-size: 0.94rem;
 }
 
 .linkInline {
   display: inline-flex;
   align-items: center;
-  gap: 0.45rem;
-  margin-top: 0.9rem;
+  gap: 0.42rem;
+  margin-top: 0.8rem;
   color: var(--accent-strong);
-  font-size: 0.9rem;
+  font-size: 0.88rem;
   font-weight: 700;
 }
 
 @media (max-width: 960px) {
   .hero,
-  .storyGrid {
+  .noteInner {
     grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 720px) {
-  .heroPanel,
-  .spotlightPanel,
-  .storyPanel {
-    padding-left: 1.05rem;
-    padding-right: 1.05rem;
-  }
-
-  .heroPanel h1 {
-    max-width: 10ch;
   }
 }

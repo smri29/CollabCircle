@@ -19,7 +19,7 @@
   height: 1.8rem;
   border: 1px solid var(--border-strong);
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.42);
+  background: var(--glass-surface);
   color: var(--accent-strong);
   backdrop-filter: blur(16px);
 }
@@ -34,7 +34,7 @@
 
 .heading h2 {
   font-family: var(--font-display);
-  font-size: clamp(1.6rem, 3.2vw, 2.35rem);
+  font-size: clamp(1.45rem, 2.9vw, 2rem);
   line-height: 1.08;
   letter-spacing: -0.04em;
   font-weight: 650;
@@ -42,6 +42,6 @@
 
 .heading p:last-child {
   color: var(--text-muted);
-  font-size: 0.92rem;
-  max-width: 31rem;
+  font-size: 0.86rem;
+  max-width: 28rem;
 }

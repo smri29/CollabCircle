@@ -21,8 +21,8 @@ export default function ResearchPage() {
       <PageHero
         eyebrow="Research"
         icon={BrainCircuit}
-        intro="We focus on machine learning and deep learning work that can support serious analysis, strong writing, and credible submission targets."
-        title="Focused directions, disciplined methodology, and room for meaningful work."
+        intro="Current ML and DL directions inside the lab."
+        title="Focused research, cleaner methodology."
       />
 
       <section className="section">
@@ -46,11 +46,9 @@ export default function ResearchPage() {
       <section className="section">
         <div className={styles.gridTwo}>
           <div className={styles.stack}>
-            <h2>How we approach projects</h2>
+            <h2>How projects are handled</h2>
             <p>
-              Each project should be narrow enough to execute with focus, but rich enough to
-              produce an argument that matters. That means careful scope, honest limitations, and
-              a clear line between experiments and claims.
+              Projects stay scoped, evidence-led, and readable from start to finish.
             </p>
             <ul className={styles.list}>
               {methods.map((method) => (
@@ -61,10 +59,7 @@ export default function ResearchPage() {
 
           <aside className={styles.panel}>
             <h3>Research posture</h3>
-            <p>
-              We prefer deliberate projects with durable evidence over rushed experiments that look
-              busy but collapse under review.
-            </p>
+            <p>Deliberate work beats rushed output.</p>
           </aside>
         </div>
       </section>

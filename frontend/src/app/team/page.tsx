@@ -16,13 +16,13 @@ export default function TeamPage() {
       <PageHero
         eyebrow="Team"
         icon={UsersRound}
-        intro="The team page is organized around the people leading CollabCircle and the structure that will later hold the broader researcher directory."
-        title="An executive panel first, then a researcher directory built to scale cleanly."
+        intro="The people leading CollabCircle, with room to expand the researcher directory later."
+        title="Executive panel first. Researcher directory next."
       />
 
       <MemberGrid
         eyebrow="Executive panel"
-        intro="This grid follows the requested display order and keeps each profile card ready for a future Cloudinary image source."
+        intro="Profiles are already structured for future image integration."
         members={executiveMembers}
         title="The six executives of CollabCircle."
       />
@@ -30,7 +30,7 @@ export default function TeamPage() {
       <MemberGrid
         eyebrow="Researchers"
         emptyMessage="Researcher profiles will appear here as the current researcher directory is finalized."
-        intro="This section is already structured for profile cards, so researcher data and images can be added later without redesigning the page."
+        intro="This section is ready for researcher data and images later."
         members={currentResearchers}
         placeholderCount={6}
         title="Current researchers of CollabCircle."
@@ -39,11 +39,9 @@ export default function TeamPage() {
       <section className="section">
         <div className={styles.gridTwo}>
           <div className={styles.stack}>
-            <h2>What this structure supports</h2>
+            <h2>Why it is split this way</h2>
             <p>
-              The executive grid establishes the leadership layer first. The researcher section is
-              intentionally separate so the directory can expand without disturbing the executive
-              presentation.
+              Leadership stays clear, and the researcher section can scale without disturbing the layout.
             </p>
             <ul className={styles.list}>
               {collaborationChecklist.map((item) => (
@@ -54,23 +52,20 @@ export default function TeamPage() {
 
           <aside className={styles.panel}>
             <h3>Directory principle</h3>
-            <p>
-              Profile images, names, roles, and ordering should come from structured data so the
-              team page stays maintainable when Cloudinary and researcher records are connected.
-            </p>
+            <p>Structured data will keep this page maintainable as profiles grow.</p>
           </aside>
         </div>
       </section>
 
       <section className="section">
         <CtaBanner
-          description="If someone wants to work with CollabCircle, the expectations should be visible before the first meeting."
-          eyebrow="Collaboration"
+          description="People should understand the team before they reach out."
+          eyebrow="Next step"
           primaryHref="/contact"
           primaryLabel="Reach out"
           secondaryHref="/about"
-          secondaryLabel="See the culture"
-          title="The team experience should feel as intentional as the research itself."
+          secondaryLabel="See the lab"
+          title="The team page should feel clear and intentional."
         />
       </section>
     </>

@@ -9,9 +9,7 @@ import { siteMeta } from "@/data/site-content";
 import styles from "./site-header.module.css";
 
 function isActivePath(pathname: string, href: string, matches?: string[]) {
-  const paths = [href, ...(matches ?? [])];
-
-  return paths.some((path) => pathname === path || pathname.startsWith(`${path}/`));
+  return [href, ...(matches ?? [])].some((path) => pathname === path || pathname.startsWith(`${path}/`));
 }
 
 export function SiteHeader() {

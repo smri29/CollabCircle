@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Cpu } from "lucide-react";
 import styles from "@/components/shared/content-sections.module.css";
-import { CtaBanner } from "@/components/shared/cta-banner";
 import { PageHero } from "@/components/shared/page-hero";
 import { engineeringFocusAreas } from "@/data/company-content";
 
@@ -9,10 +8,10 @@ export const metadata: Metadata = {
   title: "Engineering Hub",
 };
 
-const engineeringPrinciples = [
-  "Build software systems that make research capability usable",
-  "Design internal tools and future products with clarity and reliability",
-  "Create a bridge from experimentation to deployable technical value",
+const engineeringNotes = [
+  "Future products and software systems",
+  "Internal tools and technical platforms",
+  "A bridge from research to delivery",
 ];
 
 export default function EngineeringHubPage() {
@@ -21,8 +20,8 @@ export default function EngineeringHubPage() {
       <PageHero
         eyebrow="Engineering Hub"
         icon={Cpu}
-        intro="This section introduces the future engineering department CollabCircle plans to grow into as the organization moves toward a broader company identity."
-        title="A future home for products, systems, tooling, and technical delivery."
+        intro="A future home for the engineering side of CollabCircle."
+        title="Where products, systems, and technical delivery will grow."
       />
 
       <section className="section">
@@ -39,39 +38,19 @@ export default function EngineeringHubPage() {
       <section className="section">
         <div className={styles.gridTwo}>
           <div className={styles.stack}>
-            <h2>Why this section exists now</h2>
-            <p>
-              Even if the engineering department is still a future plan, the website should already
-              make room for it. That gives CollabCircle a more honest long-term structure and keeps
-              the brand from feeling limited to one current phase.
-            </p>
+            <h2>Built for the next phase</h2>
             <ul className={styles.list}>
-              {engineeringPrinciples.map((item) => (
+              {engineeringNotes.map((item) => (
                 <li key={item}>{item}</li>
               ))}
             </ul>
           </div>
 
           <aside className={styles.panel}>
-            <h3>Future build-out</h3>
-            <p>
-              This section can later expand into products, case studies, internal platforms,
-              service offerings, and engineering team visibility.
-            </p>
+            <h3>Long-term role</h3>
+            <p>This area will expand as CollabCircle moves from research foundation to company execution.</p>
           </aside>
         </div>
-      </section>
-
-      <section className="section">
-        <CtaBanner
-          description="The engineering side will become more specific as we define products, software systems, and technical priorities."
-          eyebrow="Next department"
-          primaryHref="/mission-vision"
-          primaryLabel="Read mission and vision"
-          secondaryHref="/join-us"
-          secondaryLabel="See joining paths"
-          title="The engineering hub is the long-term build layer of CollabCircle."
-        />
       </section>
     </>
   );

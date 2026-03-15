@@ -41,11 +41,29 @@ export function SiteFooter() {
             <CollabCircleLogo className={styles.logo} height={56} width={56} />
             <p className={styles.eyebrow}>CollabCircle</p>
           </div>
-          <h2>Built to grow from a research lab into a thoughtful technology company.</h2>
-          <p>
-            The site now introduces CollabCircle as a broader institution while keeping the current
-            research experience organized under its own dedicated gateway.
-          </p>
+          <div className={styles.connectBlock}>
+            <h3>Connect</h3>
+            <ul className={styles.connectList}>
+              <li>
+                <a href={`mailto:${siteMeta.email}`}>
+                  <Mail size={16} strokeWidth={2} />
+                  <span>{siteMeta.email}</span>
+                </a>
+              </li>
+              {socialLinks.map((item) => {
+                const Icon = socialIcons[item.label as keyof typeof socialIcons];
+
+                return (
+                  <li key={item.href}>
+                    <a href={item.href} rel="noreferrer" target="_blank">
+                      <Icon size={16} strokeWidth={2} />
+                      <span>{item.label}</span>
+                    </a>
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
           <Link className={styles.joinCta} href="/join-us">
             <span>Join the journey</span>
             <ArrowRight size={16} strokeWidth={2} />
@@ -91,35 +109,11 @@ export function SiteFooter() {
             </ul>
           </div>
 
-          <div>
-            <h3>Connect</h3>
-            <ul>
-              <li>
-                <a href={`mailto:${siteMeta.email}`}>
-                  <Mail size={16} strokeWidth={2} />
-                  <span>{siteMeta.email}</span>
-                </a>
-              </li>
-              {socialLinks.map((item) => {
-                const Icon = socialIcons[item.label as keyof typeof socialIcons];
-
-                return (
-                  <li key={item.href}>
-                    <a href={item.href} rel="noreferrer" target="_blank">
-                      <Icon size={16} strokeWidth={2} />
-                      <span>{item.label}</span>
-                    </a>
-                  </li>
-                );
-              })}
-            </ul>
-          </div>
         </div>
       </div>
 
       <div className={styles.bottomBar}>
-        <p>{siteMeta.tagline}</p>
-        <p>Designed for thoughtful iteration across research, engineering, and future impact.</p>
+        <p>We research to understand; we build to empower.</p>
       </div>
     </footer>
   );

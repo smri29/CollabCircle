@@ -3,6 +3,7 @@ import { Plus_Jakarta_Sans, Sora } from "next/font/google";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
 import { OrbitAssistant } from "@/components/orbit/orbit-assistant";
+import { RouteTheme } from "@/components/theme/route-theme";
 import "./globals.css";
 
 const jakarta = Plus_Jakarta_Sans({
@@ -20,7 +21,7 @@ export const metadata: Metadata = {
     default: "CollabCircle",
     template: "%s | CollabCircle",
   },
-  description: "A future-ready organization shaped around research, engineering, and meaningful impact.",
+  description: "A future-ready organization shaped around research, engineering, and long-term impact.",
 };
 
 export default function RootLayout({
@@ -31,6 +32,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${jakarta.variable} ${sora.variable}`}>
+        <RouteTheme />
         <div className="siteShell">
           <SiteHeader />
           <main className="siteMain">{children}</main>

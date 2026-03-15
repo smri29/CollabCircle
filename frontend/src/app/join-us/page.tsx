@@ -16,8 +16,8 @@ export default function JoinUsPage() {
       <PageHero
         eyebrow="Join Us"
         icon={UsersRound}
-        intro="This page creates a clear invitation for the kinds of people who may want to grow with CollabCircle over time."
-        title="A place for researchers, future engineers, and long-term collaborators."
+        intro="A simple place for future researchers, engineers, and collaborators."
+        title="Grow with CollabCircle."
       />
 
       <section className="section">
@@ -34,21 +34,14 @@ export default function JoinUsPage() {
       <section className="section">
         <div className={styles.gridTwo}>
           <div className={styles.stack}>
-            <h2>What we want from future collaborators</h2>
-            <p>
-              The strongest fit is someone who values consistency, ownership, and organized
-              execution. We are building patiently, so long-term alignment matters more than noise.
-            </p>
-            <p>
-              If you want to work with CollabCircle, the best first move is still a focused message
-              that explains your background and how you want to contribute.
-            </p>
+            <h2>Start with a focused message</h2>
+            <p>Tell us your background, your direction, and how you want to contribute.</p>
           </div>
 
           <aside className={styles.panel}>
-            <h3>Start here</h3>
+            <h3>Best first step</h3>
             <p>
-              Email remains the clearest path for serious outreach.
+              Email
               {" "}
               <Link href={`mailto:${siteMeta.email}`}>{siteMeta.email}</Link>
             </p>

@@ -15,8 +15,8 @@ export default function PublicationsPage() {
       <PageHero
         eyebrow="Publications"
         icon={BookOpenText}
-        intro="This page is organized as a clean publication archive, with separate views for journal and conference records."
-        title="A structured publication directory for journal and conference work."
+        intro="A clean archive for journal and conference work."
+        title="Publications, organized with less noise."
       />
 
       <section className="section">

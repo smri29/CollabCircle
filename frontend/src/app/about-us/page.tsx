@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
 import { Building2 } from "lucide-react";
-import { FeatureLinkGrid } from "@/components/company/feature-link-grid";
 import styles from "@/components/shared/content-sections.module.css";
 import { PageHero } from "@/components/shared/page-hero";
-import { aboutCompanyPoints, homeDivisions } from "@/data/company-content";
+import { aboutCompanyPoints } from "@/data/company-content";
 
 export const metadata: Metadata = {
   title: "About Us",
@@ -15,19 +14,14 @@ export default function AboutUsPage() {
       <PageHero
         eyebrow="About Us"
         icon={Building2}
-        intro="This page describes CollabCircle at the organization level rather than only through its current research activity."
-        title="An evolving organization with research roots and a broader company future."
+        intro="CollabCircle is growing from a research foundation into a broader company idea."
+        title="A research-rooted organization with a bigger future in view."
       />
 
       <section className="section">
         <div className={styles.gridTwo}>
           <div className={styles.stack}>
-            <h2>Who CollabCircle is becoming</h2>
-            <p>
-              CollabCircle is being shaped with the future in mind. The organization starts from a
-              research-centered foundation, but the website now acknowledges the longer path toward
-              engineering capability and broader technical impact.
-            </p>
+            <h2>Company-level identity</h2>
             <ul className={styles.list}>
               {aboutCompanyPoints.map((point) => (
                 <li key={point}>{point}</li>
@@ -36,17 +30,10 @@ export default function AboutUsPage() {
           </div>
 
           <aside className={styles.panel}>
-            <h3>Identity shift</h3>
-            <p>
-              The brand now speaks at two levels: what CollabCircle is today and what CollabCircle
-              is preparing to become.
-            </p>
+            <h3>What changed</h3>
+            <p>The site now reflects both the current research phase and the longer engineering vision.</p>
           </aside>
         </div>
-      </section>
-
-      <section className="section">
-        <FeatureLinkGrid items={homeDivisions} />
       </section>
     </>
   );

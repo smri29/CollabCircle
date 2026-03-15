@@ -3,7 +3,7 @@ import { Building2 } from "lucide-react";
 import { CtaBanner } from "@/components/shared/cta-banner";
 import styles from "@/components/shared/content-sections.module.css";
 import { PageHero } from "@/components/shared/page-hero";
-import { principles, workflowSteps } from "@/data/site-content";
+import { principles } from "@/data/site-content";
 
 export const metadata: Metadata = {
   title: "About",
@@ -15,31 +15,23 @@ export default function AboutPage() {
       <PageHero
         eyebrow="About CollabCircle"
         icon={Building2}
-        intro="We are building an organization where research quality comes from structure, collaboration, and repeatable execution rather than improvisation."
-        title="A research culture designed to stay sharp as the work gets bigger."
+        intro="A research organization built around structure, collaboration, and clarity."
+        title="A disciplined lab culture with room to grow."
       />
 
       <section className="section">
         <div className={styles.gridTwo}>
           <div className={styles.stack}>
-            <h2>Why this organization exists</h2>
+            <h2>Why it exists</h2>
             <p>
-              CollabCircle is shaped around a simple idea: good research needs more than
-              intelligence. It also needs accountability, readable systems, and a clear path from
-              experiments to publication.
-            </p>
-            <p>
-              The website reflects that same intention. It should feel calm, precise, and serious
-              enough to represent a research team that values both substance and presentation.
+              CollabCircle is built on a simple belief: strong research needs clear systems, not
+              just good ideas.
             </p>
           </div>
 
           <aside className={styles.panel}>
             <h3>Operating idea</h3>
-            <p>
-              We work best when project structure, writing discipline, and technical execution
-              reinforce each other instead of competing for attention.
-            </p>
+            <p>Structure, writing, and execution should support each other.</p>
           </aside>
         </div>
       </section>
@@ -56,28 +48,14 @@ export default function AboutPage() {
       </section>
 
       <section className="section">
-        <div className={styles.timeline}>
-          {workflowSteps.map((step) => (
-            <article className={styles.timelineItem} key={step.step}>
-              <span className={styles.timelineLabel}>{step.step}</span>
-              <div>
-                <h3>{step.title}</h3>
-                <p>{step.description}</p>
-              </div>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section className="section">
         <CtaBanner
-          description="The frontend is the first public layer of that system, so it should already feel organized, credible, and deliberate."
-          eyebrow="Organization design"
+          description="The public-facing experience should stay as organized as the research behind it."
+          eyebrow="Next step"
           primaryHref="/research"
-          primaryLabel="Review research areas"
+          primaryLabel="View research"
           secondaryHref="/contact"
-          secondaryLabel="Open collaboration"
-          title="The public-facing experience should match the internal standard."
+          secondaryLabel="Contact us"
+          title="A clear lab should look clear from the outside too."
         />
       </section>
     </>

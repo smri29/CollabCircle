@@ -1,7 +1,12 @@
 "use client";
 
 import { useState } from "react";
-import { ExternalLink, FileText, Fingerprint, LibraryBig, UsersRound } from "lucide-react";
+import {
+  ExternalLink,
+  Fingerprint,
+  LibraryBig,
+  UsersRound,
+} from "lucide-react";
 import {
   conferencePublications,
   journalPublications,
@@ -11,135 +16,102 @@ import styles from "./publication-directory.module.css";
 
 type PublicationTab = "journal" | "conference";
 
-const fieldIcons = {
-  venue: LibraryBig,
-  doi: Fingerprint,
-  link: ExternalLink,
-  authors: UsersRound,
-} as const;
-
-const tabs: Array<{
-  key: PublicationTab;
-  label: string;
-  count: number;
-}> = [
-  {
-    key: "journal",
-    label: "Journal",
-    count: journalPublications.length,
-  },
-  {
-    key: "conference",
-    label: "Conference",
-    count: conferencePublications.length,
-  },
+const tabs = [
+  { id: "journal" as const, label: "Journal", count: journalPublications.length },
+  { id: "conference" as const, label: "Conference", count: conferencePublications.length },
 ];
 
 function PublicationCard({
-  publication,
-  typeLabel,
+  item,
+  type,
 }: {
-  publication: PublicationRecord;
-  typeLabel: string;
+  item: PublicationRecord;
+  type: PublicationTab;
 }) {
-  const LinkIcon = fieldIcons.link;
-  const VenueIcon = fieldIcons.venue;
-  const DoiIcon = fieldIcons.doi;
-  const AuthorsIcon = fieldIcons.authors;
-
   return (
     <article className={styles.card}>
       <div className={styles.cardHeader}>
-        <span className={styles.typeBadge}>{typeLabel}</span>
-        <FileText size={18} strokeWidth={2} />
+        <h3>{item.title}</h3>
+        <span className={styles.typeBadge}>{type === "journal" ? "Journal" : "Conference"}</span>
       </div>
-
-      <h3>{publication.title}</h3>
 
       <div className={styles.metaList}>
         <div>
-          <span className={styles.metaLabel}>
-            <VenueIcon size={15} strokeWidth={2} />
-            Journal/Conference
-          </span>
-          <p>{publication.venue}</p>
+          <div className={styles.metaLabel}>
+            <LibraryBig size={15} strokeWidth={2} />
+            <span>Journal/Conference</span>
+          </div>
+          <p>{item.venue}</p>
         </div>
 
         <div>
-          <span className={styles.metaLabel}>
-            <DoiIcon size={15} strokeWidth={2} />
-            DOI
-          </span>
-          <p>{publication.doi}</p>
+          <div className={styles.metaLabel}>
+            <Fingerprint size={15} strokeWidth={2} />
+            <span>DOI</span>
+          </div>
+          <p>{item.doi}</p>
         </div>
 
         <div>
-          <span className={styles.metaLabel}>
-            <LinkIcon size={15} strokeWidth={2} />
-            Link
-          </span>
-          <a href={publication.link} rel="noreferrer" target="_blank">
+          <div className={styles.metaLabel}>
+            <ExternalLink size={15} strokeWidth={2} />
+            <span>Link</span>
+          </div>
+          <a href={item.link} rel="noreferrer" target="_blank">
             Open publication
           </a>
         </div>
 
         <div>
-          <span className={styles.metaLabel}>
-            <AuthorsIcon size={15} strokeWidth={2} />
-            Authors
-          </span>
-          <p>{publication.authors.join(", ")}</p>
+          <div className={styles.metaLabel}>
+            <UsersRound size={15} strokeWidth={2} />
+            <span>Authors</span>
+          </div>
+          <p>{item.authors.join(", ")}</p>
         </div>
       </div>
     </article>
   );
 }
 
-function PlaceholderCard({ typeLabel }: { typeLabel: string }) {
-  const LinkIcon = fieldIcons.link;
-  const VenueIcon = fieldIcons.venue;
-  const DoiIcon = fieldIcons.doi;
-  const AuthorsIcon = fieldIcons.authors;
-
+function PlaceholderCard({ type }: { type: PublicationTab }) {
   return (
-    <article className={styles.placeholderCard}>
+    <article className={`${styles.card} ${styles.placeholderCard}`}>
       <div className={styles.cardHeader}>
-        <span className={styles.typeBadge}>{typeLabel}</span>
-        <FileText size={18} strokeWidth={2} />
+        <h3>Publication record will appear here</h3>
+        <span className={styles.typeBadge}>{type === "journal" ? "Journal" : "Conference"}</span>
       </div>
-
-      <h3>Publication record</h3>
 
       <div className={styles.metaList}>
         <div>
-          <span className={styles.metaLabel}>
-            <VenueIcon size={15} strokeWidth={2} />
-            Journal/Conference
-          </span>
+          <div className={styles.metaLabel}>
+            <LibraryBig size={15} strokeWidth={2} />
+            <span>Journal/Conference</span>
+          </div>
           <p>To be added</p>
         </div>
 
         <div>
-          <span className={styles.metaLabel}>
-            <DoiIcon size={15} strokeWidth={2} />
-            DOI
-          </span>
+          <div className={styles.metaLabel}>
+            <Fingerprint size={15} strokeWidth={2} />
+            <span>DOI</span>
+          </div>
           <p>To be added</p>
         </div>
 
         <div>
-          <span className={styles.metaLabel}>
-            <LinkIcon size={15} strokeWidth={2} />
-            Link
-          </span>
+          <div className={styles.metaLabel}>
+            <ExternalLink size={15} strokeWidth={2} />
+            <span>Link</span>
+          </div>
           <p>To be added</p>
         </div>
 
         <div>
-          <span className={styles.metaLabel}>
-            <AuthorsIcon size={15} strokeWidth={2} />
-            Authors
-          </span>
+          <div className={styles.metaLabel}>
+            <UsersRound size={15} strokeWidth={2} />
+            <span>Authors</span>
+          </div>
           <p>To be added</p>
         </div>
       </div>
@@ -149,47 +121,37 @@ function PlaceholderCard({ typeLabel }: { typeLabel: string }) {
 
 export function PublicationDirectory() {
   const [activeTab, setActiveTab] = useState<PublicationTab>("journal");
-
-  const activeRecords =
-    activeTab === "journal" ? journalPublications : conferencePublications;
-  const typeLabel = activeTab === "journal" ? "Journal" : "Conference";
+  const activeItems = activeTab === "journal" ? journalPublications : conferencePublications;
 
   return (
     <section className={styles.section}>
       <div className={styles.header}>
         <div>
-          <p>Publication directory</p>
-          <h2>Browse journal and conference publications in one organized archive.</h2>
+          <h2>Publication archive</h2>
+          <p>Switch between journal and conference records.</p>
         </div>
 
-        <div className={styles.tabGroup} role="tablist" aria-label="Publication type">
+        <div className={styles.tabGroup} aria-label="Publication type">
           {tabs.map((tab) => (
             <button
-              aria-selected={activeTab === tab.key}
-              className={activeTab === tab.key ? styles.tabActive : styles.tab}
-              key={tab.key}
-              onClick={() => setActiveTab(tab.key)}
-              role="tab"
+              className={activeTab === tab.id ? styles.tabActive : styles.tab}
+              key={tab.id}
+              onClick={() => setActiveTab(tab.id)}
               type="button"
             >
-              <span>{tab.label}</span>
-              <small>{tab.count}</small>
+              {tab.label} ({tab.count})
             </button>
           ))}
         </div>
       </div>
 
       <div className={styles.grid}>
-        {activeRecords.length > 0
-          ? activeRecords.map((publication) => (
-              <PublicationCard
-                key={`${typeLabel}-${publication.title}`}
-                publication={publication}
-                typeLabel={typeLabel}
-              />
+        {activeItems.length > 0
+          ? activeItems.map((item) => (
+              <PublicationCard item={item} key={`${activeTab}-${item.title}`} type={activeTab} />
             ))
-          : Array.from({ length: 3 }, (_, index) => (
-              <PlaceholderCard key={`${typeLabel}-${index}`} typeLabel={typeLabel} />
+          : Array.from({ length: 2 }, (_, index) => (
+              <PlaceholderCard key={`${activeTab}-${index + 1}`} type={activeTab} />
             ))}
       </div>
     </section>
