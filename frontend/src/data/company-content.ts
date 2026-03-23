@@ -11,10 +11,10 @@ export type AchievementItem = {
 export const latestAchievements: AchievementItem[] = [
   {
     id: "achievement-1",
-    title: "2024 Research Excellence Award",
+    title: "CollabCircle Team Meetup",
     date: "March 2024",
-    description: "CollabCircle recognised for outstanding contribution to collaborative AI research methodology.",
-    image: "/achievement-placeholder.png",
+    description: "Our research team gathered to align on upcoming milestones and celebrate progress together.",
+    image: "/team-meetup.jpg.jpeg",
     href: "/achievements",
   },
 ];
