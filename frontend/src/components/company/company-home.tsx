@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Compass, Cpu, Microscope, Trophy } from "lucide-react";
+import { ArrowRight, Compass, Trophy } from "lucide-react";
 import {
   aboutCompanyPoints,
   companyLinks,
@@ -21,24 +21,12 @@ export function CompanyHome() {
             <p className={styles.eyebrow}>CollabCircle</p>
             <h1>Research now. Engineering next. Built with a long view.</h1>
             <p className={styles.lead}>
-              The homepage now frames CollabCircle as a future-ready organization, not only a
-              research site.
+              Driving innovation in Machine Learning &amp; Deep Learning through open collaboration and impactful research.
             </p>
-            <div className={styles.actions}>
-              <Link className="button" href="/research-lab">
-                <Microscope size={18} strokeWidth={2} />
-                <span>Open Research Lab</span>
-              </Link>
-              <Link className="buttonGhost" href="/engineering-hub">
-                <Cpu size={18} strokeWidth={2} />
-                <span>View Engineering Hub</span>
-              </Link>
-            </div>
-            <div className={styles.micro}>
-              <span>Research</span>
-              <span>Engineering</span>
-              <span>Impact</span>
-            </div>
+            <Link className={`button ${styles.heroCta}`} href="/join-us">
+              <span>Join CollabCircle</span>
+              <ArrowRight size={16} strokeWidth={2} />
+            </Link>
           </div>
         </article>
 
