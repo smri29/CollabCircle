@@ -7,7 +7,6 @@ import {
   landingFeatures,
   latestAchievements,
 } from "@/data/company-content";
-import { AnimatedBg } from "@/components/shared/animated-bg";
 import { FeatureLinkGrid } from "./feature-link-grid";
 import styles from "./company-home.module.css";
 
@@ -17,7 +16,6 @@ export function CompanyHome() {
   return (
     <>
       <section className={styles.hero}>
-        <AnimatedBg />
         <article className={styles.panel}>
           <div className={styles.panelInner}>
             <p className={styles.eyebrow}>CollabCircle</p>
