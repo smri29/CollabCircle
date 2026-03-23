@@ -1,3 +1,24 @@
+export type AchievementItem = {
+  id: string;
+  title: string;
+  date: string;
+  description: string;
+  image: string; // path relative to /public
+  href?: string;
+};
+
+// ✏️ Update this list to showcase your latest achievements on the homepage
+export const latestAchievements: AchievementItem[] = [
+  {
+    id: "achievement-1",
+    title: "2024 Research Excellence Award",
+    date: "March 2024",
+    description: "CollabCircle recognised for outstanding contribution to collaborative AI research methodology.",
+    image: "/achievement-placeholder.png",
+    href: "/achievements",
+  },
+];
+
 export type NavigationItem = {
   href: string;
   label: string;
@@ -14,17 +35,8 @@ export type FeatureLink = {
 
 export const primaryNavigation: NavigationItem[] = [
   {
-    href: "/research-lab",
-    label: "Research Lab",
-    matches: ["/about", "/research", "/publications", "/team", "/contact"],
-  },
-  {
-    href: "/engineering-hub",
-    label: "Engineering Hub",
-  },
-  {
-    href: "/impact-sector",
-    label: "Impact Sector",
+    href: "/achievements",
+    label: "Achievements",
   },
   {
     href: "/mission-vision",

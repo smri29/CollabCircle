@@ -10,6 +10,7 @@ import {
   Mail,
   Microscope,
   Sparkles,
+  Trophy,
   Youtube,
 } from "lucide-react";
 import { CollabCircleLogo } from "@/components/brand/collabcircle-logo";
@@ -17,13 +18,14 @@ import { primaryNavigation, researchLabLinks } from "@/data/company-content";
 import { siteMeta, socialLinks } from "@/data/site-content";
 import styles from "./site-footer.module.css";
 
-const navIcons = {
+const navIcons: Record<string, React.ElementType> = {
   "/about-us": Building2,
+  "/achievements": Trophy,
   "/engineering-hub": Cpu,
   "/impact-sector": Sparkles,
   "/mission-vision": Compass,
   "/research-lab": Microscope,
-} as const;
+};
 
 const socialIcons = {
   LinkedIn: Linkedin,
@@ -81,12 +83,12 @@ export function SiteFooter() {
                 </Link>
               </li>
               {primaryNavigation.map((item) => {
-                const Icon = navIcons[item.href as keyof typeof navIcons];
+                const Icon = navIcons[item.href];
 
                 return (
                   <li key={item.href}>
                     <Link href={item.href}>
-                      <Icon size={16} strokeWidth={2} />
+                      {Icon && <Icon size={16} strokeWidth={2} />}
                       <span>{item.label}</span>
                     </Link>
                   </li>

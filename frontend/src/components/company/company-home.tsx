@@ -1,32 +1,23 @@
+import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Compass, Cpu, Microscope } from "lucide-react";
+import { ArrowRight, Compass, Cpu, Microscope, Trophy } from "lucide-react";
 import {
   aboutCompanyPoints,
   companyLinks,
   landingFeatures,
+  latestAchievements,
 } from "@/data/company-content";
+import { AnimatedBg } from "@/components/shared/animated-bg";
 import { FeatureLinkGrid } from "./feature-link-grid";
 import styles from "./company-home.module.css";
 
-const spotlightItems = [
-  {
-    title: "Research Lab",
-    description: "The current public research system.",
-  },
-  {
-    title: "Engineering Hub",
-    description: "The future technical build layer.",
-  },
-  {
-    title: "Impact Sector",
-    description: "The practical horizon of the company.",
-  },
-];
+
 
 export function CompanyHome() {
   return (
     <>
       <section className={styles.hero}>
+        <AnimatedBg />
         <article className={styles.panel}>
           <div className={styles.panelInner}>
             <p className={styles.eyebrow}>CollabCircle</p>
@@ -53,20 +44,38 @@ export function CompanyHome() {
           </div>
         </article>
 
-        <aside className={styles.aside}>
-          <div className={styles.asideInner}>
-            <p className={styles.asideLabel}>Structure</p>
-            <h2>A cleaner front door for the full company story.</h2>
-            <div className={styles.asideCards}>
-              {spotlightItems.map((item) => (
-                <article className={styles.asideCard} key={item.title}>
-                  <h3>{item.title}</h3>
-                  <p>{item.description}</p>
-                </article>
-              ))}
+        {latestAchievements[0] && (
+          <aside className={styles.aside}>
+            <div className={styles.asideInner}>
+              <p className={styles.asideLabel}>
+                <Trophy size={12} strokeWidth={2.5} style={{ display: "inline", marginRight: "0.35rem", verticalAlign: "middle" }} />
+                Latest Achievement
+              </p>
+              <div className={styles.achievementImageWrap}>
+                <Image
+                  alt={latestAchievements[0].title}
+                  className={styles.achievementImage}
+                  fill
+                  priority
+                  sizes="(max-width: 960px) 100vw, 45vw"
+                  src={latestAchievements[0].image}
+                  style={{ objectFit: "cover" }}
+                />
+                <div className={styles.achievementOverlay}>
+                  <span className={styles.achievementDate}>{latestAchievements[0].date}</span>
+                  <h2 className={styles.achievementTitle}>{latestAchievements[0].title}</h2>
+                  <p className={styles.achievementDesc}>{latestAchievements[0].description}</p>
+                  {latestAchievements[0].href && (
+                    <Link className={styles.achievementLink} href={latestAchievements[0].href}>
+                      <span>View all achievements</span>
+                      <ArrowRight size={14} strokeWidth={2} />
+                    </Link>
+                  )}
+                </div>
+              </div>
             </div>
-          </div>
-        </aside>
+          </aside>
+        )}
       </section>
 
       <section className={styles.section}>
