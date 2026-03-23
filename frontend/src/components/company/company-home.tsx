@@ -47,32 +47,43 @@ export function CompanyHome() {
         {latestAchievements[0] && (
           <aside className={styles.aside}>
             <div className={styles.asideInner}>
+
+              {/* Label */}
               <p className={styles.asideLabel}>
                 <Trophy size={12} strokeWidth={2.5} style={{ display: "inline", marginRight: "0.35rem", verticalAlign: "middle" }} />
                 Latest Achievement
               </p>
+
+              {/* Title | divider | description — horizontal meta row */}
+              <div className={styles.achievementMeta}>
+                <h2 className={styles.achievementTitle}>{latestAchievements[0].title}</h2>
+                <span className={styles.achievementDivider} aria-hidden="true" />
+                <p className={styles.achievementDesc}>{latestAchievements[0].description}</p>
+              </div>
+
+              {/* Image — full natural ratio, no cropping */}
               <div className={styles.achievementImageWrap}>
                 <Image
                   alt={latestAchievements[0].title}
                   className={styles.achievementImage}
-                  fill
+                  height={0}
                   priority
                   sizes="(max-width: 960px) 100vw, 45vw"
                   src={latestAchievements[0].image}
-                  style={{ objectFit: "cover" }}
+                  style={{ width: "100%", height: "auto", display: "block" }}
+                  width={0}
                 />
-                <div className={styles.achievementOverlay}>
-                  <span className={styles.achievementDate}>{latestAchievements[0].date}</span>
-                  <h2 className={styles.achievementTitle}>{latestAchievements[0].title}</h2>
-                  <p className={styles.achievementDesc}>{latestAchievements[0].description}</p>
-                  {latestAchievements[0].href && (
-                    <Link className={styles.achievementLink} href={latestAchievements[0].href}>
-                      <span>View all achievements</span>
-                      <ArrowRight size={14} strokeWidth={2} />
-                    </Link>
-                  )}
-                </div>
+                <span className={styles.achievementDate}>{latestAchievements[0].date}</span>
               </div>
+
+              {/* Link below image */}
+              {latestAchievements[0].href && (
+                <Link className={styles.achievementLink} href={latestAchievements[0].href}>
+                  <span>View all achievements</span>
+                  <ArrowRight size={14} strokeWidth={2} />
+                </Link>
+              )}
+
             </div>
           </aside>
         )}

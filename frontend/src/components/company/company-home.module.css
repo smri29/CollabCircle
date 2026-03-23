@@ -244,66 +244,82 @@
 
 /* ── Achievement image panel ─────────────────────── */
 
+/* Meta bar: title | divider | description — horizontal */
+.achievementMeta {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  min-height: 2.4rem;
+}
+
+.achievementTitle {
+  font-family: var(--font-display);
+  font-size: clamp(0.88rem, 1.8vw, 1.05rem);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  font-weight: 650;
+  color: var(--text-color);
+  white-space: nowrap;          /* keep title on one line */
+  flex-shrink: 0;
+}
+
+/* Vertical separator line */
+.achievementDivider {
+  display: block;
+  width: 1px;
+  align-self: stretch;
+  background: var(--border-soft);
+  flex-shrink: 0;
+  border-radius: 1px;
+}
+
+.achievementDesc {
+  font-size: 0.78rem;
+  line-height: 1.45;
+  color: var(--text-muted);
+  /* allow description to wrap naturally on the right */
+}
+
+/* Image container — taller now that meta row is compact */
 .achievementImageWrap {
   position: relative;
-  flex: 1;
-  min-height: 240px;
   border-radius: 1rem;
   overflow: hidden;
   background: var(--glass-surface-strong);
 }
 
-.achievementOverlay {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  gap: 0.4rem;
-  padding: 1.1rem 1.15rem;
-  background: linear-gradient(
-    to top,
-    color-mix(in srgb, var(--text-base) 80%, transparent) 0%,
-    color-mix(in srgb, var(--text-base) 20%, transparent) 55%,
-    transparent 100%
-  );
+.achievementImage {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 1rem;
 }
 
+/* Date badge — top-left corner of the image */
 .achievementDate {
+  position: absolute;
+  top: 0.65rem;
+  left: 0.65rem;
+  z-index: 2;
   display: inline-block;
-  width: fit-content;
-  padding: 0.3rem 0.65rem;
+  padding: 0.28rem 0.6rem;
   border-radius: 999px;
-  background: color-mix(in srgb, var(--accent-strong) 85%, transparent);
+  background: color-mix(in srgb, var(--accent-strong) 88%, transparent);
   color: #fff;
-  font-size: 0.7rem;
+  font-size: 0.68rem;
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.18);
 }
 
-.achievementTitle {
-  font-family: var(--font-display);
-  font-size: clamp(1rem, 2.2vw, 1.3rem);
-  line-height: 1.08;
-  letter-spacing: -0.03em;
-  font-weight: 650;
-  color: #fff;
-}
-
-.achievementDesc {
-  font-size: 0.82rem;
-  line-height: 1.45;
-  color: color-mix(in srgb, #fff 80%, transparent);
-  max-width: 30ch;
-}
-
+/* Link below image */
 .achievementLink {
   display: inline-flex;
   align-items: center;
   gap: 0.38rem;
-  margin-top: 0.3rem;
-  color: #fff;
+  color: var(--accent-strong);
   font-size: 0.82rem;
   font-weight: 700;
   text-decoration: underline;
