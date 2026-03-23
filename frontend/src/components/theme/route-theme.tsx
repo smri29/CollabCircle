@@ -1,36 +1,14 @@
 "use client";
 
-import { useEffect } from "react";
+import { useLayoutEffect } from "react";
 import { usePathname } from "next/navigation";
-
-function getTheme(pathname: string) {
-  if (pathname === "/engineering-hub") {
-    return "engineering";
-  }
-
-  if (
-    pathname === "/research-lab" ||
-    pathname === "/about" ||
-    pathname === "/research" ||
-    pathname === "/publications" ||
-    pathname === "/team" ||
-    pathname === "/contact"
-  ) {
-    return "research";
-  }
-
-  return "landing";
-}
+import { getTheme } from "./theme";
 
 export function RouteTheme() {
   const pathname = usePathname();
 
-  useEffect(() => {
-    document.body.dataset.theme = getTheme(pathname);
-
-    return () => {
-      delete document.body.dataset.theme;
-    };
+  useLayoutEffect(() => {
+    document.documentElement.dataset.theme = getTheme(pathname);
   }, [pathname]);
 
   return null;

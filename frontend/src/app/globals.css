@@ -15,20 +15,20 @@
   --panel-end: rgba(29, 77, 118, 0.88);
   --panel-text: #f5fbff;
   --panel-text-muted: rgba(245, 251, 255, 0.76);
-  --page-background: #dce4ee;
+  --page-background: #c5d1dd;
   --bg-gradient:
-    radial-gradient(circle at 14% 10%, rgba(107, 140, 171, 0.2), transparent 18%),
-    radial-gradient(circle at 84% 6%, rgba(72, 108, 143, 0.14), transparent 20%),
-    radial-gradient(circle at 50% 54%, rgba(255, 255, 255, 0.44), transparent 24%),
-    linear-gradient(180deg, #f3f6fa 0%, #e8edf4 48%, #dce4ee 100%);
-  --orb-top: rgba(143, 217, 255, 0.24);
-  --orb-bottom: rgba(47, 155, 255, 0.16);
+    radial-gradient(circle at 12% 10%, rgba(74, 110, 145, 0.24), transparent 18%),
+    radial-gradient(circle at 88% 8%, rgba(113, 143, 171, 0.18), transparent 22%),
+    radial-gradient(circle at 50% 56%, rgba(255, 255, 255, 0.2), transparent 26%),
+    linear-gradient(180deg, #d9e1ea 0%, #ccd6e1 44%, #c5d1dd 100%);
+  --orb-top: rgba(89, 139, 190, 0.24);
+  --orb-bottom: rgba(52, 96, 141, 0.18);
   --shadow-soft: 0 16px 42px rgba(13, 35, 58, 0.08);
   --shadow-strong: 0 24px 60px rgba(13, 35, 58, 0.16);
   --radius-lg: 1.9rem;
 }
 
-body[data-theme="landing"] {
+html[data-theme="landing"] {
   --surface-mid: #1a4d80;
   --text-color: #213952;
   --text-muted: rgba(33, 57, 82, 0.72);
@@ -40,17 +40,17 @@ body[data-theme="landing"] {
   --glass-surface-strong: rgba(255, 248, 237, 0.72);
   --panel-start: rgba(23, 60, 96, 0.94);
   --panel-end: rgba(213, 135, 61, 0.88);
-  --page-background: #dfe6ee;
+  --page-background: #c5d1dd;
   --bg-gradient:
-    radial-gradient(circle at 12% 12%, rgba(190, 149, 97, 0.18), transparent 18%),
-    radial-gradient(circle at 84% 10%, rgba(78, 118, 152, 0.14), transparent 22%),
-    radial-gradient(circle at 54% 48%, rgba(255, 255, 255, 0.42), transparent 24%),
-    linear-gradient(180deg, #f5f3ee 0%, #ece7de 42%, #dfe6ee 100%);
-  --orb-top: rgba(243, 181, 107, 0.22);
-  --orb-bottom: rgba(23, 119, 216, 0.16);
+    radial-gradient(circle at 12% 10%, rgba(74, 110, 145, 0.24), transparent 18%),
+    radial-gradient(circle at 88% 8%, rgba(113, 143, 171, 0.18), transparent 22%),
+    radial-gradient(circle at 50% 56%, rgba(255, 255, 255, 0.2), transparent 26%),
+    linear-gradient(180deg, #d9e1ea 0%, #ccd6e1 44%, #c5d1dd 100%);
+  --orb-top: rgba(89, 139, 190, 0.24);
+  --orb-bottom: rgba(52, 96, 141, 0.18);
 }
 
-body[data-theme="research"] {
+html[data-theme="research"] {
   --surface-mid: #146a56;
   --text-color: #16483b;
   --text-muted: rgba(22, 72, 59, 0.72);
@@ -72,7 +72,7 @@ body[data-theme="research"] {
   --orb-bottom: rgba(19, 156, 116, 0.14);
 }
 
-body[data-theme="engineering"] {
+html[data-theme="engineering"] {
   --surface-mid: #7a2d17;
   --text-color: #f9efe8;
   --text-muted: rgba(249, 239, 232, 0.74);
@@ -139,6 +139,8 @@ button {
   min-height: 100vh;
   position: relative;
   isolation: isolate;
+  background-color: var(--page-background);
+  background-image: var(--bg-gradient);
 }
 
 .siteShell::before,

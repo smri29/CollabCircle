@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Plus_Jakarta_Sans, Sora } from "next/font/google";
+import Script from "next/script";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
 import { OrbitAssistant } from "@/components/orbit/orbit-assistant";
@@ -30,7 +31,32 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" data-theme="landing" suppressHydrationWarning>
+      <head>
+        <Script
+          id="route-theme-init"
+          strategy="beforeInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `(() => {
+  const pathname = window.location.pathname;
+  const theme = pathname === "/engineering-hub"
+    ? "engineering"
+    : (
+        pathname === "/research-lab" ||
+        pathname === "/about" ||
+        pathname === "/research" ||
+        pathname === "/publications" ||
+        pathname === "/team" ||
+        pathname === "/contact"
+      )
+      ? "research"
+      : "landing";
+
+  document.documentElement.dataset.theme = theme;
+})();`,
+          }}
+        />
+      </head>
       <body className={`${jakarta.variable} ${sora.variable}`}>
         <RouteTheme />
         <div className="siteShell">
