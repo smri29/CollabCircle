@@ -7,17 +7,17 @@ import { joinPaths } from "@/data/company-content";
 import { siteMeta } from "@/data/site-content";
 
 export const metadata: Metadata = {
-  title: "Join Us",
+  title: "Career",
 };
 
 export default function JoinUsPage() {
   return (
     <>
       <PageHero
-        eyebrow="Join Us"
+        eyebrow="Career"
         icon={UsersRound}
         intro="A simple place for future researchers, engineers, and collaborators."
-        title="Grow with CollabCircle."
+        title="Build your future with CollabCircle."
       />
 
       <section className="section">

@@ -41,6 +41,15 @@ export const socialLinks = [
   },
 ];
 
+export const youtubeChannelHref = socialProfiles.youtube;
+
+export type YouTubeShowcaseVideo = {
+  title: string;
+  embedUrl: string;
+};
+
+export const youtubeShowcaseVideos: YouTubeShowcaseVideo[] = [];
+
 export const heroSignals = [
   {
     value: "Research-first",

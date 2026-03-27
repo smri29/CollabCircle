@@ -46,8 +46,7 @@ export default function RootLayout({
         pathname === "/about" ||
         pathname === "/research" ||
         pathname === "/publications" ||
-        pathname === "/team" ||
-        pathname === "/contact"
+        pathname === "/team"
       )
       ? "research"
       : "landing";

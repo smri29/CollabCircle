@@ -10,8 +10,7 @@
 }
 
 .panel,
-.aside,
-.note {
+.aside {
   position: relative;
   overflow: hidden;
   border: 1px solid var(--border-strong);
@@ -27,8 +26,7 @@
 }
 
 .panel::before,
-.aside::before,
-.note::before {
+.aside::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -39,8 +37,7 @@
 }
 
 .panelInner,
-.asideInner,
-.noteInner {
+.asideInner {
   position: relative;
   z-index: 1;
 }
@@ -191,63 +188,152 @@
   font-size: 0.9rem;
 }
 
-.note {
-  padding: 1.3rem;
-}
-
-.noteInner {
+.locationPanel {
   display: grid;
-  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
   gap: 1rem;
+  padding: 1rem;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-lg);
+  background: var(--glass-surface);
+  box-shadow: var(--shadow-soft);
+  backdrop-filter: blur(18px);
+  animation: fadeLift 700ms ease both;
 }
 
-.noteCopy {
+.locationCopy {
   display: grid;
-  gap: 0.8rem;
+  align-content: start;
+  gap: 0.9rem;
+  padding: 0.45rem;
 }
 
-.noteCopy h2 {
+.locationCopy h3 {
   font-family: var(--font-display);
-  font-size: clamp(1.4rem, 3vw, 1.95rem);
+  font-size: clamp(1.35rem, 2.6vw, 1.9rem);
   line-height: 1.06;
   letter-spacing: -0.04em;
   font-weight: 650;
 }
 
-.noteCopy p,
-.noteAside p {
-  color: var(--text-muted);
-  font-size: 0.9rem;
-}
-
-.noteList {
-  display: grid;
-  gap: 0.65rem;
-  padding-left: 1rem;
-  color: var(--text-muted);
-  font-size: 0.86rem;
-}
-
-.noteAside {
-  padding: 1rem;
-  border: 1px solid var(--border-strong);
-  border-radius: 1.2rem;
-  background: var(--glass-surface-strong);
-}
-
-.noteAside h3 {
-  margin-bottom: 0.42rem;
-  font-size: 0.94rem;
-}
-
-.linkInline {
+.locationLink {
   display: inline-flex;
   align-items: center;
   gap: 0.42rem;
-  margin-top: 0.8rem;
+  width: fit-content;
   color: var(--accent-strong);
   font-size: 0.88rem;
   font-weight: 700;
+}
+
+.mapFrameWrap {
+  overflow: hidden;
+  min-height: 20rem;
+  border: 1px solid var(--border-strong);
+  border-radius: 1.5rem;
+  background: var(--glass-surface-strong);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.28);
+}
+
+.mapFrame {
+  width: 100%;
+  height: 100%;
+  min-height: 20rem;
+  border: 0;
+  display: block;
+  filter: saturate(0.92) contrast(1.02);
+}
+
+.videoPanel {
+  display: grid;
+  gap: 1rem;
+  padding: 1rem;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-lg);
+  background: var(--glass-surface);
+  box-shadow: var(--shadow-soft);
+  backdrop-filter: blur(18px);
+  animation: fadeLift 700ms ease both;
+}
+
+.videoHeading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.videoHeading > div {
+  display: grid;
+  gap: 0.75rem;
+  max-width: 44rem;
+}
+
+.videoHeading h3 {
+  font-family: var(--font-display);
+  font-size: clamp(1.35rem, 2.7vw, 2rem);
+  line-height: 1.04;
+  letter-spacing: -0.04em;
+  font-weight: 650;
+}
+
+.videoGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.videoCard,
+.videoPlaceholder {
+  display: grid;
+  gap: 0.85rem;
+  padding: 0.9rem;
+  border: 1px solid var(--border-strong);
+  border-radius: 1.4rem;
+  background: var(--glass-surface-strong);
+  box-shadow: var(--shadow-soft);
+}
+
+.videoFrameWrap,
+.videoPlaceholderFrame {
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+  border-radius: 1rem;
+  background:
+    radial-gradient(circle at 20% 20%, color-mix(in srgb, var(--accent-soft) 24%, transparent), transparent 32%),
+    linear-gradient(145deg, rgba(18, 38, 60, 0.96), rgba(9, 20, 34, 0.98));
+}
+
+.videoFrame {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+.videoPlaceholderFrame {
+  display: grid;
+  place-items: center;
+  gap: 0.4rem;
+  color: rgba(248, 251, 255, 0.9);
+}
+
+.videoPlaceholderFrame span {
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.videoCard h4,
+.videoPlaceholder h4 {
+  font-size: 0.98rem;
+}
+
+.videoPlaceholder p {
+  color: var(--text-muted);
+  font-size: 0.84rem;
 }
 
 /* ── Achievement image panel ─────────────────────── */
@@ -342,7 +428,11 @@
 
 @media (max-width: 960px) {
   .hero,
-  .noteInner {
+  .locationPanel {
+    grid-template-columns: 1fr;
+  }
+
+  .videoGrid {
     grid-template-columns: 1fr;
   }
 
