@@ -39,12 +39,16 @@ export const primaryNavigation: NavigationItem[] = [
     label: "Achievements",
   },
   {
-    href: "/mission-vision",
-    label: "Mission & Vision",
-  },
-  {
     href: "/about-us",
     label: "About Us",
+  },
+  {
+    href: "/newsroom",
+    label: "Newsroom",
+  },
+  {
+    href: "/contact",
+    label: "Contact Us",
   },
 ];
 
@@ -88,11 +92,11 @@ export const companyLinks: FeatureLink[] = [
     cta: "Get the overview",
   },
   {
-    href: "/join-us",
-    label: "Join Us",
+    href: "/career",
+    label: "Career",
     description: "For researchers, future engineers, and long-term collaborators.",
     icon: "join",
-    cta: "See how to join",
+    cta: "Explore careers",
   },
 ];
 

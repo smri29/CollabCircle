@@ -8,8 +8,7 @@ export function getTheme(pathname: string) {
     pathname === "/about" ||
     pathname === "/research" ||
     pathname === "/publications" ||
-    pathname === "/team" ||
-    pathname === "/contact"
+    pathname === "/team"
   ) {
     return "research";
   }

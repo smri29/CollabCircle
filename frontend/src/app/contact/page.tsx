@@ -1,14 +1,21 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Mail } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
+import {
+  Facebook,
+  Instagram,
+  Linkedin,
+  Mail,
+  MapPinned,
+  ShieldCheck,
+  Youtube,
+} from "lucide-react";
 import contactStyles from "@/components/contact/contact-page.module.css";
-import styles from "@/components/shared/content-sections.module.css";
 import { PageHero } from "@/components/shared/page-hero";
 import {
   collaborationChecklist,
   contactChannels,
   contactMessageBlueprint,
-  contactProcess,
   siteMeta,
 } from "@/data/site-content";
 
@@ -16,104 +23,118 @@ export const metadata: Metadata = {
   title: "Contact",
 };
 
+const channelIcons: Record<string, LucideIcon> = {
+  Email: Mail,
+  LinkedIn: Linkedin,
+  Facebook: Facebook,
+  Instagram: Instagram,
+  YouTube: Youtube,
+};
+
 export default function ContactPage() {
   return (
     <>
       <PageHero
-        eyebrow="Contact"
+        eyebrow="Contact Us"
         icon={Mail}
-        intro="Official channels for collaboration and public outreach."
-        title="A simple, direct way to reach CollabCircle."
+        intro="Official channels for inquiries, collaborations, partnerships, and general communication."
+        title="Contact CollabCircle."
       />
 
       <section className="section">
         <div className={contactStyles.heroGrid}>
-          <article className={contactStyles.featureCard}>
-            <p>How to contact us</p>
-            <h2>Use the official channels and keep the message focused.</h2>
-            <p>Short, relevant outreach works best.</p>
-            <div className={contactStyles.featureActions}>
-              <Link className="button" href={`mailto:${siteMeta.email}`}>
-                Email CollabCircle
-              </Link>
-              <Link className="buttonGhost" href="/team">
-                See the team first
-              </Link>
-            </div>
-          </article>
-
-          <article className={contactStyles.primaryChannel}>
-            <p>Primary communication channel</p>
-            <h2>Email is the main entry point.</h2>
-            <p>Use it for collaborations, research discussions, and formal inquiries.</p>
+          <article className={contactStyles.primaryCard}>
+            <p className={contactStyles.kicker}>Primary Contact</p>
+            <h2>Email is the main communication channel.</h2>
+            <p className={contactStyles.lead}>
+              Please use email for research discussions, collaboration proposals, partnership
+              inquiries, and formal communication.
+            </p>
             <a className={contactStyles.primaryLink} href={`mailto:${siteMeta.email}`}>
               {siteMeta.email}
             </a>
+          </article>
+
+          <article className={contactStyles.infoCard}>
+            <div className={contactStyles.infoRow}>
+              <MapPinned size={18} strokeWidth={2} />
+              <div>
+                <h3>Location</h3>
+                <p>Mirpur, Dhaka, Bangladesh</p>
+              </div>
+            </div>
+
+            <div className={contactStyles.infoRow}>
+              <ShieldCheck size={18} strokeWidth={2} />
+              <div>
+                <h3>Preferred approach</h3>
+                <p>Clear, concise, and relevant messages help us respond more effectively.</p>
+              </div>
+            </div>
+
+            <Link className="buttonGhost" href="/team">
+              View Team
+            </Link>
           </article>
         </div>
       </section>
 
       <section className="section">
         <div className={contactStyles.sectionHeader}>
-          <p>Official channels</p>
-          <h2>All public contact points in one place.</h2>
-          <p>Email is still the best option for serious communication.</p>
+          <p>Official Channels</p>
+          <h2>Public contact points</h2>
         </div>
 
-        <div className={styles.contactGrid}>
-          {contactChannels.map((channel) => (
-            <article className={styles.card} key={channel.label}>
-              <h3>{channel.label}</h3>
-              <p>{channel.description}</p>
-              <a href={channel.href} rel="noreferrer" target="_blank">
-                {channel.value}
-              </a>
-            </article>
-          ))}
+        <div className={contactStyles.channelGrid}>
+          {contactChannels.map((channel, index) => {
+            const Icon = channelIcons[channel.label];
+
+            return (
+              <article
+                className={contactStyles.channelCard}
+                key={channel.label}
+                style={{ animationDelay: `${index * 70}ms` }}
+              >
+                <div className={contactStyles.channelTop}>
+                  <span className={contactStyles.channelIcon}>
+                    <Icon size={18} strokeWidth={2} />
+                  </span>
+                  <div>
+                    <h3>{channel.label}</h3>
+                    <p>{channel.description}</p>
+                  </div>
+                </div>
+
+                <a href={channel.href} rel="noreferrer" target="_blank">
+                  {channel.value}
+                </a>
+              </article>
+            );
+          })}
         </div>
       </section>
 
       <section className="section">
-        <div className={styles.gridTwo}>
-          <div className={styles.timeline}>
-            {contactProcess.map((item) => (
-              <article className={styles.timelineItem} key={item.step}>
-                <span className={styles.timelineLabel}>{item.step}</span>
-                <div>
-                  <h3>{item.title}</h3>
-                  <p>{item.description}</p>
-                </div>
-              </article>
-            ))}
-          </div>
-
-          <aside className={styles.panel}>
-            <h3>Message blueprint</h3>
-            <ul className={styles.list}>
+        <div className={contactStyles.guidanceGrid}>
+          <article className={contactStyles.guidanceCard}>
+            <p className={contactStyles.kicker}>Include In Your Message</p>
+            <h2>Information that helps us understand your request.</h2>
+            <ul className={contactStyles.guidanceList}>
               {contactMessageBlueprint.map((item) => (
                 <li key={item}>{item}</li>
               ))}
             </ul>
-          </aside>
-        </div>
-      </section>
+          </article>
 
-      <section className="section">
-        <div className={styles.gridTwo}>
-          <div className={styles.stack}>
-            <h2>Before you reach out</h2>
-            <p>Short, specific, honest messages are easier to respond to.</p>
-            <ul className={styles.list}>
+          <article className={contactStyles.guidanceCard}>
+            <p className={contactStyles.kicker}>Good Outreach</p>
+            <h2>Practical standards for first contact.</h2>
+            <ul className={contactStyles.guidanceList}>
               {collaborationChecklist.map((item) => (
                 <li key={item}>{item}</li>
               ))}
             </ul>
-          </div>
-
-          <aside className={styles.panel}>
-            <h3>Outreach note</h3>
-            <p>Say who you are, what you want, and what the next step should be.</p>
-          </aside>
+          </article>
         </div>
       </section>
     </>

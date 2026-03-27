@@ -44,7 +44,7 @@ export function SiteHeader() {
         </nav>
 
         <div className={styles.actions}>
-          <Link className={styles.joinLink} href="/join-us" onClick={() => setIsMenuOpen(false)}>
+          <Link className={styles.joinLink} href="/career" onClick={() => setIsMenuOpen(false)}>
             Join Us
           </Link>
           <button
@@ -78,7 +78,7 @@ export function SiteHeader() {
               </Link>
             );
           })}
-          <Link className={styles.mobileJoinLink} href="/join-us" onClick={() => setIsMenuOpen(false)}>
+          <Link className={styles.mobileJoinLink} href="/career" onClick={() => setIsMenuOpen(false)}>
             Join Us
           </Link>
         </nav>

@@ -1,31 +1,15 @@
 import Link from "next/link";
 import {
-  ArrowRight,
-  Building2,
-  Compass,
-  Cpu,
   Facebook,
   Instagram,
   Linkedin,
   Mail,
-  Microscope,
-  Sparkles,
-  Trophy,
   Youtube,
 } from "lucide-react";
 import { CollabCircleLogo } from "@/components/brand/collabcircle-logo";
-import { primaryNavigation, researchLabLinks } from "@/data/company-content";
+import { primaryNavigation } from "@/data/company-content";
 import { siteMeta, socialLinks } from "@/data/site-content";
 import styles from "./site-footer.module.css";
-
-const navIcons: Record<string, React.ElementType> = {
-  "/about-us": Building2,
-  "/achievements": Trophy,
-  "/engineering-hub": Cpu,
-  "/impact-sector": Sparkles,
-  "/mission-vision": Compass,
-  "/research-lab": Microscope,
-};
 
 const socialIcons = {
   LinkedIn: Linkedin,
@@ -34,88 +18,93 @@ const socialIcons = {
   YouTube: Youtube,
 } as const;
 
+const footerLinks = [
+  { href: "/", label: "Home" },
+  ...primaryNavigation.map((item) => ({ href: item.href, label: item.label })),
+  { href: "/career", label: "Join Us" },
+];
+
+const legalLinks = [
+  { href: "/terms-of-use", label: "Terms of Use" },
+  { href: "/privacy-policy", label: "Privacy Policy" },
+];
+
 export function SiteFooter() {
   return (
     <footer className={styles.footer}>
-      <div className={styles.inner}>
+      <div className={styles.panel}>
         <div className={styles.brandBlock}>
           <div className={styles.brandRow}>
-            <CollabCircleLogo className={styles.logo} height={56} width={56} />
-            <p className={styles.eyebrow}>CollabCircle</p>
+            <CollabCircleLogo className={styles.logo} height={54} width={54} />
+            <div>
+              <p className={styles.eyebrow}>CollabCircle</p>
+              <h2>{siteMeta.tagline}</h2>
+            </div>
           </div>
-          <div className={styles.connectBlock}>
-            <h3>Connect</h3>
-            <ul className={styles.connectList}>
-              <li>
-                <a href={`mailto:${siteMeta.email}`}>
-                  <Mail size={16} strokeWidth={2} />
-                  <span>{siteMeta.email}</span>
-                </a>
-              </li>
-              {socialLinks.map((item) => {
-                const Icon = socialIcons[item.label as keyof typeof socialIcons];
 
-                return (
-                  <li key={item.href}>
-                    <a href={item.href} rel="noreferrer" target="_blank">
-                      <Icon size={16} strokeWidth={2} />
-                      <span>{item.label}</span>
-                    </a>
-                  </li>
-                );
-              })}
-            </ul>
+          <p className={styles.description}>{siteMeta.description}</p>
+
+          <a className={styles.emailLink} href={`mailto:${siteMeta.email}`}>
+            <Mail size={16} strokeWidth={2} />
+            <span>{siteMeta.email}</span>
+          </a>
+
+          <div className={styles.socialRow}>
+            {socialLinks.map((item) => {
+              const Icon = socialIcons[item.label as keyof typeof socialIcons];
+
+              return (
+                <a
+                  aria-label={item.label}
+                  className={styles.socialLink}
+                  href={item.href}
+                  key={item.href}
+                  rel="noreferrer"
+                  target="_blank"
+                >
+                  <Icon size={16} strokeWidth={2} />
+                  <span>{item.label}</span>
+                </a>
+              );
+            })}
           </div>
-          <Link className={styles.joinCta} href="/join-us">
-            <span>Join the journey</span>
-            <ArrowRight size={16} strokeWidth={2} />
-          </Link>
         </div>
 
-        <div className={styles.linkColumns}>
-          <div>
+        <div className={styles.linkArea}>
+          <div className={styles.linkColumn}>
             <h3>Explore</h3>
             <ul>
-              <li>
-                <Link href="/">
-                  <Building2 size={16} strokeWidth={2} />
-                  <span>Home</span>
-                </Link>
-              </li>
-              {primaryNavigation.map((item) => {
-                const Icon = navIcons[item.href];
-
-                return (
-                  <li key={item.href}>
-                    <Link href={item.href}>
-                      {Icon && <Icon size={16} strokeWidth={2} />}
-                      <span>{item.label}</span>
-                    </Link>
-                  </li>
-                );
-              })}
-            </ul>
-          </div>
-
-          <div>
-            <h3>Research Lab</h3>
-            <ul>
-              {researchLabLinks.map((item) => (
+              {footerLinks.map((item) => (
                 <li key={item.href}>
-                  <Link href={item.href}>
-                    <Microscope size={16} strokeWidth={2} />
-                    <span>{item.label}</span>
-                  </Link>
+                  <Link href={item.href}>{item.label}</Link>
                 </li>
               ))}
             </ul>
           </div>
 
+          <div className={styles.linkColumn}>
+            <h3>Legal</h3>
+            <ul>
+              {legalLinks.map((item) => (
+                <li key={item.href}>
+                  <Link href={item.href}>{item.label}</Link>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
 
       <div className={styles.bottomBar}>
+        <p className={styles.bottomMeta}>© 2026 CollabCircle. All rights reserved.</p>
         <p>We research to understand; we build to empower.</p>
+        <div className={styles.bottomLinks}>
+          {legalLinks.map((item) => (
+            <Link href={item.href} key={item.href}>
+              {item.label}
+            </Link>
+          ))}
+        </div>
       </div>
     </footer>
   );
