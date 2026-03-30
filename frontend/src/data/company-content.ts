@@ -7,6 +7,21 @@ export type AchievementItem = {
   href?: string;
 };
 
+export type AchievementShowcaseSection = {
+  id: string;
+  title: string;
+  intro: string;
+  items: AchievementShowcaseItem[];
+};
+
+export type AchievementShowcaseItem = {
+  id: string;
+  title: string;
+  date: string;
+  description: string;
+  image: string; // path relative to /public
+};
+
 // ✏️ Update this list to showcase your latest achievements on the homepage
 export const latestAchievements: AchievementItem[] = [
   {
@@ -16,6 +31,133 @@ export const latestAchievements: AchievementItem[] = [
     description: "Our research team gathered to align on upcoming milestones and celebrate progress together.",
     image: "/team-meetup.jpg.jpeg",
     href: "/achievements",
+  },
+];
+
+export const achievementShowcaseSections: AchievementShowcaseSection[] = [
+  {
+    id: "team-meetups",
+    title: "Team Meetups",
+    intro: "Internal gatherings, planning sessions, and team moments documented through photos.",
+    items: [
+      {
+        id: "team-meetup-2024",
+        title: "CollabCircle Team Meetup",
+        date: "March 2024",
+        description:
+          "A documented team meetup focused on alignment, coordination, and shared momentum across ongoing work.",
+        image: "/team-meetup.jpg.jpeg",
+      },
+      {
+        id: "team-meetup-archive-01",
+        title: "Meetup Archive Entry",
+        date: "To be updated",
+        description:
+          "Additional team meetup photographs and records will be published here as future sessions are documented.",
+        image: "/achievement-placeholder.png",
+      },
+      {
+        id: "team-meetup-archive-02",
+        title: "Activity Documentation Entry",
+        date: "To be updated",
+        description:
+          "This slot is reserved for future internal activity records, group sessions, and meetup highlights.",
+        image: "/achievement-placeholder.png",
+      },
+    ],
+  },
+  {
+    id: "conference-moments",
+    title: "Conference Moments",
+    intro: "Photos and records from conferences, academic events, presentations, and public participation.",
+    items: [
+      {
+        id: "conference-record-01",
+        title: "Conference Participation Record",
+        date: "To be updated",
+        description:
+          "Conference appearances, visits, and presentation-related moments will be displayed here as they are recorded.",
+        image: "/achievement-placeholder.png",
+      },
+      {
+        id: "conference-record-02",
+        title: "Event Documentation Entry",
+        date: "To be updated",
+        description:
+          "This section supports multiple conference photos so event participation can be documented in a fuller way.",
+        image: "/achievement-placeholder.png",
+      },
+      {
+        id: "conference-record-03",
+        title: "Conference Archive Entry",
+        date: "To be updated",
+        description:
+          "Additional conference and event records will appear here as more participation moments are documented.",
+        image: "/achievement-placeholder.png",
+      },
+    ],
+  },
+  {
+    id: "mvp-month",
+    title: "MVP of the Month",
+    intro: "Monthly recognition for standout contribution, consistency, ownership, and initiative.",
+    items: [
+      {
+        id: "mvp-month-record-01",
+        title: "Monthly MVP Recognition",
+        date: "To be updated",
+        description:
+          "Monthly MVP records will be published here with a photo, recognition date, and a short summary of contribution.",
+        image: "/achievement-placeholder.png",
+      },
+      {
+        id: "mvp-month-record-02",
+        title: "Monthly Recognition Archive",
+        date: "To be updated",
+        description:
+          "This grid is designed to hold multiple monthly recognition entries over time without overcrowding the page.",
+        image: "/achievement-placeholder.png",
+      },
+      {
+        id: "mvp-month-record-03",
+        title: "Monthly Achievement Entry",
+        date: "To be updated",
+        description:
+          "Future monthly recognition records will be added here using the same picture, title, date, and description format.",
+        image: "/achievement-placeholder.png",
+      },
+    ],
+  },
+  {
+    id: "mvp-year",
+    title: "MVP of the Year",
+    intro: "Annual recognition for the most impactful and sustained contribution across the organization.",
+    items: [
+      {
+        id: "mvp-year-record-01",
+        title: "Annual MVP Recognition",
+        date: "To be updated",
+        description:
+          "The annual MVP entry will highlight the contributor whose work had the strongest overall impact during the year.",
+        image: "/achievement-placeholder.png",
+      },
+      {
+        id: "mvp-year-record-02",
+        title: "Recognition Archive Entry",
+        date: "To be updated",
+        description:
+          "Future annual recognition records will appear here with the same photo-first format for consistency and clarity.",
+        image: "/achievement-placeholder.png",
+      },
+      {
+        id: "mvp-year-record-03",
+        title: "Annual Recognition Archive",
+        date: "To be updated",
+        description:
+          "Additional yearly achievement records will be placed here as the archive of annual recognition grows.",
+        image: "/achievement-placeholder.png",
+      },
+    ],
   },
 ];
 
