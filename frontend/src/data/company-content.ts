@@ -197,6 +197,34 @@ export type ResearchPolicyBlock = {
   description: string;
 };
 
+export type EngineeringService = {
+  title: string;
+  description: string;
+  scope: string;
+};
+
+export type EngineeringClientGroup = {
+  title: string;
+  description: string;
+  fit: string;
+};
+
+export type EngineeringTechnology = {
+  title: string;
+  description: string;
+  tags: string[];
+};
+
+export type EngineeringPolicyBlock = {
+  title: string;
+  description: string;
+};
+
+export type EngineeringRoadmapBlock = {
+  title: string;
+  description: string;
+};
+
 export const primaryNavigation: NavigationItem[] = [
   {
     href: "/achievements",
@@ -391,6 +419,173 @@ export const engineeringFocusAreas = [
   {
     title: "Platform thinking",
     description: "Building systems that can scale beyond one-off experiments.",
+  },
+];
+
+export const engineeringWingNavigation: NavigationItem[] = [
+  {
+    href: "/engineering-hub",
+    label: "Engineering Home",
+  },
+  {
+    href: "/engineering-hub/solutions-services",
+    label: "Solutions & Services",
+  },
+  {
+    href: "/engineering-hub/clients",
+    label: "Clients",
+  },
+  {
+    href: "/engineering-hub/technologies",
+    label: "Technologies",
+  },
+  {
+    href: "/engineering-hub/team",
+    label: "Team",
+  },
+  {
+    href: "/engineering-hub/policy",
+    label: "Policy",
+  },
+  {
+    href: "/engineering-hub/roadmap",
+    label: "Roadmap",
+  },
+];
+
+export const engineeringWingHighlights = [
+  {
+    label: "Solutions & Services",
+    description: "The public-facing services and solution categories that define what the engineering department aims to deliver.",
+    href: "/engineering-hub/solutions-services",
+  },
+  {
+    label: "Clients",
+    description: "The types of organizations and teams the department is being shaped to support over time.",
+    href: "/engineering-hub/clients",
+  },
+  {
+    label: "Technologies",
+    description: "The technical stack directions and platform capabilities the hub intends to build around.",
+    href: "/engineering-hub/technologies",
+  },
+  {
+    label: "Team",
+    description: "Executive oversight today, with a structure ready for future engineering leads and contributors.",
+    href: "/engineering-hub/team",
+  },
+  {
+    label: "Policy",
+    description: "Delivery principles, technical standards, and operating expectations that should guide the department.",
+    href: "/engineering-hub/policy",
+  },
+  {
+    label: "Roadmap",
+    description: "The mission and vision that define how the engineering side should grow from future capability to real execution.",
+    href: "/engineering-hub/roadmap",
+  },
+];
+
+export const engineeringServices: EngineeringService[] = [
+  {
+    title: "AI-enabled internal tools",
+    description: "Operational tools that help teams automate workflows, improve visibility, and reduce repeated manual effort.",
+    scope: "Internal productivity systems",
+  },
+  {
+    title: "Product prototyping",
+    description: "Early-stage product architecture and prototype work designed to translate promising ideas into testable software systems.",
+    scope: "Product incubation",
+  },
+  {
+    title: "Applied platform delivery",
+    description: "Structured technical delivery aimed at turning research-adjacent capability into durable user-facing systems.",
+    scope: "Platforms and services",
+  },
+];
+
+export const engineeringClientGroups: EngineeringClientGroup[] = [
+  {
+    title: "Internal CollabCircle teams",
+    description: "The first engineering clients are likely to be internal research and operational teams that need clearer tooling and systems.",
+    fit: "Immediate and strategic",
+  },
+  {
+    title: "Education and knowledge organizations",
+    description: "Institutions that benefit from structured tools, applied AI workflows, and practical software support are a strong long-term fit.",
+    fit: "High long-term relevance",
+  },
+  {
+    title: "Mission-aligned partners",
+    description: "Future external collaborators who need thoughtful technical delivery rather than generic development outsourcing.",
+    fit: "Selective and relationship-led",
+  },
+];
+
+export const engineeringTechnologies: EngineeringTechnology[] = [
+  {
+    title: "Application platforms",
+    description: "Modern web application foundations for building internal tools, dashboards, portals, and product surfaces.",
+    tags: ["frontend systems", "backend services", "deployment"],
+  },
+  {
+    title: "AI workflow infrastructure",
+    description: "Technical systems that make model-assisted work more usable, observable, and maintainable.",
+    tags: ["automation", "monitoring", "human-in-the-loop"],
+  },
+  {
+    title: "Data and integration layers",
+    description: "Connective systems for data flow, service integration, and operational traceability.",
+    tags: ["data pipelines", "APIs", "system integration"],
+  },
+];
+
+export const engineeringPolicyBlocks: EngineeringPolicyBlock[] = [
+  {
+    title: "Delivery clarity",
+    description: "Engineering work should be understandable in scope, ownership, and expected outcome before implementation begins.",
+  },
+  {
+    title: "Maintainable systems",
+    description: "The department should prefer readable architecture and clean operational decisions over rushed complexity.",
+  },
+  {
+    title: "Responsible implementation",
+    description: "AI-enabled or data-enabled systems should be designed with accountability, reviewability, and practical safeguards in mind.",
+  },
+  {
+    title: "Execution discipline",
+    description: "Documentation, testing posture, and handoff quality should be treated as part of the engineering standard itself.",
+  },
+];
+
+export const engineeringRoadmapBlocks: EngineeringRoadmapBlock[] = [
+  {
+    title: "Vision",
+    description: "Grow the Engineering Hub into a credible product and systems department that can carry CollabCircle from research strength into real-world technical execution.",
+  },
+  {
+    title: "Mission",
+    description: "Build disciplined software, tooling, and platform capability that turns ideas into durable delivery.",
+  },
+  {
+    title: "Near-term direction",
+    description: "Start with internal tools, applied workflows, and architecture foundations before expanding into broader external-facing systems.",
+  },
+];
+
+export const engineeringTeamTracks = [
+  {
+    title: "Executive oversight",
+    description: "Current executive leadership keeps the direction visible while the engineering structure is still forming.",
+  },
+  {
+    title: "Future engineering leads",
+    description: "This section is designed to support dedicated engineering leadership as the department becomes more active.",
+  },
+  {
+    title: "Builders and contributors",
+    description: "The page is ready to scale toward engineers, product-minded builders, and technical collaborators later.",
   },
 ];
 
