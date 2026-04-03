@@ -175,6 +175,16 @@ export type FeatureLink = {
   cta: string;
 };
 
+export type RecruitmentTrack = {
+  id: string;
+  title: string;
+  description: string;
+  audience: string;
+  expectations: string[];
+  googleFormUrl: string;
+  ctaLabel: string;
+};
+
 export const primaryNavigation: NavigationItem[] = [
   {
     href: "/achievements",
@@ -301,17 +311,49 @@ export const aboutCompanyPoints = [
   "The website should already reflect both realities.",
 ];
 
-export const joinPaths = [
+export const recruitmentTracks: RecruitmentTrack[] = [
   {
-    title: "Research track",
-    description: "For contributors focused on experiments, writing, and publication work.",
+    id: "researcher",
+    title: "Researcher",
+    description: "For contributors focused on experiments, literature review, technical writing, and publication work.",
+    audience: "Choose this track if you want to work on machine learning and deep learning research with a publication-minded workflow.",
+    expectations: [
+      "Comfort with experiments, analysis, or technical writing",
+      "Ability to document progress and communicate clearly",
+      "Interest in disciplined, long-term research collaboration",
+    ],
+    googleFormUrl: "https://forms.gle/A3ZjsV2HFrGBiCq17",
+    ctaLabel: "Apply as Researcher",
   },
   {
-    title: "Engineering track",
-    description: "For future builders interested in products, tooling, and technical systems.",
+    id: "engineer",
+    title: "Engineer",
+    description: "For builders interested in products, tooling, technical systems, and the future Engineering Hub direction.",
+    audience: "Choose this track if you want to help translate ideas into software, systems, and durable technical delivery.",
+    expectations: [
+      "Comfort with implementation, debugging, or platform thinking",
+      "Ability to work through structured technical tasks responsibly",
+      "Interest in building systems that can grow beyond one-off experiments",
+    ],
+    googleFormUrl: "https://forms.gle/ZCtv8TFLPzQUuAgeA",
+    ctaLabel: "Apply as Engineer",
+  },
+];
+
+export const recruitmentProcess = [
+  {
+    step: "01",
+    title: "Choose your track",
+    description: "Pick the role that best matches how you want to contribute right now: Researcher or Engineer.",
   },
   {
-    title: "Long-term collaboration",
-    description: "For serious partners who want to grow with CollabCircle over time.",
+    step: "02",
+    title: "Submit the Google Form",
+    description: "Complete the relevant form with clear information about your background, skills, and intended contribution.",
+  },
+  {
+    step: "03",
+    title: "Manual review",
+    description: "Submissions are reviewed manually, and shortlisted applicants will be contacted through the information they provide.",
   },
 ];
