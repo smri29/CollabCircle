@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { ArrowUpRight, Cpu, Microscope, UsersRound } from "lucide-react";
 import sharedStyles from "@/components/shared/content-sections.module.css";
 import { PageHero } from "@/components/shared/page-hero";
@@ -28,9 +29,8 @@ export default function JoinUsPage() {
       <section className="section">
         <div className={styles.introCard}>
           <p>
-            We are currently accepting applications through two focused recruitment tracks. Choose
-            the form that best matches your background, complete the Google Form, and share clear
-            details about the kind of contribution you want to make.
+            Choose the form that best matches your interests and background, complete the
+            application, and share clear details about the kind of contribution you want to make.
           </p>
         </div>
       </section>
@@ -111,11 +111,11 @@ export default function JoinUsPage() {
       <section className="section">
         <div className={sharedStyles.gridTwo}>
           <div className={sharedStyles.stack}>
-            <h2>Before you submit</h2>
-            <p>
-              Keep your responses specific. Tell us about your background, the track you are
-              applying for, and the kind of ownership you can take consistently.
-            </p>
+            <h2>Questions before you apply?</h2>
+            <p>Use the FAQ page for practical answers about the application flow, review process, and what to expect.</p>
+            <Link href="/faq">
+              <span>Open FAQ</span>
+            </Link>
           </div>
 
           <aside className={sharedStyles.panel}>

@@ -278,12 +278,28 @@ export const researchWingCoFounders: FounderProfile[] = [
 
 export const engineeringDepartmentCoFounders: FounderProfile[] = [
   {
-    name: "Engineering Department Co-Founder",
+    name: "Aarav Sen",
     role: "Co-Founder, Engineering Department",
     description:
-      "This section is ready for the future engineering co-founding leadership profiles as the department structure becomes public.",
+      "Part of the early co-founding group shaping the Engineering Department's delivery standards, systems direction, and long-term execution culture.",
     imagePublicId: null,
-    linkedinHref: socialProfiles.linkedin,
+    linkedinHref: "https://www.linkedin.com/in/aarav-sen-placeholder/",
+  },
+  {
+    name: "Nadia Rahman",
+    role: "Co-Founder, Engineering Department",
+    description:
+      "Supports the engineering department's future-facing structure through founding-level planning around products, tooling, and technical organization.",
+    imagePublicId: null,
+    linkedinHref: "https://www.linkedin.com/in/nadia-rahman-placeholder/",
+  },
+  {
+    name: "Ishaan Malik",
+    role: "Co-Founder, Engineering Department",
+    description:
+      "Contributes to the early engineering vision by helping define scalable technical practices and the operational discipline expected from the department.",
+    imagePublicId: null,
+    linkedinHref: "https://www.linkedin.com/in/ishaan-malik-placeholder/",
   },
 ];
 

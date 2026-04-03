@@ -6,9 +6,16 @@ type PageHeroProps = {
   title: string;
   intro: string;
   icon?: LucideIcon;
+  titleSingleLine?: boolean;
 };
 
-export function PageHero({ eyebrow, title, intro, icon: Icon }: PageHeroProps) {
+export function PageHero({
+  eyebrow,
+  title,
+  intro,
+  icon: Icon,
+  titleSingleLine = false,
+}: PageHeroProps) {
   return (
     <section className={styles.hero}>
       <div className={styles.backdrop} aria-hidden="true" />
@@ -21,7 +28,7 @@ export function PageHero({ eyebrow, title, intro, icon: Icon }: PageHeroProps) {
           ) : null}
           <p>{eyebrow}</p>
         </div>
-        <h1>{title}</h1>
+        <h1 className={titleSingleLine ? styles.singleLineTitle : undefined}>{title}</h1>
         <p>{intro}</p>
       </div>
     </section>
