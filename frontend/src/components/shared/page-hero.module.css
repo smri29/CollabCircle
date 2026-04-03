@@ -55,12 +55,17 @@
 }
 
 .content h1 {
-  max-width: 12ch;
+  max-width: none;
   font-family: var(--font-display);
   font-size: clamp(1.95rem, 4.1vw, 2.85rem);
   line-height: 1.02;
   letter-spacing: -0.045em;
   font-weight: 650;
+}
+
+.singleLineTitle {
+  max-width: none;
+  white-space: nowrap;
 }
 
 .content p:last-child {
@@ -72,5 +77,9 @@
 @media (max-width: 720px) {
   .content {
     padding: 1.4rem 1.05rem;
+  }
+
+  .singleLineTitle {
+    white-space: normal;
   }
 }
