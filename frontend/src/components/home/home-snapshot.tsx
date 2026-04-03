@@ -6,19 +6,19 @@ const snapshotItems = [
   {
     title: "Focused research",
     description: "ML and DL projects shaped for clean execution and credible outcomes.",
-    href: "/research",
+    href: "/research-lab/research",
     icon: BrainCircuit,
   },
   {
     title: "Publication pathway",
     description: "Workflows built to move from experiments into strong papers.",
-    href: "/publications",
+    href: "/research-lab/publications",
     icon: BookOpenText,
   },
   {
     title: "Compact team structure",
     description: "Clear ownership and smaller teams that can maintain quality.",
-    href: "/team",
+    href: "/research-lab/team",
     icon: UsersRound,
   },
 ];

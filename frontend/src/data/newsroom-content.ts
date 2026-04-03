@@ -72,7 +72,7 @@ export const newsroomItems: NewsroomItem[] = [
       "The Team page keeps the executive panel visible today while preserving a scalable structure for the future researcher directory.",
     category: "organization",
     publishedAt: "April 2026",
-    href: "/team",
+    href: "/research-lab/team",
     ctaLabel: "See the team",
   },
   {

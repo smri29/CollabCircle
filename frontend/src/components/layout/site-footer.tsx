@@ -22,6 +22,7 @@ const footerLinks = [
   { href: "/", label: "Home" },
   ...primaryNavigation.map((item) => ({ href: item.href, label: item.label })),
   { href: "/career", label: "Join Us" },
+  { href: "/founders-corner", label: "Founders' Corner" },
 ];
 
 const legalLinks = [

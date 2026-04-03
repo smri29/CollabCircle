@@ -31,7 +31,7 @@ export function InsightStrip() {
             </div>
             <h2>Outputs should be easy to trust at first glance.</h2>
           </div>
-          <Link href="/publications">
+          <Link href="/research-lab/publications">
             <span>See more</span>
             <ArrowRight size={16} strokeWidth={2} />
           </Link>

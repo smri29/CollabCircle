@@ -17,7 +17,7 @@ export function HomeHero() {
         </p>
 
         <div className={styles.actions}>
-          <Link className="button" href="/research">
+          <Link className="button" href="/research-lab/research">
             <span>Explore Research</span>
             <ArrowRight size={16} strokeWidth={2} />
           </Link>
