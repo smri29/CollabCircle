@@ -1,14 +1,19 @@
 import type { Metadata } from "next";
-import Link from "next/link";
-import { UsersRound } from "lucide-react";
-import styles from "@/components/shared/content-sections.module.css";
+import { ArrowUpRight, Cpu, Microscope, UsersRound } from "lucide-react";
+import sharedStyles from "@/components/shared/content-sections.module.css";
 import { PageHero } from "@/components/shared/page-hero";
-import { joinPaths } from "@/data/company-content";
+import { recruitmentProcess, recruitmentTracks } from "@/data/company-content";
 import { siteMeta } from "@/data/site-content";
+import styles from "./join-us.module.css";
 
 export const metadata: Metadata = {
   title: "Career",
 };
+
+const trackIcons = {
+  researcher: Microscope,
+  engineer: Cpu,
+} as const;
 
 export default function JoinUsPage() {
   return (
@@ -16,34 +21,109 @@ export default function JoinUsPage() {
       <PageHero
         eyebrow="Career"
         icon={UsersRound}
-        intro="A simple place for future researchers, engineers, and collaborators."
-        title="Build your future with CollabCircle."
+        intro="Choose the track that best matches how you want to contribute to CollabCircle."
+        title="Apply as a Researcher or Engineer."
       />
 
       <section className="section">
-        <div className={styles.cardGrid}>
-          {joinPaths.map((path) => (
-            <article className={styles.card} key={path.title}>
-              <h3>{path.title}</h3>
-              <p>{path.description}</p>
-            </article>
-          ))}
+        <div className={styles.introCard}>
+          <p>
+            We are currently accepting applications through two focused recruitment tracks. Choose
+            the form that best matches your background, complete the Google Form, and share clear
+            details about the kind of contribution you want to make.
+          </p>
         </div>
       </section>
 
       <section className="section">
-        <div className={styles.gridTwo}>
-          <div className={styles.stack}>
-            <h2>Start with a focused message</h2>
-            <p>Tell us your background, your direction, and how you want to contribute.</p>
+        <div className={styles.trackGrid}>
+          {recruitmentTracks.map((track) => {
+            const Icon = trackIcons[track.id as keyof typeof trackIcons];
+
+            return (
+              <article className={styles.trackCard} key={track.id}>
+                <div className={styles.trackTop}>
+                  <p className={styles.eyebrow}>
+                    <Icon size={16} strokeWidth={2} />
+                    {" "}
+                    {track.title} Track
+                  </p>
+                  <h2>{track.title}</h2>
+                  <p>{track.description}</p>
+                </div>
+
+                <div className={styles.detailBlock}>
+                  <h3>Who should apply</h3>
+                  <p className={styles.audience}>{track.audience}</p>
+                </div>
+
+                <div className={styles.detailBlock}>
+                  <h3>What we expect</h3>
+                  <ul className={styles.detailList}>
+                    {track.expectations.map((item) => (
+                      <li key={item}>{item}</li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div className={styles.ctaBlock}>
+                  <a
+                    className="button"
+                    href={track.googleFormUrl}
+                    rel="noreferrer"
+                    target="_blank"
+                  >
+                    <span>{track.ctaLabel}</span>
+                    <ArrowUpRight size={16} strokeWidth={2} />
+                  </a>
+                  <p className={styles.ctaHint}>The application form opens in a new tab.</p>
+                </div>
+              </article>
+            );
+          })}
+        </div>
+      </section>
+
+      <section className="section">
+        <div className={styles.processShell}>
+          <div className={styles.processIntro}>
+            <h2>What happens after you apply</h2>
+            <p>
+              Submit the form that fits your track. Every application is reviewed manually, and
+              shortlisted applicants will be contacted through the information they provide.
+            </p>
           </div>
 
-          <aside className={styles.panel}>
-            <h3>Best first step</h3>
+          <div className={sharedStyles.timeline}>
+            {recruitmentProcess.map((item) => (
+              <article className={sharedStyles.timelineItem} key={item.step}>
+                <span className={sharedStyles.timelineLabel}>{item.step}</span>
+                <div>
+                  <h3>{item.title}</h3>
+                  <p>{item.description}</p>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className={sharedStyles.gridTwo}>
+          <div className={sharedStyles.stack}>
+            <h2>Before you submit</h2>
             <p>
-              Email
+              Keep your responses specific. Tell us about your background, the track you are
+              applying for, and the kind of ownership you can take consistently.
+            </p>
+          </div>
+
+          <aside className={sharedStyles.panel}>
+            <h3>Need help first?</h3>
+            <p>
+              For questions before applying, contact
               {" "}
-              <Link href={`mailto:${siteMeta.email}`}>{siteMeta.email}</Link>
+              <a href={`mailto:${siteMeta.email}`}>{siteMeta.email}</a>
             </p>
           </aside>
         </div>

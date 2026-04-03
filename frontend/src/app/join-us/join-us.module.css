@@ -1,0 +1,112 @@
+.introCard {
+  padding: 1.25rem;
+  border: 1px solid var(--border-strong);
+  border-radius: 1.5rem;
+  background: var(--glass-surface);
+  box-shadow: var(--shadow-soft);
+  backdrop-filter: blur(18px);
+  animation: fadeLift 700ms ease both;
+}
+
+.introCard p {
+  max-width: 54rem;
+  color: var(--text-muted);
+  font-size: 0.94rem;
+}
+
+.trackGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.trackCard {
+  display: grid;
+  gap: 1rem;
+  padding: 1.2rem;
+  border: 1px solid var(--border-strong);
+  border-radius: 1.6rem;
+  background: linear-gradient(180deg, var(--glass-surface-strong), var(--glass-surface));
+  box-shadow: var(--shadow-soft);
+  backdrop-filter: blur(18px);
+  animation: fadeLift 700ms ease both;
+}
+
+.trackTop {
+  display: grid;
+  gap: 0.55rem;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  color: var(--accent-strong);
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.trackTop h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 2vw, 1.9rem);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  font-weight: 650;
+}
+
+.trackTop p,
+.audience {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.detailBlock {
+  display: grid;
+  gap: 0.55rem;
+}
+
+.detailBlock h3 {
+  font-size: 0.92rem;
+}
+
+.detailList {
+  display: grid;
+  gap: 0.7rem;
+  padding-left: 1.1rem;
+  color: var(--text-muted);
+  font-size: 0.86rem;
+}
+
+.ctaBlock {
+  display: grid;
+  gap: 0.6rem;
+  margin-top: auto;
+}
+
+.ctaHint {
+  color: var(--text-subtle);
+  font-size: 0.8rem;
+}
+
+.processShell {
+  display: grid;
+  gap: 1rem;
+}
+
+.processIntro {
+  display: grid;
+  gap: 0.6rem;
+}
+
+.processIntro p {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+@media (max-width: 960px) {
+  .trackGrid {
+    grid-template-columns: 1fr;
+  }
+}
