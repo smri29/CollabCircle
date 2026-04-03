@@ -16,9 +16,9 @@ const socialProfiles = {
 export const navigation = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
-  { href: "/research", label: "Research" },
-  { href: "/publications", label: "Publications" },
-  { href: "/team", label: "Team" },
+  { href: "/research-lab/research", label: "Research" },
+  { href: "/research-lab/publications", label: "Publications" },
+  { href: "/research-lab/team", label: "Team" },
   { href: "/contact", label: "Contact" },
 ];
 
@@ -183,36 +183,107 @@ export type TeamMember = {
   imagePublicId: string | null;
 };
 
+export type FounderProfile = {
+  name: string;
+  role: string;
+  description: string;
+  imagePublicId: string | null;
+  linkedinHref: string;
+};
+
 export const executiveMembers: TeamMember[] = [
   {
     name: "Sumaiya Alam Shorna",
-    role: "Co-Founder",
+    role: "Executive",
     imagePublicId: null,
   },
   {
     name: "Shah Mohammad Rizvi",
-    role: "Founder & President",
+    role: "Executive",
     imagePublicId: null,
   },
   {
     name: "Rumi Akter",
-    role: "Co-Founder",
+    role: "Executive",
     imagePublicId: null,
   },
   {
     name: "Rimo Bhuiyan",
-    role: "Co-Founder",
+    role: "Executive",
     imagePublicId: null,
   },
   {
     name: "Md. Aman Uddin Siyam",
-    role: "Co-Founder",
+    role: "Executive",
     imagePublicId: null,
   },
   {
     name: "Sumaiya Islam Mily",
-    role: "Co-Founder",
+    role: "Executive",
     imagePublicId: null,
+  },
+];
+
+export const founderProfile: FounderProfile = {
+  name: "Shah Mohammad Rizvi",
+  role: "Founder & President, CollabCircle",
+  description:
+    "Shah Mohammad Rizvi leads the long-term founding vision of CollabCircle while also serving within the current executive structure of the Research Wing.",
+  imagePublicId: null,
+  linkedinHref: socialProfiles.linkedin,
+};
+
+export const researchWingCoFounders: FounderProfile[] = [
+  {
+    name: "Sumaiya Alam Shorna",
+    role: "Co-Founder, Research Wing",
+    description:
+      "Part of the early leadership group helping shape the public foundation, discipline, and collaborative culture of the Research Wing.",
+    imagePublicId: null,
+    linkedinHref: socialProfiles.linkedin,
+  },
+  {
+    name: "Rumi Akter",
+    role: "Co-Founder, Research Wing",
+    description:
+      "Supports the early institutional structure of the Research Wing through founding-level commitment and executive participation.",
+    imagePublicId: null,
+    linkedinHref: socialProfiles.linkedin,
+  },
+  {
+    name: "Rimo Bhuiyan",
+    role: "Co-Founder, Research Wing",
+    description:
+      "Contributes to the early growth and organizational grounding of the Research Wing as part of its founding group.",
+    imagePublicId: null,
+    linkedinHref: socialProfiles.linkedin,
+  },
+  {
+    name: "Md. Aman Uddin Siyam",
+    role: "Co-Founder, Research Wing",
+    description:
+      "Helps establish the wing's early structure, direction, and continuity as part of the founding leadership team.",
+    imagePublicId: null,
+    linkedinHref: socialProfiles.linkedin,
+  },
+  {
+    name: "Sumaiya Islam Mily",
+    role: "Co-Founder, Research Wing",
+    description:
+      "Part of the founding group supporting the Research Wing's early development and long-term organizational identity.",
+    imagePublicId: null,
+    linkedinHref: socialProfiles.linkedin,
+  },
+];
+
+export const engineeringDepartmentCoFounders: FounderProfile[] = [
+  {
+    name: "Engineering Department Co-Founder",
+    role: "Co-Founder, Engineering Department",
+    description:
+      "This section is ready for the future engineering co-founding leadership profiles as the department structure becomes public.",
+    imagePublicId: null,
+    linkedinHref: socialProfiles.linkedin,
   },
 ];
 

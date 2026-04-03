@@ -185,6 +185,18 @@ export type RecruitmentTrack = {
   ctaLabel: string;
 };
 
+export type ResearchProject = {
+  title: string;
+  summary: string;
+  status: "ongoing" | "completed";
+  focus: string;
+};
+
+export type ResearchPolicyBlock = {
+  title: string;
+  description: string;
+};
+
 export const primaryNavigation: NavigationItem[] = [
   {
     href: "/achievements",
@@ -254,10 +266,117 @@ export const companyLinks: FeatureLink[] = [
 
 export const researchLabLinks = [
   { href: "/about", label: "About", description: "Why the lab exists and how it works." },
-  { href: "/research", label: "Research", description: "Current focus areas and methods." },
-  { href: "/publications", label: "Publications", description: "Journal and conference records." },
-  { href: "/team", label: "Team", description: "Executive panel and researcher structure." },
+  { href: "/research-lab/research", label: "Research", description: "Current focus areas and methods." },
+  { href: "/research-lab/publications", label: "Publications", description: "Journal and conference records." },
+  { href: "/research-lab/team", label: "Team", description: "Executive panel and researcher structure." },
   { href: "/contact", label: "Contact", description: "Official channels and collaboration path." },
+];
+
+export const researchWingNavigation: NavigationItem[] = [
+  {
+    href: "/research-lab",
+    label: "Research Home",
+  },
+  {
+    href: "/research-lab/publications",
+    label: "Publications",
+  },
+  {
+    href: "/research-lab/research",
+    label: "Research Tracks",
+  },
+  {
+    href: "/research-lab/projects",
+    label: "Projects",
+  },
+  {
+    href: "/research-lab/team",
+    label: "Team",
+  },
+  {
+    href: "/research-lab/policy",
+    label: "Policy",
+  },
+];
+
+export const researchWingHighlights = [
+  {
+    label: "Publications",
+    description: "Journal and conference outputs stay organized under one research-facing archive.",
+    href: "/research-lab/publications",
+  },
+  {
+    label: "Research Tracks",
+    description: "Core ML and DL directions stay visible so visitors understand what the wing is building toward.",
+    href: "/research-lab/research",
+  },
+  {
+    label: "Projects",
+    description: "Ongoing and completed work remains separated so current momentum is easy to read.",
+    href: "/research-lab/projects",
+  },
+  {
+    label: "Team",
+    description: "Leadership and researcher structure stay clear for collaborators and future applicants.",
+    href: "/research-lab/team",
+  },
+  {
+    label: "Policy",
+    description: "Research standards, ethics, and collaboration expectations stay public and explicit.",
+    href: "/research-lab/policy",
+  },
+];
+
+export const researchProjects: ResearchProject[] = [
+  {
+    title: "Data-Centric Benchmark Refinement",
+    summary: "An ongoing effort to improve evaluation quality through cleaner datasets, tighter baselines, and better error analysis.",
+    status: "ongoing",
+    focus: "Machine learning evaluation",
+  },
+  {
+    title: "Efficient Model Training Workflow",
+    summary: "A structured training workflow focused on reproducibility, experiment tracking, and practical efficiency decisions.",
+    status: "ongoing",
+    focus: "Deep learning systems",
+  },
+  {
+    title: "Publication Preparation Pipeline",
+    summary: "A repeatable workflow for turning experiments, figures, and findings into submission-ready research outputs.",
+    status: "ongoing",
+    focus: "Research operations",
+  },
+  {
+    title: "Internal Research Structure Rollout",
+    summary: "Completed internal work to organize the public-facing research wing around tracks, outputs, and long-term readability.",
+    status: "completed",
+    focus: "Research organization",
+  },
+  {
+    title: "Research Wing Website Foundation",
+    summary: "Completed foundational work to present the research department as a coherent destination with its own navigation and pages.",
+    status: "completed",
+    focus: "Public communication",
+  },
+];
+
+export const researchPolicyBlocks: ResearchPolicyBlock[] = [
+  {
+    title: "Research integrity",
+    description: "Claims should remain evidence-based, readable, and proportionate to the actual results produced.",
+  },
+  {
+    title: "Documentation standard",
+    description: "Methods, assumptions, and decisions should remain visible so work can be reviewed and reproduced more easily.",
+  },
+  {
+    title: "Ethics and responsibility",
+    description: "Research direction should respect responsible use, clear authorship, and honest reporting of limitations.",
+  },
+  {
+    title: "Collaboration discipline",
+    description: "Contributors are expected to communicate consistently, maintain organized records, and work through feedback responsibly.",
+  },
 ];
 
 export const engineeringFocusAreas = [
