@@ -1,0 +1,123 @@
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  width: fit-content;
+  padding: 0.42rem 0.68rem;
+  border: 1px solid var(--border-strong);
+  border-radius: 999px;
+  background: var(--glass-surface-strong);
+  color: var(--accent-strong);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.locationLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.42rem;
+  width: fit-content;
+  color: var(--accent-strong);
+  font-size: 0.88rem;
+  font-weight: 700;
+}
+
+.videoPanel {
+  display: grid;
+  gap: 1rem;
+  padding: 1rem;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-lg);
+  background: var(--glass-surface);
+  box-shadow: var(--shadow-soft);
+  backdrop-filter: blur(18px);
+  animation: fadeLift 700ms ease both;
+}
+
+.videoHeading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.videoHeading > div {
+  display: grid;
+  gap: 0.75rem;
+  max-width: 44rem;
+}
+
+.videoHeading h3 {
+  font-family: var(--font-display);
+  font-size: clamp(1.35rem, 2.7vw, 2rem);
+  line-height: 1.04;
+  letter-spacing: -0.04em;
+  font-weight: 650;
+}
+
+.videoGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.videoCard,
+.videoPlaceholder {
+  display: grid;
+  gap: 0.85rem;
+  padding: 0.9rem;
+  border: 1px solid var(--border-strong);
+  border-radius: 1.4rem;
+  background: var(--glass-surface-strong);
+  box-shadow: var(--shadow-soft);
+}
+
+.videoFrameWrap,
+.videoPlaceholderFrame {
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+  border-radius: 1rem;
+  background:
+    radial-gradient(circle at 20% 20%, color-mix(in srgb, var(--accent-soft) 24%, transparent), transparent 32%),
+    linear-gradient(145deg, rgba(18, 38, 60, 0.96), rgba(9, 20, 34, 0.98));
+}
+
+.videoFrame {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+.videoPlaceholderFrame {
+  display: grid;
+  place-items: center;
+  gap: 0.4rem;
+  color: rgba(248, 251, 255, 0.9);
+}
+
+.videoPlaceholderFrame span {
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.videoCard h4,
+.videoPlaceholder h4 {
+  font-size: 0.98rem;
+}
+
+.videoPlaceholder p {
+  color: var(--text-muted);
+  font-size: 0.84rem;
+}
+
+@media (max-width: 960px) {
+  .videoGrid {
+    grid-template-columns: 1fr;
+  }
+}

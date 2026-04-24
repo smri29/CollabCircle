@@ -192,6 +192,14 @@ export type ResearchProject = {
   focus: string;
 };
 
+export type ResearchCollaboration = {
+  name: string;
+  profession: string;
+  institution: string;
+  image?: string | null;
+  linkedinHref?: string;
+};
+
 export type ResearchPolicyBlock = {
   title: string;
   description: string;
@@ -310,14 +318,6 @@ export const researchWingNavigation: NavigationItem[] = [
     label: "Publications",
   },
   {
-    href: "/research-lab/research",
-    label: "Research Tracks",
-  },
-  {
-    href: "/research-lab/projects",
-    label: "Projects",
-  },
-  {
     href: "/research-lab/team",
     label: "Team",
   },
@@ -387,6 +387,8 @@ export const researchProjects: ResearchProject[] = [
     focus: "Public communication",
   },
 ];
+
+export const researchCollaborations: ResearchCollaboration[] = [];
 
 export const researchPolicyBlocks: ResearchPolicyBlock[] = [
   {
