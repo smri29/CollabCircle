@@ -1,38 +1,24 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, Microscope } from "lucide-react";
+import { CollaborationGrid } from "@/components/research/collaboration-grid";
+import styles from "@/components/research/research-home.module.css";
+import { YouTubeShowcase } from "@/components/shared/youtube-showcase";
+import sharedStyles from "@/components/shared/content-sections.module.css";
 import { PageHero } from "@/components/shared/page-hero";
-import wingStyles from "@/components/research/research-wing.module.css";
-import { researchWingHighlights } from "@/data/company-content";
+import {
+  researchCollaborations,
+  researchProjects,
+} from "@/data/company-content";
+import { researchPillars } from "@/data/site-content";
 
 export const metadata: Metadata = {
   title: "Research Lab",
 };
 
-const researchWingMetrics = [
-  {
-    label: "Core Structure",
-    value: "5",
-    copy: "Public-facing sections organize the wing around outputs, tracks, projects, people, and policy.",
-  },
-  {
-    label: "Current Focus",
-    value: "ML / DL",
-    copy: "The department is centered on machine learning and deep learning work with a publication-minded posture.",
-  },
-  {
-    label: "Operating Model",
-    value: "Evidence-led",
-    copy: "Research choices are expected to stay scoped, readable, and grounded in actual experimental work.",
-  },
-];
-
-const orientationPoints = [
-  "Research Home gives visitors an overview of the department before they explore deeper sections.",
-  "Research Tracks explains the intellectual directions that shape current work.",
-  "Projects separates active execution from completed milestones and internal build-out.",
-  "Publications presents the formal output archive of the department.",
-];
+const featuredTracks = researchPillars.slice(0, 3);
+const featuredProjects = researchProjects.slice(0, 3);
+const featuredCollaborations = researchCollaborations.slice(0, 3);
 
 export default function ResearchLabPage() {
   return (
@@ -40,74 +26,109 @@ export default function ResearchLabPage() {
       <PageHero
         eyebrow="Research Lab"
         icon={Microscope}
-        intro="The research-facing department of CollabCircle now lives as a dedicated destination inside the wider website."
-        title="Welcome to the Research Wing."
+        intro="The home page of the Research Wing, organized around active tracks, projects, collaborations, and public video updates."
+        title="Research Wing of CollabCircle."
       />
 
       <section className="section">
-        <div className={wingStyles.metricGrid}>
-          {researchWingMetrics.map((item) => (
-            <article className={wingStyles.metricCard} key={item.label}>
-              <span className={wingStyles.metricLabel}>{item.label}</span>
-              <strong className={wingStyles.metricValue}>{item.value}</strong>
-              <p className={wingStyles.metricCopy}>{item.copy}</p>
-            </article>
-          ))}
-        </div>
-      </section>
+        <div className={styles.sectionStack}>
+          <div className={styles.sectionHeader}>
+            <div className={styles.sectionIntro}>
+              <span className={styles.eyebrow}>Research Tracks</span>
+              <h2>The core research directions currently visible from the lab.</h2>
+              <p>
+                These tracks show the problem spaces and methods that shape the current research
+                direction of CollabCircle.
+              </p>
+            </div>
 
-      <section className="section">
-        <div className={wingStyles.featureGrid}>
-          <article className={wingStyles.featurePanel}>
-            <span className={wingStyles.panelEyebrow}>Department Overview</span>
-            <h3>A professional research wing should explain both its work and its structure.</h3>
-            <p>
-              This section is designed to feel more like an academic department or research unit
-              than a generic marketing page. Visitors should understand what the wing studies, how
-              it operates, and where the public evidence of that work lives.
-            </p>
-            <ul className={wingStyles.keyList}>
-              {orientationPoints.map((item) => (
-                <li key={item}>{item}</li>
-              ))}
-            </ul>
-          </article>
-
-          <aside className={wingStyles.sidePanel}>
-            <span className={wingStyles.panelEyebrow}>Navigation Logic</span>
-            <h3>Clarity first, complexity later.</h3>
-            <p>
-              The wing is organized so a visitor can move from overview to research direction, then
-              into projects, outputs, people, and standards without losing context.
-            </p>
-          </aside>
-        </div>
-      </section>
-
-      <section className="section">
-        <div className={wingStyles.sectionStack}>
-          <div className={wingStyles.lead}>
-            <span className={wingStyles.leadMark}>Department Sections</span>
-            <h2>Everything important is visible from one structured overview.</h2>
-            <p>
-              The research wing should feel stable and legible to collaborators, reviewers, and
-              future researchers. These sections form the public backbone of the department.
-            </p>
+            <Link className={styles.viewAllLink} href="/research-lab/research">
+              <span>View all</span>
+              <ArrowRight size={16} strokeWidth={2} />
+            </Link>
           </div>
 
-          <div className={wingStyles.highlightGrid}>
-            {researchWingHighlights.map((item) => (
-              <article className={wingStyles.highlightCard} key={item.href}>
-                <h3>{item.label}</h3>
-                <p>{item.description}</p>
-                <Link className={wingStyles.inlineLink} href={item.href}>
-                  <span>Open section</span>
-                  <ArrowRight size={15} strokeWidth={2} />
-                </Link>
+          <div className={sharedStyles.cardGrid}>
+            {featuredTracks.map((track) => (
+              <article className={sharedStyles.card} key={track.title}>
+                <h3>{track.title}</h3>
+                <p>{track.description}</p>
+                <div className={sharedStyles.pillList}>
+                  {track.tags.map((tag) => (
+                    <span className={sharedStyles.pill} key={tag}>
+                      {tag}
+                    </span>
+                  ))}
+                </div>
               </article>
             ))}
           </div>
         </div>
+      </section>
+
+      <section className="section">
+        <div className={styles.sectionStack}>
+          <div className={styles.sectionHeader}>
+            <div className={styles.sectionIntro}>
+              <span className={styles.eyebrow}>Projects</span>
+              <h2>Current research work and documented milestones.</h2>
+              <p>
+                The project preview keeps active and completed work visible from the department
+                home page before visitors go deeper.
+              </p>
+            </div>
+
+            <Link className={styles.viewAllLink} href="/research-lab/projects">
+              <span>View all</span>
+              <ArrowRight size={16} strokeWidth={2} />
+            </Link>
+          </div>
+
+          <div className={sharedStyles.cardGrid}>
+            {featuredProjects.map((project) => (
+              <article className={sharedStyles.card} key={project.title}>
+                <h3>{project.title}</h3>
+                <p>{project.summary}</p>
+                <div className={sharedStyles.pillList}>
+                  <span className={sharedStyles.pill}>{project.focus}</span>
+                  <span className={sharedStyles.pill}>
+                    {project.status === "ongoing" ? "Ongoing" : "Completed"}
+                  </span>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className={styles.sectionStack}>
+          <div className={styles.sectionHeader}>
+            <div className={styles.sectionIntro}>
+              <span className={styles.eyebrow}>Collaborations</span>
+              <h2>People and institutions connected to the Research Wing.</h2>
+              <p>
+                This section is ready to show collaboration profiles with image, profession,
+                institution, and an optional LinkedIn profile.
+              </p>
+            </div>
+
+            <Link className={styles.viewAllLink} href="/research-lab/collaborations">
+              <span>View all</span>
+              <ArrowRight size={16} strokeWidth={2} />
+            </Link>
+          </div>
+
+          <CollaborationGrid
+            emptyCopy="No collaboration profiles are published yet. This section is ready for real collaborator entries as they become available."
+            emptyTitle="Collaboration directory coming soon."
+            items={featuredCollaborations}
+          />
+        </div>
+      </section>
+
+      <section className="section">
+        <YouTubeShowcase />
       </section>
     </>
   );

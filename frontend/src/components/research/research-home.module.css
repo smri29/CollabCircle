@@ -1,0 +1,57 @@
+.sectionStack {
+  display: grid;
+  gap: 1rem;
+}
+
+.sectionHeader {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.sectionIntro {
+  display: grid;
+  gap: 0.55rem;
+  max-width: 44rem;
+}
+
+.eyebrow {
+  color: var(--accent-strong);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.sectionIntro h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.45rem, 3vw, 2rem);
+  line-height: 1.04;
+  letter-spacing: -0.04em;
+  font-weight: 650;
+}
+
+.sectionIntro p {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.viewAllLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  color: var(--accent-strong);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.viewAllLink svg {
+  transition: transform 180ms ease;
+}
+
+.viewAllLink:hover svg,
+.viewAllLink:focus-visible svg {
+  transform: translateX(4px);
+}
