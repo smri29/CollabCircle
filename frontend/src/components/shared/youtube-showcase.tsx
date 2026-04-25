@@ -11,7 +11,6 @@ export function YouTubeShowcase() {
             <PlayCircle size={16} strokeWidth={2} />
             <span>YouTube</span>
           </p>
-          <h3>Videos from the CollabCircle YouTube channel will appear here.</h3>
         </div>
 
         <a
