@@ -4,7 +4,6 @@ import { ArrowRight, Microscope } from "lucide-react";
 import { CollaborationGrid } from "@/components/research/collaboration-grid";
 import styles from "@/components/research/research-home.module.css";
 import { YouTubeShowcase } from "@/components/shared/youtube-showcase";
-import sharedStyles from "@/components/shared/content-sections.module.css";
 import { PageHero } from "@/components/shared/page-hero";
 import {
   researchCollaborations,
@@ -24,9 +23,9 @@ export default function ResearchLabPage() {
   return (
     <>
       <PageHero
-        eyebrow="Research Lab"
+        eyebrow="Research Department"
         icon={Microscope}
-        intro="The home page of the Research Wing, organized around active tracks, projects, collaborations, and public video updates."
+        intro=""
         title="Research Wing of CollabCircle."
       />
 
@@ -34,12 +33,7 @@ export default function ResearchLabPage() {
         <div className={styles.sectionStack}>
           <div className={styles.sectionHeader}>
             <div className={styles.sectionIntro}>
-              <span className={styles.eyebrow}>Research Tracks</span>
-              <h2>The core research directions currently visible from the lab.</h2>
-              <p>
-                These tracks show the problem spaces and methods that shape the current research
-                direction of CollabCircle.
-              </p>
+              <h2>Research Tracks</h2>
             </div>
 
             <Link className={styles.viewAllLink} href="/research-lab/research">
@@ -48,18 +42,11 @@ export default function ResearchLabPage() {
             </Link>
           </div>
 
-          <div className={sharedStyles.cardGrid}>
+          <div className={styles.previewGrid}>
             {featuredTracks.map((track) => (
-              <article className={sharedStyles.card} key={track.title}>
+              <article className={styles.previewCard} key={track.title}>
                 <h3>{track.title}</h3>
                 <p>{track.description}</p>
-                <div className={sharedStyles.pillList}>
-                  {track.tags.map((tag) => (
-                    <span className={sharedStyles.pill} key={tag}>
-                      {tag}
-                    </span>
-                  ))}
-                </div>
               </article>
             ))}
           </div>
@@ -70,12 +57,7 @@ export default function ResearchLabPage() {
         <div className={styles.sectionStack}>
           <div className={styles.sectionHeader}>
             <div className={styles.sectionIntro}>
-              <span className={styles.eyebrow}>Projects</span>
-              <h2>Current research work and documented milestones.</h2>
-              <p>
-                The project preview keeps active and completed work visible from the department
-                home page before visitors go deeper.
-              </p>
+              <h2>Projects</h2>
             </div>
 
             <Link className={styles.viewAllLink} href="/research-lab/projects">
@@ -84,17 +66,11 @@ export default function ResearchLabPage() {
             </Link>
           </div>
 
-          <div className={sharedStyles.cardGrid}>
+          <div className={styles.previewGrid}>
             {featuredProjects.map((project) => (
-              <article className={sharedStyles.card} key={project.title}>
+              <article className={styles.previewCard} key={project.title}>
                 <h3>{project.title}</h3>
                 <p>{project.summary}</p>
-                <div className={sharedStyles.pillList}>
-                  <span className={sharedStyles.pill}>{project.focus}</span>
-                  <span className={sharedStyles.pill}>
-                    {project.status === "ongoing" ? "Ongoing" : "Completed"}
-                  </span>
-                </div>
               </article>
             ))}
           </div>
@@ -105,12 +81,7 @@ export default function ResearchLabPage() {
         <div className={styles.sectionStack}>
           <div className={styles.sectionHeader}>
             <div className={styles.sectionIntro}>
-              <span className={styles.eyebrow}>Collaborations</span>
-              <h2>People and institutions connected to the Research Wing.</h2>
-              <p>
-                This section is ready to show collaboration profiles with image, profession,
-                institution, and an optional LinkedIn profile.
-              </p>
+              <h2>Collaborations</h2>
             </div>
 
             <Link className={styles.viewAllLink} href="/research-lab/collaborations">
