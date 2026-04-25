@@ -314,7 +314,7 @@ export const researchLabLinks = [
 export const researchWingNavigation: NavigationItem[] = [
   {
     href: "/research-lab",
-    label: "Research Home",
+    label: "Home",
   },
   {
     href: "/research-lab/publications",

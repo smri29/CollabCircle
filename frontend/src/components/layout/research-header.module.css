@@ -85,7 +85,12 @@
 }
 
 .link:hover,
-.link:focus-visible,
+.link:focus-visible {
+  color: var(--text-color);
+  background: color-mix(in srgb, var(--accent-strong) 8%, white 84%);
+  box-shadow: 0 10px 22px rgba(13, 35, 58, 0.06);
+}
+
 .activeLink {
   color: var(--text-color);
   background: rgba(255, 255, 255, 0.76);
@@ -224,6 +229,12 @@
     background: transparent;
     font-size: 0.9rem;
     font-weight: 600;
+  }
+
+  .mobileLink:hover,
+  .mobileLink:focus-visible {
+    color: var(--text-color);
+    background: color-mix(in srgb, var(--accent-strong) 8%, white 84%);
   }
 
   .mobileActiveLink {
