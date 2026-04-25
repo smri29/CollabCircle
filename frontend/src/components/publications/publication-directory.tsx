@@ -5,6 +5,7 @@ import {
   ExternalLink,
   Fingerprint,
   LibraryBig,
+  ScrollText,
   UsersRound,
 } from "lucide-react";
 import {
@@ -31,11 +32,19 @@ function PublicationCard({
   return (
     <article className={styles.card}>
       <div className={styles.cardHeader}>
-        <h3>{item.title}</h3>
+        <h3>Research Record</h3>
         <span className={styles.typeBadge}>{type === "journal" ? "Journal" : "Conference"}</span>
       </div>
 
       <div className={styles.metaList}>
+        <div className={styles.metaBlock}>
+          <div className={styles.metaLabel}>
+            <ScrollText size={15} strokeWidth={2} />
+            <span>Paper Title</span>
+          </div>
+          <p className={styles.paperTitle}>{item.title}</p>
+        </div>
+
         <div>
           <div className={styles.metaLabel}>
             <LibraryBig size={15} strokeWidth={2} />
@@ -78,11 +87,19 @@ function PlaceholderCard({ type }: { type: PublicationTab }) {
   return (
     <article className={`${styles.card} ${styles.placeholderCard}`}>
       <div className={styles.cardHeader}>
-        <h3>Publication record will appear here</h3>
+        <h3>Research Record</h3>
         <span className={styles.typeBadge}>{type === "journal" ? "Journal" : "Conference"}</span>
       </div>
 
       <div className={styles.metaList}>
+        <div className={styles.metaBlock}>
+          <div className={styles.metaLabel}>
+            <ScrollText size={15} strokeWidth={2} />
+            <span>Paper Title</span>
+          </div>
+          <p className={styles.paperTitle}>To be added</p>
+        </div>
+
         <div>
           <div className={styles.metaLabel}>
             <LibraryBig size={15} strokeWidth={2} />

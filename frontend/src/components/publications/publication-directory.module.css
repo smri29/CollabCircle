@@ -76,7 +76,7 @@
 }
 
 .cardHeader h3 {
-  font-size: 1rem;
+  font-size: 0.96rem;
   line-height: 1.15;
 }
 
@@ -95,6 +95,13 @@
   gap: 0.65rem;
 }
 
+.metaBlock {
+  display: grid;
+  gap: 0.25rem;
+  padding-bottom: 0.25rem;
+  border-bottom: 1px solid color-mix(in srgb, var(--text-color) 8%, white 76%);
+}
+
 .metaLabel {
   display: flex;
   align-items: center;
@@ -109,6 +116,13 @@
 .metaList a {
   color: var(--text-muted);
   font-size: 0.84rem;
+}
+
+.paperTitle {
+  color: var(--text-color) !important;
+  font-size: 0.94rem !important;
+  font-weight: 700;
+  line-height: 1.4;
 }
 
 .metaList a {
