@@ -50,6 +50,13 @@ export type YouTubeShowcaseVideo = {
 
 export const youtubeShowcaseVideos: YouTubeShowcaseVideo[] = [];
 
+export type ResearchPillar = {
+  title: string;
+  description: string;
+  tags: string[];
+  image?: string | null;
+};
+
 export const heroSignals = [
   {
     value: "Research-first",
@@ -65,21 +72,24 @@ export const heroSignals = [
   },
 ];
 
-export const researchPillars = [
+export const researchPillars: ResearchPillar[] = [
   {
     title: "Data-Centric Machine Learning",
     description: "Better data design before bigger models.",
     tags: ["benchmark design", "error analysis", "robust evaluation"],
+    image: null,
   },
   {
     title: "Efficient Deep Learning Systems",
     description: "Sharper models with cleaner training decisions.",
     tags: ["parameter efficiency", "distillation", "training pipelines"],
+    image: null,
   },
   {
     title: "Applied Intelligence Workflows",
     description: "Interfaces, systems, and applied model workflows.",
     tags: ["deployment framing", "monitoring", "human-in-the-loop"],
+    image: null,
   },
 ];
 
