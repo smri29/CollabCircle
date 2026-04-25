@@ -199,6 +199,7 @@ export type ResearchCollaboration = {
   profession: string;
   institution: string;
   image?: string | null;
+  projectName: string;
   linkedinHref?: string;
 };
 

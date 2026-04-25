@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, Microscope } from "lucide-react";
-import { CollaborationGrid } from "@/components/research/collaboration-grid";
 import styles from "@/components/research/research-home.module.css";
 import { YouTubeShowcase } from "@/components/shared/youtube-showcase";
 import { PageHero } from "@/components/shared/page-hero";
@@ -90,11 +89,14 @@ export default function ResearchLabPage() {
             </Link>
           </div>
 
-          <CollaborationGrid
-            emptyCopy="No collaboration profiles are published yet. This section is ready for real collaborator entries as they become available."
-            emptyTitle="Collaboration directory coming soon."
-            items={featuredCollaborations}
-          />
+          <div className={styles.previewGrid}>
+            {featuredCollaborations.map((item) => (
+              <article className={styles.previewCard} key={`${item.name}-${item.institution}-${item.projectName}`}>
+                <h3>{item.name}</h3>
+                <p>{item.profession}</p>
+              </article>
+            ))}
+          </div>
         </div>
       </section>
 
