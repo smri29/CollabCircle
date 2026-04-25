@@ -191,6 +191,9 @@ export type TeamMember = {
   name: string;
   role: string;
   imagePublicId: string | null;
+  institution?: string;
+  profession?: string;
+  linkedinHref?: string;
 };
 
 export type FounderProfile = {
@@ -206,31 +209,49 @@ export const executiveMembers: TeamMember[] = [
     name: "Sumaiya Alam Shorna",
     role: "Executive",
     imagePublicId: null,
+    institution: "CollabCircle Research Wing",
+    profession: "Research Executive",
+    linkedinHref: socialProfiles.linkedin,
   },
   {
     name: "Shah Mohammad Rizvi",
     role: "Executive",
     imagePublicId: null,
+    institution: "CollabCircle Research Wing",
+    profession: "Founder and Research Executive",
+    linkedinHref: socialProfiles.linkedin,
   },
   {
     name: "Rumi Akter",
     role: "Executive",
     imagePublicId: null,
+    institution: "CollabCircle Research Wing",
+    profession: "Research Executive",
+    linkedinHref: socialProfiles.linkedin,
   },
   {
     name: "Rimo Bhuiyan",
     role: "Executive",
     imagePublicId: null,
+    institution: "CollabCircle Research Wing",
+    profession: "Research Executive",
+    linkedinHref: socialProfiles.linkedin,
   },
   {
     name: "Md. Aman Uddin Siyam",
     role: "Executive",
     imagePublicId: null,
+    institution: "CollabCircle Research Wing",
+    profession: "Research Executive",
+    linkedinHref: socialProfiles.linkedin,
   },
   {
     name: "Sumaiya Islam Mily",
     role: "Executive",
     imagePublicId: null,
+    institution: "CollabCircle Research Wing",
+    profession: "Research Executive",
+    linkedinHref: socialProfiles.linkedin,
   },
 ];
 
@@ -313,7 +334,48 @@ export const engineeringDepartmentCoFounders: FounderProfile[] = [
   },
 ];
 
-export const currentResearchers: TeamMember[] = [];
+export const currentResearchers: TeamMember[] = [
+  {
+    name: "Nur-A-Jannat Shuchi",
+    role: "Researcher",
+    imagePublicId: null,
+    institution: "CollabCircle Research Wing",
+    profession: "Researcher",
+    linkedinHref: socialProfiles.linkedin,
+  },
+  {
+    name: "Saymon Hasan",
+    role: "Researcher",
+    imagePublicId: null,
+    institution: "CollabCircle Research Wing",
+    profession: "Researcher",
+    linkedinHref: socialProfiles.linkedin,
+  },
+  {
+    name: "Sifat Hasan",
+    role: "Researcher",
+    imagePublicId: null,
+    institution: "CollabCircle Research Wing",
+    profession: "Researcher",
+    linkedinHref: socialProfiles.linkedin,
+  },
+  {
+    name: "Sheikh Samiya Samad Joya",
+    role: "Researcher",
+    imagePublicId: null,
+    institution: "CollabCircle Research Wing",
+    profession: "Researcher",
+    linkedinHref: socialProfiles.linkedin,
+  },
+  {
+    name: "Nondita Devnath",
+    role: "Researcher",
+    imagePublicId: null,
+    institution: "CollabCircle Research Wing",
+    profession: "Researcher",
+    linkedinHref: socialProfiles.linkedin,
+  },
+];
 
 export const contactChannels = [
   {
