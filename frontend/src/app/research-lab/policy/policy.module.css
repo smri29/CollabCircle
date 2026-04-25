@@ -1,0 +1,63 @@
+.accordion {
+  display: grid;
+  gap: 0;
+  border-top: 1px solid color-mix(in srgb, var(--text-color) 10%, white 72%);
+  max-width: 64rem;
+  margin: 0 auto;
+}
+
+.item {
+  border-bottom: 1px solid color-mix(in srgb, var(--text-color) 10%, white 72%);
+  animation: fadeLift 700ms ease both;
+}
+
+.summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 0.4rem;
+  cursor: pointer;
+  list-style: none;
+}
+
+.summary::-webkit-details-marker {
+  display: none;
+}
+
+.summary h3 {
+  font-size: 1rem;
+  font-weight: 650;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.chevron {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.42);
+  border: 1px solid color-mix(in srgb, var(--text-color) 8%, white 72%);
+  color: var(--text-muted);
+  font-size: 1rem;
+  transition: transform 180ms ease, color 180ms ease;
+}
+
+.item[open] .chevron {
+  transform: rotate(180deg);
+  color: var(--accent-strong);
+}
+
+.content {
+  padding: 0 0.4rem 1rem;
+}
+
+.content p {
+  color: var(--text-muted);
+  font-size: 0.92rem;
+  line-height: 1.65;
+  max-width: 54rem;
+}
