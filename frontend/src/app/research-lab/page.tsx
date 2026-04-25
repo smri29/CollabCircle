@@ -70,7 +70,7 @@ export default function ResearchLabPage() {
             {featuredProjects.map((project) => (
               <article className={styles.previewCard} key={project.title}>
                 <h3>{project.title}</h3>
-                <p>{project.summary}</p>
+                <p>{project.description}</p>
               </article>
             ))}
           </div>
