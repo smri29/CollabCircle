@@ -187,9 +187,11 @@ export type RecruitmentTrack = {
 
 export type ResearchProject = {
   title: string;
-  summary: string;
+  description: string;
   status: "ongoing" | "completed";
-  focus: string;
+  image?: string | null;
+  liveLink?: string;
+  teamMembers: string[];
 };
 
 export type ResearchCollaboration = {
@@ -358,33 +360,43 @@ export const researchWingHighlights = [
 export const researchProjects: ResearchProject[] = [
   {
     title: "Data-Centric Benchmark Refinement",
-    summary: "An ongoing effort to improve evaluation quality through cleaner datasets, tighter baselines, and better error analysis.",
+    description: "An ongoing effort to improve evaluation quality through cleaner datasets, tighter baselines, and better error analysis.",
     status: "ongoing",
-    focus: "Machine learning evaluation",
+    image: null,
+    liveLink: "https://example.com/data-centric-benchmark-refinement",
+    teamMembers: ["Shah Mohammad Rizvi", "Sumaiya Alam Shorna"],
   },
   {
     title: "Efficient Model Training Workflow",
-    summary: "A structured training workflow focused on reproducibility, experiment tracking, and practical efficiency decisions.",
+    description: "A structured training workflow focused on reproducibility, experiment tracking, and practical efficiency decisions.",
     status: "ongoing",
-    focus: "Deep learning systems",
+    image: null,
+    liveLink: "https://example.com/efficient-model-training-workflow",
+    teamMembers: ["Rumi Akter", "Rimo Bhuiyan"],
   },
   {
     title: "Publication Preparation Pipeline",
-    summary: "A repeatable workflow for turning experiments, figures, and findings into submission-ready research outputs.",
+    description: "A repeatable workflow for turning experiments, figures, and findings into submission-ready research outputs.",
     status: "ongoing",
-    focus: "Research operations",
+    image: null,
+    liveLink: "https://example.com/publication-preparation-pipeline",
+    teamMembers: ["Md. Aman Uddin Siyam", "Sumaiya Islam Mily"],
   },
   {
     title: "Internal Research Structure Rollout",
-    summary: "Completed internal work to organize the public-facing research wing around tracks, outputs, and long-term readability.",
+    description: "Completed internal work to organize the public-facing research wing around tracks, outputs, and long-term readability.",
     status: "completed",
-    focus: "Research organization",
+    image: null,
+    liveLink: "https://example.com/internal-research-structure-rollout",
+    teamMembers: ["Shah Mohammad Rizvi", "Rumi Akter"],
   },
   {
     title: "Research Wing Website Foundation",
-    summary: "Completed foundational work to present the research department as a coherent destination with its own navigation and pages.",
+    description: "Completed foundational work to present the research department as a coherent destination with its own navigation and pages.",
     status: "completed",
-    focus: "Public communication",
+    image: null,
+    liveLink: "https://example.com/research-wing-website-foundation",
+    teamMembers: ["Sumaiya Alam Shorna", "Rimo Bhuiyan"],
   },
 ];
 
