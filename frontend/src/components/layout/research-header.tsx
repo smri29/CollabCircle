@@ -8,7 +8,13 @@ import { researchWingNavigation } from "@/data/company-content";
 import styles from "./research-header.module.css";
 
 function isActivePath(pathname: string, href: string, matches?: string[]) {
-  return [href, ...(matches ?? [])].some((path) => pathname === path || pathname.startsWith(`${path}/`));
+  return [href, ...(matches ?? [])].some((path) => {
+    if (path === "/research-lab") {
+      return pathname === path;
+    }
+
+    return pathname === path || pathname.startsWith(`${path}/`);
+  });
 }
 
 export function ResearchHeader() {
