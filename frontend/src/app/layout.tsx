@@ -21,6 +21,11 @@ export const metadata: Metadata = {
     template: "%s | CollabCircle",
   },
   description: "A future-ready organization shaped around research, engineering, and long-term impact.",
+  icons: {
+    icon: "/CollabCircle%20Logo.svg",
+    shortcut: "/CollabCircle%20Logo.svg",
+    apple: "/CollabCircle%20Logo.svg",
+  },
 };
 
 export default function RootLayout({
