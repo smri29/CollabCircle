@@ -42,7 +42,7 @@ export const newsroomItems: NewsroomItem[] = [
     summary:
       "CollabCircle now accepts focused applications through separate Researcher and Engineer recruitment tracks, each with its own dedicated Google Form.",
     category: "announcement",
-    publishedAt: "April 2026",
+    publishedAt: "26 April 2026",
     featured: true,
     href: "/career",
     ctaLabel: "View careers",
@@ -53,7 +53,7 @@ export const newsroomItems: NewsroomItem[] = [
     summary:
       "This page now serves as the public record for announcements, research visibility, and organization milestones as CollabCircle grows.",
     category: "organization",
-    publishedAt: "April 2026",
+    publishedAt: "24 April 2026",
   },
   {
     id: "research-foundation-update",
@@ -61,7 +61,7 @@ export const newsroomItems: NewsroomItem[] = [
     summary:
       "The organization continues to present research as its current public core while preparing the engineering layer for future expansion.",
     category: "research",
-    publishedAt: "April 2026",
+    publishedAt: "22 April 2026",
     href: "/research-lab",
     ctaLabel: "Enter the lab",
   },
@@ -71,7 +71,7 @@ export const newsroomItems: NewsroomItem[] = [
     summary:
       "The Team page keeps the executive panel visible today while preserving a scalable structure for the future researcher directory.",
     category: "organization",
-    publishedAt: "April 2026",
+    publishedAt: "20 April 2026",
     href: "/research-lab/team",
     ctaLabel: "See the team",
   },
@@ -81,7 +81,7 @@ export const newsroomItems: NewsroomItem[] = [
     summary:
       "Milestones, meetup records, and future recognition moments now have a clearer presentation through the Achievements section.",
     category: "announcement",
-    publishedAt: "April 2026",
+    publishedAt: "18 April 2026",
     href: "/achievements",
     ctaLabel: "View achievements",
   },
