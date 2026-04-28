@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Plus_Jakarta_Sans, Sora } from "next/font/google";
 import { HeaderSwitcher } from "@/components/layout/header-switcher";
 import { SiteFooter } from "@/components/layout/site-footer";
@@ -35,7 +36,19 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" data-theme="landing" suppressHydrationWarning>
-      <body className={`${jakarta.variable} ${sora.variable}`}>
+      <head>
+        <Script id="strip-extension-body-attrs" strategy="beforeInteractive">
+          {`
+            document.documentElement.removeAttribute("data-new-gr-c-s-check-loaded");
+            document.documentElement.removeAttribute("data-gr-ext-installed");
+            if (document.body) {
+              document.body.removeAttribute("data-new-gr-c-s-check-loaded");
+              document.body.removeAttribute("data-gr-ext-installed");
+            }
+          `}
+        </Script>
+      </head>
+      <body className={`${jakarta.variable} ${sora.variable}`} suppressHydrationWarning>
         <div className="siteShell">
           <HeaderSwitcher />
           <main className="siteMain">{children}</main>
