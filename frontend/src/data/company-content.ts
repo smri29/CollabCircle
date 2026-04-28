@@ -270,23 +270,9 @@ export const landingFeatures: FeatureLink[] = [
     icon: "engineering",
     cta: "See the direction",
   },
-  {
-    href: "/impact-sector",
-    label: "Impact Sector",
-    description: "Where research and engineering can create visible value over time.",
-    icon: "impact",
-    cta: "View sectors",
-  },
 ];
 
 export const companyLinks: FeatureLink[] = [
-  {
-    href: "/mission-vision",
-    label: "Mission & Vision",
-    description: "The long-range direction behind the organization.",
-    icon: "mission",
-    cta: "Read the mission",
-  },
   {
     href: "/about-us",
     label: "About Us",

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { Trophy } from "lucide-react";
+import Link from "next/link";
+import { ArrowRight, Trophy } from "lucide-react";
 import styles from "@/components/achievements/achievement-page.module.css";
 import { AchievementSectionGallery } from "@/components/achievements/achievement-section-gallery";
 import { PageHero } from "@/components/shared/page-hero";
@@ -33,6 +34,29 @@ export default function AchievementsPage() {
             </section>
           ))}
         </div>
+      </section>
+
+      <section className="section">
+        <article className={styles.ctaPanel}>
+          <div className={styles.ctaCopy}>
+            <p>Join the journey</p>
+            <h2>Be part of what CollabCircle is building.</h2>
+            <p>
+              Follow the milestones, explore the work more closely, or step in if you want to grow
+              with the direction CollabCircle is shaping.
+            </p>
+          </div>
+
+          <div className={styles.ctaActions}>
+            <Link className="button" href="/career">
+              <span>Explore Careers</span>
+              <ArrowRight size={16} strokeWidth={2} />
+            </Link>
+            <Link className={styles.secondaryCta} href="/contact">
+              <span>Contact Us</span>
+            </Link>
+          </div>
+        </article>
       </section>
     </>
   );

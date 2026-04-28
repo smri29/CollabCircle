@@ -77,8 +77,89 @@
   line-height: 1.5;
 }
 
+.ctaPanel {
+  display: grid;
+  align-items: center;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 1rem 1.5rem;
+  padding: 1.45rem;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-lg);
+  background: var(--glass-surface);
+  box-shadow: var(--shadow-soft);
+  backdrop-filter: blur(22px);
+  animation: fadeLift 700ms ease both;
+}
+
+.ctaCopy {
+  display: grid;
+  gap: 0.55rem;
+  max-width: 44rem;
+}
+
+.ctaCopy p:first-child {
+  color: var(--accent-strong);
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.ctaCopy h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.45rem, 3vw, 2.15rem);
+  line-height: 1.04;
+  letter-spacing: -0.04em;
+  font-weight: 650;
+}
+
+.ctaCopy p:last-child {
+  color: var(--text-muted);
+  font-size: 0.93rem;
+  line-height: 1.72;
+}
+
+.ctaActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+.secondaryCta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.9rem;
+  padding: 0.72rem 1.15rem;
+  border: 1px solid var(--border-strong);
+  border-radius: 999px;
+  background: var(--glass-surface-strong);
+  color: var(--text-color);
+  font-size: 0.9rem;
+  font-weight: 700;
+  transition:
+    background-color 180ms ease,
+    border-color 180ms ease;
+}
+
+.secondaryCta:hover,
+.secondaryCta:focus-visible {
+  background: color-mix(in srgb, var(--accent-soft) 10%, white 90%);
+  border-color: color-mix(in srgb, var(--accent-strong) 22%, var(--border-strong));
+}
+
 @media (max-width: 960px) {
   .trackGrid {
     grid-template-columns: 1fr;
+  }
+
+  .ctaPanel {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 720px) {
+  .ctaPanel {
+    padding: 1.2rem 1rem;
   }
 }

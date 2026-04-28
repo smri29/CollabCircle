@@ -68,6 +68,29 @@ export default function NewsroomPage() {
           ))}
         </div>
       </section>
+
+      <section className="section">
+        <article className={styles.ctaPanel}>
+          <div className={styles.ctaCopy}>
+            <p>Join the journey</p>
+            <h2>Be part of what CollabCircle is building.</h2>
+            <p>
+              Follow the updates, explore the work more closely, or reach out if you want to be
+              part of the direction CollabCircle is shaping.
+            </p>
+          </div>
+
+          <div className={styles.ctaActions}>
+            <Link className="button" href="/career">
+              <span>Explore Careers</span>
+              <ArrowRight size={16} strokeWidth={2} />
+            </Link>
+            <Link className={styles.secondaryCta} href="/contact">
+              <span>Contact Us</span>
+            </Link>
+          </div>
+        </article>
+      </section>
     </>
   );
 }
