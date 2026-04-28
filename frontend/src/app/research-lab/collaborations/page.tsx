@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowUpRight, Handshake } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Handshake } from "lucide-react";
 import styles from "./collaborations.module.css";
 import { PageHero } from "@/components/shared/page-hero";
 import { researchCollaborations } from "@/data/company-content";
@@ -98,6 +98,29 @@ export default function ResearchCollaborationsPage() {
             </article>
           ))}
         </div>
+      </section>
+
+      <section className="section">
+        <article className={styles.ctaPanel}>
+          <div className={styles.ctaCopy}>
+            <p>Join the journey</p>
+            <h2>Be part of what CollabCircle is building.</h2>
+            <p>
+              If you want to collaborate, contribute to ongoing work, or build institutional
+              connections around the research wing, this is a good place to begin.
+            </p>
+          </div>
+
+          <div className={styles.ctaActions}>
+            <Link className="button" href="/career">
+              <span>Explore Careers</span>
+              <ArrowRight size={16} strokeWidth={2} />
+            </Link>
+            <Link className={styles.secondaryCta} href="/contact">
+              <span>Contact Us</span>
+            </Link>
+          </div>
+        </article>
       </section>
     </>
   );

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { BriefcaseBusiness } from "lucide-react";
+import Link from "next/link";
+import { ArrowRight, BriefcaseBusiness } from "lucide-react";
 import styles from "@/components/shared/content-sections.module.css";
 import wingStyles from "@/components/research/research-wing.module.css";
 import { PageHero } from "@/components/shared/page-hero";
@@ -83,6 +84,29 @@ export default function SolutionsServicesPage() {
             </article>
           ))}
         </div>
+      </section>
+
+      <section className="section">
+        <article className={styles.ctaPanel}>
+          <div className={styles.ctaCopy}>
+            <p>Join the journey</p>
+            <h2>Be part of what CollabCircle is building.</h2>
+            <p>
+              If you want to build systems, contribute to delivery, or grow with the engineering
+              direction taking shape inside CollabCircle, this is a good point to step in.
+            </p>
+          </div>
+
+          <div className={styles.ctaActions}>
+            <Link className="button" href="/career">
+              <span>Explore Careers</span>
+              <ArrowRight size={16} strokeWidth={2} />
+            </Link>
+            <Link className={styles.secondaryCta} href="/contact">
+              <span>Contact Us</span>
+            </Link>
+          </div>
+        </article>
       </section>
     </>
   );

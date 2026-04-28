@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { BrainCircuit } from "lucide-react";
+import Link from "next/link";
+import { ArrowRight, BrainCircuit } from "lucide-react";
 import styles from "./research.module.css";
 import wingStyles from "@/components/research/research-wing.module.css";
 import { PageHero } from "@/components/shared/page-hero";
@@ -76,6 +77,29 @@ export default function ResearchTracksPage() {
             ))}
           </div>
         </div>
+      </section>
+
+      <section className="section">
+        <article className={styles.ctaPanel}>
+          <div className={styles.ctaCopy}>
+            <p>Join the journey</p>
+            <h2>Be part of what CollabCircle is building.</h2>
+            <p>
+              Explore the research direction more closely, follow the active tracks, or step in if
+              you want to contribute to the work taking shape inside the wing.
+            </p>
+          </div>
+
+          <div className={styles.ctaActions}>
+            <Link className="button" href="/career">
+              <span>Explore Careers</span>
+              <ArrowRight size={16} strokeWidth={2} />
+            </Link>
+            <Link className={styles.secondaryCta} href="/contact">
+              <span>Contact Us</span>
+            </Link>
+          </div>
+        </article>
       </section>
     </>
   );
