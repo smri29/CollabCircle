@@ -28,6 +28,7 @@ const footerLinks = [
 const legalLinks = [
   { href: "/terms-of-use", label: "Terms of Use" },
   { href: "/privacy-policy", label: "Privacy Policy" },
+  { href: "/faq", label: "FAQ" },
 ];
 
 export function SiteFooter() {

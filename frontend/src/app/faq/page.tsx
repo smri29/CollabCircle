@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { ChevronDown, CircleHelp } from "lucide-react";
+import Link from "next/link";
+import { ArrowRight, ChevronDown, CircleHelp } from "lucide-react";
 import { PageHero } from "@/components/shared/page-hero";
 import styles from "./faq.module.css";
 
@@ -92,6 +93,17 @@ export default function FaqPage() {
       />
 
       <section className="section">
+        <div className={styles.sectionIntro}>
+          <p>Quick answers</p>
+          <h2>Common questions, kept in one place.</h2>
+          <p>
+            If you are exploring the website, trying to understand the structure, or preparing to
+            apply, these answers should help you move faster.
+          </p>
+        </div>
+      </section>
+
+      <section className="section">
         <div className={styles.faqWrap}>
           {faqItems.map((item) => (
             <details className={styles.item} key={item.title}>
@@ -105,6 +117,29 @@ export default function FaqPage() {
             </details>
           ))}
         </div>
+      </section>
+
+      <section className="section">
+        <article className={styles.ctaPanel}>
+          <div className={styles.ctaCopy}>
+            <p>Still need help?</p>
+            <h2>Use the next best route if your question is not covered here.</h2>
+            <p>
+              If your question is about applying, start with the Career page. If you need direct
+              clarification, use the Contact page and reach out through the official channel.
+            </p>
+          </div>
+
+          <div className={styles.ctaActions}>
+            <Link className="button" href="/career">
+              <span>Open Career</span>
+              <ArrowRight size={16} strokeWidth={2} />
+            </Link>
+            <Link className={styles.secondaryCta} href="/contact">
+              <span>Contact Us</span>
+            </Link>
+          </div>
+        </article>
       </section>
     </>
   );
