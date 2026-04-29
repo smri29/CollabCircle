@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, ArrowUpRight, Cpu } from "lucide-react";
-import memberStyles from "@/components/team/member-grid.module.css";
+import { ArrowRight, Cpu } from "lucide-react";
 import sharedStyles from "@/components/shared/content-sections.module.css";
 import styles from "./engineering-home.module.css";
 import { PageHero } from "@/components/shared/page-hero";
@@ -139,40 +138,13 @@ export default function EngineeringHubPage() {
             </Link>
           </div>
 
-          <div className={memberStyles.grid}>
+          <div className={styles.teamGrid}>
             {featuredTeam.map((member) => (
-              <article className={memberStyles.card} key={member.name}>
-                <div className={memberStyles.imageSlot} aria-hidden="true">
+              <article className={styles.teamCard} key={member.name}>
+                <div className={styles.teamImageSlot} aria-hidden="true">
                   <span>{getInitials(member.name)}</span>
                 </div>
-                <div className={memberStyles.cardTop}>
-                  <span className={memberStyles.role}>{member.role}</span>
-                </div>
                 <h3>{member.name}</h3>
-
-                {member.profession ? (
-                  <div className={memberStyles.noteCard}>
-                    <h4>Profession</h4>
-                    <p>{member.profession}</p>
-                  </div>
-                ) : null}
-
-                {member.institution ? (
-                  <div className={memberStyles.fieldRow}>
-                    <span className={memberStyles.fieldLabel}>Institution</span>
-                    <p>{member.institution}</p>
-                  </div>
-                ) : null}
-
-                {member.linkedinHref ? (
-                  <div className={memberStyles.fieldRow}>
-                    <span className={memberStyles.fieldLabel}>LinkedIn</span>
-                    <Link className={memberStyles.profileLink} href={member.linkedinHref} rel="noreferrer" target="_blank">
-                      <span>Open profile</span>
-                      <ArrowUpRight size={15} strokeWidth={2} />
-                    </Link>
-                  </div>
-                ) : null}
               </article>
             ))}
           </div>
