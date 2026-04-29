@@ -28,14 +28,19 @@ export default function JoinUsPage() {
 
       <section className="section">
         <div className={styles.introCard}>
+          <p className={styles.cardLabel}>Application flow</p>
+          <h2>Choose your suitable track.</h2>
           <p>
-            Choose the form that best matches your interests and background, complete the
-            application, and share clear details about the kind of contribution you want to make.
+            Select the form that best fits your background, and complete the application carefully.
           </p>
         </div>
       </section>
 
       <section className="section">
+        <div className={styles.sectionHeader}>
+          <p>Open tracks</p>
+        </div>
+
         <div className={styles.trackGrid}>
           {recruitmentTracks.map((track) => {
             const Icon = trackIcons[track.id as keyof typeof trackIcons];
@@ -87,6 +92,7 @@ export default function JoinUsPage() {
       <section className="section">
         <div className={styles.processShell}>
           <div className={styles.processIntro}>
+            <p className={styles.cardLabel}>After you apply</p>
             <h2>What happens after you apply</h2>
             <p>
               Submit the form that fits your track. Every application is reviewed manually, and
@@ -109,24 +115,26 @@ export default function JoinUsPage() {
       </section>
 
       <section className="section">
-        <div className={sharedStyles.gridTwo}>
-          <div className={sharedStyles.stack}>
+        <article className={styles.ctaPanel}>
+          <div className={styles.ctaCopy}>
+            <p>Before you apply</p>
             <h2>Questions before you apply?</h2>
-            <p>Use the FAQ page for practical answers about the application flow, review process, and what to expect.</p>
-            <Link href="/faq">
-              <span>Open FAQ</span>
-            </Link>
+            <p>
+              Use the FAQ page for practical answers about the application flow, review process,
+              and what to expect. If you still need help, reach out before submitting.
+            </p>
           </div>
 
-          <aside className={sharedStyles.panel}>
-            <h3>Need help first?</h3>
-            <p>
-              For questions before applying, contact
-              {" "}
-              <a href={`mailto:${siteMeta.email}`}>{siteMeta.email}</a>
-            </p>
-          </aside>
-        </div>
+          <div className={styles.ctaActions}>
+            <Link className="button" href="/faq">
+              <span>Open FAQ</span>
+              <ArrowUpRight size={16} strokeWidth={2} />
+            </Link>
+            <a className={styles.secondaryCta} href={`mailto:${siteMeta.email}`}>
+              Contact First
+            </a>
+          </div>
+        </article>
       </section>
     </>
   );
