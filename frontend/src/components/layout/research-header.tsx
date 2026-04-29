@@ -20,6 +20,7 @@ function isActivePath(pathname: string, href: string, matches?: string[]) {
 export function ResearchHeader() {
   const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const isJoinActive = pathname === "/career" || pathname === "/join-us";
 
   return (
     <header className={styles.header}>
@@ -27,7 +28,7 @@ export function ResearchHeader() {
         <Link className={styles.brand} href="/research-lab" onClick={() => setIsMenuOpen(false)}>
           <CollabCircleLogo className={styles.logo} height={44} priority width={44} />
           <span className={styles.brandText}>
-            <strong>Research Wing</strong>
+            <strong>CollabCircle</strong>
           </span>
         </Link>
 
@@ -49,6 +50,13 @@ export function ResearchHeader() {
         </nav>
 
         <div className={styles.actions}>
+          <Link
+            className={isJoinActive ? styles.joinActiveLink : styles.joinLink}
+            href="/career"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            Join Us
+          </Link>
           <Link className={styles.backLink} href="/" onClick={() => setIsMenuOpen(false)}>
             Main Site
           </Link>
@@ -83,6 +91,9 @@ export function ResearchHeader() {
               </Link>
             );
           })}
+          <Link className={pathname === "/faq" ? styles.mobileActiveLink : styles.mobileLink} href="/faq" onClick={() => setIsMenuOpen(false)}>
+            FAQ
+          </Link>
           <Link className={styles.mobileBackLink} href="/" onClick={() => setIsMenuOpen(false)}>
             Main Site
           </Link>
