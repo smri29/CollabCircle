@@ -7,6 +7,13 @@ import { CollabCircleLogo } from "@/components/brand/collabcircle-logo";
 import { engineeringWingNavigation } from "@/data/company-content";
 import styles from "./research-header.module.css";
 
+const engineeringMenuHiddenRoutes = new Set([
+  "/engineering-hub/solutions-services",
+  "/engineering-hub/clients",
+  "/engineering-hub/technologies",
+  "/engineering-hub/team",
+]);
+
 function isActivePath(pathname: string, href: string, matches?: string[]) {
   return [href, ...(matches ?? [])].some((path) => {
     if (path === "/engineering-hub") {
@@ -20,6 +27,10 @@ function isActivePath(pathname: string, href: string, matches?: string[]) {
 export function EngineeringHeader() {
   const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const isJoinActive = pathname === "/career" || pathname === "/join-us";
+  const engineeringMenuItems = engineeringWingNavigation.filter(
+    (item) => !engineeringMenuHiddenRoutes.has(item.href),
+  );
 
   return (
     <header className={styles.header}>
@@ -27,7 +38,7 @@ export function EngineeringHeader() {
         <Link className={styles.brand} href="/engineering-hub" onClick={() => setIsMenuOpen(false)}>
           <CollabCircleLogo className={styles.logo} height={44} priority width={44} />
           <span className={styles.brandText}>
-            <strong>Engineering Hub</strong>
+            <strong>CollabCircle</strong>
           </span>
         </Link>
 
@@ -49,6 +60,13 @@ export function EngineeringHeader() {
         </nav>
 
         <div className={styles.actions}>
+          <Link
+            className={isJoinActive ? styles.joinActiveLink : styles.joinLink}
+            href="/career"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            Join Us
+          </Link>
           <Link className={styles.backLink} href="/" onClick={() => setIsMenuOpen(false)}>
             Main Site
           </Link>
@@ -69,7 +87,7 @@ export function EngineeringHeader() {
         id="engineering-mobile-navigation"
       >
         <nav className={styles.mobileNav} aria-label="Engineering Hub mobile">
-          {engineeringWingNavigation.map((item) => {
+          {engineeringMenuItems.map((item) => {
             const isActive = isActivePath(pathname, item.href, item.matches);
 
             return (
@@ -83,6 +101,9 @@ export function EngineeringHeader() {
               </Link>
             );
           })}
+          <Link className={pathname === "/faq" ? styles.mobileActiveLink : styles.mobileLink} href="/faq" onClick={() => setIsMenuOpen(false)}>
+            FAQ
+          </Link>
           <Link className={styles.mobileBackLink} href="/" onClick={() => setIsMenuOpen(false)}>
             Main Site
           </Link>

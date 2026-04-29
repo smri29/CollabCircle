@@ -485,7 +485,7 @@ export const engineeringFocusAreas = [
 export const engineeringWingNavigation: NavigationItem[] = [
   {
     href: "/engineering-hub",
-    label: "Engineering Home",
+    label: "Home",
   },
   {
     href: "/engineering-hub/solutions-services",
