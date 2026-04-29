@@ -240,7 +240,7 @@
   }
 
   .mobilePanelOpen {
-    max-height: 24rem;
+    max-height: 40rem;
     opacity: 1;
     transform: translateY(0) scaleY(1);
   }
