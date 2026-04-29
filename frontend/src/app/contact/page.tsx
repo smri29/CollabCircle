@@ -13,9 +13,7 @@ import {
 import contactStyles from "@/components/contact/contact-page.module.css";
 import { PageHero } from "@/components/shared/page-hero";
 import {
-  collaborationChecklist,
   contactChannels,
-  contactMessageBlueprint,
   siteMeta,
 } from "@/data/site-content";
 
@@ -111,30 +109,6 @@ export default function ContactPage() {
               </article>
             );
           })}
-        </div>
-      </section>
-
-      <section className="section">
-        <div className={contactStyles.guidanceGrid}>
-          <article className={contactStyles.guidanceCard}>
-            <p className={contactStyles.kicker}>Include In Your Message</p>
-            <h2>Information that helps us understand your request.</h2>
-            <ul className={contactStyles.guidanceList}>
-              {contactMessageBlueprint.map((item) => (
-                <li key={item}>{item}</li>
-              ))}
-            </ul>
-          </article>
-
-          <article className={contactStyles.guidanceCard}>
-            <p className={contactStyles.kicker}>Good Outreach</p>
-            <h2>Practical standards for first contact.</h2>
-            <ul className={contactStyles.guidanceList}>
-              {collaborationChecklist.map((item) => (
-                <li key={item}>{item}</li>
-              ))}
-            </ul>
-          </article>
         </div>
       </section>
     </>
