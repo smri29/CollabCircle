@@ -223,7 +223,6 @@ export type EngineeringClientGroup = {
 export type EngineeringTechnology = {
   title: string;
   description: string;
-  tags: string[];
 };
 
 export type EngineeringPolicyBlock = {
@@ -548,55 +547,94 @@ export const engineeringWingHighlights = [
 
 export const engineeringServices: EngineeringService[] = [
   {
-    title: "AI-enabled internal tools",
-    description: "Operational tools that help teams automate workflows, improve visibility, and reduce repeated manual effort.",
-    scope: "Internal productivity systems",
+    title: "Applied AI & ML Integration",
+    description: "Transitioning complex deep learning models into optimized, production-ready software systems. We build efficient inference pipelines that bring research to life.",
+    scope: "AI deployment systems",
   },
   {
-    title: "Product prototyping",
-    description: "Early-stage product architecture and prototype work designed to translate promising ideas into testable software systems.",
-    scope: "Product incubation",
+    title: "Enterprise Web Platforms",
+    description: "Engineering robust, secure full-stack web architectures with advanced user workflows, administrative controls, and secure data layers.",
+    scope: "Full-stack platforms",
   },
   {
-    title: "Applied platform delivery",
-    description: "Structured technical delivery aimed at turning research-adjacent capability into durable user-facing systems.",
-    scope: "Platforms and services",
+    title: "Distributed Systems & Optimization",
+    description: "Building scalable backend infrastructure, real-time data pipelines, and optimized caching layers designed to handle intensive operational workloads.",
+    scope: "Backend infrastructure",
+  },
+  {
+    title: "Agentic Workflow Automation",
+    description: "Eliminating manual operational bottlenecks by engineering autonomous workflow pipelines. We integrate n8n, Zapier, and custom webhooks to orchestrate asynchronous tasks, sync multi-platform data, and automate business logic behind the scenes.",
+    scope: "Workflow automation",
+  },
+  {
+    title: "Intelligent Knowledge Systems",
+    description: "Transforming fragmented institutional data into accessible intelligence. We build custom Retrieval-Augmented Generation (RAG) pipelines, secure semantic search engines, and multi-turn AI assistants designed to chat directly with proprietary databases safely.",
+    scope: "Knowledge systems",
+  },
+  {
+    title: "Immersive Gamification & Campaign Tech",
+    description: "Driving viral brand engagement through interactive digital experiences. We engineer high-performance web campaign games, real-time interactive leaderboards, and generative AI marketing micro-apps built to scale instantly during high-traffic launches.",
+    scope: "Campaign experiences",
   },
 ];
 
 export const engineeringClientGroups: EngineeringClientGroup[] = [
   {
-    title: "Internal CollabCircle teams",
-    description: "The first engineering clients are likely to be internal research and operational teams that need clearer tooling and systems.",
-    fit: "Immediate and strategic",
+    title: "Research & Academic Institutions",
+    description: "Supporting scientific environments with robust software systems to manage datasets, track experimental variables, and streamline computational analysis.",
+    fit: "Research systems",
   },
   {
-    title: "Education and knowledge organizations",
-    description: "Institutions that benefit from structured tools, applied AI workflows, and practical software support are a strong long-term fit.",
-    fit: "High long-term relevance",
+    title: "Data-Driven Enterprises",
+    description: "Partnering with organizations that need sophisticated data pipelines, custom management systems, and specialized full-stack internal tooling.",
+    fit: "Data infrastructure",
   },
   {
-    title: "Mission-aligned partners",
-    description: "Future external collaborators who need thoughtful technical delivery rather than generic development outsourcing.",
-    fit: "Selective and relationship-led",
+    title: "Agile Technology Startups",
+    description: "Delivering rapid MVP prototyping, production-ready system architecture, and scalable software foundations for early-stage platforms.",
+    fit: "Startup delivery",
+  },
+  {
+    title: "Healthcare & Biomedical Research Teams",
+    description: "Empowering clinical researchers and medical-tech teams with specialized applications designed for neurological signal visualization, secure dataset handling, and complex biomedical analysis workflows.",
+    fit: "Biomedical systems",
+  },
+  {
+    title: "E-Commerce & Consumer Brands",
+    description: "Partnering with forward-thinking consumer brands to launch immersive marketing campaigns, interactive web games, and intelligent AI assistants that capture zero-party data and drive viral engagement.",
+    fit: "Brand engagement tech",
+  },
+  {
+    title: "Operations & Logistics Providers",
+    description: "Engineering custom agentic workflows, internal tooling, and automated data synchronization layers (via n8n and micro-services) to eliminate manual bottlenecks for operational teams.",
+    fit: "Operational automation",
   },
 ];
 
 export const engineeringTechnologies: EngineeringTechnology[] = [
   {
-    title: "Application platforms",
-    description: "Modern web application foundations for building internal tools, dashboards, portals, and product surfaces.",
-    tags: ["frontend systems", "backend services", "deployment"],
+    title: "Deep Learning & Data Science Frameworks",
+    description: "Advanced modeling using specialized convolutional architectures, custom neural network implementations, and rigorous computational benchmarking.",
   },
   {
-    title: "AI workflow infrastructure",
-    description: "Technical systems that make model-assisted work more usable, observable, and maintainable.",
-    tags: ["automation", "monitoring", "human-in-the-loop"],
+    title: "Modern Full-Stack Web Architecture",
+    description: "Building fast, interactive, and responsive user interfaces powered by structured, decoupled backend services.",
   },
   {
-    title: "Data and integration layers",
-    description: "Connective systems for data flow, service integration, and operational traceability.",
-    tags: ["data pipelines", "APIs", "system integration"],
+    title: "Data Orchestration & Caching",
+    description: "Utilizing high-velocity data layers, secure relational management systems, and distributed caching to ensure high availability and sub-millisecond data delivery.",
+  },
+  {
+    title: "Agentic Workflow & Automation Orchestration",
+    description: "Building resilient automation layers and event-driven architectures. We integrate advanced orchestration frameworks like n8n and custom webhook middleware to execute complex data synchronizations and multi-step business logic.",
+  },
+  {
+    title: "Large Language Model (LLM) Operations & API Integration",
+    description: "Integrating and fine-tuning state-of-the-art frontier models via production APIs. We manage prompt engineering systems, token consumption budgets, context window constraints, and streaming API architectures.",
+  },
+  {
+    title: "AI-Assisted Engineering & Agentic Tooling",
+    description: "Optimizing development velocity through modern execution tools. We leverage terminal-based coding agents, automated CLI tooling (like Claude Code), and advanced IDE extensions to accelerate system deployment and code safety.",
   },
 ];
 
