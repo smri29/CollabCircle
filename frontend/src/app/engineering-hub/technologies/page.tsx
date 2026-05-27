@@ -55,13 +55,6 @@ export default function EngineeringTechnologiesPage() {
             <article className={styles.card} key={item.title}>
               <h3>{item.title}</h3>
               <p>{item.description}</p>
-              <div className={styles.pillList}>
-                {item.tags.map((tag) => (
-                  <span className={styles.pill} key={tag}>
-                    {tag}
-                  </span>
-                ))}
-              </div>
             </article>
           ))}
         </div>

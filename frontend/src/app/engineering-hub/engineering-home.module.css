@@ -43,6 +43,343 @@
   transform: translateX(4px);
 }
 
+.servicesHeader {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.servicesTable {
+  padding: 1rem;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-lg);
+  background:
+    radial-gradient(circle at 12% 16%, color-mix(in srgb, var(--accent-soft) 8%, transparent), transparent 24%),
+    linear-gradient(150deg, color-mix(in srgb, var(--glass-surface-strong) 94%, white 6%), var(--glass-surface));
+  box-shadow: var(--shadow-soft);
+  backdrop-filter: blur(18px);
+  animation: fadeLift 700ms ease both;
+}
+
+.servicesRail {
+  display: grid;
+  gap: 1rem;
+}
+
+.serviceFeatureCard,
+.serviceCard {
+  display: grid;
+  gap: 0;
+  border: 1px solid var(--border-strong);
+  border-radius: 1.2rem;
+  background: var(--glass-surface-strong);
+  box-shadow: var(--shadow-soft);
+  backdrop-filter: blur(18px);
+  animation: fadeLift 700ms ease both;
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.serviceFeatureCard:hover,
+.serviceFeatureCard:focus-within,
+.serviceCard:hover,
+.serviceCard:focus-within {
+  transform: translateY(-4px);
+  border-color: color-mix(in srgb, var(--accent-strong) 28%, transparent);
+  box-shadow: var(--shadow-strong);
+}
+
+.serviceSummary {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.05rem;
+  list-style: none;
+  cursor: pointer;
+}
+
+.serviceSummary::-webkit-details-marker {
+  display: none;
+}
+
+.serviceTop {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.serviceIndex {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.35rem;
+  height: 2.35rem;
+  border: 1px solid var(--border-soft);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--accent-strong) 10%, transparent);
+  color: var(--accent-strong);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.serviceBody {
+  display: grid;
+  min-width: 0;
+}
+
+.serviceBody h3 {
+  font-family: var(--font-display);
+  font-size: clamp(1.08rem, 2vw, 1.4rem);
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  font-weight: 650;
+  text-wrap: balance;
+}
+
+.serviceChevron {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border: 1px solid var(--border-soft);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--accent-strong) 8%, transparent);
+  color: var(--accent-strong);
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1;
+  transition:
+    transform 180ms ease,
+    background-color 180ms ease,
+    border-color 180ms ease;
+}
+
+.serviceCard[open] .serviceChevron,
+.serviceFeatureCard[open] .serviceChevron {
+  transform: rotate(45deg);
+  background: color-mix(in srgb, var(--accent-strong) 12%, transparent);
+  border-color: color-mix(in srgb, var(--accent-strong) 26%, transparent);
+}
+
+.serviceContent {
+  padding: 0 1.05rem 1rem 4.35rem;
+}
+
+.serviceContent p {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  line-height: 1.65;
+  max-width: 68ch;
+}
+
+.audienceShowcase {
+  display: grid;
+  gap: 1rem;
+  padding: 1rem;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-lg);
+  background:
+    radial-gradient(circle at 12% 16%, color-mix(in srgb, var(--accent-soft) 8%, transparent), transparent 24%),
+    linear-gradient(150deg, color-mix(in srgb, var(--glass-surface-strong) 94%, white 6%), var(--glass-surface));
+  box-shadow: var(--shadow-soft);
+  backdrop-filter: blur(18px);
+  animation: fadeLift 700ms ease both;
+}
+
+.audienceHeaderRow {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.audienceGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.audienceCard {
+  display: grid;
+  gap: 0.85rem;
+  padding: 1rem;
+  border: 1px solid var(--border-strong);
+  border-radius: 1.35rem;
+  background: var(--glass-surface-strong);
+  box-shadow: var(--shadow-soft);
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.audienceCard:hover,
+.audienceCard:focus-within {
+  transform: translateY(-4px);
+  border-color: color-mix(in srgb, var(--accent-strong) 24%, transparent);
+  box-shadow: var(--shadow-strong);
+}
+
+.audienceTop {
+  display: grid;
+  gap: 0.65rem;
+}
+
+.audienceTop h3 {
+  font-family: var(--font-display);
+  font-size: clamp(1.02rem, 1.8vw, 1.22rem);
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  font-weight: 650;
+}
+
+.audienceCard p {
+  color: var(--text-muted);
+  font-size: 0.89rem;
+  line-height: 1.65;
+}
+
+.technologyHeader {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.technologyTable {
+  padding: 1rem;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-lg);
+  background:
+    radial-gradient(circle at 84% 14%, color-mix(in srgb, var(--accent-strong) 8%, transparent), transparent 24%),
+    linear-gradient(150deg, color-mix(in srgb, var(--glass-surface-strong) 94%, white 6%), var(--glass-surface));
+  box-shadow: var(--shadow-soft);
+  backdrop-filter: blur(18px);
+  animation: fadeLift 700ms ease both;
+}
+
+.technologyRail {
+  display: grid;
+  gap: 1rem;
+}
+
+.technologyBand {
+  display: grid;
+  gap: 0;
+  border: 1px solid var(--border-strong);
+  border-radius: 1.2rem;
+  background: var(--glass-surface-strong);
+  box-shadow: var(--shadow-soft);
+  backdrop-filter: blur(18px);
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease;
+  animation: fadeLift 700ms ease both;
+}
+
+.technologyBand:hover,
+.technologyBand:focus-within {
+  transform: translateY(-4px);
+  border-color: color-mix(in srgb, var(--accent-strong) 26%, transparent);
+  box-shadow: var(--shadow-strong);
+}
+
+.technologyBandSummary {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.05rem;
+  list-style: none;
+  cursor: pointer;
+}
+
+.technologyBandSummary::-webkit-details-marker {
+  display: none;
+}
+
+.technologyBandTop {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.technologyBandIndex {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.2rem;
+  height: 2.2rem;
+  border: 1px solid var(--border-soft);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--accent-strong) 10%, transparent);
+  color: var(--accent-strong);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.technologyBandBody {
+  display: grid;
+  min-width: 0;
+}
+
+.technologyBandBody h3 {
+  font-family: var(--font-display);
+  font-size: clamp(1.04rem, 1.7vw, 1.2rem);
+  line-height: 1.14;
+  letter-spacing: -0.03em;
+  font-weight: 650;
+  text-wrap: balance;
+}
+
+.technologyChevron {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border: 1px solid var(--border-soft);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--accent-strong) 8%, transparent);
+  color: var(--accent-strong);
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1;
+  transition:
+    transform 180ms ease,
+    background-color 180ms ease,
+    border-color 180ms ease;
+}
+
+.technologyBand[open] .technologyChevron {
+  transform: rotate(45deg);
+  background: color-mix(in srgb, var(--accent-strong) 12%, transparent);
+  border-color: color-mix(in srgb, var(--accent-strong) 26%, transparent);
+}
+
+.technologyBandContent {
+  padding: 0 1.05rem 1rem 4.35rem;
+}
+
+.technologyBandContent p {
+  color: var(--text-muted);
+  font-size: 0.89rem;
+  line-height: 1.62;
+  max-width: 68ch;
+}
+
 .teamGrid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -89,12 +426,49 @@
   letter-spacing: -0.05em;
 }
 
+.teamCopy {
+  display: grid;
+  gap: 0.3rem;
+}
+
 .teamCard h3 {
   font-size: 1.1rem;
 }
 
+.teamCopy p {
+  color: var(--text-muted);
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+
 @media (max-width: 960px) {
+  .audienceGrid,
   .teamGrid {
     grid-template-columns: 1fr;
+  }
+
+  .serviceFeatureCard,
+  .serviceCard {
+    gap: 0.8rem;
+  }
+
+  .serviceSummary {
+    grid-template-columns: auto minmax(0, 1fr) auto;
+  }
+
+  .serviceContent {
+    padding-left: 1.05rem;
+  }
+
+  .technologyBand {
+    gap: 0.8rem;
+  }
+
+  .technologyBandSummary {
+    grid-template-columns: auto minmax(0, 1fr) auto;
+  }
+
+  .technologyBandContent {
+    padding-left: 1.05rem;
   }
 }
