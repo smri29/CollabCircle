@@ -25,7 +25,7 @@ export function ResearchHeader() {
   return (
     <header className={styles.header}>
       <div className={styles.shell}>
-        <Link className={styles.brand} href="/research-lab" onClick={() => setIsMenuOpen(false)}>
+        <Link className={styles.brand} href="/" onClick={() => setIsMenuOpen(false)}>
           <CollabCircleLogo className={styles.logo} height={44} priority width={44} />
           <span className={styles.brandText}>
             <strong>CollabCircle</strong>
