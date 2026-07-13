@@ -31,6 +31,7 @@ export default function EngineeringClientsPage() {
   return (
     <>
       <PageHero
+        backHref="/engineering-hub"
         eyebrow="Clients"
         icon={Handshake}
         intro="The Engineering Hub should be clear about who it is designed to support as it grows into delivery."

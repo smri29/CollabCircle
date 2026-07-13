@@ -55,6 +55,7 @@ export default function ResearchLabPage() {
   return (
     <>
       <PageHero
+        backHref="/"
         eyebrow="Research Department"
         icon={Microscope}
         intro=""

@@ -13,6 +13,7 @@ export default function AboutPage() {
   return (
     <>
       <PageHero
+        backHref="/"
         eyebrow="About CollabCircle"
         icon={Building2}
         intro="A research organization built around structure, collaboration, and clarity."

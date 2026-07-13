@@ -34,6 +34,7 @@ export default function EngineeringTeamPage() {
   return (
     <>
       <PageHero
+        backHref="/engineering-hub"
         eyebrow="Team"
         icon={Wrench}
         intro="The engineering department should make clear who is guiding it now and how the team is expected to grow."

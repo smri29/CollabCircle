@@ -37,6 +37,7 @@ export default function CognitiveCyberLabPage() {
   return (
     <>
       <PageHero
+        backHref="/"
         eyebrow="Cognitive Cyber Lab"
         icon={Shield}
         intro="A new section of CollabCircle focused on cognitive security, cyber intelligence, and resilient systems thinking."

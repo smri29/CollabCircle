@@ -51,6 +51,7 @@ export default function PrivacyPolicyPage() {
   return (
     <>
       <PageHero
+        backHref="/"
         eyebrow="Privacy Policy"
         icon={ShieldCheck}
         intro="Review how privacy and visitor data are handled across the CollabCircle website."

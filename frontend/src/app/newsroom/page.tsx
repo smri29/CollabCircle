@@ -30,6 +30,7 @@ export default function NewsroomPage() {
   return (
     <>
       <PageHero
+        backHref="/"
         eyebrow="Newsroom"
         icon={Newspaper}
         intro=""

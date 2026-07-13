@@ -33,6 +33,7 @@ export default function EngineeringHubPage() {
   return (
     <>
       <PageHero
+        backHref="/"
         eyebrow="Engineering Department"
         icon={Cpu}
         intro=""
