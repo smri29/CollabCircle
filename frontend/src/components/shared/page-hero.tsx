@@ -1,5 +1,5 @@
-import Link from "next/link";
-import { ArrowLeft, type LucideIcon } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
+import { BackButton } from "./back-button";
 import styles from "./page-hero.module.css";
 
 type PageHeroProps = {
@@ -25,12 +25,7 @@ export function PageHero({
     <section className={styles.hero}>
       <div className={styles.backdrop} aria-hidden="true" />
       <div className={styles.content}>
-        {backHref ? (
-          <Link className={styles.backLink} href={backHref}>
-            <ArrowLeft size={16} strokeWidth={2} />
-            <span>{backLabel}</span>
-          </Link>
-        ) : null}
+        {backHref ? <BackButton href={backHref} label={backLabel} /> : null}
         <div className={styles.kicker}>
           {Icon ? (
             <span className={styles.iconWrap}>

@@ -56,6 +56,7 @@ export default function FoundersCornerPage() {
   return (
     <>
       <PageHero
+        backHref="/"
         eyebrow="Founders' Corner"
         icon={Crown}
         intro="A dedicated place for the founder-level identity of CollabCircle and the co-founding leadership shaping its departments."

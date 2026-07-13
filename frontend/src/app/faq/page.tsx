@@ -85,6 +85,7 @@ export default function FaqPage() {
   return (
     <>
       <PageHero
+        backHref="/"
         eyebrow="FAQ"
         icon={CircleHelp}
         intro="Answers about the organization, the website structure, the research and engineering departments, and the application process."

@@ -33,6 +33,7 @@ export default function ContactPage() {
   return (
     <>
       <PageHero
+        backHref="/"
         eyebrow="Contact Us"
         icon={Mail}
         intro="Official channels for inquiries, collaborations, partnerships, and general communication."

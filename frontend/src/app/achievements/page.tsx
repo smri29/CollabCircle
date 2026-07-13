@@ -14,6 +14,7 @@ export default function AchievementsPage() {
   return (
     <>
       <PageHero
+        backHref="/"
         eyebrow="Achievements"
         icon={Trophy}
         intro="A record of CollabCircle activities, recognition, and milestone moments."

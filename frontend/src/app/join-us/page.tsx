@@ -20,6 +20,7 @@ export default function JoinUsPage() {
   return (
     <>
       <PageHero
+        backHref="/"
         eyebrow="Career"
         icon={UsersRound}
         intro="Choose the track that best matches how you want to contribute to CollabCircle."
