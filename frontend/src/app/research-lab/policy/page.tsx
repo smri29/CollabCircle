@@ -12,6 +12,7 @@ export default function ResearchPolicyPage() {
   return (
     <>
       <PageHero
+        backHref="/research-lab"
         eyebrow="Policy"
         icon={ShieldCheck}
         intro=""

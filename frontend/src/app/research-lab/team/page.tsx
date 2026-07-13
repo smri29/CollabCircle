@@ -12,6 +12,7 @@ export default function ResearchTeamPage() {
   return (
     <>
       <PageHero
+        backHref="/research-lab"
         eyebrow="Team"
         icon={UsersRound}
         intro="The people leading and growing the research wing of CollabCircle."

@@ -164,6 +164,7 @@ export default function SolutionsServicesPage() {
   return (
     <>
       <PageHero
+        backHref="/engineering-hub"
         eyebrow="Solutions & Services"
         icon={BriefcaseBusiness}
         intro="Bridging Advanced AI Research with Enterprise Engineering"

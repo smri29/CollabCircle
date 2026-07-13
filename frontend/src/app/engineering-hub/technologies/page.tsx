@@ -31,6 +31,7 @@ export default function EngineeringTechnologiesPage() {
   return (
     <>
       <PageHero
+        backHref="/engineering-hub"
         eyebrow="Technologies"
         icon={Boxes}
         intro="The Engineering Hub should make its technical direction understandable before it becomes a larger delivery organization."

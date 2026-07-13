@@ -52,6 +52,7 @@ export default function ResearchCollaborationsPage() {
   return (
     <>
       <PageHero
+        backHref="/research-lab"
         eyebrow="Collaborations"
         icon={Handshake}
         intro=""

@@ -16,7 +16,7 @@ const socialProfiles = {
 export const navigation = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
-  { href: "/research-lab/research", label: "Research" },
+  { href: "/research-lab", label: "Research" },
   { href: "/research-lab/publications", label: "Publications" },
   { href: "/research-lab/team", label: "Team" },
   { href: "/contact", label: "Contact" },
