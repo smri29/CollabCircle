@@ -30,6 +30,11 @@
   animation: fadeLift 700ms ease both;
 }
 
+.topRow {
+  display: flex;
+  justify-content: flex-end;
+}
+
 .kicker {
   display: inline-flex;
   align-items: center;

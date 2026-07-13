@@ -17,7 +17,7 @@ const faqItems = [
   {
     title: "What is the difference between the Research Wing and the Development Wing?",
     description:
-      "The Research Wing represents the current research-facing wing with publications, tracks, projects, team, and policy. The Development Wing represents the long-term development and delivery direction, including systems, services, team growth, and roadmap planning.",
+      "The Research Wing represents the current research-facing wing with publications, tracks, projects, team, and policy. The Development Wing represents the long-term development and delivery direction, including systems, services, and technologies.",
   },
   {
     title: "Where should I start if I am new to the website?",

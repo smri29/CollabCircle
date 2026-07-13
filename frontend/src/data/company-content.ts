@@ -225,11 +225,6 @@ export type EngineeringPolicyBlock = {
   description: string;
 };
 
-export type EngineeringRoadmapBlock = {
-  title: string;
-  description: string;
-};
-
 export type DevelopmentProject = {
   title: string;
   overview: string;
@@ -240,7 +235,6 @@ export type DevelopmentProject = {
   liveLink?: string;
   focus: string;
 };
-
 export const primaryNavigation: NavigationItem[] = [
   {
     href: "/achievements",
@@ -494,10 +488,6 @@ export const developmentWingNavigation: NavigationItem[] = [
     href: "/development-wing/policy",
     label: "Policy",
   },
-  {
-    href: "/development-wing/roadmap",
-    label: "Roadmap",
-  },
 ];
 
 export const cognitiveCyberLabNavigation: NavigationItem[] = [
@@ -517,11 +507,6 @@ export const developmentWingHighlights = [
     label: "Policy",
     description: "Delivery principles, technical standards, and operating expectations that should guide the wing.",
     href: "/development-wing/policy",
-  },
-  {
-    label: "Roadmap",
-    description: "The mission and vision that define how the development side should grow from future capability to real execution.",
-    href: "/development-wing/roadmap",
   },
 ];
 
@@ -668,18 +653,18 @@ export const developmentPolicyBlocks: EngineeringPolicyBlock[] = [
   },
 ];
 
-export const developmentRoadmapBlocks: EngineeringRoadmapBlock[] = [
+export const engineeringTeamTracks = [
   {
-    title: "Vision",
-    description: "Grow the Development Wing into a credible product and systems wing that can carry CollabCircle from research strength into real-world technical execution.",
+    title: "Executive oversight",
+    description: "Current executive leadership keeps the direction visible while the engineering structure is still forming.",
   },
   {
-    title: "Mission",
-    description: "Build disciplined software, tooling, and platform capability that turns ideas into durable delivery.",
+    title: "Future engineering leads",
+    description: "This section is designed to support dedicated engineering leadership as the department becomes more active.",
   },
   {
-    title: "Near-term direction",
-    description: "Start with internal tools, applied workflows, and architecture foundations before expanding into broader external-facing systems.",
+    title: "Builders and contributors",
+    description: "The page is ready to scale toward engineers, product-minded builders, and technical collaborators later.",
   },
 ];
 
