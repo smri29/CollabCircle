@@ -21,6 +21,9 @@ export function ResearchHeader() {
   const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const isJoinActive = pathname === "/career" || pathname === "/join-us";
+  const mobileMenuItems = researchWingNavigation.filter(
+    (item) => item.href !== "/research-lab/publications" && item.href !== "/research-lab/team",
+  );
 
   return (
     <header className={styles.header}>
@@ -77,7 +80,7 @@ export function ResearchHeader() {
         id="research-mobile-navigation"
       >
         <nav className={styles.mobileNav} aria-label="Research Wing mobile">
-          {researchWingNavigation.map((item) => {
+          {mobileMenuItems.map((item) => {
             const isActive = isActivePath(pathname, item.href, item.matches);
 
             return (

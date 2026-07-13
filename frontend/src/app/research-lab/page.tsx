@@ -3,24 +3,20 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, ArrowUpRight, Microscope } from "lucide-react";
 import collaborationStyles from "@/app/research-lab/collaborations/collaborations.module.css";
-import projectStyles from "@/app/research-lab/projects/projects.module.css";
-import trackStyles from "@/app/research-lab/research/research.module.css";
+import { PublicationPreviewGrid } from "@/components/publications/publication-directory";
 import styles from "@/components/research/research-home.module.css";
 import { YouTubeShowcase } from "@/components/shared/youtube-showcase";
 import { PageHero } from "@/components/shared/page-hero";
-import {
-  researchCollaborations,
-  researchProjects,
-} from "@/data/company-content";
-import { researchPillars } from "@/data/site-content";
+import { researchCollaborations } from "@/data/company-content";
+import teamStyles from "@/components/team/member-grid.module.css";
+import { currentResearchers } from "@/data/site-content";
 
 export const metadata: Metadata = {
   title: "Research Lab",
 };
 
-const featuredTracks = [...researchPillars].slice(-3).reverse();
-const featuredProjects = [...researchProjects].slice(-3).reverse();
 const featuredCollaborations = [...researchCollaborations].slice(-3).reverse();
+const featuredResearchers = currentResearchers.slice(0, 3);
 const placeholderCollaborations = Array.from({ length: 3 }, (_, index) => ({
   id: `homepage-placeholder-${index + 1}`,
   name: "Collaborator Name",
@@ -66,41 +62,16 @@ export default function ResearchLabPage() {
         <div className={styles.sectionStack}>
           <div className={styles.sectionHeader}>
             <div className={styles.sectionIntro}>
-              <h2>Research Tracks</h2>
+              <h2>Projects &amp; Publications</h2>
             </div>
 
-            <Link className={styles.viewAllLink} href="/research-lab/research">
+            <Link className={styles.viewAllLink} href="/research-lab/publications">
               <span>View all</span>
               <ArrowRight size={16} strokeWidth={2} />
             </Link>
           </div>
 
-          <div className={trackStyles.trackGrid}>
-            {featuredTracks.map((track) => (
-              <article className={trackStyles.trackCard} key={track.title}>
-                <div className={trackStyles.imageWrap}>
-                  {track.image ? (
-                    <Image
-                      alt={track.title}
-                      className={trackStyles.image}
-                      height={360}
-                      src={track.image}
-                      width={480}
-                    />
-                  ) : (
-                    <div className={trackStyles.imagePlaceholder} aria-hidden="true">
-                      <span>{getInitials(track.title)}</span>
-                    </div>
-                  )}
-                </div>
-
-                <div className={trackStyles.body}>
-                  <h3>{track.title}</h3>
-                  <p>{track.description}</p>
-                </div>
-              </article>
-            ))}
-          </div>
+          <PublicationPreviewGrid />
         </div>
       </section>
 
@@ -108,49 +79,49 @@ export default function ResearchLabPage() {
         <div className={styles.sectionStack}>
           <div className={styles.sectionHeader}>
             <div className={styles.sectionIntro}>
-              <h2>Projects</h2>
+              <h2>Team</h2>
             </div>
 
-            <Link className={styles.viewAllLink} href="/research-lab/projects">
+            <Link className={styles.viewAllLink} href="/research-lab/team">
               <span>View all</span>
               <ArrowRight size={16} strokeWidth={2} />
             </Link>
           </div>
 
-          <div className={styles.homeGrid}>
-            {featuredProjects.map((project) => (
-              <article className={`${styles.homeCard} ${projectStyles.projectCard}`} key={project.title}>
-                <div className={projectStyles.imageWrap}>
-                  {project.image ? (
-                    <Image
-                      alt={project.title}
-                      className={projectStyles.image}
-                      height={360}
-                      src={project.image}
-                      width={480}
-                    />
-                  ) : (
-                    <div className={projectStyles.imagePlaceholder} aria-hidden="true">
-                      <span>{getInitials(project.title)}</span>
-                    </div>
-                  )}
+          <div className={teamStyles.grid}>
+            {featuredResearchers.map((member) => (
+              <article className={teamStyles.card} key={member.name}>
+                <div className={teamStyles.imageSlot} aria-hidden="true">
+                  <span>{getInitials(member.name)}</span>
                 </div>
-                <h3>{project.title}</h3>
-                <p>{project.description}</p>
-                <div className={styles.noteCard}>
-                  {project.liveLink ? (
-                    <Link className={projectStyles.noteLink} href={project.liveLink} rel="noreferrer" target="_blank">
-                      <span>Open project</span>
+                <div className={teamStyles.cardTop}>
+                  <span className={teamStyles.role}>{member.role}</span>
+                </div>
+                <h3>{member.name}</h3>
+
+                {member.profession ? (
+                  <div className={teamStyles.noteCard}>
+                    <h4>Profession</h4>
+                    <p>{member.profession}</p>
+                  </div>
+                ) : null}
+
+                {member.institution ? (
+                  <div className={teamStyles.fieldRow}>
+                    <span className={teamStyles.fieldLabel}>Institution</span>
+                    <p>{member.institution}</p>
+                  </div>
+                ) : null}
+
+                {member.linkedinHref ? (
+                  <div className={teamStyles.fieldRow}>
+                    <span className={teamStyles.fieldLabel}>LinkedIn</span>
+                    <Link className={teamStyles.profileLink} href={member.linkedinHref} rel="noreferrer" target="_blank">
+                      <span>Open profile</span>
                       <ArrowUpRight size={15} strokeWidth={2} />
                     </Link>
-                  ) : (
-                    <p className={styles.noteMuted}>Open project</p>
-                  )}
-                </div>
-                <div className={styles.noteCard}>
-                  <h4>Team</h4>
-                  <p>{project.teamMembers.join(", ")}</p>
-                </div>
+                  </div>
+                ) : null}
               </article>
             ))}
           </div>
