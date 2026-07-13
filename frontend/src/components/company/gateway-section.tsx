@@ -12,8 +12,8 @@ const gatewayItems = [
     Icon: Microscope,
   },
   {
-    href: "/engineering-hub",
-    title: "Engineering Hub",
+    href: "/development-wing",
+    title: "Development Wing",
     description:
       "Architecting robust, scalable systems and technical infrastructure for the next stage of CollabCircle.",
     themeClassName: styles.engineering,
