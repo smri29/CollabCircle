@@ -2,7 +2,7 @@
 
 import { usePathname } from "next/navigation";
 import { CognitiveCyberHeader } from "./cognitive-cyber-header";
-import { EngineeringHeader } from "./engineering-header";
+import { DevelopmentHeader } from "./development-header";
 import { ResearchHeader } from "./research-header";
 import { SiteHeader } from "./site-header";
 
@@ -10,8 +10,13 @@ function isResearchRoute(pathname: string) {
   return pathname === "/research-lab" || pathname.startsWith("/research-lab/");
 }
 
-function isEngineeringRoute(pathname: string) {
-  return pathname === "/engineering-hub" || pathname.startsWith("/engineering-hub/");
+function isDevelopmentRoute(pathname: string) {
+  return (
+    pathname === "/development-wing" ||
+    pathname.startsWith("/development-wing/") ||
+    pathname === "/engineering-hub" ||
+    pathname.startsWith("/engineering-hub/")
+  );
 }
 
 function isCognitiveCyberRoute(pathname: string) {
@@ -25,8 +30,8 @@ export function HeaderSwitcher() {
     return <ResearchHeader />;
   }
 
-  if (isEngineeringRoute(pathname)) {
-    return <EngineeringHeader />;
+  if (isDevelopmentRoute(pathname)) {
+    return <DevelopmentHeader />;
   }
 
   if (isCognitiveCyberRoute(pathname)) {

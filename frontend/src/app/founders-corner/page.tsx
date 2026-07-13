@@ -3,7 +3,7 @@ import { ArrowUpRight, Crown, Linkedin } from "lucide-react";
 import wingStyles from "@/components/research/research-wing.module.css";
 import { PageHero } from "@/components/shared/page-hero";
 import {
-  engineeringDepartmentCoFounders,
+  developmentWingCoFounders,
   founderProfile,
   researchWingCoFounders,
   type FounderProfile,
@@ -59,8 +59,8 @@ export default function FoundersCornerPage() {
         backHref="/"
         eyebrow="Founders' Corner"
         icon={Crown}
-        intro="A dedicated place for the founder-level identity of CollabCircle and the co-founding leadership shaping its departments."
-        title="Leaders across CollabCircle and its departments."
+        intro="A dedicated place for the founder-level identity of CollabCircle and the co-founding leadership shaping its wings."
+        title="Leaders across CollabCircle and its wings."
       />
 
       <section className="section">
@@ -70,7 +70,7 @@ export default function FoundersCornerPage() {
             <h2>Founder, CollabCircle.</h2>
             <p>
               This profile represents the founding identity of the full company rather than only one
-              current department.
+              current wing.
             </p>
           </div>
 
@@ -111,7 +111,7 @@ export default function FoundersCornerPage() {
             <h2>Co-founders, Research Wing.</h2>
             <p>
               These profiles belong to the origin and development of the Research Wing specifically
-              and are presented in that department context.
+              and are presented in that wing context.
             </p>
           </div>
 
@@ -126,17 +126,17 @@ export default function FoundersCornerPage() {
       <section className="section">
         <div className={wingStyles.sectionStack}>
           <div className={wingStyles.lead}>
-            <span className={wingStyles.leadMark}>Engineering Department</span>
-            <h2>Co-founders, Engineering Department.</h2>
+            <span className={wingStyles.leadMark}>Development Wing</span>
+            <h2>Co-founders, Development Wing.</h2>
             <p>
-              This section is ready for the engineering side of CollabCircle and can absorb full
-              founder profiles as that department becomes public-facing.
+              This section is ready for the development side of CollabCircle and can absorb full
+              founder profiles as that wing becomes public-facing.
             </p>
           </div>
 
           <div className={wingStyles.profileGrid}>
-            {engineeringDepartmentCoFounders.map((member) => (
-              <FounderCard badge="Engineering Dept." key={member.name} member={member} />
+            {developmentWingCoFounders.map((member) => (
+              <FounderCard badge="Development Wing" key={member.name} member={member} />
             ))}
           </div>
         </div>

@@ -4,14 +4,13 @@ import Link from "next/link";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
 import { CollabCircleLogo } from "@/components/brand/collabcircle-logo";
-import { engineeringWingNavigation } from "@/data/company-content";
+import { developmentWingNavigation } from "@/data/company-content";
 import styles from "./research-header.module.css";
 
-const engineeringMenuHiddenRoutes = new Set([
-  "/engineering-hub/solutions-services",
-  "/engineering-hub/clients",
-  "/engineering-hub/technologies",
-  "/engineering-hub/team",
+const developmentMenuHiddenRoutes = new Set([
+  "/development-wing/projects",
+  "/development-wing/solutions-services",
+  "/development-wing/roadmap",
 ]);
 
 function isActivePath(pathname: string, href: string, matches?: string[]) {
@@ -20,16 +19,20 @@ function isActivePath(pathname: string, href: string, matches?: string[]) {
       return pathname === path;
     }
 
+    if (path === "/development-wing") {
+      return pathname === path;
+    }
+
     return pathname === path || pathname.startsWith(`${path}/`);
   });
 }
 
-export function EngineeringHeader() {
+export function DevelopmentHeader() {
   const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const isJoinActive = pathname === "/career" || pathname === "/join-us";
-  const engineeringMenuItems = engineeringWingNavigation.filter(
-    (item) => !engineeringMenuHiddenRoutes.has(item.href),
+  const developmentMenuItems = developmentWingNavigation.filter(
+    (item) => !developmentMenuHiddenRoutes.has(item.href),
   );
 
   return (
@@ -42,8 +45,8 @@ export function EngineeringHeader() {
           </span>
         </Link>
 
-        <nav className={styles.desktopNav} aria-label="Engineering Hub">
-          {engineeringWingNavigation.map((item) => {
+        <nav className={styles.desktopNav} aria-label="Development Wing">
+          {developmentWingNavigation.map((item) => {
             const isActive = isActivePath(pathname, item.href, item.matches);
 
             return (
@@ -71,7 +74,7 @@ export function EngineeringHeader() {
             Main Site
           </Link>
           <button
-            aria-controls="engineering-mobile-navigation"
+            aria-controls="development-mobile-navigation"
             aria-expanded={isMenuOpen}
             className={styles.menuButton}
             onClick={() => setIsMenuOpen((open) => !open)}
@@ -84,10 +87,10 @@ export function EngineeringHeader() {
 
       <div
         className={isMenuOpen ? styles.mobilePanelOpen : styles.mobilePanel}
-        id="engineering-mobile-navigation"
+        id="development-mobile-navigation"
       >
-        <nav className={styles.mobileNav} aria-label="Engineering Hub mobile">
-          {engineeringMenuItems.map((item) => {
+        <nav className={styles.mobileNav} aria-label="Development Wing mobile">
+          {developmentMenuItems.map((item) => {
             const isActive = isActivePath(pathname, item.href, item.matches);
 
             return (

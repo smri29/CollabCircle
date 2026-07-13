@@ -30,7 +30,7 @@ const focusAreas = [
 const directionPoints = [
   "A dedicated home for cyber and cognition-aligned work inside the wider CollabCircle vision.",
   "A structure that can later grow into projects, publications, team pages, and policy pages of its own.",
-  "An early public-facing foundation for future research and engineering activity in this domain.",
+  "An early public-facing foundation for future research and development activity in this domain.",
 ];
 
 export default function CognitiveCyberLabPage() {
@@ -50,7 +50,7 @@ export default function CognitiveCyberLabPage() {
             <h2>A dedicated direction inside CollabCircle.</h2>
             <p>
               CCL is being introduced as a dedicated destination so the website can grow beyond the
-              current Research Wing and Engineering Hub structure while staying cohesive.
+              current Research Wing and Development Wing structure while staying cohesive.
             </p>
           </div>
 
@@ -92,8 +92,8 @@ export default function CognitiveCyberLabPage() {
             <p>Explore CollabCircle</p>
             <h2>Move between the active and emerging parts of the organization.</h2>
             <p>
-              You can return to the main site, explore the Research Wing, or review the Engineering
-              Hub while this new section continues to take shape.
+              You can return to the main site, explore the Research Wing, or review the Development
+              Wing while this new section continues to take shape.
             </p>
           </div>
 
@@ -102,8 +102,8 @@ export default function CognitiveCyberLabPage() {
               <span>Research Wing</span>
               <ArrowRight size={16} strokeWidth={2} />
             </Link>
-            <Link className={sharedStyles.secondaryCta} href="/engineering-hub">
-              <span>Engineering Hub</span>
+            <Link className={sharedStyles.secondaryCta} href="/development-wing">
+              <span>Development Wing</span>
             </Link>
           </div>
         </article>
