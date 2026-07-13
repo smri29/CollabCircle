@@ -230,11 +230,6 @@ export type EngineeringPolicyBlock = {
   description: string;
 };
 
-export type EngineeringRoadmapBlock = {
-  title: string;
-  description: string;
-};
-
 export const primaryNavigation: NavigationItem[] = [
   {
     href: "/achievements",
@@ -495,10 +490,6 @@ export const engineeringWingNavigation: NavigationItem[] = [
     href: "/engineering-hub/policy",
     label: "Policy",
   },
-  {
-    href: "/engineering-hub/roadmap",
-    label: "Roadmap",
-  },
 ];
 
 export const cognitiveCyberLabNavigation: NavigationItem[] = [
@@ -533,11 +524,6 @@ export const engineeringWingHighlights = [
     label: "Policy",
     description: "Delivery principles, technical standards, and operating expectations that should guide the department.",
     href: "/engineering-hub/policy",
-  },
-  {
-    label: "Roadmap",
-    description: "The mission and vision that define how the engineering side should grow from future capability to real execution.",
-    href: "/engineering-hub/roadmap",
   },
 ];
 
@@ -650,21 +636,6 @@ export const engineeringPolicyBlocks: EngineeringPolicyBlock[] = [
   {
     title: "Execution discipline",
     description: "Documentation, testing posture, and handoff quality should be treated as part of the engineering standard itself.",
-  },
-];
-
-export const engineeringRoadmapBlocks: EngineeringRoadmapBlock[] = [
-  {
-    title: "Vision",
-    description: "Grow the Engineering Hub into a credible product and systems department that can carry CollabCircle from research strength into real-world technical execution.",
-  },
-  {
-    title: "Mission",
-    description: "Build disciplined software, tooling, and platform capability that turns ideas into durable delivery.",
-  },
-  {
-    title: "Near-term direction",
-    description: "Start with internal tools, applied workflows, and architecture foundations before expanding into broader external-facing systems.",
   },
 ];
 

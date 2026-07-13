@@ -17,7 +17,7 @@ const faqItems = [
   {
     title: "What is the difference between the Research Wing and the Engineering Hub?",
     description:
-      "The Research Wing represents the current research-facing department with publications, tracks, projects, team, and policy. The Engineering Hub represents the long-term engineering and delivery direction, including systems, services, technologies, and roadmap planning.",
+      "The Research Wing represents the current research-facing department with publications, tracks, projects, team, and policy. The Engineering Hub represents the long-term engineering and delivery direction, including systems, services, and technologies.",
   },
   {
     title: "Where should I start if I am new to the website?",

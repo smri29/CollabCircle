@@ -77,8 +77,8 @@ export default function EngineeringTeamPage() {
           eyebrow="Next step"
           primaryHref="/engineering-hub/policy"
           primaryLabel="Read policy"
-          secondaryHref="/engineering-hub/roadmap"
-          secondaryLabel="See roadmap"
+          secondaryHref="/engineering-hub"
+          secondaryLabel="Back home"
           title="The team page should explain both the present structure and the future build direction."
         />
       </section>

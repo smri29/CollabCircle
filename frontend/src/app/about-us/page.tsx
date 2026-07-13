@@ -15,7 +15,9 @@ export default function AboutUsPage() {
     <section className={styles.hero}>
       <div className={styles.backdrop} aria-hidden="true" />
       <div className={styles.content}>
-        <BackButton href="/" />
+        <div className={styles.topRow}>
+          <BackButton href="/" />
+        </div>
         <div className={styles.kicker}>
           <span className={styles.iconWrap}>
             <Building2 size={18} strokeWidth={2} />

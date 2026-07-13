@@ -25,7 +25,11 @@ export function PageHero({
     <section className={styles.hero}>
       <div className={styles.backdrop} aria-hidden="true" />
       <div className={styles.content}>
-        {backHref ? <BackButton href={backHref} label={backLabel} /> : null}
+        {backHref ? (
+          <div className={styles.topRow}>
+            <BackButton href={backHref} label={backLabel} />
+          </div>
+        ) : null}
         <div className={styles.kicker}>
           {Icon ? (
             <span className={styles.iconWrap}>
