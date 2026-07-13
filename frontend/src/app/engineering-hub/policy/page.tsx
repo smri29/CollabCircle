@@ -20,6 +20,7 @@ export default function EngineeringPolicyPage() {
   return (
     <>
       <PageHero
+        backHref="/engineering-hub"
         eyebrow="Policy"
         icon={ShieldCheck}
         intro="The engineering department should make its delivery standards and technical expectations public."

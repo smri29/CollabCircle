@@ -136,7 +136,51 @@ function PlaceholderCard({ type }: { type: PublicationTab }) {
   );
 }
 
+export function PublicationPreviewGrid() {
+  const latestJournalItems = journalPublications.map((item) => ({
+    item,
+    type: "journal" as const,
+  }));
+  const latestConferenceItems = conferencePublications.map((item) => ({
+    item,
+    type: "conference" as const,
+  }));
+  const latestItems = [...latestJournalItems, ...latestConferenceItems].slice(-4).reverse();
+
+  return (
+    <div className={styles.grid}>
+      {latestItems.length > 0
+        ? latestItems.map(({ item, type }) => (
+            <PublicationCard item={item} key={`${type}-${item.title}`} type={type} />
+          ))
+        : [
+            <PlaceholderCard key="preview-journal-1" type="journal" />,
+            <PlaceholderCard key="preview-conference-1" type="conference" />,
+            <PlaceholderCard key="preview-journal-2" type="journal" />,
+            <PlaceholderCard key="preview-conference-2" type="conference" />,
+          ]}
+    </div>
+  );
+}
+
 export function PublicationDirectory() {
+  return (
+    <PublicationDirectoryWithCopy
+      description="Switch between journal and conference records."
+      title="Publication archive"
+    />
+  );
+}
+
+type PublicationDirectoryWithCopyProps = {
+  title: string;
+  description: string;
+};
+
+export function PublicationDirectoryWithCopy({
+  title,
+  description,
+}: PublicationDirectoryWithCopyProps) {
   const [activeTab, setActiveTab] = useState<PublicationTab>("journal");
   const activeItems = activeTab === "journal" ? journalPublications : conferencePublications;
 
@@ -144,8 +188,8 @@ export function PublicationDirectory() {
     <section className={styles.section}>
       <div className={styles.header}>
         <div>
-          <h2>Publication archive</h2>
-          <p>Switch between journal and conference records.</p>
+          <h2>{title}</h2>
+          <p>{description}</p>
         </div>
 
         <div className={styles.tabGroup} aria-label="Publication type">

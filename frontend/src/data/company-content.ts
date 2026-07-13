@@ -290,7 +290,6 @@ export const companyLinks: FeatureLink[] = [
 
 export const researchLabLinks = [
   { href: "/about", label: "About", description: "Why the lab exists and how it works." },
-  { href: "/research-lab/research", label: "Research", description: "Current focus areas and methods." },
   { href: "/research-lab/publications", label: "Publications", description: "Journal and conference records." },
   { href: "/research-lab/team", label: "Team", description: "Executive panel and researcher structure." },
   { href: "/contact", label: "Contact", description: "Official channels and collaboration path." },
@@ -320,16 +319,6 @@ export const researchWingHighlights = [
     label: "Publications",
     description: "Journal and conference outputs stay organized under one research-facing archive.",
     href: "/research-lab/publications",
-  },
-  {
-    label: "Research Tracks",
-    description: "Core ML and DL directions stay visible so visitors understand what the wing is building toward.",
-    href: "/research-lab/research",
-  },
-  {
-    label: "Projects",
-    description: "Ongoing and completed work remains separated so current momentum is easy to read.",
-    href: "/research-lab/projects",
   },
   {
     label: "Team",

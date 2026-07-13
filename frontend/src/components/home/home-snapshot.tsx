@@ -6,7 +6,7 @@ const snapshotItems = [
   {
     title: "Focused research",
     description: "ML and DL projects shaped for clean execution and credible outcomes.",
-    href: "/research-lab/research",
+    href: "/research-lab",
     icon: BrainCircuit,
   },
   {
