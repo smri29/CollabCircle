@@ -512,6 +512,13 @@ export const engineeringWingNavigation: NavigationItem[] = [
   },
 ];
 
+export const cognitiveCyberLabNavigation: NavigationItem[] = [
+  {
+    href: "/cognitive-cyber-lab",
+    label: "Home",
+  },
+];
+
 export const engineeringWingHighlights = [
   {
     label: "Solutions & Services",

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, Cpu, Microscope } from "lucide-react";
+import { ArrowRight, Cpu, Microscope, Shield } from "lucide-react";
 import styles from "./gateway-section.module.css";
 
 const gatewayItems = [
@@ -19,6 +19,14 @@ const gatewayItems = [
     themeClassName: styles.engineering,
     Icon: Cpu,
   },
+  {
+    href: "/cognitive-cyber-lab",
+    title: "Cognitive Cyber Lab (CCL)",
+    description:
+      "A future-facing lab direction for cognitive security, cyber intelligence, and resilient systems research.",
+    themeClassName: `${styles.ccl} ${styles.widePanel}`,
+    Icon: Shield,
+  },
 ];
 
 export function GatewaySection() {
@@ -30,7 +38,7 @@ export function GatewaySection() {
 
       <div className={styles.gateway}>
         {gatewayItems.map(({ href, title, description, themeClassName, Icon }) => (
-          <Link className={`${styles.panel} ${themeClassName}`} href={href} key={href}>
+          <Link className={`${styles.panel} ${themeClassName}`} href={href} key={title}>
             <div className={styles.blob} aria-hidden="true" />
             <div className={styles.content}>
               <span className={styles.iconWrap}>

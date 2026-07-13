@@ -32,14 +32,13 @@
 }
 
 .gateway {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1rem;
-  min-height: 30rem;
 }
 
 .panel {
   position: relative;
-  flex: 1 1 0;
   overflow: hidden;
   display: flex;
   align-items: stretch;
@@ -50,7 +49,6 @@
   box-shadow: var(--shadow-soft);
   isolation: isolate;
   transition:
-    flex 700ms cubic-bezier(0.4, 0, 0.2, 1),
     transform 240ms ease,
     box-shadow 240ms ease,
     border-color 240ms ease;
@@ -69,7 +67,6 @@
 
 .panel:hover,
 .panel:focus-visible {
-  flex: 1.55 1 0;
   transform: translateY(-4px);
   border-color: color-mix(in srgb, var(--accent-strong) 36%, rgba(255, 255, 255, 0.18));
   box-shadow: var(--shadow-strong);
@@ -85,6 +82,17 @@
   background:
     radial-gradient(circle at 16% 22%, rgba(255, 123, 57, 0.2), transparent 24%),
     linear-gradient(135deg, #2b1a14 0%, #141c26 100%);
+}
+
+.ccl {
+  background:
+    radial-gradient(circle at 16% 24%, rgba(255, 255, 255, 0.12), transparent 20%),
+    linear-gradient(135deg, #0a0a0c 0%, #15171b 55%, #050608 100%);
+}
+
+.widePanel {
+  grid-column: 1 / -1;
+  min-height: 14rem;
 }
 
 .blob {
@@ -107,6 +115,10 @@
 
 .engineering .blob {
   background: rgba(255, 209, 102, 0.18);
+}
+
+.ccl .blob {
+  background: rgba(120, 138, 168, 0.16);
 }
 
 .content {
@@ -192,19 +204,31 @@
   transform: translateX(4px);
 }
 
+.widePanel .content {
+  width: min(100%, 100%);
+  padding-top: 1.45rem;
+  padding-bottom: 1.45rem;
+}
+
+.widePanel .content h3 {
+  font-size: clamp(1.8rem, 3vw, 2.45rem);
+}
+
+.widePanel .content p {
+  max-width: 44rem;
+}
+
 @media (max-width: 960px) {
   .gateway {
-    flex-direction: column;
-    min-height: auto;
+    grid-template-columns: 1fr;
   }
 
   .panel {
     min-height: 21rem;
   }
 
-  .panel:hover,
-  .panel:focus-visible {
-    flex: 1 1 0;
+  .widePanel {
+    min-height: 16rem;
   }
 
   .content h3 {
