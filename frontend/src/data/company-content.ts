@@ -220,16 +220,21 @@ export type EngineeringClientGroup = {
   fit: string;
 };
 
-export type EngineeringTechnology = {
-  title: string;
-  description: string;
-};
-
 export type EngineeringPolicyBlock = {
   title: string;
   description: string;
 };
 
+export type DevelopmentProject = {
+  title: string;
+  overview: string;
+  client: string;
+  startDate: string;
+  endDate: string;
+  status: "Planned" | "Ongoing" | "Halt" | "Completed";
+  liveLink?: string;
+  focus: string;
+};
 export const primaryNavigation: NavigationItem[] = [
   {
     href: "/achievements",
@@ -258,8 +263,8 @@ export const landingFeatures: FeatureLink[] = [
     cta: "Enter the lab",
   },
   {
-    href: "/engineering-hub",
-    label: "Engineering Hub",
+    href: "/development-wing",
+    label: "Development Wing",
     description: "The future home for products, systems, and technical delivery.",
     icon: "engineering",
     cta: "See the direction",
@@ -362,7 +367,8 @@ export const researchProjects: ResearchProject[] = [
   },
   {
     title: "Research Wing Website Foundation",
-    description: "Completed foundational work to present the research department as a coherent destination with its own navigation and pages.",
+    description:
+      "Completed foundational work to present the research wing as a coherent destination with its own navigation and pages.",
     status: "completed",
     image: null,
     liveLink: "https://example.com/research-wing-website-foundation",
@@ -450,7 +456,7 @@ export const researchPolicyBlocks: ResearchPolicyBlock[] = [
   },
 ];
 
-export const engineeringFocusAreas = [
+export const developmentFocusAreas = [
   {
     title: "Products and tools",
     description: "A future space for software, platforms, and AI-enabled systems.",
@@ -465,29 +471,21 @@ export const engineeringFocusAreas = [
   },
 ];
 
-export const engineeringWingNavigation: NavigationItem[] = [
+export const developmentWingNavigation: NavigationItem[] = [
   {
-    href: "/engineering-hub",
+    href: "/development-wing",
     label: "Home",
   },
   {
-    href: "/engineering-hub/solutions-services",
+    href: "/development-wing/projects",
+    label: "Projects",
+  },
+  {
+    href: "/development-wing/solutions-services",
     label: "Solutions & Services",
   },
   {
-    href: "/engineering-hub/clients",
-    label: "Clients",
-  },
-  {
-    href: "/engineering-hub/technologies",
-    label: "Technologies",
-  },
-  {
-    href: "/engineering-hub/team",
-    label: "Team",
-  },
-  {
-    href: "/engineering-hub/policy",
+    href: "/development-wing/policy",
     label: "Policy",
   },
 ];
@@ -499,35 +497,20 @@ export const cognitiveCyberLabNavigation: NavigationItem[] = [
   },
 ];
 
-export const engineeringWingHighlights = [
+export const developmentWingHighlights = [
   {
     label: "Solutions & Services",
-    description: "The public-facing services and solution categories that define what the engineering department aims to deliver.",
-    href: "/engineering-hub/solutions-services",
-  },
-  {
-    label: "Clients",
-    description: "The types of organizations and teams the department is being shaped to support over time.",
-    href: "/engineering-hub/clients",
-  },
-  {
-    label: "Technologies",
-    description: "The technical stack directions and platform capabilities the hub intends to build around.",
-    href: "/engineering-hub/technologies",
-  },
-  {
-    label: "Team",
-    description: "Executive oversight today, with a structure ready for future engineering leads and contributors.",
-    href: "/engineering-hub/team",
+    description: "The public-facing services and solution categories that define what the development wing aims to deliver.",
+    href: "/development-wing/solutions-services",
   },
   {
     label: "Policy",
-    description: "Delivery principles, technical standards, and operating expectations that should guide the department.",
-    href: "/engineering-hub/policy",
+    description: "Delivery principles, technical standards, and operating expectations that should guide the wing.",
+    href: "/development-wing/policy",
   },
 ];
 
-export const engineeringServices: EngineeringService[] = [
+export const developmentServices: EngineeringService[] = [
   {
     title: "Applied AI & ML Integration",
     description: "Transitioning complex deep learning models into optimized, production-ready software systems. We build efficient inference pipelines that bring research to life.",
@@ -560,7 +543,65 @@ export const engineeringServices: EngineeringService[] = [
   },
 ];
 
-export const engineeringClientGroups: EngineeringClientGroup[] = [
+export const developmentProjects: DevelopmentProject[] = [
+  {
+    title: "CollabCircle Operations Core",
+    overview:
+      "A unified internal operations platform for researcher coordination, task visibility, approvals, and cross-wing activity tracking.",
+    client: "CollabCircle Internal",
+    startDate: "January 2026",
+    endDate: "June 2026",
+    status: "Planned",
+    liveLink: "https://example.com/collabcircle-operations-core",
+    focus: "Internal platform",
+  },
+  {
+    title: "Applied AI Delivery Framework",
+    overview:
+      "A structured framework for turning research prototypes into production-ready APIs, deployment pipelines, and monitored delivery surfaces.",
+    client: "AI Product Teams",
+    startDate: "March 2026",
+    endDate: "September 2026",
+    status: "Planned",
+    liveLink: "https://example.com/applied-ai-delivery-framework",
+    focus: "AI delivery systems",
+  },
+  {
+    title: "Secure Knowledge Assistant Stack",
+    overview:
+      "A private retrieval and assistant system designed to let teams query internal documents, workflows, and institutional knowledge safely.",
+    client: "Research and Operations Teams",
+    startDate: "May 2026",
+    endDate: "November 2026",
+    status: "Ongoing",
+    liveLink: "https://example.com/secure-knowledge-assistant-stack",
+    focus: "Knowledge systems",
+  },
+  {
+    title: "Campaign Experience Engine",
+    overview:
+      "A reusable build system for high-performance branded microsites, interactive campaign games, and real-time engagement tracking.",
+    client: "Consumer Brand Partners",
+    startDate: "January 2027",
+    endDate: "August 2027",
+    status: "Planned",
+    liveLink: "https://example.com/campaign-experience-engine",
+    focus: "Campaign technology",
+  },
+  {
+    title: "Workflow Automation Control Layer",
+    overview:
+      "A modular orchestration layer for automating lead flow, approvals, task routing, and cross-platform data synchronization.",
+    client: "Operations and Logistics Teams",
+    startDate: "April 2027",
+    endDate: "December 2027",
+    status: "Halt",
+    liveLink: "https://example.com/workflow-automation-control-layer",
+    focus: "Automation infrastructure",
+  },
+];
+
+export const developmentClientGroups: EngineeringClientGroup[] = [
   {
     title: "Research & Academic Institutions",
     description: "Supporting scientific environments with robust software systems to manage datasets, track experimental variables, and streamline computational analysis.",
@@ -593,41 +634,14 @@ export const engineeringClientGroups: EngineeringClientGroup[] = [
   },
 ];
 
-export const engineeringTechnologies: EngineeringTechnology[] = [
-  {
-    title: "Deep Learning & Data Science Frameworks",
-    description: "Advanced modeling using specialized convolutional architectures, custom neural network implementations, and rigorous computational benchmarking.",
-  },
-  {
-    title: "Modern Full-Stack Web Architecture",
-    description: "Building fast, interactive, and responsive user interfaces powered by structured, decoupled backend services.",
-  },
-  {
-    title: "Data Orchestration & Caching",
-    description: "Utilizing high-velocity data layers, secure relational management systems, and distributed caching to ensure high availability and sub-millisecond data delivery.",
-  },
-  {
-    title: "Agentic Workflow & Automation Orchestration",
-    description: "Building resilient automation layers and event-driven architectures. We integrate advanced orchestration frameworks like n8n and custom webhook middleware to execute complex data synchronizations and multi-step business logic.",
-  },
-  {
-    title: "Large Language Model (LLM) Operations & API Integration",
-    description: "Integrating and fine-tuning state-of-the-art frontier models via production APIs. We manage prompt engineering systems, token consumption budgets, context window constraints, and streaming API architectures.",
-  },
-  {
-    title: "AI-Assisted Engineering & Agentic Tooling",
-    description: "Optimizing development velocity through modern execution tools. We leverage terminal-based coding agents, automated CLI tooling (like Claude Code), and advanced IDE extensions to accelerate system deployment and code safety.",
-  },
-];
-
-export const engineeringPolicyBlocks: EngineeringPolicyBlock[] = [
+export const developmentPolicyBlocks: EngineeringPolicyBlock[] = [
   {
     title: "Delivery clarity",
     description: "Engineering work should be understandable in scope, ownership, and expected outcome before implementation begins.",
   },
   {
     title: "Maintainable systems",
-    description: "The department should prefer readable architecture and clean operational decisions over rushed complexity.",
+    description: "The wing should prefer readable architecture and clean operational decisions over rushed complexity.",
   },
   {
     title: "Responsible implementation",
@@ -635,7 +649,7 @@ export const engineeringPolicyBlocks: EngineeringPolicyBlock[] = [
   },
   {
     title: "Execution discipline",
-    description: "Documentation, testing posture, and handoff quality should be treated as part of the engineering standard itself.",
+    description: "Documentation, testing posture, and handoff quality should be treated as part of the development standard itself.",
   },
 ];
 
@@ -672,7 +686,7 @@ export const impactSectors = [
 export const missionVisionBlocks = [
   {
     title: "Mission",
-    description: "Build a disciplined organization where research and engineering strengthen each other.",
+    description: "Build a disciplined organization where research and development strengthen each other.",
   },
   {
     title: "Vision",
@@ -686,7 +700,7 @@ export const missionVisionBlocks = [
 
 export const aboutCompanyPoints = [
   "Research Lab is the current public foundation.",
-  "Engineering Hub is the future build layer.",
+  "Development Wing is the future build layer.",
   "The website should already reflect both realities.",
 ];
 
@@ -707,7 +721,7 @@ export const recruitmentTracks: RecruitmentTrack[] = [
   {
     id: "engineer",
     title: "Engineer",
-    description: "For builders interested in products, tooling, technical systems, and the future Engineering Hub direction.",
+    description: "For builders interested in products, tooling, technical systems, and the future Development Wing direction.",
     audience: "Choose this track if you want to help translate ideas into software, systems, and durable technical delivery.",
     expectations: [
       "Comfort with implementation, debugging, or platform thinking",

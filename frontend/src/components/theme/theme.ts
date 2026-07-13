@@ -3,7 +3,12 @@ export function getTheme(pathname: string) {
     return "engineering";
   }
 
-  if (pathname === "/engineering-hub" || pathname.startsWith("/engineering-hub/")) {
+  if (
+    pathname === "/development-wing" ||
+    pathname.startsWith("/development-wing/") ||
+    pathname === "/engineering-hub" ||
+    pathname.startsWith("/engineering-hub/")
+  ) {
     return "engineering";
   }
 

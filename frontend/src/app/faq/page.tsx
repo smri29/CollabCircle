@@ -12,17 +12,17 @@ const faqItems = [
   {
     title: "What is CollabCircle at this stage?",
     description:
-      "CollabCircle is growing from a research-led foundation toward a broader long-term organization. Right now, the public website shows both the active research side and the future-facing engineering direction.",
+      "CollabCircle is growing from a research-led foundation toward a broader long-term organization. Right now, the public website shows both the active research side and the future-facing development direction.",
   },
   {
-    title: "What is the difference between the Research Wing and the Engineering Hub?",
+    title: "What is the difference between the Research Wing and the Development Wing?",
     description:
-      "The Research Wing represents the current research-facing department with publications, tracks, projects, team, and policy. The Engineering Hub represents the long-term engineering and delivery direction, including systems, services, and technologies.",
+      "The Research Wing represents the current research-facing wing with publications, tracks, projects, team, and policy. The Development Wing represents the long-term development and delivery direction, including systems, services, and technologies.",
   },
   {
     title: "Where should I start if I am new to the website?",
     description:
-      "Start from the homepage if you want the full company-level view. If you already know your interest, you can enter the Research Wing for research-focused pages or the Engineering Hub for technical delivery and future systems direction.",
+      "Start from the homepage if you want the full company-level view. If you already know your interest, you can enter the Research Wing for research-focused pages or the Development Wing for technical delivery and future systems direction.",
   },
   {
     title: "Does the Research Wing have its own pages?",
@@ -72,12 +72,12 @@ const faqItems = [
   {
     title: "Who appears on the Research Wing team page and who appears in Founders' Corner?",
     description:
-      "The Research Wing team page presents the current executive and department-facing team structure. Founders' Corner is separate and is used for founder and co-founding leadership context at the organization and department level.",
+      "The Research Wing team page presents the current executive and wing-facing team structure. Founders' Corner is separate and is used for founder and co-founding leadership context at the organization and wing level.",
   },
   {
     title: "Will the website continue to grow with more sections later?",
     description:
-      "Yes. The site is being structured so the research, engineering, newsroom, careers, and founder areas can grow over time without needing a full redesign.",
+      "Yes. The site is being structured so the research, development, newsroom, careers, and founder areas can grow over time without needing a full redesign.",
   },
 ];
 
@@ -88,7 +88,7 @@ export default function FaqPage() {
         backHref="/"
         eyebrow="FAQ"
         icon={CircleHelp}
-        intro="Answers about the organization, the website structure, the research and engineering departments, and the application process."
+        intro="Answers about the organization, the website structure, the research and development wings, and the application process."
         title="Frequently asked questions."
         titleSingleLine
       />

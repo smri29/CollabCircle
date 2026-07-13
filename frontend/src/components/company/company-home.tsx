@@ -14,7 +14,7 @@ export function CompanyHome() {
       <section className={styles.hero}>
         <article className={styles.panel}>
           <div className={styles.panelInner}>
-            <h1>Research now. Engineering next. Built with a long view.</h1>
+            <h1>Research now. Development next. Built with a long view.</h1>
             <p className={styles.lead}>
               Driving innovation in Machine Learning &amp; Deep Learning through open collaboration and impactful research.
             </p>
