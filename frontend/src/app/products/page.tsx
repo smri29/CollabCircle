@@ -1,21 +1,21 @@
 import type { Metadata } from "next";
-import { FolderKanban } from "lucide-react";
+import { Package } from "lucide-react";
 import { DevelopmentProjectCard } from "@/components/development/development-project-card";
 import styles from "@/components/development/development-project-card.module.css";
 import { PageHero } from "@/components/shared/page-hero";
 import { developmentProjects } from "@/data/company-content";
 
-export const metadata: Metadata = { title: "Projects" };
+export const metadata: Metadata = { title: "Products" };
 
-export default function DevelopmentProjectsPage() {
+export default function ProductsPage() {
   return (
     <>
       <PageHero
-        backHref="/development-wing"
-        eyebrow="Projects"
-        icon={FolderKanban}
+        backHref="/"
+        eyebrow="Products"
+        icon={Package}
         intro=""
-        title="Projects Archive of CollabCircle"
+        title="Products of CollabCircle"
       />
 
       <section className="section">

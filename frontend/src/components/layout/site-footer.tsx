@@ -19,7 +19,6 @@ const socialIcons = {
 } as const;
 
 const footerLinks = [
-  { href: "/", label: "Home" },
   ...primaryNavigation.map((item) => ({ href: item.href, label: item.label })),
   { href: "/career", label: "Join Us" },
   { href: "/founders-corner", label: "Founders' Corner" },
@@ -77,7 +76,7 @@ export function SiteFooter() {
             <h3>Explore</h3>
             <ul>
               {footerLinks.map((item) => (
-                <li key={item.href}>
+                <li key={`${item.href}-${item.label}`}>
                   <Link href={item.href}>{item.label}</Link>
                 </li>
               ))}

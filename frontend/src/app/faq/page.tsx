@@ -12,32 +12,22 @@ const faqItems = [
   {
     title: "What is CollabCircle at this stage?",
     description:
-      "CollabCircle is growing from a research-led foundation toward a broader long-term organization. Right now, the public website shows both the active research side and the future-facing development direction.",
+      "CollabCircle is growing from a research-led foundation toward a broader long-term organization. Right now, the public website presents publications, products, solutions and services, company information, and careers.",
   },
   {
-    title: "What is the difference between the Research Wing and the Development Wing?",
+    title: "How do Publications, Products, and Solutions & Services relate to each other?",
     description:
-      "The Research Wing represents the current research-facing wing with publications, tracks, projects, team, and policy. The Development Wing represents the long-term development and delivery direction, including systems, services, and technologies.",
+      "Publications acts as the public research-facing archive of CollabCircle. Products highlights build directions and product-oriented work, while Solutions & Services presents the practical technical capabilities CollabCircle offers.",
   },
   {
     title: "Where should I start if I am new to the website?",
     description:
-      "Start from the homepage if you want the full company-level view. If you already know your interest, you can enter the Research Wing for research-focused pages or the Development Wing for technical delivery and future systems direction.",
-  },
-  {
-    title: "Does the Research Wing have its own pages?",
-    description:
-      "Yes. The Research Wing is organized as its own nested section with dedicated pages for publications, research tracks, projects, team, and policy under the research-lab routes.",
+      "Start from the homepage if you want the full company-level view. If you already know your interest, open Publications for research-facing records, Products for build directions, or Solutions & Services for technical delivery capabilities.",
   },
   {
     title: "What kind of content appears in Publications?",
     description:
-      "The Publications page is intended for conference and journal outputs, along with other research-facing records that document the public scholarly side of the Research Wing.",
-  },
-  {
-    title: "What kinds of updates appear in the Newsroom?",
-    description:
-      "The Newsroom is the public update hub for announcements, research highlights, and organization updates. It is meant for dated official updates rather than evergreen informational content.",
+      "The Publications page is intended for conference and journal outputs, along with other research-facing records that document the public scholarly side of CollabCircle.",
   },
   {
     title: "How can I contact CollabCircle for official communication?",
@@ -70,14 +60,9 @@ const faqItems = [
       "If you need clarification before submitting, use the official contact email so your question can be handled directly.",
   },
   {
-    title: "Who appears on the Research Wing team page and who appears in Founders' Corner?",
-    description:
-      "The Research Wing team page presents the current executive and wing-facing team structure. Founders' Corner is separate and is used for founder and co-founding leadership context at the organization and wing level.",
-  },
-  {
     title: "Will the website continue to grow with more sections later?",
     description:
-      "Yes. The site is being structured so the research, development, newsroom, careers, and founder areas can grow over time without needing a full redesign.",
+      "Yes. The site is being structured so the research, development, careers, and founder areas can grow over time without needing a full redesign.",
   },
 ];
 
@@ -88,7 +73,7 @@ export default function FaqPage() {
         backHref="/"
         eyebrow="FAQ"
         icon={CircleHelp}
-        intro="Answers about the organization, the website structure, the research and development wings, and the application process."
+        intro="Answers about the organization, the website structure, publications, products, solutions and services, and the application process."
         title="Frequently asked questions."
         titleSingleLine
       />

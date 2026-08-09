@@ -16,7 +16,7 @@ Development is happening incrementally, with the frontend being built first and 
   - the Research Wing
   - the Engineering Hub
   - careers / recruitment
-  - newsroom, achievements, FAQ, legal, and founder-facing pages
+  - FAQ, legal, and founder-facing pages
 - The frontend is built with Next.js App Router, TypeScript, reusable components, and typed local content files.
 - The current frontend is still largely static/content-driven and is not yet connected to a live backend or database.
 - The backend exists as a NestJS scaffold and will be expanded after the frontend structure is finalized.
@@ -30,7 +30,6 @@ This choice fits the domain the website is growing into, including:
 
 - team and founder records
 - research projects and publications
-- newsroom and achievement records
 - recruitment/application workflows
 - structured admin-managed content
 
@@ -55,8 +54,6 @@ It is a branded, multi-section public website that currently includes:
 - Landing / company homepage
 - About and About Us pages
 - Contact page
-- Newsroom
-- Achievements
 - FAQ
 - Founders' Corner
 - Career / Join Us flows
@@ -86,7 +83,7 @@ The backend is currently in an early scaffold stage using NestJS.
 Planned future backend responsibilities include:
 
 - exposing public content APIs
-- managing structured records for team members, founders, projects, publications, achievements, and newsroom entries
+- managing structured records for team members, founders, projects, and publications
 - supporting future recruitment/application handling
 - providing the data layer that will replace hardcoded frontend content over time
 

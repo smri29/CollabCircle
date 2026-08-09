@@ -1,25 +1,25 @@
-import { ArrowUpRight, BookOpenText, BrainCircuit, UsersRound } from "lucide-react";
+import { ArrowUpRight, BookOpenText, BrainCircuit, ShieldCheck } from "lucide-react";
 import Link from "next/link";
 import styles from "./home-snapshot.module.css";
 
 const snapshotItems = [
   {
-    title: "Focused research",
-    description: "ML and DL projects shaped for clean execution and credible outcomes.",
-    href: "/research-lab",
+    title: "Publication archive",
+    description: "Conference and journal records presented as the public research-facing archive.",
+    href: "/publications",
     icon: BrainCircuit,
   },
   {
     title: "Publication pathway",
     description: "Workflows built to move from experiments into strong papers.",
-    href: "/research-lab/publications",
+    href: "/publications",
     icon: BookOpenText,
   },
   {
-    title: "Compact team structure",
-    description: "Clear ownership and smaller teams that can maintain quality.",
-    href: "/research-lab/team",
-    icon: UsersRound,
+    title: "Company direction",
+    description: "See how CollabCircle is being shaped across research, development, and long-term growth.",
+    href: "/about",
+    icon: ShieldCheck,
   },
 ];
 

@@ -126,17 +126,17 @@ export default function FoundersCornerPage() {
       <section className="section">
         <div className={wingStyles.sectionStack}>
           <div className={wingStyles.lead}>
-            <span className={wingStyles.leadMark}>Development Wing</span>
-            <h2>Co-founders, Development Wing.</h2>
+            <span className={wingStyles.leadMark}>Product Direction</span>
+            <h2>Co-founders, Product Direction.</h2>
             <p>
-              This section is ready for the development side of CollabCircle and can absorb full
-              founder profiles as that wing becomes public-facing.
+              This section is ready for the product and delivery side of CollabCircle and can
+              absorb fuller founder profiles as that work becomes more public-facing.
             </p>
           </div>
 
           <div className={wingStyles.profileGrid}>
             {developmentWingCoFounders.map((member) => (
-              <FounderCard badge="Development Wing" key={member.name} member={member} />
+              <FounderCard badge="Product Direction" key={member.name} member={member} />
             ))}
           </div>
         </div>

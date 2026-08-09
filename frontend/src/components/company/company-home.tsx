@@ -1,12 +1,11 @@
-import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, MapPinned, Trophy } from "lucide-react";
+import { ArrowRight, MapPinned } from "lucide-react";
 import { YouTubeShowcase } from "@/components/shared/youtube-showcase";
-import { latestAchievements } from "@/data/company-content";
-import { GatewaySection } from "./gateway-section";
+import { developmentServices } from "@/data/company-content";
+import servicesStyles from "./services-preview.module.css";
 import styles from "./company-home.module.css";
 
-
+const featuredServices = developmentServices;
 
 export function CompanyHome() {
   return (
@@ -16,7 +15,8 @@ export function CompanyHome() {
           <div className={styles.panelInner}>
             <h1>Research now. Development next. Built with a long view.</h1>
             <p className={styles.lead}>
-              Driving innovation in Machine Learning &amp; Deep Learning through open collaboration and impactful research.
+              Driving innovation in Machine Learning &amp; Deep Learning through open collaboration
+              and impactful research.
             </p>
             <Link className={`button ${styles.heroCta}`} href="/career">
               <span>Explore Careers</span>
@@ -24,53 +24,47 @@ export function CompanyHome() {
             </Link>
           </div>
         </article>
-
-        {latestAchievements[0] && (
-          <aside className={styles.aside}>
-            <div className={styles.asideInner}>
-
-              {/* Label */}
-              <p className={styles.asideLabel}>
-                <Trophy size={12} strokeWidth={2.5} style={{ display: "inline", marginRight: "0.35rem", verticalAlign: "middle" }} />
-                Latest Achievement
-              </p>
-
-              {/* Title | divider | description — horizontal meta row */}
-              <div className={styles.achievementMeta}>
-                <h2 className={styles.achievementTitle}>{latestAchievements[0].title}</h2>
-                <span className={styles.achievementDivider} aria-hidden="true" />
-                <p className={styles.achievementDesc}>{latestAchievements[0].description}</p>
-              </div>
-
-              {/* Image — full natural ratio, no cropping */}
-              <div className={styles.achievementImageWrap}>
-                <Image
-                  alt={latestAchievements[0].title}
-                  className={styles.achievementImage}
-                  height={0}
-                  priority
-                  sizes="(max-width: 960px) 100vw, 45vw"
-                  src={latestAchievements[0].image}
-                  style={{ width: "100%", height: "auto", display: "block" }}
-                  width={0}
-                />
-                <span className={styles.achievementDate}>{latestAchievements[0].date}</span>
-              </div>
-
-              {/* Link below image */}
-              {latestAchievements[0].href && (
-                <Link className={styles.achievementLink} href={latestAchievements[0].href}>
-                  <span>View all achievements</span>
-                  <ArrowRight size={14} strokeWidth={2} />
-                </Link>
-              )}
-
-            </div>
-          </aside>
-        )}
       </section>
 
-      <GatewaySection />
+      <section className="section">
+        <div className={servicesStyles.sectionStack}>
+          <div className={servicesStyles.servicesHeader}>
+            <div className={servicesStyles.sectionIntro}>
+              <h2>Solutions &amp; Services</h2>
+            </div>
+            <Link className={servicesStyles.viewAllLink} href="/solutions-services">
+              <span>View all</span>
+              <ArrowRight size={16} strokeWidth={2} />
+            </Link>
+          </div>
+
+          <div className={servicesStyles.servicesTable}>
+            <div className={servicesStyles.servicesRail}>
+              {featuredServices.map((item, index) => (
+                <details
+                  className={index === 0 ? servicesStyles.serviceFeatureCard : servicesStyles.serviceCard}
+                  key={item.title}
+                >
+                  <summary className={servicesStyles.serviceSummary}>
+                    <div className={servicesStyles.serviceTop}>
+                      <span className={servicesStyles.serviceIndex}>{String(index + 1).padStart(2, "0")}</span>
+                    </div>
+                    <div className={servicesStyles.serviceBody}>
+                      <h3>{item.title}</h3>
+                    </div>
+                    <span className={servicesStyles.serviceChevron} aria-hidden="true">
+                      +
+                    </span>
+                  </summary>
+                  <div className={servicesStyles.serviceContent}>
+                    <p>{item.description}</p>
+                  </div>
+                </details>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
 
       <section className={styles.section}>
         <article className={styles.locationPanel}>
@@ -103,7 +97,6 @@ export function CompanyHome() {
 
         <YouTubeShowcase />
       </section>
-
     </>
   );
 }
