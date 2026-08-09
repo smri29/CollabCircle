@@ -16,9 +16,7 @@ const socialProfiles = {
 export const navigation = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
-  { href: "/research-lab", label: "Research" },
-  { href: "/research-lab/publications", label: "Publications" },
-  { href: "/research-lab/team", label: "Team" },
+  { href: "/publications", label: "Publications" },
   { href: "/contact", label: "Contact" },
 ];
 
@@ -310,25 +308,25 @@ export const researchWingCoFounders: FounderProfile[] = [
 export const developmentWingCoFounders: FounderProfile[] = [
   {
     name: "Aarav Sen",
-    role: "Co-Founder, Development Wing",
+    role: "Co-Founder, Product Direction",
     description:
-      "Part of the early co-founding group shaping the Development Wing's delivery standards, systems direction, and long-term execution culture.",
+      "Part of the early co-founding group shaping CollabCircle's product direction, delivery standards, systems direction, and long-term execution culture.",
     imagePublicId: null,
     linkedinHref: "https://www.linkedin.com/in/aarav-sen-placeholder/",
   },
   {
     name: "Nadia Rahman",
-    role: "Co-Founder, Development Wing",
+    role: "Co-Founder, Product Direction",
     description:
-      "Supports the development wing's future-facing structure through founding-level planning around products, tooling, and technical organization.",
+      "Supports the product-facing structure through founding-level planning around products, tooling, and technical organization.",
     imagePublicId: null,
     linkedinHref: "https://www.linkedin.com/in/nadia-rahman-placeholder/",
   },
   {
     name: "Ishaan Malik",
-    role: "Co-Founder, Development Wing",
+    role: "Co-Founder, Product Direction",
     description:
-      "Contributes to the early development vision by helping define scalable technical practices and the operational discipline expected from the wing.",
+      "Contributes to the early product and delivery vision by helping define scalable technical practices and the operational discipline expected from this side of the organization.",
     imagePublicId: null,
     linkedinHref: "https://www.linkedin.com/in/ishaan-malik-placeholder/",
   },

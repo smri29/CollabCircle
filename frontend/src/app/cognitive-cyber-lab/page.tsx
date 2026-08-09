@@ -50,7 +50,7 @@ export default function CognitiveCyberLabPage() {
             <h2>A dedicated direction inside CollabCircle.</h2>
             <p>
               CCL is being introduced as a dedicated destination so the website can grow beyond the
-              current Research Wing and Development Wing structure while staying cohesive.
+              current publication and product surfaces while staying cohesive.
             </p>
           </div>
 
@@ -92,18 +92,18 @@ export default function CognitiveCyberLabPage() {
             <p>Explore CollabCircle</p>
             <h2>Move between the active and emerging parts of the organization.</h2>
             <p>
-              You can return to the main site, explore the Research Wing, or review the Development
-              Wing while this new section continues to take shape.
+              You can return to the main site, review the Publications archive, or explore the
+              Solutions &amp; Services page while this new section continues to take shape.
             </p>
           </div>
 
           <div className={sharedStyles.ctaActions}>
-            <Link className="button" href="/research-lab">
-              <span>Research Wing</span>
+            <Link className="button" href="/publications">
+              <span>Publications</span>
               <ArrowRight size={16} strokeWidth={2} />
             </Link>
-            <Link className={sharedStyles.secondaryCta} href="/development-wing">
-              <span>Development Wing</span>
+            <Link className={sharedStyles.secondaryCta} href="/solutions-services">
+              <span>Solutions &amp; Services</span>
             </Link>
           </div>
         </article>

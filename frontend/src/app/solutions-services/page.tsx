@@ -164,10 +164,10 @@ export default function SolutionsServicesPage() {
   return (
     <>
       <PageHero
-        backHref="/development-wing"
+        backHref="/"
         eyebrow="Solutions & Services"
         icon={BriefcaseBusiness}
-        intro="Bridging Advanced AI Research with Product Development"
+        intro="Bridging advanced AI research with product development."
         title="Solutions & Services"
       />
 
@@ -175,9 +175,8 @@ export default function SolutionsServicesPage() {
         <article className={styles.introPanel}>
           <p>
             At CollabCircle, we don&apos;t just conceptualize artificial intelligence, we
-            architect, optimize, and deploy it. Our dual-wing capability allows us to take
-            cutting-edge deep learning models and wrap them in robust, secure, and hyper-scalable
-            full-stack applications.
+            architect, optimize, and deploy it. We take cutting-edge deep learning models and wrap
+            them in robust, secure, and hyper-scalable full-stack applications.
           </p>
           <p>Explore our core technical capabilities below.</p>
         </article>

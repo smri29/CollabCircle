@@ -52,8 +52,8 @@ export default function AboutPage() {
         <CtaBanner
           description="The public-facing experience should stay as organized as the research behind it."
           eyebrow="Next step"
-          primaryHref="/research-lab"
-          primaryLabel="View research"
+          primaryHref="/publications"
+          primaryLabel="View publications"
           secondaryHref="/contact"
           secondaryLabel="Contact us"
           title="A clear lab should look clear from the outside too."

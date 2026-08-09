@@ -1,5 +1,26 @@
-import { redirect } from "next/navigation";
+import type { Metadata } from "next";
+import { BookOpenText } from "lucide-react";
+import { PublicationDirectory } from "@/components/publications/publication-directory";
+import { PageHero } from "@/components/shared/page-hero";
 
-export default function PublicationsRedirectPage() {
-  redirect("/research-lab/publications");
+export const metadata: Metadata = {
+  title: "Publications",
+};
+
+export default function PublicationsPage() {
+  return (
+    <>
+      <PageHero
+        backHref="/"
+        eyebrow="Publications"
+        icon={BookOpenText}
+        intro=""
+        title="Research Archive of CollabCircle."
+      />
+
+      <section className="section">
+        <PublicationDirectory />
+      </section>
+    </>
+  );
 }
