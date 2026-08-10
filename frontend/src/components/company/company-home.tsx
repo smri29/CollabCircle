@@ -1,11 +1,14 @@
 import Link from "next/link";
 import { ArrowRight, MapPinned } from "lucide-react";
+import { DevelopmentProjectCard } from "@/components/development/development-project-card";
+import productCardStyles from "@/components/development/development-project-card.module.css";
 import { YouTubeShowcase } from "@/components/shared/youtube-showcase";
-import { developmentServices } from "@/data/company-content";
+import { developmentProjects, developmentServices } from "@/data/company-content";
 import servicesStyles from "./services-preview.module.css";
 import styles from "./company-home.module.css";
 
 const featuredServices = developmentServices;
+const featuredProducts = [...developmentProjects].slice(-3).reverse();
 
 export function CompanyHome() {
   return (
@@ -64,6 +67,53 @@ export function CompanyHome() {
             </div>
           </div>
         </div>
+      </section>
+
+      <section className="section">
+        <div className={servicesStyles.sectionStack}>
+          <div className={servicesStyles.servicesHeader}>
+            <div className={servicesStyles.sectionIntro}>
+              <h2>Products</h2>
+            </div>
+            <Link className={servicesStyles.viewAllLink} href="/products">
+              <span>View all</span>
+              <ArrowRight size={16} strokeWidth={2} />
+            </Link>
+          </div>
+
+          <div className={productCardStyles.grid}>
+            {featuredProducts.map((project, index) => (
+              <DevelopmentProjectCard index={index} key={project.title} project={project} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className={styles.section}>
+        <article className={styles.impactPanel}>
+          <div className={styles.sectionHeader}>
+            <p>At a glance</p>
+          </div>
+
+          <div className={styles.statsGrid}>
+            <div className={styles.statCard}>
+              <span className={styles.statValue}>20+</span>
+              <span className={styles.statLabel}>Team Members</span>
+            </div>
+            <div className={styles.statCard}>
+              <span className={styles.statValue}>2+</span>
+              <span className={styles.statLabel}>Years of Experience</span>
+            </div>
+            <div className={styles.statCard}>
+              <span className={styles.statValue}>16+</span>
+              <span className={styles.statLabel}>Projects</span>
+            </div>
+            <div className={styles.statCard}>
+              <span className={styles.statValue}>7+</span>
+              <span className={styles.statLabel}>Collaborators</span>
+            </div>
+          </div>
+        </article>
       </section>
 
       <section className={styles.section}>
