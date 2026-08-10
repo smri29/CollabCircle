@@ -31,7 +31,6 @@ export function DevelopmentProjectCard({
         <span className={styles.serial}>
           {index !== undefined ? String(index + 1).padStart(2, "0") : project.startDate}
         </span>
-        <span className={styles.role}>{project.status}</span>
       </div>
 
       <h3>{project.title}</h3>
@@ -44,21 +43,6 @@ export function DevelopmentProjectCard({
       <div className={styles.fieldRow}>
         <span className={styles.fieldLabel}>Client</span>
         <p>{project.client}</p>
-      </div>
-
-      <div className={styles.fieldRow}>
-        <span className={styles.fieldLabel}>Start Date</span>
-        <p>{project.startDate}</p>
-      </div>
-
-      <div className={styles.fieldRow}>
-        <span className={styles.fieldLabel}>End Date</span>
-        <p>{project.endDate}</p>
-      </div>
-
-      <div className={styles.fieldRow}>
-        <span className={styles.fieldLabel}>Focus/Track</span>
-        <p>{project.focus}</p>
       </div>
 
       <div className={styles.fieldRow}>
