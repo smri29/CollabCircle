@@ -39,9 +39,9 @@
   padding: 1.1rem;
   border: 1px solid var(--border-strong);
   border-radius: 1.5rem;
-  background: var(--glass-surface);
-  box-shadow: var(--shadow-soft);
-  backdrop-filter: blur(18px);
+  background: rgba(8, 18, 29, 0.18);
+  box-shadow: 0 16px 34px rgba(0, 0, 0, 0.14);
+  backdrop-filter: blur(10px);
   animation: fadeLift 700ms ease both;
   transition:
     transform 180ms ease,
@@ -100,7 +100,7 @@
 .role {
   padding: 0.42rem 0.7rem;
   border-radius: 999px;
-  background: var(--glass-surface-strong);
+  background: rgba(8, 18, 29, 0.28);
   border: 1px solid var(--border-soft);
   color: var(--text-muted);
   font-size: 0.84rem;

@@ -3,7 +3,7 @@
   grid-template-columns: 1.1fr 0.9fr;
   gap: 1.5rem;
   align-items: center;
-  padding: 2.8rem 0 1.4rem;
+  padding: 3.25rem 0 1.8rem;
   animation: fadeLift 700ms ease both;
 }
 
@@ -14,25 +14,26 @@
 
 .eyebrow {
   color: var(--accent-strong);
-  font-size: 0.84rem;
+  font-size: 0.76rem;
   font-weight: 700;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
 }
 
 .copy h1 {
   max-width: 11ch;
   font-family: var(--font-display);
-  font-size: clamp(2.4rem, 4.8vw, 3.85rem);
-  line-height: 1;
-  letter-spacing: -0.04em;
-  font-weight: 650;
+  font-size: clamp(3.2rem, 6vw, 5.2rem);
+  line-height: 0.9;
+  letter-spacing: -0.06em;
+  font-weight: 600;
 }
 
 .lead {
   max-width: 31rem;
   color: var(--text-muted);
-  font-size: 0.92rem;
+  font-size: 1.02rem;
+  line-height: 1.85;
 }
 
 .actions {
@@ -53,7 +54,7 @@
   padding: 0.48rem 0.72rem;
   border: 1px solid var(--border-soft);
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.48);
+  background: rgba(10, 19, 28, 0.8);
   color: var(--text-muted);
   font-size: 0.82rem;
 }
@@ -73,9 +74,9 @@
   aspect-ratio: 1;
   border-radius: 50%;
   background:
-    radial-gradient(circle at center, rgba(143, 217, 255, 0.28), transparent 30%),
-    radial-gradient(circle at 50% 50%, transparent 54%, rgba(47, 155, 255, 0.12) 55%, transparent 56%);
-  filter: blur(0.2px);
+    radial-gradient(circle at center, rgba(154, 224, 255, 0.14), transparent 30%),
+    radial-gradient(circle at 50% 50%, transparent 54%, rgba(73, 184, 255, 0.14) 55%, transparent 56%);
+  filter: blur(0.1px);
   animation: drift 8s ease-in-out infinite;
 }
 
@@ -87,7 +88,9 @@
   padding: 0.95rem;
   border: 1px solid var(--border-strong);
   border-radius: 1.5rem;
-  background: rgba(255, 255, 255, 0.42);
+  background:
+    linear-gradient(180deg, rgba(9, 18, 28, 0.9), rgba(6, 12, 18, 0.82)),
+    radial-gradient(circle at top left, rgba(154, 224, 255, 0.08), transparent 40%);
   box-shadow: var(--shadow-soft);
   backdrop-filter: blur(18px);
   animation: slideUp 700ms ease both;
@@ -100,8 +103,9 @@
   width: 2rem;
   height: 2rem;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.58);
+  background: rgba(255, 255, 255, 0.06);
   color: var(--accent-strong);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
 }
 
 .signalCard:nth-child(2) {
@@ -117,8 +121,8 @@
 }
 
 .signalCard p {
-  color: var(--surface-deep);
-  font-size: 0.94rem;
+  color: var(--text-color);
+  font-size: 1rem;
   font-weight: 700;
 }
 

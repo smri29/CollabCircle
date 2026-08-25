@@ -1,5 +1,4 @@
 import type { LucideIcon } from "lucide-react";
-import { BackButton } from "./back-button";
 import styles from "./page-hero.module.css";
 
 type PageHeroProps = {
@@ -8,8 +7,6 @@ type PageHeroProps = {
   intro: string;
   icon?: LucideIcon;
   titleSingleLine?: boolean;
-  backHref?: string;
-  backLabel?: string;
 };
 
 export function PageHero({
@@ -18,18 +15,11 @@ export function PageHero({
   intro,
   icon: Icon,
   titleSingleLine = false,
-  backHref,
-  backLabel = "Back",
 }: PageHeroProps) {
   return (
     <section className={styles.hero}>
       <div className={styles.backdrop} aria-hidden="true" />
       <div className={styles.content}>
-        {backHref ? (
-          <div className={styles.topRow}>
-            <BackButton href={backHref} label={backLabel} />
-          </div>
-        ) : null}
         <div className={styles.kicker}>
           {Icon ? (
             <span className={styles.iconWrap}>

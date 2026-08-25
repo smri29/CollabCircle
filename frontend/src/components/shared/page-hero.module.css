@@ -1,7 +1,7 @@
 .hero {
   position: relative;
   overflow: clip;
-  padding: 2.25rem 0 0.75rem;
+  padding: 2.5rem 0 0.9rem;
 }
 
 .backdrop {
@@ -9,9 +9,8 @@
   inset: 0;
   border-radius: var(--radius-lg);
   background:
-    radial-gradient(circle at 20% 15%, color-mix(in srgb, var(--accent-soft) 36%, transparent), transparent 30%),
-    radial-gradient(circle at 84% 20%, color-mix(in srgb, var(--accent-strong) 18%, transparent), transparent 32%),
-    linear-gradient(180deg, color-mix(in srgb, var(--glass-surface-strong) 96%, transparent), color-mix(in srgb, var(--glass-surface) 40%, transparent));
+    radial-gradient(circle at 20% 15%, color-mix(in srgb, var(--accent-soft) 16%, transparent), transparent 30%),
+    radial-gradient(circle at 84% 20%, color-mix(in srgb, var(--accent-strong) 10%, transparent), transparent 32%);
   animation: drift 8s ease-in-out infinite;
 }
 
@@ -19,13 +18,24 @@
   position: relative;
   display: grid;
   gap: 0.95rem;
-  padding: 1.55rem;
-  border: 1px solid var(--border-strong);
+  padding: 1.8rem;
+  border: 0;
   border-radius: var(--radius-lg);
-  background: var(--glass-surface);
-  box-shadow: var(--shadow-soft);
-  backdrop-filter: blur(22px);
+  background: transparent;
+  box-shadow: none;
+  backdrop-filter: none;
   animation: fadeLift 700ms ease both;
+  isolation: isolate;
+}
+
+.content::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(circle at 18% 16%, rgba(68, 184, 255, 0.04), transparent 24%);
+  pointer-events: none;
+  z-index: -1;
 }
 
 .topRow {
@@ -47,25 +57,25 @@
   height: 1.95rem;
   border: 1px solid var(--border-strong);
   border-radius: 999px;
-  background: var(--glass-surface-strong);
+  background: color-mix(in srgb, var(--glass-surface-strong) 96%, transparent);
   color: var(--accent-strong);
 }
 
 .kicker p {
   color: var(--accent-strong);
-  font-size: 0.78rem;
+  font-size: 0.72rem;
   font-weight: 700;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
 }
 
 .content h1 {
   max-width: none;
   font-family: var(--font-display);
-  font-size: clamp(1.95rem, 4.1vw, 2.85rem);
-  line-height: 1.02;
-  letter-spacing: -0.045em;
-  font-weight: 650;
+  font-size: clamp(2.5rem, 5vw, 3.8rem);
+  line-height: 0.94;
+  letter-spacing: -0.055em;
+  font-weight: 600;
 }
 
 .singleLineTitle {
@@ -76,7 +86,9 @@
 .content p:last-child {
   max-width: 32rem;
   color: var(--text-muted);
-  font-size: 0.88rem;
+  font-size: 0.98rem;
+  line-height: 1.75;
+  text-shadow: 0 10px 24px rgba(0, 0, 0, 0.28);
 }
 
 @media (max-width: 720px) {

@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Building2, Compass, Sparkles, UsersRound } from "lucide-react";
-import { BackButton } from "@/components/shared/back-button";
 import { missionVisionBlocks } from "@/data/company-content";
 import styles from "./about-us.module.css";
 
@@ -15,9 +14,6 @@ export default function AboutUsPage() {
     <section className={styles.hero}>
       <div className={styles.backdrop} aria-hidden="true" />
       <div className={styles.content}>
-        <div className={styles.topRow}>
-          <BackButton href="/" />
-        </div>
         <div className={styles.kicker}>
           <span className={styles.iconWrap}>
             <Building2 size={18} strokeWidth={2} />
@@ -157,7 +153,7 @@ export default function AboutUsPage() {
           </div>
 
           <div className={styles.ctaActions}>
-            <Link className="button" href="/career">
+            <Link className="button" href="/join-us">
               <span>Explore Careers</span>
               <ArrowRight size={16} strokeWidth={2} />
             </Link>

@@ -34,9 +34,9 @@
   padding: 1rem;
   border: 1px solid var(--border-strong);
   border-radius: 1.4rem;
-  background: var(--glass-surface);
-  box-shadow: var(--shadow-soft);
-  backdrop-filter: blur(18px);
+  background: rgba(8, 18, 29, 0.18);
+  box-shadow: 0 16px 34px rgba(0, 0, 0, 0.14);
+  backdrop-filter: blur(10px);
   animation: fadeLift 700ms ease both;
   transition:
     transform 180ms ease,
@@ -113,9 +113,9 @@
   padding: 0.95rem 1rem;
   border: 1px solid var(--border-strong);
   border-radius: 1.25rem;
-  background: var(--glass-surface);
-  box-shadow: var(--shadow-soft);
-  backdrop-filter: blur(18px);
+  background: rgba(8, 18, 29, 0.18);
+  box-shadow: 0 16px 34px rgba(0, 0, 0, 0.14);
+  backdrop-filter: blur(10px);
   animation: fadeLift 700ms ease both;
 }
 
@@ -156,24 +156,37 @@
 .pill {
   padding: 0.5rem 0.8rem;
   border-radius: 999px;
-  background: var(--glass-surface-strong);
+  background: rgba(8, 18, 29, 0.24);
   border: 1px solid var(--border-soft);
   color: var(--text-muted);
   font-size: 0.8rem;
 }
 
 .ctaPanel {
+  position: relative;
+  overflow: hidden;
   display: grid;
   align-items: center;
   grid-template-columns: minmax(0, 1fr) auto;
   gap: 1rem 1.5rem;
   padding: 1.45rem;
-  border: 1px solid var(--border-strong);
+  border: 0;
   border-radius: var(--radius-lg);
-  background: var(--glass-surface);
-  box-shadow: var(--shadow-soft);
-  backdrop-filter: blur(22px);
+  background: transparent;
+  box-shadow: none;
+  backdrop-filter: none;
   animation: fadeLift 700ms ease both;
+  isolation: isolate;
+}
+
+.ctaPanel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(circle at 18% 16%, rgba(68, 184, 255, 0.04), transparent 22%);
+  pointer-events: none;
+  z-index: -1;
 }
 
 .ctaCopy {
@@ -202,6 +215,7 @@
   color: var(--text-muted);
   font-size: 0.93rem;
   line-height: 1.72;
+  text-shadow: 0 8px 22px rgba(0, 0, 0, 0.24);
 }
 
 .ctaActions {
@@ -218,7 +232,7 @@
   padding: 0.72rem 1.15rem;
   border: 1px solid var(--border-strong);
   border-radius: 999px;
-  background: var(--glass-surface-strong);
+  background: rgba(8, 18, 29, 0.26);
   color: var(--text-color);
   font-size: 0.9rem;
   font-weight: 700;
@@ -229,7 +243,7 @@
 
 .secondaryCta:hover,
 .secondaryCta:focus-visible {
-  background: color-mix(in srgb, var(--accent-soft) 10%, white 90%);
+  background: rgba(10, 24, 38, 0.42);
   border-color: color-mix(in srgb, var(--accent-strong) 22%, var(--border-strong));
 }
 

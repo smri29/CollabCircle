@@ -15,7 +15,7 @@ const socialProfiles = {
 
 export const navigation = [
   { href: "/", label: "Home" },
-  { href: "/about", label: "About" },
+  { href: "/about-us", label: "About" },
   { href: "/publications", label: "Publications" },
   { href: "/contact", label: "Contact" },
 ];
@@ -207,7 +207,7 @@ export const executiveMembers: TeamMember[] = [
     name: "Sumaiya Alam Shorna",
     role: "Executive",
     imagePublicId: null,
-    institution: "CollabCircle Research Wing",
+    institution: "CollabCircle",
     profession: "Research Executive",
     linkedinHref: socialProfiles.linkedin,
   },
@@ -215,7 +215,7 @@ export const executiveMembers: TeamMember[] = [
     name: "Shah Mohammad Rizvi",
     role: "Executive",
     imagePublicId: null,
-    institution: "CollabCircle Research Wing",
+    institution: "CollabCircle",
     profession: "Founder and Research Executive",
     linkedinHref: socialProfiles.linkedin,
   },
@@ -223,7 +223,7 @@ export const executiveMembers: TeamMember[] = [
     name: "Rumi Akter",
     role: "Executive",
     imagePublicId: null,
-    institution: "CollabCircle Research Wing",
+    institution: "CollabCircle",
     profession: "Research Executive",
     linkedinHref: socialProfiles.linkedin,
   },
@@ -231,7 +231,7 @@ export const executiveMembers: TeamMember[] = [
     name: "Rimo Bhuiyan",
     role: "Executive",
     imagePublicId: null,
-    institution: "CollabCircle Research Wing",
+    institution: "CollabCircle",
     profession: "Research Executive",
     linkedinHref: socialProfiles.linkedin,
   },
@@ -239,7 +239,7 @@ export const executiveMembers: TeamMember[] = [
     name: "Md. Aman Uddin Siyam",
     role: "Executive",
     imagePublicId: null,
-    institution: "CollabCircle Research Wing",
+    institution: "CollabCircle",
     profession: "Research Executive",
     linkedinHref: socialProfiles.linkedin,
   },
@@ -247,7 +247,7 @@ export const executiveMembers: TeamMember[] = [
     name: "Sumaiya Islam Mily",
     role: "Executive",
     imagePublicId: null,
-    institution: "CollabCircle Research Wing",
+    institution: "CollabCircle",
     profession: "Research Executive",
     linkedinHref: socialProfiles.linkedin,
   },
@@ -257,66 +257,66 @@ export const founderProfile: FounderProfile = {
   name: "Shah Mohammad Rizvi",
   role: "Founder & President, CollabCircle",
   description:
-    "Shah Mohammad Rizvi leads the long-term founding vision of CollabCircle while also serving within the current executive structure of the Research Wing.",
+    "Shah Mohammad Rizvi leads the long-term founding vision of CollabCircle and helps shape its organizational direction.",
   imagePublicId: null,
   linkedinHref: socialProfiles.linkedin,
 };
 
-export const researchWingCoFounders: FounderProfile[] = [
+export const companyCoFounders: FounderProfile[] = [
   {
     name: "Sumaiya Alam Shorna",
-    role: "Co-Founder, Research Wing",
+    role: "Co-Founder, CollabCircle",
     description:
-      "Part of the early leadership group helping shape the public foundation, discipline, and collaborative culture of the Research Wing.",
+      "Part of the early leadership group helping shape the public foundation, discipline, and collaborative culture of CollabCircle.",
     imagePublicId: null,
     linkedinHref: socialProfiles.linkedin,
   },
   {
     name: "Rumi Akter",
-    role: "Co-Founder, Research Wing",
+    role: "Co-Founder, CollabCircle",
     description:
-      "Supports the early institutional structure of the Research Wing through founding-level commitment and executive participation.",
+      "Supports the early institutional structure of CollabCircle through founding-level commitment and executive participation.",
     imagePublicId: null,
     linkedinHref: socialProfiles.linkedin,
   },
   {
     name: "Rimo Bhuiyan",
-    role: "Co-Founder, Research Wing",
+    role: "Co-Founder, CollabCircle",
     description:
-      "Contributes to the early growth and organizational grounding of the Research Wing as part of its founding group.",
+      "Contributes to the early growth and organizational grounding of CollabCircle as part of its founding group.",
     imagePublicId: null,
     linkedinHref: socialProfiles.linkedin,
   },
   {
     name: "Md. Aman Uddin Siyam",
-    role: "Co-Founder, Research Wing",
+    role: "Co-Founder, CollabCircle",
     description:
-      "Helps establish the wing's early structure, direction, and continuity as part of the founding leadership team.",
+      "Helps establish the company's early structure, direction, and continuity as part of the founding leadership team.",
     imagePublicId: null,
     linkedinHref: socialProfiles.linkedin,
   },
   {
     name: "Sumaiya Islam Mily",
-    role: "Co-Founder, Research Wing",
+    role: "Co-Founder, CollabCircle",
     description:
-      "Part of the founding group supporting the Research Wing's early development and long-term organizational identity.",
+      "Part of the founding group supporting CollabCircle's early development and long-term organizational identity.",
     imagePublicId: null,
     linkedinHref: socialProfiles.linkedin,
   },
 ];
 
-export const developmentWingCoFounders: FounderProfile[] = [
+export const productCoFounders: FounderProfile[] = [
   {
     name: "Aarav Sen",
-    role: "Co-Founder, Product Direction",
+    role: "Co-Founder, CollabCircle",
     description:
-      "Part of the early co-founding group shaping CollabCircle's product direction, delivery standards, systems direction, and long-term execution culture.",
+      "Part of the early co-founding group shaping CollabCircle's delivery standards, systems direction, and long-term execution culture.",
     imagePublicId: null,
     linkedinHref: "https://www.linkedin.com/in/aarav-sen-placeholder/",
   },
   {
     name: "Nadia Rahman",
-    role: "Co-Founder, Product Direction",
+    role: "Co-Founder, CollabCircle",
     description:
       "Supports the product-facing structure through founding-level planning around products, tooling, and technical organization.",
     imagePublicId: null,
@@ -324,7 +324,7 @@ export const developmentWingCoFounders: FounderProfile[] = [
   },
   {
     name: "Ishaan Malik",
-    role: "Co-Founder, Product Direction",
+    role: "Co-Founder, CollabCircle",
     description:
       "Contributes to the early product and delivery vision by helping define scalable technical practices and the operational discipline expected from this side of the organization.",
     imagePublicId: null,
@@ -337,7 +337,7 @@ export const currentResearchers: TeamMember[] = [
     name: "Nur-A-Jannat Shuchi",
     role: "Researcher",
     imagePublicId: null,
-    institution: "CollabCircle Research Wing",
+    institution: "CollabCircle",
     profession: "Researcher",
     linkedinHref: socialProfiles.linkedin,
   },
@@ -345,7 +345,7 @@ export const currentResearchers: TeamMember[] = [
     name: "Saymon Hasan",
     role: "Researcher",
     imagePublicId: null,
-    institution: "CollabCircle Research Wing",
+    institution: "CollabCircle",
     profession: "Researcher",
     linkedinHref: socialProfiles.linkedin,
   },
@@ -353,7 +353,7 @@ export const currentResearchers: TeamMember[] = [
     name: "Sifat Hasan",
     role: "Researcher",
     imagePublicId: null,
-    institution: "CollabCircle Research Wing",
+    institution: "CollabCircle",
     profession: "Researcher",
     linkedinHref: socialProfiles.linkedin,
   },
@@ -361,7 +361,7 @@ export const currentResearchers: TeamMember[] = [
     name: "Sheikh Samiya Samad Joya",
     role: "Researcher",
     imagePublicId: null,
-    institution: "CollabCircle Research Wing",
+    institution: "CollabCircle",
     profession: "Researcher",
     linkedinHref: socialProfiles.linkedin,
   },
@@ -369,7 +369,7 @@ export const currentResearchers: TeamMember[] = [
     name: "Nondita Devnath",
     role: "Researcher",
     imagePublicId: null,
-    institution: "CollabCircle Research Wing",
+    institution: "CollabCircle",
     profession: "Researcher",
     linkedinHref: socialProfiles.linkedin,
   },

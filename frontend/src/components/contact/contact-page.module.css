@@ -8,12 +8,27 @@
 .infoCard,
 .channelCard,
 .guidanceCard {
-  border: 1px solid var(--border-strong);
+  position: relative;
+  overflow: hidden;
+  border: 0;
   border-radius: var(--radius-lg);
-  background: var(--glass-surface);
-  box-shadow: var(--shadow-soft);
-  backdrop-filter: blur(18px);
+  background: transparent;
+  box-shadow: none;
+  backdrop-filter: none;
   animation: fadeLift 700ms ease both;
+  isolation: isolate;
+}
+
+.infoCard::before,
+.channelCard::before,
+.guidanceCard::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(circle at 18% 16%, rgba(68, 184, 255, 0.035), transparent 24%);
+  pointer-events: none;
+  z-index: -1;
 }
 
 .primaryCard,
@@ -34,8 +49,8 @@
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(circle at 18% 16%, color-mix(in srgb, var(--accent-soft) 26%, transparent), transparent 22%),
-    radial-gradient(circle at 84% 14%, color-mix(in srgb, var(--accent-strong) 16%, transparent), transparent 28%);
+    radial-gradient(circle at 18% 16%, color-mix(in srgb, var(--accent-soft) 14%, transparent), transparent 22%),
+    radial-gradient(circle at 84% 14%, color-mix(in srgb, var(--accent-strong) 10%, transparent), transparent 28%);
   pointer-events: none;
 }
 
@@ -105,7 +120,7 @@
   padding: 0.95rem;
   border: 1px solid var(--border-strong);
   border-radius: 1.25rem;
-  background: var(--glass-surface-strong);
+  background: rgba(8, 18, 29, 0.24);
 }
 
 .infoRow svg {
@@ -186,7 +201,7 @@
   flex-shrink: 0;
   border: 1px solid var(--border-strong);
   border-radius: 1rem;
-  background: var(--glass-surface-strong);
+  background: rgba(8, 18, 29, 0.24);
   color: var(--accent-strong);
 }
 

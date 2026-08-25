@@ -11,7 +11,6 @@ export default function PublicationsPage() {
   return (
     <>
       <PageHero
-        backHref="/"
         eyebrow="Publications"
         icon={BookOpenText}
         intro=""

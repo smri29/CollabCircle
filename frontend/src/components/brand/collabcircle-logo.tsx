@@ -1,3 +1,4 @@
+import type { CSSProperties } from "react";
 import Image from "next/image";
 
 type CollabCircleLogoProps = {
@@ -5,6 +6,8 @@ type CollabCircleLogoProps = {
   height: number;
   priority?: boolean;
   className?: string;
+  variant?: "mark" | "lockup";
+  style?: CSSProperties;
 };
 
 export function CollabCircleLogo({
@@ -12,6 +15,8 @@ export function CollabCircleLogo({
   height,
   priority = false,
   className,
+  variant = "lockup",
+  style,
 }: CollabCircleLogoProps) {
   return (
     <Image
@@ -19,7 +24,18 @@ export function CollabCircleLogo({
       className={className}
       height={height}
       priority={priority}
-      src="/CollabCircle Logo.svg"
+      src="/New%20Logo/CollabCircle.svg"
+      style={{
+        ...(variant === "mark"
+          ? {
+              objectFit: "cover",
+              objectPosition: "center 22%",
+            }
+          : {
+              objectFit: "contain",
+            }),
+        ...style,
+      }}
       width={width}
     />
   );

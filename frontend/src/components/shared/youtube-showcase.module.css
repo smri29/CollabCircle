@@ -25,15 +25,28 @@
 }
 
 .videoPanel {
+  position: relative;
+  overflow: hidden;
   display: grid;
   gap: 1rem;
   padding: 1rem;
-  border: 1px solid var(--border-strong);
+  border: 0;
   border-radius: var(--radius-lg);
-  background: var(--glass-surface);
-  box-shadow: var(--shadow-soft);
-  backdrop-filter: blur(18px);
+  background: transparent;
+  box-shadow: none;
+  backdrop-filter: none;
   animation: fadeLift 700ms ease both;
+  isolation: isolate;
+}
+
+.videoPanel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(circle at 18% 14%, rgba(68, 184, 255, 0.04), transparent 24%);
+  pointer-events: none;
+  z-index: -1;
 }
 
 .videoHeading {
@@ -71,8 +84,8 @@
   padding: 0.9rem;
   border: 1px solid var(--border-strong);
   border-radius: 1.4rem;
-  background: var(--glass-surface-strong);
-  box-shadow: var(--shadow-soft);
+  background: rgba(8, 18, 29, 0.2);
+  box-shadow: 0 16px 34px rgba(0, 0, 0, 0.14);
 }
 
 .videoFrameWrap,

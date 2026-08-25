@@ -6,7 +6,6 @@ import { useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
 import { CollabCircleLogo } from "@/components/brand/collabcircle-logo";
 import { moreNavigation, primaryNavigation } from "@/data/company-content";
-import { siteMeta } from "@/data/site-content";
 import styles from "./site-header.module.css";
 
 function isActivePath(pathname: string, href: string, matches?: string[]) {
@@ -42,10 +41,12 @@ export function SiteHeader() {
             setIsMoreOpen(false);
           }}
         >
-          <CollabCircleLogo className={styles.logo} height={44} priority width={44} />
-          <span className={styles.brandText}>
-            <strong>{siteMeta.name}</strong>
-          </span>
+          <CollabCircleLogo
+            className={styles.logo}
+            height={58}
+            priority
+            width={190}
+          />
         </Link>
 
         <nav className={styles.desktopNav} aria-label="Primary">
@@ -110,7 +111,7 @@ export function SiteHeader() {
         <div className={styles.actions}>
           <Link
             className={styles.joinLink}
-            href="/career"
+            href="/join-us"
             onClick={() => {
               setIsMenuOpen(false);
               setIsMoreOpen(false);
@@ -187,7 +188,7 @@ export function SiteHeader() {
 
           <Link
             className={styles.mobileJoinLink}
-            href="/career"
+            href="/join-us"
             onClick={() => {
               setIsMenuOpen(false);
               setIsMoreOpen(false);

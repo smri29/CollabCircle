@@ -20,7 +20,7 @@ const socialIcons = {
 
 const footerLinks = [
   ...primaryNavigation.map((item) => ({ href: item.href, label: item.label })),
-  { href: "/career", label: "Join Us" },
+  { href: "/join-us", label: "Join Us" },
   { href: "/founders-corner", label: "Founders' Corner" },
 ];
 
@@ -36,7 +36,11 @@ export function SiteFooter() {
       <div className={styles.panel}>
         <div className={styles.brandBlock}>
           <div className={styles.brandRow}>
-            <CollabCircleLogo className={styles.logo} height={54} width={54} />
+            <CollabCircleLogo
+              className={styles.logo}
+              height={92}
+              width={240}
+            />
             <div>
               <p className={styles.eyebrow}>CollabCircle</p>
               <h2>{siteMeta.tagline}</h2>
@@ -97,7 +101,7 @@ export function SiteFooter() {
       </div>
 
       <div className={styles.bottomBar}>
-        <p className={styles.bottomMeta}>© 2026 CollabCircle. All rights reserved.</p>
+        <p className={styles.bottomMeta}>Copyright 2026 CollabCircle. All rights reserved.</p>
         <p>We research to understand; we build to empower.</p>
         <div className={styles.bottomLinks}>
           {legalLinks.map((item) => (

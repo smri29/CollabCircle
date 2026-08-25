@@ -1,7 +1,3 @@
-export function getTheme(pathname: string) {
-  if (pathname === "/cognitive-cyber-lab" || pathname.startsWith("/cognitive-cyber-lab/")) {
-    return "engineering";
-  }
-
+export function getTheme() {
   return "landing";
 }

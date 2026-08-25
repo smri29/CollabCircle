@@ -11,7 +11,6 @@ export default function ProductsPage() {
   return (
     <>
       <PageHero
-        backHref="/"
         eyebrow="Products"
         icon={Package}
         intro=""

@@ -30,8 +30,8 @@
   padding: 0.24rem;
   border: 1px solid var(--border-strong);
   border-radius: 999px;
-  background: var(--glass-surface);
-  backdrop-filter: blur(16px);
+  background: rgba(8, 18, 29, 0.16);
+  backdrop-filter: blur(8px);
 }
 
 .tab,
@@ -47,7 +47,7 @@
 }
 
 .tabActive {
-  background: var(--glass-surface-strong);
+  background: rgba(8, 18, 29, 0.28);
   color: var(--text-color);
 }
 
@@ -63,9 +63,9 @@
   padding: 1rem;
   border: 1px solid var(--border-strong);
   border-radius: 1.35rem;
-  background: var(--glass-surface);
-  box-shadow: var(--shadow-soft);
-  backdrop-filter: blur(18px);
+  background: rgba(8, 18, 29, 0.18);
+  box-shadow: 0 16px 34px rgba(0, 0, 0, 0.14);
+  backdrop-filter: blur(10px);
 }
 
 .cardHeader {
@@ -83,7 +83,7 @@
 .typeBadge {
   padding: 0.36rem 0.64rem;
   border-radius: 999px;
-  background: var(--glass-surface-strong);
+  background: rgba(8, 18, 29, 0.28);
   border: 1px solid var(--border-soft);
   color: var(--accent-strong);
   font-size: 0.76rem;

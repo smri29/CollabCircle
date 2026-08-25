@@ -48,10 +48,6 @@ export const primaryNavigation: NavigationItem[] = [
     label: "Products",
   },
   {
-    href: "/courses",
-    label: "Courses",
-  },
-  {
     href: "/about-us",
     label: "About",
   },
@@ -67,8 +63,8 @@ export const moreNavigation: NavigationItem[] = [
     label: "Publications",
   },
   {
-    href: "/team",
-    label: "Team",
+    href: "/founders-corner",
+    label: "Founders' Corner",
   },
   {
     href: "/terms-of-use",
@@ -110,18 +106,11 @@ export const companyLinks: FeatureLink[] = [
     cta: "Get the overview",
   },
   {
-    href: "/career",
+    href: "/join-us",
     label: "Career",
     description: "For researchers, future engineers, and long-term collaborators.",
     icon: "join",
     cta: "Explore careers",
-  },
-];
-
-export const cognitiveCyberLabNavigation: NavigationItem[] = [
-  {
-    href: "/cognitive-cyber-lab",
-    label: "Home",
   },
 ];
 
