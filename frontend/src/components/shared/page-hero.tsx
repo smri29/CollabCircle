@@ -2,9 +2,9 @@ import type { LucideIcon } from "lucide-react";
 import styles from "./page-hero.module.css";
 
 type PageHeroProps = {
-  eyebrow: string;
+  eyebrow?: string;
   title: string;
-  intro: string;
+  intro?: string;
   icon?: LucideIcon;
   titleSingleLine?: boolean;
 };
@@ -20,16 +20,18 @@ export function PageHero({
     <section className={styles.hero}>
       <div className={styles.backdrop} aria-hidden="true" />
       <div className={styles.content}>
-        <div className={styles.kicker}>
-          {Icon ? (
-            <span className={styles.iconWrap}>
-              <Icon size={18} strokeWidth={2} />
-            </span>
-          ) : null}
-          <p>{eyebrow}</p>
-        </div>
+        {eyebrow || Icon ? (
+          <div className={styles.kicker}>
+            {Icon ? (
+              <span className={styles.iconWrap}>
+                <Icon size={18} strokeWidth={2} />
+              </span>
+            ) : null}
+            {eyebrow ? <p>{eyebrow}</p> : null}
+          </div>
+        ) : null}
         <h1 className={titleSingleLine ? styles.singleLineTitle : undefined}>{title}</h1>
-        <p>{intro}</p>
+        {intro ? <p>{intro}</p> : null}
       </div>
     </section>
   );
