@@ -63,7 +63,6 @@ export default function TermsOfUsePage() {
   return (
     <>
       <PageHero
-        backHref="/"
         eyebrow="Terms of Use"
         icon={Scale}
         intro="Review the terms that govern use of the CollabCircle website."

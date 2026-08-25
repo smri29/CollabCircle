@@ -17,9 +17,9 @@
   padding: 1.15rem;
   border: 1px solid var(--border-strong);
   border-radius: 1.45rem;
-  background: var(--glass-surface);
-  box-shadow: var(--shadow-soft);
-  backdrop-filter: blur(18px);
+  background: rgba(8, 18, 29, 0.18);
+  box-shadow: 0 16px 34px rgba(0, 0, 0, 0.14);
+  backdrop-filter: blur(10px);
   transition:
     transform 180ms ease,
     border-color 180ms ease,
@@ -61,7 +61,7 @@
   height: 2.5rem;
   border: 1px solid var(--border-strong);
   border-radius: 1rem;
-  background: var(--glass-surface-strong);
+  background: rgba(8, 18, 29, 0.28);
   color: var(--accent-strong);
 }
 

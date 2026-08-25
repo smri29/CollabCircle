@@ -21,7 +21,7 @@ export function CompanyHome() {
               Driving innovation in Machine Learning &amp; Deep Learning through open collaboration
               and impactful research.
             </p>
-            <Link className={`button ${styles.heroCta}`} href="/career">
+            <Link className={`button ${styles.heroCta}`} href="/join-us">
               <span>Explore Careers</span>
               <ArrowRight size={16} strokeWidth={2} />
             </Link>
@@ -35,10 +35,6 @@ export function CompanyHome() {
             <div className={servicesStyles.sectionIntro}>
               <h2>Solutions &amp; Services</h2>
             </div>
-            <Link className={servicesStyles.viewAllLink} href="/solutions-services">
-              <span>View all</span>
-              <ArrowRight size={16} strokeWidth={2} />
-            </Link>
           </div>
 
           <div className={servicesStyles.servicesTable}>

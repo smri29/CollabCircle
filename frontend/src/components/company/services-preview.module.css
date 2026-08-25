@@ -45,13 +45,11 @@
 
 .servicesTable {
   padding: 1rem;
-  border: 1px solid var(--border-strong);
+  border: 0;
   border-radius: var(--radius-lg);
-  background:
-    radial-gradient(circle at 12% 16%, color-mix(in srgb, var(--accent-soft) 8%, transparent), transparent 24%),
-    linear-gradient(150deg, color-mix(in srgb, var(--glass-surface-strong) 94%, white 6%), var(--glass-surface));
-  box-shadow: var(--shadow-soft);
-  backdrop-filter: blur(18px);
+  background: transparent;
+  box-shadow: none;
+  backdrop-filter: none;
   animation: fadeLift 700ms ease both;
 }
 
@@ -66,9 +64,9 @@
   gap: 0;
   border: 1px solid var(--border-strong);
   border-radius: 1.2rem;
-  background: var(--glass-surface-strong);
-  box-shadow: var(--shadow-soft);
-  backdrop-filter: blur(18px);
+  background: rgba(8, 18, 29, 0.22);
+  box-shadow: 0 16px 34px rgba(0, 0, 0, 0.14);
+  backdrop-filter: blur(10px);
   animation: fadeLift 700ms ease both;
   transition:
     transform 180ms ease,

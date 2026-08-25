@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import { ArrowUpRight, Crown, Linkedin } from "lucide-react";
+import { ArrowUpRight, Linkedin } from "lucide-react";
 import wingStyles from "@/components/research/research-wing.module.css";
 import { PageHero } from "@/components/shared/page-hero";
 import {
-  developmentWingCoFounders,
+  companyCoFounders,
   founderProfile,
-  researchWingCoFounders,
+  productCoFounders,
   type FounderProfile,
 } from "@/data/site-content";
 
@@ -56,22 +56,13 @@ export default function FoundersCornerPage() {
   return (
     <>
       <PageHero
-        backHref="/"
-        eyebrow="Founders' Corner"
-        icon={Crown}
-        intro="A dedicated place for the founder-level identity of CollabCircle and the co-founding leadership shaping its wings."
-        title="Leaders across CollabCircle and its wings."
+        title="Leaders across CollabCircle."
       />
 
       <section className="section">
         <div className={wingStyles.sectionStack}>
           <div className={wingStyles.lead}>
-            <span className={wingStyles.leadMark}>Company Founder</span>
             <h2>Founder, CollabCircle.</h2>
-            <p>
-              This profile represents the founding identity of the full company rather than only one
-              current wing.
-            </p>
           </div>
 
           <article className={wingStyles.profileHeroCard}>
@@ -80,7 +71,6 @@ export default function FoundersCornerPage() {
             </div>
 
             <div className={wingStyles.profileBody}>
-              <span className={wingStyles.profileRole}>Founder</span>
               <h3>{founderProfile.name}</h3>
               <p>{founderProfile.role}</p>
               <p>{founderProfile.description}</p>
@@ -106,18 +96,9 @@ export default function FoundersCornerPage() {
 
       <section className="section">
         <div className={wingStyles.sectionStack}>
-          <div className={wingStyles.lead}>
-            <span className={wingStyles.leadMark}>Research Wing</span>
-            <h2>Co-founders, Research Wing.</h2>
-            <p>
-              These profiles belong to the origin and development of the Research Wing specifically
-              and are presented in that wing context.
-            </p>
-          </div>
-
           <div className={wingStyles.profileGrid}>
-            {researchWingCoFounders.map((member) => (
-              <FounderCard badge="Research Wing" key={member.name} member={member} />
+            {companyCoFounders.map((member) => (
+              <FounderCard badge="Co-Founder" key={member.name} member={member} />
             ))}
           </div>
         </div>
@@ -125,18 +106,9 @@ export default function FoundersCornerPage() {
 
       <section className="section">
         <div className={wingStyles.sectionStack}>
-          <div className={wingStyles.lead}>
-            <span className={wingStyles.leadMark}>Product Direction</span>
-            <h2>Co-founders, Product Direction.</h2>
-            <p>
-              This section is ready for the product and delivery side of CollabCircle and can
-              absorb fuller founder profiles as that work becomes more public-facing.
-            </p>
-          </div>
-
           <div className={wingStyles.profileGrid}>
-            {developmentWingCoFounders.map((member) => (
-              <FounderCard badge="Product Direction" key={member.name} member={member} />
+            {productCoFounders.map((member) => (
+              <FounderCard badge="Co-Founder" key={member.name} member={member} />
             ))}
           </div>
         </div>

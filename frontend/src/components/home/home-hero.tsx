@@ -21,7 +21,7 @@ export function HomeHero() {
             <span>View Publications</span>
             <ArrowRight size={16} strokeWidth={2} />
           </Link>
-          <Link className="buttonGhost" href="/about">
+          <Link className="buttonGhost" href="/about-us">
             See How We Work
           </Link>
         </div>

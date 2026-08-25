@@ -12,17 +12,17 @@ const faqItems = [
   {
     title: "What is CollabCircle at this stage?",
     description:
-      "CollabCircle is growing from a research-led foundation toward a broader long-term organization. Right now, the public website presents publications, products, solutions and services, company information, and careers.",
+      "CollabCircle is growing from a research-led foundation toward a broader long-term organization. Right now, the public website presents publications, products, company information, and career opportunities.",
   },
   {
-    title: "How do Publications, Products, and Solutions & Services relate to each other?",
+    title: "How do Publications and Products relate to each other?",
     description:
-      "Publications acts as the public research-facing archive of CollabCircle. Products highlights build directions and product-oriented work, while Solutions & Services presents the practical technical capabilities CollabCircle offers.",
+      "Publications acts as the public research-facing archive of CollabCircle. Products highlights build directions and product-oriented work across the broader organization.",
   },
   {
     title: "Where should I start if I am new to the website?",
     description:
-      "Start from the homepage if you want the full company-level view. If you already know your interest, open Publications for research-facing records, Products for build directions, or Solutions & Services for technical delivery capabilities.",
+      "Start from the homepage if you want the full company-level view. If you already know your interest, open Publications for research-facing records or Products for build directions.",
   },
   {
     title: "What kind of content appears in Publications?",
@@ -70,10 +70,9 @@ export default function FaqPage() {
   return (
     <>
       <PageHero
-        backHref="/"
         eyebrow="FAQ"
         icon={CircleHelp}
-        intro="Answers about the organization, the website structure, publications, products, solutions and services, and the application process."
+        intro="Answers about the organization, the website structure, publications, products, and the application process."
         title="Frequently asked questions."
         titleSingleLine
       />
@@ -111,14 +110,14 @@ export default function FaqPage() {
             <p>Still need help?</p>
             <h2>Use the next best route if your question is not covered here.</h2>
             <p>
-              If your question is about applying, start with the Career page. If you need direct
+              If your question is about applying, start with the Join Us page. If you need direct
               clarification, use the Contact page and reach out through the official channel.
             </p>
           </div>
 
           <div className={styles.ctaActions}>
-            <Link className="button" href="/career">
-              <span>Open Career</span>
+            <Link className="button" href="/join-us">
+              <span>Open Join Us</span>
               <ArrowRight size={16} strokeWidth={2} />
             </Link>
             <Link className={styles.secondaryCta} href="/contact">

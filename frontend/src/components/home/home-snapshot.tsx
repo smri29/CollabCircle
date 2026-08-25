@@ -18,7 +18,7 @@ const snapshotItems = [
   {
     title: "Company direction",
     description: "See how CollabCircle is being shaped across research, development, and long-term growth.",
-    href: "/about",
+    href: "/about-us",
     icon: ShieldCheck,
   },
 ];

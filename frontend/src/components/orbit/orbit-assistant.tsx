@@ -89,7 +89,12 @@ export function OrbitAssistant() {
         onClick={() => setIsOpen((open) => !open)}
         type="button"
       >
-        <CollabCircleLogo className={styles.fabMark} height={44} width={44} />
+        <CollabCircleLogo
+          className={styles.fabMark}
+          height={44}
+          variant="mark"
+          width={44}
+        />
         <span className={styles.fabText}>
           <strong>Orbit</strong>
           <small>Ask about CollabCircle</small>

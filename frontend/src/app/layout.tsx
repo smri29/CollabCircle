@@ -1,19 +1,21 @@
 import type { Metadata } from "next";
 import Script from "next/script";
-import { Plus_Jakarta_Sans, Sora } from "next/font/google";
-import { HeaderSwitcher } from "@/components/layout/header-switcher";
+import { Cormorant_Garamond, Manrope } from "next/font/google";
+import { SiteHeader } from "@/components/layout/site-header";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { OrbitAssistant } from "@/components/orbit/orbit-assistant";
+import { RouteTheme } from "@/components/theme/route-theme";
 import "./globals.css";
 
-const jakarta = Plus_Jakarta_Sans({
+const manrope = Manrope({
   variable: "--font-sans",
   subsets: ["latin"],
 });
 
-const sora = Sora({
+const cormorant = Cormorant_Garamond({
   variable: "--font-display",
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
@@ -23,9 +25,9 @@ export const metadata: Metadata = {
   },
   description: "A future-ready organization shaped around research, engineering, and long-term impact.",
   icons: {
-    icon: "/CollabCircle%20Logo.svg",
-    shortcut: "/CollabCircle%20Logo.svg",
-    apple: "/CollabCircle%20Logo.svg",
+    icon: "/New%20Logo/CollabCircle.png",
+    shortcut: "/New%20Logo/CollabCircle.png",
+    apple: "/New%20Logo/CollabCircle.png",
   },
 };
 
@@ -35,7 +37,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" data-theme="landing" suppressHydrationWarning>
+    <html
+      lang="en"
+      data-scroll-behavior="smooth"
+      data-theme="landing"
+      suppressHydrationWarning
+    >
       <head>
         <Script id="strip-extension-body-attrs" strategy="beforeInteractive">
           {`
@@ -48,9 +55,26 @@ export default function RootLayout({
           `}
         </Script>
       </head>
-      <body className={`${jakarta.variable} ${sora.variable}`} suppressHydrationWarning>
+      <body className={`${manrope.variable} ${cormorant.variable}`} suppressHydrationWarning>
+        <RouteTheme />
         <div className="siteShell">
-          <HeaderSwitcher />
+          <div aria-hidden="true" className="siteBgMedia">
+            <video
+              autoPlay
+              className="siteBgVideo"
+              loop
+              muted
+              playsInline
+              preload="auto"
+            >
+              <source
+                src="/BG%20Video/CollabCircle%20Background%20Video.mp4"
+                type="video/mp4"
+              />
+            </video>
+            <div className="siteBgOverlay" />
+          </div>
+          <SiteHeader />
           <main className="siteMain">{children}</main>
           <SiteFooter />
           <OrbitAssistant />
