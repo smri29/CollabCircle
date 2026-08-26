@@ -1,16 +1,20 @@
+const envValue = (value: string | undefined) => value?.trim() || undefined;
+
 export const siteMeta = {
   name: "CollabCircle",
   tagline: "Research, engineering, and long-term impact.",
   description:
     "CollabCircle is a future-ready organization growing from a research foundation toward engineering and broader impact.",
-  email: "collabcircle.official@gmail.com",
+  email: envValue(process.env.Gmail) ?? "",
 };
 
 const socialProfiles = {
-  linkedin: "https://www.linkedin.com/company/collabcircle-official/",
-  facebook: "https://www.facebook.com/collabcircle.official",
-  instagram: "https://www.instagram.com/collabcircle.official/",
-  youtube: "https://www.youtube.com/@collabcircle.official",
+  linkedin: envValue(process.env.Linkedin),
+  facebook: envValue(process.env.Facebook),
+  instagram: envValue(process.env.Instagram),
+  youtube: envValue(process.env.Youtube),
+  x: envValue(process.env.x),
+  github: envValue(process.env.Github),
 };
 
 export const navigation = [
@@ -26,6 +30,14 @@ export const socialLinks = [
     href: socialProfiles.linkedin,
   },
   {
+    label: "X",
+    href: socialProfiles.x,
+  },
+  {
+    label: "GitHub",
+    href: socialProfiles.github,
+  },
+  {
     label: "Facebook",
     href: socialProfiles.facebook,
   },
@@ -37,9 +49,9 @@ export const socialLinks = [
     label: "YouTube",
     href: socialProfiles.youtube,
   },
-];
+].filter((item): item is { label: string; href: string } => Boolean(item.href));
 
-export const youtubeChannelHref = socialProfiles.youtube;
+export const youtubeChannelHref = socialProfiles.youtube ?? "";
 
 export type YouTubeShowcaseVideo = {
   title: string;
@@ -468,10 +480,22 @@ export const contactChannels = [
     description: "Public updates and community presence.",
   },
   {
+    label: "X",
+    value: "@CollabCircle1",
+    href: socialProfiles.x,
+    description: "Short updates, public notes, and broader visibility.",
+  },
+  {
     label: "Instagram",
     value: "@collabcircle.official",
     href: socialProfiles.instagram,
     description: "Visual snapshots and organization moments.",
+  },
+  {
+    label: "GitHub",
+    value: "CollabCircle-Official",
+    href: socialProfiles.github,
+    description: "Code, repositories, and public technical presence.",
   },
   {
     label: "YouTube",
@@ -479,7 +503,9 @@ export const contactChannels = [
     href: socialProfiles.youtube,
     description: "Video content and future public communication.",
   },
-];
+].filter((channel): channel is { label: string; value: string; href: string; description: string } =>
+  Boolean(channel.value && channel.href),
+);
 
 export const contactPurposes = [
   {
