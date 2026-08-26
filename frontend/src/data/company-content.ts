@@ -243,11 +243,11 @@ export const missionVisionBlocks = [
   },
   {
     title: "Vision",
-    description: "Grow CollabCircle into a credible technology company by 2030.",
+    description: "Shape CollabCircle into a high-tech company where research, engineering, and cybersecurity grow together with clarity and purpose.",
   },
   {
     title: "Promise",
-    description: "Stay organized, ethical, and quality-driven while the company expands.",
+    description: "Stay disciplined, ethical, and quality-driven as the company grows and evolves.",
   },
 ];
 
