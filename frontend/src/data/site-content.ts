@@ -202,6 +202,22 @@ export type FounderProfile = {
   linkedinHref: string;
 };
 
+export type ExecutivePanelMember = {
+  id:
+    | "ceo"
+    | "cfo"
+    | "coo"
+    | "cyber"
+    | "advisor"
+    | "product"
+    | "research"
+    | "vp"
+    | "qa";
+  name: string;
+  roleLines: string[];
+  linkedinHref: string;
+};
+
 export const executiveMembers: TeamMember[] = [
   {
     name: "Sumaiya Alam Shorna",
@@ -261,6 +277,63 @@ export const founderProfile: FounderProfile = {
   imagePublicId: null,
   linkedinHref: socialProfiles.linkedin,
 };
+
+export const executivePanelMembers: ExecutivePanelMember[] = [
+  {
+    id: "ceo",
+    name: "Shah Mohammad Rizvi",
+    roleLines: ["Chief Executive Officer", "(CEO) & Lead Architect"],
+    linkedinHref: socialProfiles.linkedin,
+  },
+  {
+    id: "cfo",
+    name: "Sumaiya Alam Shorna",
+    roleLines: ["Chief Financial Officer", "(CFO) & Financial Analyst"],
+    linkedinHref: socialProfiles.linkedin,
+  },
+  {
+    id: "coo",
+    name: "Ummay Saima",
+    roleLines: ["Chief Operating Officer", "(COO) & Chief of Staff"],
+    linkedinHref: socialProfiles.linkedin,
+  },
+  {
+    id: "cyber",
+    name: "Saymon Hasan",
+    roleLines: ["Director of Cybersecurity Operations"],
+    linkedinHref: socialProfiles.linkedin,
+  },
+  {
+    id: "advisor",
+    name: "Rimo Bhuiyan",
+    roleLines: ["Operations Advisor &", "Board Consultant"],
+    linkedinHref: socialProfiles.linkedin,
+  },
+  {
+    id: "product",
+    name: "Sumaiya Islam Mily",
+    roleLines: ["Associate Product Manager", "& Business Analyst"],
+    linkedinHref: socialProfiles.linkedin,
+  },
+  {
+    id: "research",
+    name: "Nur A Jannat Shuchi",
+    roleLines: ["Director of Research &", "Artificial Intelligence (R&D)"],
+    linkedinHref: socialProfiles.linkedin,
+  },
+  {
+    id: "vp",
+    name: "Md. Aman Uddin Siyam",
+    roleLines: ["Vice President (VP) of", "Software Engineering"],
+    linkedinHref: socialProfiles.linkedin,
+  },
+  {
+    id: "qa",
+    name: "Rumi Akter",
+    roleLines: ["QA Associate"],
+    linkedinHref: socialProfiles.linkedin,
+  },
+];
 
 export const companyCoFounders: FounderProfile[] = [
   {

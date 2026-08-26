@@ -1,0 +1,159 @@
+.page {
+  position: relative;
+  display: grid;
+  gap: 1rem;
+  min-height: calc(100vh - 8rem);
+  padding: 1rem 0 7rem;
+  --level-1-top: 3%;
+  --level-2-top: 28%;
+  --level-3-top: 56%;
+  --level-4-top: 86%;
+}
+
+.board {
+  position: relative;
+  min-height: 1460px;
+  overflow: visible;
+  background: transparent;
+  box-shadow: none;
+}
+
+.node {
+  position: absolute;
+  display: grid;
+  justify-items: center;
+  width: 18rem;
+  text-align: center;
+}
+
+.avatarWrap {
+  display: grid;
+  place-items: center;
+}
+
+.avatar {
+  display: grid;
+  place-items: center;
+  width: 8.5rem;
+  height: 8.5rem;
+  border: 7px solid #49b8ff;
+  border-radius: 999px;
+  background:
+    radial-gradient(circle at 30% 28%, rgba(255, 255, 255, 0.36), transparent 35%),
+    linear-gradient(180deg, rgba(43, 43, 43, 0.94), rgba(15, 15, 15, 1));
+  box-shadow:
+    0 0 0 1px rgba(194, 240, 255, 0.22),
+    0 10px 24px rgba(0, 0, 0, 0.28);
+}
+
+.avatar span {
+  color: #f8fbff;
+  font-family: var(--font-display);
+  font-size: 2rem;
+  line-height: 1;
+  letter-spacing: -0.04em;
+}
+
+.nodeCopy {
+  display: grid;
+  gap: 0.45rem;
+  margin-top: -0.08rem;
+  align-content: start;
+  width: 100%;
+}
+
+.name {
+  color: #f0b63e;
+  font-size: clamp(1.05rem, 1.8vw, 1.6rem);
+  line-height: 1.15;
+  font-weight: 700;
+  min-height: 2.4em;
+  display: grid;
+  align-items: end;
+}
+
+.roleBlock {
+  display: grid;
+  align-content: start;
+  gap: 0.12rem;
+  min-height: 3.15em;
+}
+
+.roleBlock p {
+  color: #f8fbff;
+  font-size: clamp(0.95rem, 1.3vw, 1.15rem);
+  line-height: 1.25;
+  margin: 0;
+}
+
+.profileLink {
+  display: inline-flex;
+  align-items: center;
+  justify-self: center;
+  gap: 0.35rem;
+  margin-top: 0.35rem;
+  color: #9fdcff;
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.ceoNode { top: var(--level-1-top); left: 50%; transform: translateX(-50%); width: 20rem; }
+.cfoNode { top: var(--level-2-top); left: 14%; transform: translateX(-50%); width: 17rem; }
+.cooNode { top: var(--level-2-top); left: 50%; transform: translateX(-50%); width: 19rem; }
+.cyberNode { top: var(--level-2-top); left: 86%; transform: translateX(-50%); width: 17rem; }
+.advisorNode { top: var(--level-3-top); left: 13%; transform: translateX(-50%); width: 13rem; }
+.productNode { top: var(--level-3-top); left: 36%; transform: translateX(-50%); width: 16rem; }
+.researchNode { top: var(--level-3-top); left: 59.5%; transform: translateX(-50%); width: 18rem; }
+
+.researchNode .name {
+  white-space: nowrap;
+}
+.vpNode { top: var(--level-3-top); left: 84%; transform: translateX(-50%); width: 19rem; }
+.qaNode { top: var(--level-4-top); left: 84%; transform: translateX(-50%); width: 20rem; }
+
+.qaNode .roleBlock {
+  min-height: auto;
+  gap: 0;
+}
+
+.qaNode .profileLink {
+  margin-top: 0.12rem;
+}
+
+@media (max-width: 1100px) {
+  .board {
+    min-height: auto;
+    padding: 2rem 1rem;
+    display: grid;
+    gap: 1.75rem;
+  }
+
+  .node {
+    position: static;
+    transform: none !important;
+    width: 100%;
+    padding: 1rem;
+    border: 1px dashed rgba(255, 255, 255, 0.35);
+    border-radius: 1.5rem;
+    background: rgba(255, 255, 255, 0.03);
+  }
+
+  .ceoNode,
+  .cfoNode,
+  .cooNode,
+  .cyberNode,
+  .advisorNode,
+  .productNode,
+  .researchNode,
+  .vpNode,
+  .qaNode {
+    width: 100%;
+  }
+}
+
+@media (max-width: 720px) {
+  .avatar {
+    width: 7.25rem;
+    height: 7.25rem;
+  }
+}

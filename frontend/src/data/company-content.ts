@@ -63,8 +63,8 @@ export const moreNavigation: NavigationItem[] = [
     label: "Publications",
   },
   {
-    href: "/founders-corner",
-    label: "Founders' Corner",
+    href: "/team",
+    label: "Team",
   },
   {
     href: "/terms-of-use",
