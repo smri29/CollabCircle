@@ -9,12 +9,12 @@ export const siteMeta = {
 };
 
 const socialProfiles = {
-  linkedin: envValue(process.env.Linkedin),
-  facebook: envValue(process.env.Facebook),
-  instagram: envValue(process.env.Instagram),
-  youtube: envValue(process.env.Youtube),
-  x: envValue(process.env.x),
-  github: envValue(process.env.Github),
+  linkedin: envValue(process.env.Linkedin) ?? "",
+  facebook: envValue(process.env.Facebook) ?? "",
+  instagram: envValue(process.env.Instagram) ?? "",
+  youtube: envValue(process.env.Youtube) ?? "",
+  x: envValue(process.env.x) ?? "",
+  github: envValue(process.env.Github) ?? "",
 };
 
 export const navigation = [
