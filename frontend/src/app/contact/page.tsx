@@ -3,11 +3,13 @@ import Link from "next/link";
 import type { LucideIcon } from "lucide-react";
 import {
   Facebook,
+  Github,
   Instagram,
   Linkedin,
   Mail,
   MapPinned,
   ShieldCheck,
+  Twitter,
   Youtube,
 } from "lucide-react";
 import contactStyles from "@/components/contact/contact-page.module.css";
@@ -25,7 +27,9 @@ const channelIcons: Record<string, LucideIcon> = {
   Email: Mail,
   LinkedIn: Linkedin,
   Facebook: Facebook,
+  X: Twitter,
   Instagram: Instagram,
+  GitHub: Github,
   YouTube: Youtube,
 };
 

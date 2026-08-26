@@ -1,9 +1,11 @@
 import Link from "next/link";
 import {
   Facebook,
+  Github,
   Instagram,
   Linkedin,
   Mail,
+  Twitter,
   Youtube,
 } from "lucide-react";
 import { CollabCircleLogo } from "@/components/brand/collabcircle-logo";
@@ -13,6 +15,8 @@ import styles from "./site-footer.module.css";
 
 const socialIcons = {
   LinkedIn: Linkedin,
+  X: Twitter,
+  GitHub: Github,
   Facebook: Facebook,
   Instagram: Instagram,
   YouTube: Youtube,

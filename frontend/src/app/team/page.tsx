@@ -7,6 +7,17 @@ export const metadata: Metadata = {
   title: "Team",
 };
 
+const teamLinkedinLinks = {
+  ceo: process.env.Rizvi,
+  cfo: process.env.Shorna,
+  coo: process.env.Saima,
+  cyber: process.env.Saymon,
+  advisor: process.env.Rimo,
+  product: process.env.Mily,
+  research: process.env.Shuchi,
+  vp: process.env.Siyam,
+  qa: process.env.Rumi,
+} as const;
 function getInitials(name: string) {
   return name
     .split(" ")
@@ -49,7 +60,13 @@ function TeamNode({
 }
 
 const membersById = Object.fromEntries(
-  executivePanelMembers.map((member) => [member.id, member]),
+  executivePanelMembers.map((member) => [
+    member.id,
+    {
+      ...member,
+      linkedinHref: teamLinkedinLinks[member.id] ?? member.linkedinHref,
+    },
+  ]),
 ) as Record<ExecutivePanelMember["id"], ExecutivePanelMember>;
 
 export default function TeamPage() {
