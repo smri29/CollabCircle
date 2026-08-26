@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { ArrowUpRight, Linkedin } from "lucide-react";
 import { executivePanelMembers, type ExecutivePanelMember } from "@/data/site-content";
 import styles from "./team.module.css";
@@ -18,27 +19,41 @@ const teamLinkedinLinks = {
   vp: process.env.Siyam,
   qa: process.env.Rumi,
 } as const;
-function getInitials(name: string) {
-  return name
-    .split(" ")
-    .filter(Boolean)
-    .slice(0, 2)
-    .map((part) => part[0]?.toUpperCase() ?? "")
-    .join("");
-}
+
+const teamImagePaths = {
+  ceo: "/Team%20Page%20Pictures/Shah%20Mohammad%20Rizvi.jpg",
+  cfo: "/Team%20Page%20Pictures/Sumaiya%20Alam%20Shorna.jpg",
+  coo: "/Team%20Page%20Pictures/Ummay%20Saima.png",
+  cyber: "/Team%20Page%20Pictures/Saymon%20Hasan.jpg",
+  advisor: "/Team%20Page%20Pictures/Rimo%20Bhuiyan.jpg",
+  product: "/Team%20Page%20Pictures/Sumaiya%20Islam%20Mily.jpg",
+  research: "/Team%20Page%20Pictures/Nur%20A%20Jannat%20Shuchi.jpg",
+  vp: "/Team%20Page%20Pictures/Md.%20Aman%20Uddin%20Siyam.jpg",
+  qa: "/Team%20Page%20Pictures/Rume%20Akter.jpg",
+} as const;
+
+type TeamPageMember = ExecutivePanelMember & {
+  imageSrc: string;
+};
 
 function TeamNode({
   member,
   className,
 }: {
-  member: ExecutivePanelMember;
+  member: TeamPageMember;
   className: string;
 }) {
   return (
     <article className={`${styles.node} ${className}`}>
       <div className={styles.avatarWrap}>
         <div className={styles.avatar}>
-          <span>{getInitials(member.name)}</span>
+          <Image
+            alt={member.name}
+            className={styles.avatarImage}
+            fill
+            sizes="136px"
+            src={member.imageSrc}
+          />
         </div>
       </div>
 
@@ -64,10 +79,11 @@ const membersById = Object.fromEntries(
     member.id,
     {
       ...member,
+      imageSrc: teamImagePaths[member.id],
       linkedinHref: teamLinkedinLinks[member.id] ?? member.linkedinHref,
     },
   ]),
-) as Record<ExecutivePanelMember["id"], ExecutivePanelMember>;
+) as Record<ExecutivePanelMember["id"], TeamPageMember>;
 
 export default function TeamPage() {
   return (
