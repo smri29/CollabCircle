@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Building2, Compass, Sparkles, UsersRound } from "lucide-react";
+import { ArrowRight, Compass, Sparkles, UsersRound } from "lucide-react";
 import { missionVisionBlocks } from "@/data/company-content";
 import styles from "./about-us.module.css";
 
@@ -15,43 +15,90 @@ export default function AboutUsPage() {
       <div className={styles.backdrop} aria-hidden="true" />
       <div className={styles.content}>
         <div className={styles.kicker}>
-          <span className={styles.iconWrap}>
-            <Building2 size={18} strokeWidth={2} />
-          </span>
-          <p>About Us</p>
+          <p>Founders Corner</p>
         </div>
 
-        <div className={styles.foundingNote}>
-          <h1>The People behind CollabCircle</h1>
-        </div>
-
-        <div className={styles.imageFrame}>
-          <Image
-            alt="The six founding members of CollabCircle"
-            className={styles.heroImage}
-            priority
-            sizes="(max-width: 960px) 100vw, 72rem"
-            src="/CollabCircle Founding Body.png"
-            width={1600}
-            height={900}
-          />
-        </div>
-
-        <div className={styles.foundingNote}>
-          <p>
-            CollabCircle began with the vision of Shah Mohammad Rizvi, the Founder of
-            CollabCircle, who imagined a space where research, discipline, and long-term ambition
-            could grow into something meaningful. At the core of that early journey was Md. Aman
-            Uddin Siyam, whose support helped turn that vision into a real starting point.
-          </p>
-          <p>
-            The other five joined as Co-Founders because they believed in the same dream: that
-            together they could build something powerful, creative, and lasting. What brought them
-            together was not only shared trust or interest, but a genuine belief that collective
-            effort could create something larger than any one person alone.
-          </p>
-        </div>
       </div>
+
+      <section className={styles.section}>
+        <article className={styles.founderPanel}>
+          <div className={styles.founderImageFrame}>
+            <Image
+              alt="Shah Mohammad Rizvi, Founder of CollabCircle"
+              className={styles.founderImage}
+              priority
+              sizes="(max-width: 960px) 100vw, 22rem"
+              src="/Founder.jpg"
+              width={960}
+              height={1200}
+            />
+          </div>
+
+          <div className={styles.founderCopy}>
+            <div className={styles.sectionIntro}>
+              <h2>Shah Mohammad Rizvi</h2>
+            </div>
+
+            <p>
+              I started CollabCircle from a long-view belief that disciplined research, thoughtful
+              systems, and shared ambition could grow into an organization with real public value.
+            </p>
+            <p>
+              What began as an early idea gradually became a real foundation through collaboration,
+              research work, and a growing belief that meaningful progress requires both ambition
+              and structure.
+            </p>
+            <p>
+              In the beginning, CollabCircle was shaped around research. We built our early work
+              with care, developed internal structure, and grew through shared effort, discipline,
+              and consistency. That stage gave us more than output. It gave us identity.
+            </p>
+            <p>
+              Over time, I realized CollabCircle should not remain limited to research alone. If
+              we are capable of serious research, then we should also be capable of building real
+              systems from that knowledge. That realization opened a larger direction for the
+              company.
+            </p>
+            <p>
+              Today, I see CollabCircle as a high-tech startup being shaped across three connected
+              fields: Research using AI, Machine Learning, and Deep Learning; Focused
+              Engineering; and Cybersecurity. I want it to be built not only on ideas, but on
+              trust, structure, consistency, and the kind of long-term impact that lasts.
+            </p>
+          </div>
+        </article>
+      </section>
+
+      <section className={styles.section}>
+        <article className={styles.aboutPanel}>
+          <div className={styles.sectionIntro}>
+            <p>About CollabCircle</p>
+            <h2>How we think, build, and grow.</h2>
+          </div>
+
+          <div className={styles.aboutCopy}>
+            <p>
+              CollabCircle is a high-tech startup company being shaped across three connected
+              fields: research using Artificial Intelligence, Machine Learning, and Deep Learning;
+              focused engineering; and cybersecurity. What connects these areas is a shared belief
+              that strong ideas should lead to real systems, real structure, and meaningful public
+              value.
+            </p>
+            <p>
+              We believe good work does not grow from energy alone. It grows from discipline,
+              clarity, documentation, and responsible execution. That is why CollabCircle is being
+              built around organized processes, thoughtful collaboration, and a culture that values
+              consistency as much as ambition.
+            </p>
+            <p>
+              Our way of working is rooted in learning deeply, building carefully, and improving
+              steadily. We approach research with seriousness, engineering with focus, and
+              cybersecurity with responsibility. As CollabCircle grows, we want that standard to
+              remain visible in everything we do.
+            </p>
+          </div>
+        </article>
+      </section>
 
       <section className={styles.section}>
         <div className={styles.dualGrid}>
@@ -71,47 +118,6 @@ export default function AboutUsPage() {
             </article>
           ))}
         </div>
-      </section>
-
-      <section className={styles.section}>
-        <article className={styles.valuesPanel}>
-          <div className={styles.sectionIntro}>
-            <p>What drives us</p>
-            <h2>The ideas that hold the organization together.</h2>
-          </div>
-
-          <div className={styles.valueList}>
-            <div className={styles.valueItem}>
-              <h3>Collaboration first</h3>
-              <p>
-                CollabCircle is built on the belief that meaningful work becomes stronger when
-                people contribute across trust, discipline, and shared responsibility.
-              </p>
-            </div>
-            <div className={styles.valueItem}>
-              <h3>Open knowledge</h3>
-              <p>
-                We value research and learning that can be understood, shared, and carried forward
-                by others rather than hidden behind unnecessary complexity.
-              </p>
-            </div>
-            <div className={styles.valueItem}>
-              <h3>Research discipline</h3>
-              <p>
-                Ideas matter, but structure matters too. We care about documentation, quality,
-                ethics, and the kind of consistency that turns ambition into real progress.
-              </p>
-            </div>
-            <div className={styles.valueItem}>
-              <h3>Long-term building</h3>
-              <p>
-                CollabCircle is not shaped around quick visibility alone. It is being built with a
-                longer horizon in mind, where research, engineering, and impact can reinforce each
-                other over time.
-              </p>
-            </div>
-          </div>
-        </article>
       </section>
 
       <section className={styles.section}>
