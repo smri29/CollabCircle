@@ -21,7 +21,7 @@ const socialIcons = {
 const footerLinks = [
   ...primaryNavigation.map((item) => ({ href: item.href, label: item.label })),
   { href: "/join-us", label: "Join Us" },
-  { href: "/founders-corner", label: "Founders' Corner" },
+  { href: "/team", label: "Team" },
 ];
 
 const legalLinks = [

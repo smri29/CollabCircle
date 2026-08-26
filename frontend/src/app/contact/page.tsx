@@ -70,8 +70,8 @@ export default function ContactPage() {
               </div>
             </div>
 
-            <Link className="buttonGhost" href="/founders-corner">
-              Founders&apos; Corner
+            <Link className="buttonGhost" href="/team">
+              Team
             </Link>
           </article>
         </div>
