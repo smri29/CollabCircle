@@ -32,26 +32,21 @@
 }
 
 .avatar {
-  display: grid;
-  place-items: center;
+  position: relative;
+  overflow: hidden;
   width: 8.5rem;
   height: 8.5rem;
   border: 7px solid #49b8ff;
   border-radius: 999px;
-  background:
-    radial-gradient(circle at 30% 28%, rgba(255, 255, 255, 0.36), transparent 35%),
-    linear-gradient(180deg, rgba(43, 43, 43, 0.94), rgba(15, 15, 15, 1));
+  background: linear-gradient(180deg, rgba(43, 43, 43, 0.94), rgba(15, 15, 15, 1));
   box-shadow:
     0 0 0 1px rgba(194, 240, 255, 0.22),
     0 10px 24px rgba(0, 0, 0, 0.28);
 }
 
-.avatar span {
-  color: #f8fbff;
-  font-family: var(--font-display);
-  font-size: 2rem;
-  line-height: 1;
-  letter-spacing: -0.04em;
+.avatarImage {
+  object-fit: cover;
+  object-position: center;
 }
 
 .nodeCopy {
