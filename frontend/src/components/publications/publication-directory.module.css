@@ -6,7 +6,7 @@
 .header {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   gap: 1rem;
   flex-wrap: wrap;
 }
@@ -26,29 +26,26 @@
 
 .tabGroup {
   display: inline-flex;
-  gap: 0.3rem;
-  padding: 0.24rem;
-  border: 1px solid var(--border-strong);
-  border-radius: 999px;
-  background: rgba(8, 18, 29, 0.16);
-  backdrop-filter: blur(8px);
+  align-items: center;
+  gap: 1.4rem;
 }
 
 .tab,
 .tabActive {
-  padding: 0.62rem 0.92rem;
+  padding: 0.2rem 0;
   border: 0;
-  border-radius: 999px;
+  border-bottom: 1px solid transparent;
   background: transparent;
   color: var(--text-muted);
   font: inherit;
   font-size: 0.86rem;
+  font-weight: 700;
   cursor: pointer;
 }
 
 .tabActive {
-  background: rgba(8, 18, 29, 0.28);
-  color: var(--text-color);
+  border-bottom-color: var(--accent-strong);
+  color: var(--accent-strong);
 }
 
 .grid {
@@ -78,16 +75,6 @@
 .cardHeader h3 {
   font-size: 0.96rem;
   line-height: 1.15;
-}
-
-.typeBadge {
-  padding: 0.36rem 0.64rem;
-  border-radius: 999px;
-  background: rgba(8, 18, 29, 0.28);
-  border: 1px solid var(--border-soft);
-  color: var(--accent-strong);
-  font-size: 0.76rem;
-  font-weight: 700;
 }
 
 .metaList {

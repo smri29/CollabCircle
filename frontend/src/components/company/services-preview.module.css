@@ -6,15 +6,150 @@
 .sectionIntro {
   display: flex;
   align-items: center;
-  min-height: 3.25rem;
 }
 
-.sectionIntro h2 {
+.sectionCopy {
+  display: grid;
+  gap: 0.5rem;
+  max-width: 46rem;
+}
+
+.sectionCopy h2 {
   font-family: var(--font-display);
-  font-size: clamp(1.4rem, 3vw, 1.9rem);
-  line-height: 1;
+  font-size: clamp(2rem, 4.4vw, 3.2rem);
+  line-height: 0.96;
   letter-spacing: -0.05em;
   font-weight: 680;
+}
+
+.sectionCopy h3 {
+  font-family: var(--font-display);
+  font-size: clamp(1.25rem, 2.5vw, 1.72rem);
+  line-height: 1.08;
+  letter-spacing: -0.045em;
+  font-weight: 600;
+}
+
+.sectionCopy p {
+  max-width: 40rem;
+  color: var(--text-muted);
+  font-size: 0.98rem;
+}
+
+.solutionList {
+  display: grid;
+  border-top: 1px solid var(--border-strong);
+}
+
+.solutionOption {
+  border-bottom: 1px solid var(--border-strong);
+}
+
+.solutionOption summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.1rem 0;
+  cursor: pointer;
+  list-style: none;
+}
+
+.solutionOption summary::-webkit-details-marker {
+  display: none;
+}
+
+.solutionOptionTitle {
+  font-family: var(--font-display);
+  font-size: clamp(1.28rem, 2.4vw, 1.75rem);
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.035em;
+}
+
+.solutionOptionControl {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.2rem;
+  height: 2.2rem;
+  flex: 0 0 auto;
+  border: 1px solid var(--border-soft);
+  border-radius: 999px;
+  color: var(--accent-strong);
+  font-size: 1.2rem;
+  line-height: 1;
+  transition: transform 180ms ease, background-color 180ms ease;
+}
+
+.solutionOption[open] .solutionOptionControl {
+  transform: rotate(45deg);
+  background: color-mix(in srgb, var(--accent-strong) 12%, transparent);
+}
+
+.solutionOptionContent {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  gap: 2rem;
+  padding: 0 0 1.4rem;
+}
+
+.solutionOptionContent p {
+  color: var(--text-muted);
+  font-size: 0.98rem;
+  line-height: 1.55;
+}
+
+.solutionOptionContent ul {
+  display: grid;
+  gap: 0.55rem;
+  list-style: none;
+}
+
+.solutionOptionContent li {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: start;
+  gap: 0.7rem;
+  color: var(--text-color);
+  font-size: 0.95rem;
+}
+
+.solutionServiceIndex {
+  color: var(--accent-strong);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  line-height: 1.7;
+}
+
+.solutionOptionContent strong,
+.solutionOptionContent small {
+  display: block;
+}
+
+.solutionOptionContent strong {
+  font-weight: 700;
+}
+
+.solutionOptionContent small {
+  margin-top: 0.22rem;
+  color: var(--text-muted);
+  font-size: 0.88rem;
+  line-height: 1.45;
+}
+
+@media (max-width: 900px) {
+  .solutionOptionContent {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 560px) {
+  .solutionOption summary {
+    padding: 1rem 0;
+  }
 }
 
 .viewAllLink {

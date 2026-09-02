@@ -1,0 +1,17 @@
+.section {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.ctaRow p {
+  color: var(--text-muted);
+  font-size: 0.98rem;
+}
+
+.ctaRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}

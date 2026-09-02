@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { Package } from "lucide-react";
 import { DevelopmentProjectCard } from "@/components/development/development-project-card";
 import styles from "@/components/development/development-project-card.module.css";
 import { PageHero } from "@/components/shared/page-hero";
@@ -11,9 +10,6 @@ export default function ProductsPage() {
   return (
     <>
       <PageHero
-        eyebrow="Products"
-        icon={Package}
-        intro=""
         title="Products of CollabCircle"
       />
 

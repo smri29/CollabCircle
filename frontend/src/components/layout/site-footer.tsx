@@ -9,7 +9,7 @@ import {
   Youtube,
 } from "lucide-react";
 import { CollabCircleLogo } from "@/components/brand/collabcircle-logo";
-import { primaryNavigation } from "@/data/company-content";
+import { eLearnNavigation, primaryNavigation } from "@/data/company-content";
 import { siteMeta, socialLinks } from "@/data/site-content";
 import styles from "./site-footer.module.css";
 
@@ -24,6 +24,8 @@ const socialIcons = {
 
 const footerLinks = [
   ...primaryNavigation.map((item) => ({ href: item.href, label: item.label })),
+  eLearnNavigation,
+  { href: "/campaigns", label: "Campaigns" },
   { href: "/join-us", label: "Join Us" },
   { href: "/team", label: "Team" },
 ];

@@ -67,19 +67,16 @@
 
 .trackGrid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1rem;
+  border-top: 1px solid var(--border-strong);
 }
 
 .trackCard {
   display: grid;
-  gap: 1rem;
-  padding: 1.2rem;
-  border: 1px solid var(--border-strong);
-  border-radius: 1.6rem;
-  background: rgba(8, 18, 29, 0.18);
-  box-shadow: 0 16px 34px rgba(0, 0, 0, 0.14);
-  backdrop-filter: blur(10px);
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.4rem 0;
+  border-bottom: 1px solid var(--border-strong);
   animation: fadeLift 700ms ease both;
 }
 
@@ -88,57 +85,103 @@
   gap: 0.55rem;
 }
 
-.eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.45rem;
-  color: var(--accent-strong);
-  font-size: 0.74rem;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-}
-
 .trackTop h2 {
   font-family: var(--font-display);
-  font-size: clamp(1.4rem, 2vw, 1.9rem);
+  font-size: clamp(1.5rem, 2.4vw, 2rem);
   line-height: 1.05;
   letter-spacing: -0.03em;
   font-weight: 650;
 }
 
-.trackTop p,
-.audience {
+.trackTop p {
+  max-width: 42rem;
   color: var(--text-muted);
   font-size: 0.9rem;
 }
 
-.detailBlock {
-  display: grid;
-  gap: 0.55rem;
-}
-
-.detailBlock h3 {
-  font-size: 0.92rem;
-}
-
-.detailList {
-  display: grid;
-  gap: 0.7rem;
-  padding-left: 1.1rem;
-  color: var(--text-muted);
-  font-size: 0.86rem;
-}
-
 .ctaBlock {
   display: grid;
-  gap: 0.6rem;
-  margin-top: auto;
 }
 
-.ctaHint {
-  color: var(--text-subtle);
-  font-size: 0.8rem;
+.openingsSection {
+  display: grid;
+  gap: 1rem;
+}
+
+.openingTypeTabs {
+  display: inline-flex;
+  align-items: center;
+  justify-self: start;
+  gap: 1.4rem;
+}
+
+.openingTypeTab,
+.openingTypeTabActive {
+  padding: 0.2rem 0;
+  border: 0;
+  border-bottom: 1px solid transparent;
+  background: transparent;
+  color: var(--text-muted);
+  font: inherit;
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.openingTypeTabActive {
+  border-bottom-color: var(--accent-strong);
+  color: var(--accent-strong);
+}
+
+.openingList {
+  display: grid;
+  border-top: 1px solid var(--border-strong);
+}
+
+.openingRow {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--border-strong);
+}
+
+.openingRow > span {
+  color: var(--accent-strong);
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.openingRow h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.2rem, 2.2vw, 1.65rem);
+  line-height: 1.1;
+  letter-spacing: -0.035em;
+  font-weight: 600;
+}
+
+.openingApply {
+  min-height: 2.6rem;
+  padding: 0.58rem 1rem;
+  border: 1px solid var(--border-soft);
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--surface-mid), var(--accent-strong));
+  color: #f8fbff;
+  font: inherit;
+  font-size: 0.88rem;
+  font-weight: 700;
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.emptyOpenings {
+  padding: 1rem 0;
+  border-top: 1px solid var(--border-strong);
+  border-bottom: 1px solid var(--border-strong);
+  color: var(--text-muted);
+  font-size: 0.94rem;
 }
 
 .processShell {
@@ -238,8 +281,9 @@
 }
 
 @media (max-width: 960px) {
-  .trackGrid {
+  .trackCard {
     grid-template-columns: 1fr;
+    align-items: start;
   }
 
   .ctaPanel {
@@ -248,6 +292,15 @@
 }
 
 @media (max-width: 720px) {
+  .openingRow {
+    grid-template-columns: auto minmax(0, 1fr);
+  }
+
+  .openingApply {
+    grid-column: 2;
+    justify-self: start;
+  }
+
   .processShell,
   .ctaPanel {
     padding: 1rem;
