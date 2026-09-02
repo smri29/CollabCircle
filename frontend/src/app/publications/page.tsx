@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { BookOpenText } from "lucide-react";
 import { PublicationDirectory } from "@/components/publications/publication-directory";
 import { PageHero } from "@/components/shared/page-hero";
 
@@ -11,9 +10,6 @@ export default function PublicationsPage() {
   return (
     <>
       <PageHero
-        eyebrow="Publications"
-        icon={BookOpenText}
-        intro=""
         title="Research Archive of CollabCircle."
       />
 

@@ -1,14 +1,100 @@
 import Link from "next/link";
-import { ArrowRight, MapPinned } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { DevelopmentProjectCard } from "@/components/development/development-project-card";
 import productCardStyles from "@/components/development/development-project-card.module.css";
 import { YouTubeShowcase } from "@/components/shared/youtube-showcase";
-import { developmentProjects, developmentServices } from "@/data/company-content";
+import { developmentProjects } from "@/data/company-content";
 import servicesStyles from "./services-preview.module.css";
 import styles from "./company-home.module.css";
 
-const featuredServices = developmentServices;
 const featuredProducts = [...developmentProjects].slice(-3).reverse();
+
+const solutionAreas = [
+  {
+    title: "Research",
+    description: "Explore what's possible before committing to what gets built.",
+    services: [
+      {
+        title: "Applied Research & Technology Strategy",
+        description:
+          "Explore emerging technologies, evaluate feasibility, and turn complex technical questions into actionable technology roadmaps.",
+      },
+      {
+        title: "AI Research & Prototyping",
+        description:
+          "Experiment, benchmark and validate AI concepts through rapid prototypes before committing to production-scale implementation.",
+      },
+    ],
+  },
+  {
+    title: "Engineering",
+    description: "Turn validated ideas into reliable systems engineered for production.",
+    services: [
+      {
+        title: "Software & Product Engineering",
+        description:
+          "Design and build secure, scalable digital products and enterprise systems from concept to production.",
+      },
+      {
+        title: "AI & Intelligent Systems",
+        description:
+          "Build production-ready AI and machine learning systems that transform data into intelligent products, decisions and experiences.",
+      },
+      {
+        title: "Cloud & Platform Engineering",
+        description:
+          "Architect resilient cloud platforms, distributed systems and data infrastructure engineered for scale, reliability and performance.",
+      },
+      {
+        title: "AI Agents & Automation",
+        description:
+          "Automate complex workflows with intelligent agents that securely connect your data, applications and business processes.",
+      },
+    ],
+  },
+  {
+    title: "Cybersecurity",
+    description: "Protect products, platforms and infrastructure by building security into every layer.",
+    services: [
+      {
+        title: "Security Assessment & Offensive Testing",
+        description:
+          "Identify vulnerabilities across applications, APIs and infrastructure before they can be exploited.",
+      },
+      {
+        title: "Application & Cloud Security",
+        description:
+          "Secure applications, infrastructure and cloud environments throughout their architecture and deployment lifecycle.",
+      },
+      {
+        title: "DevSecOps & Secure Engineering",
+        description:
+          "Embed security into software development through secure coding, automated testing and continuous security controls.",
+      },
+    ],
+  },
+  {
+    title: "Specialized Solutions",
+    description: "Adapt focused technical work to complex organizational requirements.",
+    services: [
+      {
+        title: "Immersive & Spatial Experiences",
+        description:
+          "AR/VR applications, interactive environments and immersive digital experiences.",
+      },
+      {
+        title: "Gamification & Interactive Campaigns",
+        description:
+          "Game mechanics and interactive technology designed for engagement, education and campaigns.",
+      },
+      {
+        title: "Simulation & Visualization",
+        description:
+          "Interactive simulations and visualization systems for training, demonstration and complex information.",
+      },
+    ],
+  },
+];
 
 export function CompanyHome() {
   return (
@@ -29,38 +115,45 @@ export function CompanyHome() {
         </article>
       </section>
 
-      <section className="section">
+      <section className="section" aria-labelledby="solutions-services-heading">
         <div className={servicesStyles.sectionStack}>
           <div className={servicesStyles.servicesHeader}>
             <div className={servicesStyles.sectionIntro}>
-              <h2>Solutions &amp; Services</h2>
+              <div className={servicesStyles.sectionCopy}>
+                <h2 id="solutions-services-heading">Solutions &amp; Services</h2>
+                <h3>From research to resilient systems.</h3>
+                <p>
+                  We explore emerging technologies, engineer production-grade solutions, and secure
+                  the systems organizations depend on.
+                </p>
+              </div>
             </div>
           </div>
-
-          <div className={servicesStyles.servicesTable}>
-            <div className={servicesStyles.servicesRail}>
-              {featuredServices.map((item, index) => (
-                <details
-                  className={index === 0 ? servicesStyles.serviceFeatureCard : servicesStyles.serviceCard}
-                  key={item.title}
-                >
-                  <summary className={servicesStyles.serviceSummary}>
-                    <div className={servicesStyles.serviceTop}>
-                      <span className={servicesStyles.serviceIndex}>{String(index + 1).padStart(2, "0")}</span>
-                    </div>
-                    <div className={servicesStyles.serviceBody}>
-                      <h3>{item.title}</h3>
-                    </div>
-                    <span className={servicesStyles.serviceChevron} aria-hidden="true">
-                      +
-                    </span>
-                  </summary>
-                  <div className={servicesStyles.serviceContent}>
-                    <p>{item.description}</p>
-                  </div>
-                </details>
-              ))}
-            </div>
+          <div className={servicesStyles.solutionList}>
+            {solutionAreas.map((area) => (
+              <details className={servicesStyles.solutionOption} key={area.title}>
+                <summary>
+                  <span className={servicesStyles.solutionOptionTitle}>{area.title}</span>
+                  <span className={servicesStyles.solutionOptionControl} aria-hidden="true">+</span>
+                </summary>
+                <div className={servicesStyles.solutionOptionContent}>
+                  <p>{area.description}</p>
+                  <ul>
+                    {area.services.map((service, index) => (
+                      <li key={service.title}>
+                        <span className={servicesStyles.solutionServiceIndex}>
+                          {String(index + 1).padStart(2, "0")}
+                        </span>
+                        <span>
+                          <strong>{service.title}</strong>
+                          {service.description ? <small>{service.description}</small> : null}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </details>
+            ))}
           </div>
         </div>
       </section>
@@ -69,7 +162,14 @@ export function CompanyHome() {
         <div className={servicesStyles.sectionStack}>
           <div className={servicesStyles.servicesHeader}>
             <div className={servicesStyles.sectionIntro}>
-              <h2>Products</h2>
+              <div className={servicesStyles.sectionCopy}>
+                <h2>Products</h2>
+                <h3>Technology shaped for real-world use.</h3>
+                <p>
+                  Explore systems, platforms, and digital experiences designed to turn complex needs
+                  into durable outcomes.
+                </p>
+              </div>
             </div>
             <Link className={servicesStyles.viewAllLink} href="/products">
               <span>View all</span>
@@ -88,7 +188,7 @@ export function CompanyHome() {
       <section className={styles.section}>
         <article className={styles.impactPanel}>
           <div className={styles.sectionHeader}>
-            <p>At a glance</p>
+            <h2>At a glance</h2>
           </div>
 
           <div className={styles.statsGrid}>
@@ -115,11 +215,11 @@ export function CompanyHome() {
       <section className={styles.section}>
         <article className={styles.locationPanel}>
           <div className={styles.locationCopy}>
-            <p className={styles.eyebrow}>
-              <MapPinned size={16} strokeWidth={2} />
-              <span>Location</span>
+            <h2>Location</h2>
+            <p className={styles.locationDescription}>
+              Our work connects research, technology, and collaboration from Bangladesh to a wider
+              community.
             </p>
-            <h3>CollabCircle is rooted in Mirpur, Dhaka, Bangladesh.</h3>
             <a
               className={styles.locationLink}
               href="https://www.google.com/maps?q=Mirpur,Dhaka,Bangladesh"

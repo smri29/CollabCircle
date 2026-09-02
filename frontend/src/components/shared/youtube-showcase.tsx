@@ -7,9 +7,9 @@ export function YouTubeShowcase() {
     <article className={styles.videoPanel}>
       <div className={styles.videoHeading}>
         <div>
-          <p className={styles.eyebrow}>
-            <PlayCircle size={16} strokeWidth={2} />
-            <span>YouTube</span>
+          <h2>YouTube</h2>
+          <p className={styles.description}>
+            Watch research notes, product demonstrations, and conversations as they are published.
           </p>
         </div>
 

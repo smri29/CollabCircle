@@ -3,10 +3,7 @@
 import { useState } from "react";
 import {
   ExternalLink,
-  Fingerprint,
-  LibraryBig,
   ScrollText,
-  UsersRound,
 } from "lucide-react";
 import {
   conferencePublications,
@@ -22,18 +19,11 @@ const tabs = [
   { id: "conference" as const, label: "Conference", count: conferencePublications.length },
 ];
 
-function PublicationCard({
-  item,
-  type,
-}: {
-  item: PublicationRecord;
-  type: PublicationTab;
-}) {
+function PublicationCard({ item }: { item: PublicationRecord }) {
   return (
     <article className={styles.card}>
       <div className={styles.cardHeader}>
         <h3>Research Record</h3>
-        <span className={styles.typeBadge}>{type === "journal" ? "Journal" : "Conference"}</span>
       </div>
 
       <div className={styles.metaList}>
@@ -47,22 +37,6 @@ function PublicationCard({
 
         <div>
           <div className={styles.metaLabel}>
-            <LibraryBig size={15} strokeWidth={2} />
-            <span>Journal/Conference</span>
-          </div>
-          <p>{item.venue}</p>
-        </div>
-
-        <div>
-          <div className={styles.metaLabel}>
-            <Fingerprint size={15} strokeWidth={2} />
-            <span>DOI</span>
-          </div>
-          <p>{item.doi}</p>
-        </div>
-
-        <div>
-          <div className={styles.metaLabel}>
             <ExternalLink size={15} strokeWidth={2} />
             <span>Link</span>
           </div>
@@ -71,24 +45,16 @@ function PublicationCard({
           </a>
         </div>
 
-        <div>
-          <div className={styles.metaLabel}>
-            <UsersRound size={15} strokeWidth={2} />
-            <span>Authors</span>
-          </div>
-          <p>{item.authors.join(", ")}</p>
-        </div>
       </div>
     </article>
   );
 }
 
-function PlaceholderCard({ type }: { type: PublicationTab }) {
+function PlaceholderCard() {
   return (
     <article className={`${styles.card} ${styles.placeholderCard}`}>
       <div className={styles.cardHeader}>
         <h3>Research Record</h3>
-        <span className={styles.typeBadge}>{type === "journal" ? "Journal" : "Conference"}</span>
       </div>
 
       <div className={styles.metaList}>
@@ -102,35 +68,12 @@ function PlaceholderCard({ type }: { type: PublicationTab }) {
 
         <div>
           <div className={styles.metaLabel}>
-            <LibraryBig size={15} strokeWidth={2} />
-            <span>Journal/Conference</span>
-          </div>
-          <p>To be added</p>
-        </div>
-
-        <div>
-          <div className={styles.metaLabel}>
-            <Fingerprint size={15} strokeWidth={2} />
-            <span>DOI</span>
-          </div>
-          <p>To be added</p>
-        </div>
-
-        <div>
-          <div className={styles.metaLabel}>
             <ExternalLink size={15} strokeWidth={2} />
             <span>Link</span>
           </div>
           <p>To be added</p>
         </div>
 
-        <div>
-          <div className={styles.metaLabel}>
-            <UsersRound size={15} strokeWidth={2} />
-            <span>Authors</span>
-          </div>
-          <p>To be added</p>
-        </div>
       </div>
     </article>
   );
@@ -151,47 +94,25 @@ export function PublicationPreviewGrid() {
     <div className={styles.grid}>
       {latestItems.length > 0
         ? latestItems.map(({ item, type }) => (
-            <PublicationCard item={item} key={`${type}-${item.title}`} type={type} />
+            <PublicationCard item={item} key={`${type}-${item.title}`} />
           ))
         : [
-            <PlaceholderCard key="preview-journal-1" type="journal" />,
-            <PlaceholderCard key="preview-conference-1" type="conference" />,
-            <PlaceholderCard key="preview-journal-2" type="journal" />,
-            <PlaceholderCard key="preview-conference-2" type="conference" />,
+            <PlaceholderCard key="preview-journal-1" />,
+            <PlaceholderCard key="preview-conference-1" />,
+            <PlaceholderCard key="preview-journal-2" />,
+            <PlaceholderCard key="preview-conference-2" />,
           ]}
     </div>
   );
 }
 
 export function PublicationDirectory() {
-  return (
-    <PublicationDirectoryWithCopy
-      description="Switch between journal and conference records."
-      title="Publication archive"
-    />
-  );
-}
-
-type PublicationDirectoryWithCopyProps = {
-  title: string;
-  description: string;
-};
-
-export function PublicationDirectoryWithCopy({
-  title,
-  description,
-}: PublicationDirectoryWithCopyProps) {
   const [activeTab, setActiveTab] = useState<PublicationTab>("journal");
   const activeItems = activeTab === "journal" ? journalPublications : conferencePublications;
 
   return (
     <section className={styles.section}>
       <div className={styles.header}>
-        <div>
-          <h2>{title}</h2>
-          <p>{description}</p>
-        </div>
-
         <div className={styles.tabGroup} aria-label="Publication type">
           {tabs.map((tab) => (
             <button
@@ -209,10 +130,10 @@ export function PublicationDirectoryWithCopy({
       <div className={styles.grid}>
         {activeItems.length > 0
           ? activeItems.map((item) => (
-              <PublicationCard item={item} key={`${activeTab}-${item.title}`} type={activeTab} />
+              <PublicationCard item={item} key={`${activeTab}-${item.title}`} />
             ))
           : Array.from({ length: 2 }, (_, index) => (
-              <PlaceholderCard key={`${activeTab}-${index + 1}`} type={activeTab} />
+              <PlaceholderCard key={`${activeTab}-${index + 1}`} />
             ))}
       </div>
     </section>

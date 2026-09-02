@@ -97,7 +97,6 @@ export function OrbitAssistant() {
         />
         <span className={styles.fabText}>
           <strong>Orbit</strong>
-          <small>Ask about CollabCircle</small>
         </span>
       </button>
 

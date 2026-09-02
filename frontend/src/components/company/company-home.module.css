@@ -125,7 +125,32 @@
   max-width: 38rem;
 }
 
-.sectionHeader p:first-child {
+.sectionHeader h2 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4.4vw, 3.2rem);
+  line-height: 0.96;
+  letter-spacing: -0.05em;
+  font-weight: 680;
+}
+
+.sectionHeader h3 {
+  font-family: var(--font-display);
+  font-size: clamp(1.25rem, 2.5vw, 1.72rem);
+  line-height: 1.08;
+  letter-spacing: -0.045em;
+  font-weight: 600;
+}
+
+.sectionHeader h2 + h3 {
+  margin-top: 0.1rem;
+}
+
+.sectionHeader p {
+  color: var(--text-muted);
+  font-size: 0.98rem;
+}
+
+.locationLabel {
   color: var(--accent-strong);
   font-size: 0.72rem;
   font-weight: 800;
@@ -133,17 +158,17 @@
   text-transform: uppercase;
 }
 
-.sectionHeader h2 {
+.locationCopy h2 {
   font-family: var(--font-display);
-  font-size: clamp(1.45rem, 3vw, 2rem);
-  line-height: 1.06;
-  letter-spacing: -0.04em;
-  font-weight: 650;
+  font-size: clamp(2rem, 4.4vw, 3.2rem);
+  line-height: 0.96;
+  letter-spacing: -0.05em;
+  font-weight: 680;
 }
 
-.sectionHeader p:last-child {
+.locationDescription {
   color: var(--text-muted);
-  font-size: 0.9rem;
+  font-size: 0.98rem;
 }
 
 .impactPanel {
@@ -231,10 +256,10 @@
 
 .locationCopy h3 {
   font-family: var(--font-display);
-  font-size: clamp(1.35rem, 2.6vw, 1.9rem);
-  line-height: 1.06;
-  letter-spacing: -0.04em;
-  font-weight: 650;
+  font-size: clamp(1.25rem, 2.5vw, 1.72rem);
+  line-height: 1.08;
+  letter-spacing: -0.045em;
+  font-weight: 600;
 }
 
 .locationLink {

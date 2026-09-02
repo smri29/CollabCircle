@@ -36,17 +36,10 @@ export function DevelopmentProjectCard({
       <h3>{project.title}</h3>
 
       <div className={styles.noteCard}>
-        <h4>Project overview</h4>
         <p>{project.overview}</p>
       </div>
 
       <div className={styles.fieldRow}>
-        <span className={styles.fieldLabel}>Client</span>
-        <p>{project.client}</p>
-      </div>
-
-      <div className={styles.fieldRow}>
-        <span className={styles.fieldLabel}>Live Link</span>
         {project.liveLink ? (
           <Link className={styles.link} href={project.liveLink} rel="noreferrer" target="_blank">
             <span>Open project</span>
