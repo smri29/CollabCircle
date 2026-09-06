@@ -8,9 +8,6 @@ export function YouTubeShowcase() {
       <div className={styles.videoHeading}>
         <div>
           <h2>YouTube</h2>
-          <p className={styles.description}>
-            Watch research notes, product demonstrations, and conversations as they are published.
-          </p>
         </div>
 
         <a

@@ -11,7 +11,6 @@ export default function ContactPage() {
   return (
     <>
       <PageHero
-        intro="Official contact points for inquiries, collaborations, partnerships, and public communication."
         title="Contact CollabCircle."
       />
 

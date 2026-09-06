@@ -12,7 +12,6 @@ const featuredProducts = [...developmentProjects].slice(-3).reverse();
 const solutionAreas = [
   {
     title: "Research",
-    description: "Explore what's possible before committing to what gets built.",
     services: [
       {
         title: "Applied Research & Technology Strategy",
@@ -28,7 +27,6 @@ const solutionAreas = [
   },
   {
     title: "Engineering",
-    description: "Turn validated ideas into reliable systems engineered for production.",
     services: [
       {
         title: "Software & Product Engineering",
@@ -54,7 +52,6 @@ const solutionAreas = [
   },
   {
     title: "Cybersecurity",
-    description: "Protect products, platforms and infrastructure by building security into every layer.",
     services: [
       {
         title: "Security Assessment & Offensive Testing",
@@ -75,7 +72,6 @@ const solutionAreas = [
   },
   {
     title: "Specialized Solutions",
-    description: "Adapt focused technical work to complex organizational requirements.",
     services: [
       {
         title: "Immersive & Spatial Experiences",
@@ -102,11 +98,7 @@ export function CompanyHome() {
       <section className={styles.hero}>
         <article className={styles.panel}>
           <div className={styles.panelInner}>
-            <h1>Research now. Development next. Built with a long view.</h1>
-            <p className={styles.lead}>
-              Driving innovation in Machine Learning &amp; Deep Learning through open collaboration
-              and impactful research.
-            </p>
+            <h1>Research. Engineering. Security. Impact.</h1>
             <Link className={`button ${styles.heroCta}`} href="/join-us">
               <span>Explore Careers</span>
               <ArrowRight size={16} strokeWidth={2} />
@@ -121,11 +113,6 @@ export function CompanyHome() {
             <div className={servicesStyles.sectionIntro}>
               <div className={servicesStyles.sectionCopy}>
                 <h2 id="solutions-services-heading">Solutions &amp; Services</h2>
-                <h3>From research to resilient systems.</h3>
-                <p>
-                  We explore emerging technologies, engineer production-grade solutions, and secure
-                  the systems organizations depend on.
-                </p>
               </div>
             </div>
           </div>
@@ -137,7 +124,6 @@ export function CompanyHome() {
                   <span className={servicesStyles.solutionOptionControl} aria-hidden="true">+</span>
                 </summary>
                 <div className={servicesStyles.solutionOptionContent}>
-                  <p>{area.description}</p>
                   <ul>
                     {area.services.map((service, index) => (
                       <li key={service.title}>
@@ -164,11 +150,6 @@ export function CompanyHome() {
             <div className={servicesStyles.sectionIntro}>
               <div className={servicesStyles.sectionCopy}>
                 <h2>Products</h2>
-                <h3>Technology shaped for real-world use.</h3>
-                <p>
-                  Explore systems, platforms, and digital experiences designed to turn complex needs
-                  into durable outcomes.
-                </p>
               </div>
             </div>
             <Link className={servicesStyles.viewAllLink} href="/products">
@@ -216,10 +197,6 @@ export function CompanyHome() {
         <article className={styles.locationPanel}>
           <div className={styles.locationCopy}>
             <h2>Location</h2>
-            <p className={styles.locationDescription}>
-              Our work connects research, technology, and collaboration from Bangladesh to a wider
-              community.
-            </p>
             <a
               className={styles.locationLink}
               href="https://www.google.com/maps?q=Mirpur,Dhaka,Bangladesh"

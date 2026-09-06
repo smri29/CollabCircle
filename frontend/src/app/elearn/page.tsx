@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { ComingSoonBanner } from "@/components/shared/coming-soon-banner";
 import { PageHero } from "@/components/shared/page-hero";
 
 export const metadata: Metadata = {
@@ -10,9 +11,9 @@ export default function ELearnPage() {
   return (
     <>
       <PageHero
-        intro="Sharpen your thinking, expand your skills, and turn curiosity into practical capability across research, engineering, and secure technology."
-        title="Learn boldly. Build what lasts."
+        title="Learn what matters. Build what lasts."
       />
+      <ComingSoonBanner />
     </>
   );
 }

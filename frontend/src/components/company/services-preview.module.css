@@ -89,15 +89,7 @@
 
 .solutionOptionContent {
   display: grid;
-  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
-  gap: 2rem;
   padding: 0 0 1.4rem;
-}
-
-.solutionOptionContent p {
-  color: var(--text-muted);
-  font-size: 0.98rem;
-  line-height: 1.55;
 }
 
 .solutionOptionContent ul {
@@ -137,13 +129,6 @@
   color: var(--text-muted);
   font-size: 0.88rem;
   line-height: 1.45;
-}
-
-@media (max-width: 900px) {
-  .solutionOptionContent {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-  }
 }
 
 @media (max-width: 560px) {

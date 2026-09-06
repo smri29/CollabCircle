@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ShieldCheck } from "lucide-react";
 import styles from "@/components/shared/content-sections.module.css";
 import { PageHero } from "@/components/shared/page-hero";
 
@@ -51,9 +50,6 @@ export default function PrivacyPolicyPage() {
   return (
     <>
       <PageHero
-        eyebrow="Privacy Policy"
-        icon={ShieldCheck}
-        intro="Review how privacy and visitor data are handled across the CollabCircle website."
         title="Privacy Policy"
       />
 

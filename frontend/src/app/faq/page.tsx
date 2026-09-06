@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, ChevronDown, CircleHelp } from "lucide-react";
+import { ArrowRight, ChevronDown } from "lucide-react";
 import { PageHero } from "@/components/shared/page-hero";
 import styles from "./faq.module.css";
 
@@ -10,59 +10,44 @@ export const metadata: Metadata = {
 
 const faqItems = [
   {
-    title: "What is CollabCircle at this stage?",
+    title: "What is CollabCircle?",
     description:
-      "CollabCircle is growing from a research-led foundation toward a broader long-term organization. Right now, the public website presents publications, products, company information, and career opportunities.",
+      "CollabCircle is a technology-focused organization working across research, engineering, cybersecurity, and practical digital solutions.",
   },
   {
-    title: "How do Publications and Products relate to each other?",
+    title: "What does CollabCircle work on?",
     description:
-      "Publications acts as the public research-facing archive of CollabCircle. Products highlights build directions and product-oriented work across the broader organization.",
+      "Our work spans applied research, software and product engineering, AI systems, cloud platforms, cybersecurity, automation, and specialized interactive experiences.",
   },
   {
-    title: "Where should I start if I am new to the website?",
+    title: "Where can I find CollabCircle publications?",
     description:
-      "Start from the homepage if you want the full company-level view. If you already know your interest, open Publications for research-facing records or Products for build directions.",
+      "Visit the Publications page to explore the current research archive, organized by journal and conference records.",
   },
   {
-    title: "What kind of content appears in Publications?",
+    title: "How do I apply for an opening?",
     description:
-      "The Publications page is intended for conference and journal outputs, along with other research-facing records that document the public scholarly side of CollabCircle.",
+      "Visit Join Us, choose Internships, Full Time, or Part Time, then select a role. An Apply button opens the relevant application form when that opening is active.",
   },
   {
-    title: "How can I contact CollabCircle for official communication?",
+    title: "Are all listed roles currently accepting applications?",
     description:
-      "For collaborations, questions, or formal communication, use the official contact page and email address listed on the site. That is the primary channel for serious outreach.",
+      "Openings are published by role and work type. Application links are added to individual positions when applications are available.",
   },
   {
-    title: "Which form should I choose if I want to apply?",
+    title: "What are eLearn and Campaigns?",
     description:
-      "Choose the Researcher form if your strengths are closer to experiments, literature review, technical writing, or publication work. Choose the Engineer form if your strengths are closer to implementation, systems, tools, and technical delivery.",
+      "eLearn and Campaigns are growing CollabCircle initiatives. Their pages will expand as learning content, public initiatives, and interactive experiences are announced.",
   },
   {
-    title: "Can I apply to both tracks?",
+    title: "How can I contact CollabCircle?",
     description:
-      "You should choose the one that best matches your current direction. If your profile spans both areas, explain that clearly in your application so the review can consider the strongest fit.",
+      "Use the Contact page for collaborations, partnerships, general inquiries, or official communication.",
   },
   {
-    title: "How are applications reviewed?",
+    title: "Where can I learn more about products and services?",
     description:
-      "Applications are reviewed manually. Shortlisted applicants will be contacted through the information they provide in the form.",
-  },
-  {
-    title: "What kind of information should I include?",
-    description:
-      "Be specific about your background, relevant skills, current interests, and the kind of contribution you want to make consistently.",
-  },
-  {
-    title: "What if I still have questions before applying?",
-    description:
-      "If you need clarification before submitting, use the official contact email so your question can be handled directly.",
-  },
-  {
-    title: "Will the website continue to grow with more sections later?",
-    description:
-      "Yes. The site is being structured so the research, development, careers, and founder areas can grow over time without needing a full redesign.",
+      "The homepage provides an overview of CollabCircle's service areas, while the Products page presents current product directions and projects.",
   },
 ];
 
@@ -70,23 +55,9 @@ export default function FaqPage() {
   return (
     <>
       <PageHero
-        eyebrow="FAQ"
-        icon={CircleHelp}
-        intro="Answers about the organization, the website structure, publications, products, and the application process."
         title="Frequently asked questions."
         titleSingleLine
       />
-
-      <section className="section">
-        <div className={styles.sectionIntro}>
-          <p>Quick answers</p>
-          <h2>Common questions, kept in one place.</h2>
-          <p>
-            If you are exploring the website, trying to understand the structure, or preparing to
-            apply, these answers should help you move faster.
-          </p>
-        </div>
-      </section>
 
       <section className="section">
         <div className={styles.faqWrap}>
@@ -108,11 +79,7 @@ export default function FaqPage() {
         <article className={styles.ctaPanel}>
           <div className={styles.ctaCopy}>
             <p>Still need help?</p>
-            <h2>Use the next best route if your question is not covered here.</h2>
-            <p>
-              If your question is about applying, start with the Join Us page. If you need direct
-              clarification, use the Contact page and reach out through the official channel.
-            </p>
+            <h2>Let&apos;s find the right next step.</h2>
           </div>
 
           <div className={styles.ctaActions}>
