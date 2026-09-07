@@ -53,8 +53,6 @@ export function SiteFooter() {
             </div>
           </div>
 
-          <p className={styles.description}>{siteMeta.description}</p>
-
           <a className={styles.emailLink} href={`mailto:${siteMeta.email}`}>
             <Mail size={16} strokeWidth={2} />
             <span>{siteMeta.email}</span>

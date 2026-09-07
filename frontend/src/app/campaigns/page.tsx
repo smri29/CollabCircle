@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { ComingSoonBanner } from "@/components/shared/coming-soon-banner";
 import { PageHero } from "@/components/shared/page-hero";
 
 export const metadata: Metadata = {
@@ -8,9 +9,9 @@ export const metadata: Metadata = {
 
 export default function CampaignsPage() {
   return (
-    <PageHero
-      intro="A dedicated space for the ideas, interactive experiences, and public initiatives that bring CollabCircle's work into the world."
-      title="Ideas made to move people."
-    />
+    <>
+      <PageHero title="Ideas made to move people." />
+      <ComingSoonBanner />
+    </>
   );
 }

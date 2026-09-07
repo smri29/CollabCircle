@@ -152,10 +152,6 @@ export default function AboutUsPage() {
           <div className={styles.ctaCopy}>
             <p>Join the journey</p>
             <h2>Be part of what CollabCircle is building.</h2>
-            <p>
-              Whether you want to contribute through research, grow with the broader vision, or
-              simply understand the direction more closely, there is space to step in.
-            </p>
           </div>
 
           <div className={styles.ctaActions}>

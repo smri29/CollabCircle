@@ -3,8 +3,6 @@ const envValue = (value: string | undefined) => value?.trim() || undefined;
 export const siteMeta = {
   name: "CollabCircle",
   tagline: "Research, engineering, and long-term impact.",
-  description:
-    "CollabCircle is a future-ready organization growing from a research foundation toward engineering and broader impact.",
   email: envValue(process.env.Gmail) ?? "",
 };
 
@@ -58,7 +56,16 @@ export type YouTubeShowcaseVideo = {
   embedUrl: string;
 };
 
-export const youtubeShowcaseVideos: YouTubeShowcaseVideo[] = [];
+export const youtubeShowcaseVideos: YouTubeShowcaseVideo[] = [
+  {
+    title: "CollabCircle Video 01",
+    embedUrl: "https://www.youtube.com/embed/LHKPf86XkXA",
+  },
+  {
+    title: "CollabCircle Video 02",
+    embedUrl: "https://www.youtube.com/embed/FLKCD0YZaKc",
+  },
+];
 
 export type ResearchPillar = {
   title: string;

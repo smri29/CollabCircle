@@ -1,0 +1,16 @@
+.banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 8rem;
+  border-top: 1px solid var(--border-strong);
+  border-bottom: 1px solid var(--border-strong);
+  color: var(--accent-soft);
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 4rem);
+  line-height: 1;
+  letter-spacing: -0.05em;
+  font-weight: 600;
+  text-align: center;
+  text-shadow: 0 0 30px color-mix(in srgb, var(--accent-strong) 24%, transparent);
+}

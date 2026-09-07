@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Scale } from "lucide-react";
 import styles from "@/components/shared/content-sections.module.css";
 import { PageHero } from "@/components/shared/page-hero";
 
@@ -63,9 +62,6 @@ export default function TermsOfUsePage() {
   return (
     <>
       <PageHero
-        eyebrow="Terms of Use"
-        icon={Scale}
-        intro="Review the terms that govern use of the CollabCircle website."
         title="Terms of Use"
       />
 
