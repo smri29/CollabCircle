@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { DevelopmentProjectCard } from "@/components/development/development-project-card";
 import styles from "@/components/development/development-project-card.module.css";
 import { PageHero } from "@/components/shared/page-hero";
-import { developmentProjects } from "@/data/company-content";
+import { products } from "@/Products/product-data";
 
 export const metadata: Metadata = { title: "Products" };
 
@@ -15,8 +15,8 @@ export default function ProductsPage() {
 
       <section className="section">
         <div className={styles.grid}>
-          {developmentProjects.map((project, index) => (
-            <DevelopmentProjectCard index={index} key={project.title} project={project} />
+          {products.map((product, index) => (
+            <DevelopmentProjectCard index={index} key={product.slug} product={product} />
           ))}
         </div>
       </section>

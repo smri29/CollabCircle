@@ -1,6 +1,7 @@
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
-import type { DevelopmentProject } from "@/data/company-content";
+import type { Product } from "@/Products/product-data";
 import styles from "./development-project-card.module.css";
 
 function getInitials(value: string) {
@@ -13,41 +14,51 @@ function getInitials(value: string) {
 }
 
 type DevelopmentProjectCardProps = {
-  project: DevelopmentProject;
+  product: Product;
   index?: number;
 };
 
 export function DevelopmentProjectCard({
-  project,
+  product,
   index,
 }: DevelopmentProjectCardProps) {
   return (
     <article className={styles.card}>
-      <div className={styles.imageSlot} aria-hidden="true">
-        <span>{getInitials(project.title)}</span>
+      <div className={styles.imageSlot}>
+        {product.imagePaths[0] ? (
+          <Image
+            alt={`${product.name} preview`}
+            className={styles.productImage}
+            fill
+            sizes="(max-width: 960px) 100vw, 33vw"
+            src={product.imagePaths[0]}
+          />
+        ) : (
+          <span>{getInitials(product.name)}</span>
+        )}
       </div>
 
       <div className={styles.cardTop}>
         <span className={styles.serial}>
-          {index !== undefined ? String(index + 1).padStart(2, "0") : project.startDate}
+          {index !== undefined ? String(index + 1).padStart(2, "0") : product.status}
         </span>
       </div>
 
-      <h3>{project.title}</h3>
+      <h3>{product.name}</h3>
 
       <div className={styles.noteCard}>
-        <p>{project.overview}</p>
+        <p>{product.overview}</p>
       </div>
 
       <div className={styles.fieldRow}>
-        {project.liveLink ? (
-          <Link className={styles.link} href={project.liveLink} rel="noreferrer" target="_blank">
-            <span>Open project</span>
+        <Link className={styles.link} href={`/products/${product.slug}`}>
+            <span>View details</span>
             <ArrowUpRight size={15} strokeWidth={2} />
-          </Link>
-        ) : (
-          <p className={styles.muted}>Unavailable</p>
-        )}
+        </Link>
+        <Link className={styles.externalLink} href={product.liveUrl} rel="noreferrer" target="_blank">
+          <span>Open live product</span>
+          <ArrowUpRight size={15} strokeWidth={2} />
+        </Link>
       </div>
     </article>
   );

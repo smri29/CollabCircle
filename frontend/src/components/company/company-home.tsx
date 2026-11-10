@@ -3,11 +3,11 @@ import { ArrowRight } from "lucide-react";
 import { DevelopmentProjectCard } from "@/components/development/development-project-card";
 import productCardStyles from "@/components/development/development-project-card.module.css";
 import { YouTubeShowcase } from "@/components/shared/youtube-showcase";
-import { developmentProjects } from "@/data/company-content";
+import { products } from "@/Products/product-data";
 import servicesStyles from "./services-preview.module.css";
 import styles from "./company-home.module.css";
 
-const featuredProducts = [...developmentProjects].slice(-3).reverse();
+const featuredProducts = products;
 
 const solutionAreas = [
   {
@@ -160,7 +160,7 @@ export function CompanyHome() {
 
           <div className={productCardStyles.grid}>
             {featuredProducts.map((project, index) => (
-              <DevelopmentProjectCard index={index} key={project.title} project={project} />
+                <DevelopmentProjectCard index={index} key={project.slug} product={project} />
             ))}
           </div>
         </div>

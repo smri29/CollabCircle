@@ -28,6 +28,8 @@
 }
 
 .imageSlot {
+  position: relative;
+  overflow: hidden;
   display: grid;
   place-items: center;
   aspect-ratio: 16 / 12;
@@ -36,6 +38,16 @@
   background:
     radial-gradient(circle at top, rgba(255, 255, 255, 0.48), transparent 50%),
     linear-gradient(155deg, rgba(16, 49, 78, 0.94), rgba(47, 155, 255, 0.8));
+}
+
+.productImage {
+  object-fit: cover;
+  transition: transform 240ms ease;
+}
+
+.card:hover .productImage,
+.card:focus-within .productImage {
+  transform: scale(1.03);
 }
 
 .imageSlot span {
@@ -114,6 +126,11 @@
   color: var(--accent-strong);
   font-size: 0.86rem;
   font-weight: 700;
+}
+
+.externalLink {
+  composes: link;
+  color: var(--text-muted);
 }
 
 @media (max-width: 960px) {
