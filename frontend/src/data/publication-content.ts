@@ -1,11 +1,5 @@
-export type PublicationRecord = {
-  title: string;
-  venue: string;
-  doi: string;
-  link: string;
-  authors: string[];
-};
-
-export const journalPublications: PublicationRecord[] = [];
-
-export const conferencePublications: PublicationRecord[] = [];
+export {
+  conferencePublications,
+  journalPublications,
+  type PublicationRecord,
+} from "@/Publication/publication-data";

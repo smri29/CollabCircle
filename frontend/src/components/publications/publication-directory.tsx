@@ -15,8 +15,8 @@ import styles from "./publication-directory.module.css";
 type PublicationTab = "journal" | "conference";
 
 const tabs = [
-  { id: "journal" as const, label: "Journal", count: journalPublications.length },
   { id: "conference" as const, label: "Conference", count: conferencePublications.length },
+  { id: "journal" as const, label: "Journal", count: journalPublications.length },
 ];
 
 function PublicationCard({ item }: { item: PublicationRecord }) {
@@ -36,12 +36,14 @@ function PublicationCard({ item }: { item: PublicationRecord }) {
         </div>
 
         <div>
-          <div className={styles.metaLabel}>
+          <a
+            className={styles.metaLabel}
+            href={item.link}
+            rel="noreferrer"
+            target="_blank"
+          >
             <ExternalLink size={15} strokeWidth={2} />
             <span>Link</span>
-          </div>
-          <a href={item.link} rel="noreferrer" target="_blank">
-            Open publication
           </a>
         </div>
 
@@ -107,7 +109,7 @@ export function PublicationPreviewGrid() {
 }
 
 export function PublicationDirectory() {
-  const [activeTab, setActiveTab] = useState<PublicationTab>("journal");
+  const [activeTab, setActiveTab] = useState<PublicationTab>("conference");
   const activeItems = activeTab === "journal" ? journalPublications : conferencePublications;
 
   return (
