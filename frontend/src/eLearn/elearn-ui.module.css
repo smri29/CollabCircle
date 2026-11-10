@@ -1,0 +1,29 @@
+.grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
+.card, .panel { display: grid; gap: 1rem; padding: 1.25rem; border: 1px solid var(--border-strong); border-radius: 1.5rem; background: rgba(8, 18, 29, 0.28); box-shadow: var(--shadow-soft); backdrop-filter: blur(12px); }
+.card { min-height: 100%; }
+.cover { display: grid; place-items: end start; min-height: 10rem; padding: 1rem; border-radius: 1.1rem; color: white; background: linear-gradient(145deg, #10314e, #2f9bff); }
+.cover.security { background: linear-gradient(145deg, #142b32, #15a57c); }
+.cover.privacy { background: linear-gradient(145deg, #29204a, #9f71ff); }
+.cover.ai { background: linear-gradient(145deg, #3b2148, #f28a4b); }
+.cover span, .label { font-size: .75rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+.card h2, .panel h2, .panel h3 { margin: 0; }
+.card p, .panel p, .meta, .lesson p { color: var(--text-muted); line-height: 1.65; }
+.meta { display: flex; flex-wrap: wrap; gap: .5rem 1rem; font-size: .82rem; }
+.actions { display: flex; flex-wrap: wrap; align-items: center; gap: .8rem; margin-top: auto; }
+.back { color: var(--accent-strong); font-weight: 800; }
+.heroGrid { display: grid; grid-template-columns: 1.2fr .8fr; gap: 1rem; }
+.outcomes, .lessons { display: grid; gap: .75rem; margin: 0; padding-left: 1.2rem; color: var(--text-muted); line-height: 1.7; }
+.lesson { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 1rem; padding: 1rem 0; border-top: 1px solid var(--border-soft); }
+.lesson:first-child { border-top: 0; }
+.lessonNumber { color: var(--accent-strong); font-weight: 800; }
+.lesson h3 { font-size: 1rem; }
+.lesson p { margin: .25rem 0 0; font-size: .88rem; }
+.form { display: grid; gap: .8rem; max-width: 32rem; }
+.form input { padding: .85rem 1rem; border: 1px solid var(--border-strong); border-radius: .7rem; color: var(--text-color); background: var(--glass-surface); }
+.completion { display: grid; gap: 1rem; text-align: center; place-items: center; padding: 2rem; }
+.certificate { width: min(100%, 52rem); padding: clamp(1.5rem, 5vw, 4rem); border: 8px double #b58b35; background: #fffaf0; color: #1c2835; text-align: center; box-shadow: 0 18px 50px rgba(0,0,0,.25); }
+.certificate h1 { margin: .5rem 0; color: #193a58; font-family: var(--font-display); font-size: clamp(2rem, 6vw, 4.5rem); }
+.certificate h2 { color: #8c6723; font-family: var(--font-display); }
+.certificate p { color: #42505c; }
+@media (max-width: 900px) { .grid, .heroGrid { grid-template-columns: 1fr; } }
+@media (max-width: 560px) { .lesson { grid-template-columns: auto 1fr; } .lesson button, .lesson time { grid-column: 2; } }
