@@ -28,6 +28,16 @@
   isolation: isolate;
 }
 
+.transparentHero .backdrop,
+.transparentContent::before {
+  display: none;
+}
+
+.transparentContent {
+  padding-left: 0;
+  padding-right: 0;
+}
+
 .content::before {
   content: "";
   position: absolute;
@@ -83,6 +93,16 @@
   white-space: nowrap;
 }
 
+.compactTitle {
+  font-size: clamp(1.35rem, 2.7vw, 2.45rem) !important;
+  letter-spacing: -0.04em !important;
+}
+
+.wideIntro {
+  max-width: none !important;
+  white-space: nowrap;
+}
+
 .content p:last-child {
   max-width: 32rem;
   color: var(--text-muted);
@@ -97,6 +117,14 @@
   }
 
   .singleLineTitle {
+    white-space: normal;
+  }
+
+  .compactTitle {
+    font-size: clamp(1.8rem, 7vw, 2.7rem) !important;
+  }
+
+  .wideIntro {
     white-space: normal;
   }
 }

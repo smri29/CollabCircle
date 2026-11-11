@@ -1,0 +1,82 @@
+.imageWrap {
+  position: relative;
+  overflow: hidden;
+  min-height: 18rem;
+  border-radius: 1rem;
+}
+
+.imageWrap img {
+  object-fit: cover;
+  transition: transform 240ms ease;
+}
+
+.imageWrap:hover img {
+  transform: scale(1.03);
+}
+
+.featureImage {
+  position: absolute;
+  inset: 0;
+  object-fit: contain;
+  background: rgba(2, 8, 13, 0.72);
+  opacity: 1;
+}
+
+.imageOverlay {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  align-content: end;
+  min-height: 18rem;
+  margin: -1.3rem;
+  padding: 1.3rem;
+  background: linear-gradient(180deg, transparent 20%, rgba(2, 10, 15, 0.88) 100%);
+}
+
+.bannerWrap {
+  position: relative;
+  overflow: hidden;
+  min-height: clamp(16rem, 36vw, 30rem);
+  border: 0;
+  border-radius: 1.5rem;
+  background: transparent;
+  box-shadow: none;
+}
+
+.bannerWrap img {
+  object-fit: contain;
+}
+
+.bannerDownload {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.55rem 0.8rem;
+  border: 1px solid var(--border-soft);
+  border-radius: 999px;
+  background: rgba(2, 8, 13, 0.72);
+  backdrop-filter: blur(10px);
+  color: var(--accent-strong);
+  font-size: 0.88rem;
+  font-weight: 800;
+}
+
+.featurePanel {
+  position: relative;
+  min-height: 0;
+  aspect-ratio: 1;
+  overflow: hidden;
+  padding: 0;
+  background: rgba(2, 8, 13, 0.82);
+}
+
+.transparentCta {
+  background: transparent !important;
+  border-color: transparent;
+  box-shadow: none;
+  backdrop-filter: none;
+}
