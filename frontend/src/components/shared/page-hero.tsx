@@ -7,6 +7,9 @@ type PageHeroProps = {
   intro?: string;
   icon?: LucideIcon;
   titleSingleLine?: boolean;
+  compactTitle?: boolean;
+  transparent?: boolean;
+  wideIntro?: boolean;
 };
 
 export function PageHero({
@@ -15,11 +18,14 @@ export function PageHero({
   intro,
   icon: Icon,
   titleSingleLine = false,
+  compactTitle = false,
+  transparent = false,
+  wideIntro = false,
 }: PageHeroProps) {
   return (
-    <section className={styles.hero}>
+    <section className={`${styles.hero} ${transparent ? styles.transparentHero : ""}`}>
       <div className={styles.backdrop} aria-hidden="true" />
-      <div className={styles.content}>
+      <div className={`${styles.content} ${transparent ? styles.transparentContent : ""}`}>
         {eyebrow || Icon ? (
           <div className={styles.kicker}>
             {Icon ? (
@@ -30,8 +36,8 @@ export function PageHero({
             {eyebrow ? <p>{eyebrow}</p> : null}
           </div>
         ) : null}
-        <h1 className={titleSingleLine ? styles.singleLineTitle : undefined}>{title}</h1>
-        {intro ? <p>{intro}</p> : null}
+        <h1 className={`${titleSingleLine ? styles.singleLineTitle : ""} ${compactTitle ? styles.compactTitle : ""}`}>{title}</h1>
+        {intro ? <p className={wideIntro ? styles.wideIntro : undefined}>{intro}</p> : null}
       </div>
     </section>
   );
