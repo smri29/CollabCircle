@@ -7,7 +7,7 @@ import { products } from "@/Products/product-data";
 import servicesStyles from "./services-preview.module.css";
 import styles from "./company-home.module.css";
 
-const featuredProducts = products;
+const featuredProducts = products.slice(0, 3);
 
 const solutionAreas = [
   {

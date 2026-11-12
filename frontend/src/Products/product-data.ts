@@ -118,6 +118,151 @@ export const products: Product[] = [
     privacyNote:
       "User-provided text, tokens, configuration, code, and files are processed in browser memory. There is no application-data API, upload service, remote transformation provider, analytics SDK, or telemetry pipeline.",
   },
+  {
+    slug: "tutorly",
+    name: "Tutorly",
+    eyebrow: "Multi-branch coaching management platform",
+    tagline: "Run coaching centers with structured branch operations and intelligent student insights.",
+    overview:
+      "Tutorly is a multi-tenant Laravel and Livewire SaaS platform for managing coaching centers, branches, teachers, students, attendance, fees, certificates, exports, and guardian communication.",
+    audience: "Coaching center owners, branch administrators, teachers, students, and academic operations teams.",
+    status: "Live",
+    liveUrl: "https://tutorly-uhxd.onrender.com/",
+    imagePaths: [
+      "/Products/Tutorly/Tutorly01.png",
+      "/Products/Tutorly/Tutorly02.png",
+    ],
+    highlights: [
+      "Support Super Admin, Branch Admin, Teacher, and Student roles.",
+      "Enforce branch-level data isolation with a custom Eloquent BranchScope.",
+      "Assess student risk using attendance and fee burden signals with AI and offline fallback logic.",
+      "Broadcast real-time attendance updates and maintain WhatsApp delivery audit logs.",
+    ],
+    features: [
+      { title: "Multi-tenant branch operations", description: "Manage a 13-table MySQL relational schema with migrated and seeded organization data." },
+      { title: "AI student risk assessment", description: "Use Google Gemini to classify student risk as HIGH, MEDIUM, or LOW with recommendations, with a rule-based fallback." },
+      { title: "Certificates and exports", description: "Generate PDF certificates with SHA-256 verification hashes and export operational data to Excel." },
+      { title: "Real-time guardian alerts", description: "Broadcast attendance events over Laravel Reverb private channels and record WhatsApp notification delivery audits." },
+    ],
+    privacyNote:
+      "Tutorly is an operational management platform with role-aware access controls and branch-level data boundaries.",
+  },
+  {
+    slug: "dev-sync",
+    name: "Dev-Sync",
+    eyebrow: "Collaborative architecture diagram editor",
+    tagline: "Design, annotate, and simulate system architecture together in real time.",
+    overview:
+      "Dev-Sync is a real-time multiplayer canvas for collaborative architecture diagrams, synchronized code authoring, and flow simulation through shareable canvas URLs.",
+    audience: "Software teams, architects, developers, educators, and collaborators designing technical systems together.",
+    status: "Live",
+    liveUrl: "https://graph-architect.vercel.app/",
+    imagePaths: [
+      "/Products/Dev-Sync/DevSync01.png",
+      "/Products/Dev-Sync/DevSync02.png",
+    ],
+    highlights: [
+      "Synchronize cursors, nodes, edges, code changes, and flow simulations across collaborators.",
+      "Persist canvas state to MongoDB on every change for session durability.",
+      "Edit SQL, JSON, and TypeScript directly inside React Flow nodes with Monaco Editor.",
+      "Join isolated Socket.io collaboration rooms through shareable canvas IDs without authentication.",
+    ],
+    features: [
+      { title: "Real-time multiplayer canvas", description: "Use Socket.io room-based architecture to broadcast collaborative diagram and simulation events." },
+      { title: "Embedded code authoring", description: "Add context-aware Monaco Editor instances to architecture nodes with syntax highlighting by node type." },
+      { title: "Durable canvas sessions", description: "Persist collaborative canvas changes to MongoDB and synchronize state through a custom Zustand store." },
+      { title: "Shareable collaboration model", description: "Generate unique canvas URLs that map collaborators into isolated sessions." },
+    ],
+    privacyNote:
+      "Dev-Sync uses shared canvas sessions to synchronize collaboration state and code changes between connected users.",
+  },
+  {
+    slug: "praniseba",
+    name: "Praniseba",
+    eyebrow: "Pet shop management system",
+    tagline: "Coordinate pet shop operations, customers, orders, and appointments securely.",
+    overview:
+      "Praniseba is a full-stack pet shop operations platform with role-based access, analytics, email notifications, and a containerized CI/CD deployment workflow.",
+    audience: "Pet shop owners, administrators, staff members, and teams managing pet retail operations.",
+    status: "Live",
+    liveUrl: "https://siyams-praniseba.vercel.app/",
+    imagePaths: [
+      "/Products/Praniseba/Pranisheba01.png",
+      "/Products/Praniseba/Pranisheba02.png",
+    ],
+    highlights: [
+      "Separate Admin and Staff permissions with protected account management.",
+      "Secure authentication using JWT verification and bcrypt password hashing.",
+      "Track pets, customers, orders, and appointments through a Recharts analytics dashboard.",
+      "Use GitHub Actions, Docker, Vercel, Render, Express, and MongoDB in a multi-stage delivery pipeline.",
+    ],
+    features: [
+      { title: "Role-based operations", description: "Provide Admin-only staff account management through an Express middleware layer." },
+      { title: "Operational analytics", description: "Visualize live business activity across pets, customers, orders, and appointments." },
+      { title: "Automated notifications", description: "Send operational email notifications through Nodemailer." },
+      { title: "CI/CD and deployment", description: "Maintain CI, code quality, and Docker publishing workflows with GitHub Actions." },
+    ],
+    privacyNote:
+      "Praniseba applies authenticated role-based access controls and centralized error handling across its management workflows.",
+  },
+  {
+    slug: "debate-arena",
+    name: "DebateArena",
+    eyebrow: "AI-judged real-time debate platform",
+    tagline: "Practice, compete, and improve arguments through real-time AI-assisted debates.",
+    overview:
+      "DebateArena is a real-time debate platform with matchmaking, turn-based debate rooms, Solo Practice Mode, contextual AI counterarguments, and automated argument scoring.",
+    audience: "Debaters, students, educators, debate communities, and anyone practicing structured argumentation.",
+    status: "Live",
+    liveUrl: "https://debate-arena-mu.vercel.app/",
+    imagePaths: [
+      "/Products/DebateArena/Debate01.png",
+      "/Products/DebateArena/Debate02.png",
+    ],
+    highlights: [
+      "Manage matchmaking and debate rooms through WAITING, ONGOING, and COMPLETED states.",
+      "Practice against an AI opponent without requiring another live participant.",
+      "Generate contextual counterarguments using four-message conversation history.",
+      "Score arguments from 1–100 across logic, evidence, relevance, and clarity.",
+    ],
+    features: [
+      { title: "Real-time debate lifecycle", description: "Use Socket.IO to power matchmaking queues and turn-based room progression." },
+      { title: "AI debate coaching", description: "Use Google Gemini for contextual counterarguments and structured argument quality scoring." },
+      { title: "Secure full-stack architecture", description: "Combine JWT authentication, bcrypt hashing, rate limiting, MongoDB, and indexed debate transcripts." },
+      { title: "Focused debate experience", description: "Use a Next.js route-group layout to isolate the full-viewport debate room from the main site shell." },
+    ],
+    privacyNote:
+      "DebateArena stores authenticated debate activity and transcript data to support real-time rooms, scoring, and session continuity.",
+  },
+  {
+    slug: "syntaxstate",
+    name: "SyntaxState",
+    eyebrow: "Real estate management system",
+    tagline: "Connect sellers, buyers, and administrators through a secure property marketplace.",
+    overview:
+      "SyntaxState is a full-stack real estate marketplace where sellers submit properties, administrators approve listings, and buyers browse, save, and inquire about available properties.",
+    audience: "Property buyers, sellers, real estate administrators, and agencies managing digital property listings.",
+    status: "Live",
+    liveUrl: "https://syntaxestate.vercel.app/",
+    imagePaths: [
+      "/Products/SyntaxState/Syntax01.png",
+      "/Products/SyntaxState/Syntax02.png",
+    ],
+    highlights: [
+      "Support Buyer, Seller, and Admin roles with protected workflows.",
+      "Manage the seller submission, administrator approval, and public listing lifecycle.",
+      "Provide property maps, inquiries, reviews, favorites, and image uploads.",
+      "Deploy a decoupled React/Vite and Express/MongoDB architecture with Vercel and Render.",
+    ],
+    features: [
+      { title: "Role-based marketplace", description: "Use JWT authentication, bcrypt password hashing, and role-based middleware for protected actions." },
+      { title: "Listing approval workflow", description: "Move properties from seller submission through Admin approval to public availability." },
+      { title: "Property interactions", description: "Support inquiries, reviews, favorites, interactive maps, and dual-mode inquiry flows." },
+      { title: "Media and delivery stack", description: "Use Multer or Cloudinary for property images and Redux Toolkit with Framer Motion for the interface." },
+    ],
+    privacyNote:
+      "SyntaxState protects marketplace actions through authenticated routes and records unauthorized access attempts in a security audit log.",
+  },
 ];
 
 export function getProduct(slug: string) {
