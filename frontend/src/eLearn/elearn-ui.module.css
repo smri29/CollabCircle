@@ -21,9 +21,12 @@
 .form { display: grid; gap: .8rem; max-width: 32rem; }
 .form input { padding: .85rem 1rem; border: 1px solid var(--border-strong); border-radius: .7rem; color: var(--text-color); background: var(--glass-surface); }
 .completion { display: grid; gap: 1rem; text-align: center; place-items: center; padding: 2rem; }
-.certificate { width: min(100%, 52rem); padding: clamp(1.5rem, 5vw, 4rem); border: 8px double #b58b35; background: #fffaf0; color: #1c2835; text-align: center; box-shadow: 0 18px 50px rgba(0,0,0,.25); }
-.certificate h1 { margin: .5rem 0; color: #193a58; font-family: var(--font-display); font-size: clamp(2rem, 6vw, 4.5rem); }
-.certificate h2 { color: #8c6723; font-family: var(--font-display); }
-.certificate p { color: #42505c; }
+.certificateFrame { position: relative; width: min(100%, 62.5rem); aspect-ratio: 2000 / 1414; overflow: hidden; background: white; box-shadow: 0 18px 50px rgba(0, 0, 0, .25); }
+.certificateImage { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; }
+.certificateField { position: absolute; display: flex; align-items: center; justify-content: center; color: #050505; background: transparent; text-align: center; }
+.certificateName { top: 20.5%; left: 13%; width: 74%; min-height: 8%; padding: 0 .5rem; font-family: "Brush Script MT", "Segoe Script", cursive; font-size: clamp(1.45rem, 4.4vw, 4.4rem); line-height: 1; }
+.certificateCourse { top: 39%; left: 11%; width: 78%; min-height: 10%; padding: .35rem 1rem; font-size: clamp(.8rem, 2.15vw, 2rem); font-weight: 800; line-height: 1.15; }
+.certificateMeta { bottom: 8.5%; left: 7.5%; width: 29%; display: grid; justify-content: start; justify-items: start; align-items: start; padding: .25rem .35rem; font-size: clamp(.45rem, .95vw, .95rem); font-weight: 800; line-height: 1.35; text-align: left; }
+.downloadError { color: #ffb4b4 !important; font-size: .85rem; }
 @media (max-width: 900px) { .grid, .heroGrid { grid-template-columns: 1fr; } }
 @media (max-width: 560px) { .lesson { grid-template-columns: auto 1fr; } .lesson button, .lesson time { grid-column: 2; } }
