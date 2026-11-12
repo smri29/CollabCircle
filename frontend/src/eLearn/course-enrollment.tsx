@@ -26,7 +26,7 @@ export function CourseEnrollment({ course }: { course: Course }) {
     <div className={styles.lessons}>
       {course.lessons.map((lesson) => <div className={styles.lesson} key={lesson.id}>
         <span className={styles.lessonNumber}>✓</span><div><h3>{lesson.title}</h3><p>{lesson.duration}</p></div>
-        <button className="button" disabled={enrollment.completed.includes(lesson.id)} onClick={() => completeLesson(lesson.id)} type="button">{enrollment.completed.includes(lesson.id) ? "Completed" : "Mark complete"}</button>
+        <button className="button" disabled={enrollment.completed.includes(lesson.id)} onClick={() => completeLesson(lesson.id, course.lessons.length)} type="button">{enrollment.completed.includes(lesson.id) ? "Completed" : "Mark complete"}</button>
       </div>)}
     </div>
   </div>;

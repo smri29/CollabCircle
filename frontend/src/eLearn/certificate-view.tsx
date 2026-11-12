@@ -1,12 +1,97 @@
 "use client";
 
+import Image from "next/image";
+import { useState } from "react";
 import type { Course } from "./course-data";
+import { createCertificatePdf } from "./certificate-pdf";
 import { useCourseEnrollment } from "./elearn-client";
 import styles from "./elearn-ui.module.css";
 
 export function CertificateView({ course }: { course: Course }) {
   const { enrollment, ready } = useCourseEnrollment(course.slug);
-  if (!ready || !enrollment) return <div className={styles.panel}><p>Enroll in this course first to view your certificate.</p><a className="button" href={`/elearn/${course.slug}`}>View course</a></div>;
+  const [isDownloading, setIsDownloading] = useState(false);
+  const [downloadError, setDownloadError] = useState(false);
+
+  if (!ready || !enrollment) {
+    return (
+      <div className={styles.panel}>
+        <p>Enroll in this course first to view your certificate.</p>
+        <a className="button" href={`/elearn/${course.slug}`}>View course</a>
+      </div>
+    );
+  }
+
   const complete = enrollment.completed.length === course.lessons.length;
-  return <div className={styles.completion}>{complete ? <div className={styles.certificate}><p>COLLABCIRCLE ELEARN</p><h1>Certificate of Completion</h1><p>This certificate is proudly presented to</p><h2>{enrollment.name}</h2><p>for successfully completing</p><h2>{course.title}</h2><p>Issued by CollabCircle · {new Date().toLocaleDateString()}</p></div> : <><h2>Finish the course to unlock your certificate.</h2><a className="button" href={`/elearn/${course.slug}/learn`}>Continue learning</a></>}</div>;
+
+  if (!complete || !enrollment.completedAt || !enrollment.certificateCode) {
+    return (
+      <div className={styles.panel}>
+        <h2>Finish the course to unlock your certificate.</h2>
+        <a className="button" href={`/elearn/${course.slug}/learn`}>Continue learning</a>
+      </div>
+    );
+  }
+
+  const certificateEnrollment = enrollment;
+  const completedAt = certificateEnrollment.completedAt!;
+  const certificateCode = certificateEnrollment.certificateCode!;
+  const completedDate = new Date(completedAt).toLocaleDateString("en-US", {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+  });
+
+  async function handleDownload() {
+    setDownloadError(false);
+    setIsDownloading(true);
+
+    try {
+      const pdfBytes = await createCertificatePdf({
+        certificateCode,
+        completedDate,
+        courseName: course.title,
+        learnerName: certificateEnrollment.name,
+      });
+      const pdfBuffer = new ArrayBuffer(pdfBytes.byteLength);
+      new Uint8Array(pdfBuffer).set(pdfBytes);
+      const blob = new Blob([pdfBuffer], { type: "application/pdf" });
+      const downloadUrl = URL.createObjectURL(blob);
+      const link = document.createElement("a");
+
+      link.href = downloadUrl;
+      link.download = `collabcircle-certificate-${certificateCode}.pdf`;
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+      URL.revokeObjectURL(downloadUrl);
+    } catch {
+      setDownloadError(true);
+    } finally {
+      setIsDownloading(false);
+    }
+  }
+
+  return (
+    <div className={styles.completion}>
+      <div className={styles.certificateFrame}>
+        <Image
+          alt="CollabCircle certificate design"
+          className={styles.certificateImage}
+          fill
+          priority
+          src="/Certificate%20Design/CollabCircle%20Certificate%20Template.png"
+        />
+        <div className={`${styles.certificateField} ${styles.certificateName}`}>{certificateEnrollment.name}</div>
+        <div className={`${styles.certificateField} ${styles.certificateCourse}`}>{course.title}</div>
+        <div className={`${styles.certificateField} ${styles.certificateMeta}`}>
+          <span>{completedDate}</span>
+          <span>Certificate Code: {certificateCode}</span>
+        </div>
+      </div>
+      <button className="button" disabled={isDownloading} onClick={handleDownload} type="button">
+        {isDownloading ? "Preparing PDF..." : "Download PDF"}
+      </button>
+      {downloadError ? <p className={styles.downloadError}>The certificate PDF could not be generated. Please try again.</p> : null}
+    </div>
+  );
 }
