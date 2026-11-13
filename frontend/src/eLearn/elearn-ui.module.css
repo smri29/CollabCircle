@@ -20,11 +20,15 @@
 .lesson p { margin: .25rem 0 0; font-size: .88rem; }
 .form { display: grid; gap: .8rem; max-width: 32rem; }
 .form input { padding: .85rem 1rem; border: 1px solid var(--border-strong); border-radius: .7rem; color: var(--text-color); background: var(--glass-surface); }
+.form input[aria-invalid="true"] { border-color: #ff7777; }
+.formHint, .formError { margin: 0; font-size: .85rem; }
+.formHint { color: var(--text-muted); }
+.formError { color: #ff8e8e !important; font-weight: 700; }
 .completion { display: grid; gap: 1rem; text-align: center; place-items: center; padding: 2rem; }
 .certificateFrame { position: relative; width: min(100%, 62.5rem); aspect-ratio: 2000 / 1414; overflow: hidden; background: white; box-shadow: 0 18px 50px rgba(0, 0, 0, .25); }
 .certificateImage { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; }
 .certificateField { position: absolute; display: flex; align-items: center; justify-content: center; color: #050505; background: transparent; text-align: center; }
-.certificateName { top: 20.5%; left: 13%; width: 74%; min-height: 8%; padding: 0 .5rem; font-family: "Brush Script MT", "Segoe Script", cursive; font-size: clamp(1.45rem, 4.4vw, 4.4rem); line-height: 1; }
+.certificateName { top: 20.5%; left: 13%; width: 74%; min-height: 8%; padding: 0 .5rem; font-family: "Brush Script MT", "Segoe Script", cursive; font-size: clamp(1.45rem, 4.4vw, 4.4rem); line-height: 1; white-space: nowrap; transform-origin: center; }
 .certificateCourse { top: 39%; left: 11%; width: 78%; min-height: 10%; padding: .35rem 1rem; font-size: clamp(.8rem, 2.15vw, 2rem); font-weight: 800; line-height: 1.15; }
 .certificateMeta { bottom: 8.5%; left: 7.5%; width: 29%; display: grid; justify-content: start; justify-items: start; align-items: start; padding: .25rem .35rem; font-size: clamp(.45rem, .95vw, .95rem); font-weight: 800; line-height: 1.35; text-align: left; }
 .downloadError { color: #ffb4b4 !important; font-size: .85rem; }
