@@ -173,6 +173,49 @@
   gap: 0.7rem;
 }
 
+.accountBar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.7rem;
+  width: min(1440px, calc(100vw - 0.5rem));
+  margin: 0.55rem auto 0;
+}
+
+.accountGreeting {
+  max-width: min(22rem, 55vw);
+  overflow: hidden;
+  color: var(--text-muted);
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.accountButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.25rem;
+  padding: 0.55rem 0.9rem;
+  border: 1px solid var(--border-strong);
+  border-radius: 0.8rem;
+  background: var(--glass-surface-strong);
+  color: var(--text-color);
+  font: inherit;
+  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 180ms ease, background-color 180ms ease;
+}
+
+.accountButton:hover,
+.accountButton:focus-visible {
+  background: var(--accent-strong);
+  color: #f8fbff;
+  transform: translateY(-1px);
+}
+
 .joinLink,
 .mobileJoinLink {
   display: inline-flex;
@@ -335,6 +378,10 @@
 
   .mobilePanel,
   .mobilePanelOpen {
+    width: min(1440px, calc(100vw - 1.2rem));
+  }
+
+  .accountBar {
     width: min(1440px, calc(100vw - 1.2rem));
   }
 }

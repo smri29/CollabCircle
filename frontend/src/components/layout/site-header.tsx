@@ -6,6 +6,7 @@ import { useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
 import { CollabCircleLogo } from "@/components/brand/collabcircle-logo";
 import { aboutNavigation, eLearnNavigation, primaryNavigation } from "@/data/company-content";
+import { useAuth } from "@/auth/auth-context";
 import styles from "./site-header.module.css";
 
 function isActivePath(pathname: string, href: string, matches?: string[]) {
@@ -16,6 +17,7 @@ export function SiteHeader() {
   const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isAboutOpen, setIsAboutOpen] = useState(false);
+  const { user, ready, logout } = useAuth();
   const aboutMenuRef = useRef<HTMLDivElement | null>(null);
   const isAboutActive = aboutNavigation.some((item) => isActivePath(pathname, item.href, item.matches));
 
@@ -149,6 +151,17 @@ export function SiteHeader() {
             Menu
           </button>
         </div>
+      </div>
+
+      <div className={styles.accountBar}>
+        {ready ? user ? (
+          <>
+            <span className={styles.accountGreeting}>Signed in as {user.name}</span>
+            <button className={styles.accountButton} onClick={logout} type="button">Sign out</button>
+          </>
+        ) : (
+          <Link className={styles.accountButton} href="/elearn/account">Sign in</Link>
+        ) : null}
       </div>
 
       <div

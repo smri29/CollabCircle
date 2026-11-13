@@ -58,28 +58,30 @@ export default function RootLayout({
       </head>
       <body className={`${manrope.variable} ${cormorant.variable}`} suppressHydrationWarning>
         <RouteTheme />
-        <div className="siteShell">
-          <div aria-hidden="true" className="siteBgMedia">
-            <video
-              autoPlay
-              className="siteBgVideo"
-              loop
-              muted
-              playsInline
-              preload="auto"
-            >
-              <source
-                src="/BG%20Video/CollabCircle%20Background%20Video.mp4"
-                type="video/mp4"
-              />
-            </video>
-            <div className="siteBgOverlay" />
+        <AuthProvider>
+          <div className="siteShell">
+            <div aria-hidden="true" className="siteBgMedia">
+              <video
+                autoPlay
+                className="siteBgVideo"
+                loop
+                muted
+                playsInline
+                preload="auto"
+              >
+                <source
+                  src="/BG%20Video/CollabCircle%20Background%20Video.mp4"
+                  type="video/mp4"
+                />
+              </video>
+              <div className="siteBgOverlay" />
+            </div>
+            <SiteHeader />
+            <main className="siteMain">{children}</main>
+            <SiteFooter />
+            <OrbitAssistant />
           </div>
-          <SiteHeader />
-          <AuthProvider><main className="siteMain">{children}</main></AuthProvider>
-          <SiteFooter />
-          <OrbitAssistant />
-        </div>
+        </AuthProvider>
       </body>
     </html>
   );
