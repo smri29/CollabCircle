@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useLayoutEffect, useRef, useState } from "react";
+import { Facebook, Linkedin, Twitter } from "lucide-react";
 import type { Course } from "./course-data";
 import { createCertificatePdf } from "./certificate-pdf";
 import { useCourseEnrollment } from "./elearn-client";
@@ -114,9 +115,23 @@ export function CertificateView({ course }: { course: Course }) {
           <span>Certificate Code: {certificateCode}</span>
         </div>
       </div>
-      <button className="button" disabled={isDownloading} onClick={handleDownload} type="button">
-        {isDownloading ? "Preparing PDF..." : "Download PDF"}
-      </button>
+      <div className={styles.certificateActions}>
+        <button className="button" disabled={isDownloading} onClick={handleDownload} type="button">
+          {isDownloading ? "Preparing..." : "Download"}
+        </button>
+        <button aria-label="Share certificate on LinkedIn (coming soon)" className="buttonGhost" disabled title="LinkedIn sharing will be configured later" type="button">
+          <Linkedin aria-hidden="true" size={17} />
+          LinkedIn
+        </button>
+        <button aria-label="Share certificate on Facebook (coming soon)" className="buttonGhost" disabled title="Facebook sharing will be configured later" type="button">
+          <Facebook aria-hidden="true" size={17} />
+          Facebook
+        </button>
+        <button aria-label="Share certificate on X (coming soon)" className="buttonGhost" disabled title="X sharing will be configured later" type="button">
+          <Twitter aria-hidden="true" size={17} />
+          X
+        </button>
+      </div>
       {downloadError ? <p className={styles.downloadError}>The certificate PDF could not be generated. Please try again.</p> : null}
     </div>
   );
