@@ -1,6 +1,4 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
-</p>
+# CollabCircle Backend
 
 [circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
 [circleci-url]: https://circleci.com/gh/nestjs/nest
@@ -21,15 +19,28 @@
   <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
   [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
 
-## Description
-
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+NestJS API backed by Prisma ORM and Neon PostgreSQL.
 
 ## Project setup
 
 ```bash
-$ npm install
+npm install
+Copy-Item .env.example .env
+npm run prisma:generate
+npm run start:dev
 ```
+
+Set `DATABASE_URL` to the Neon pooled connection and `DIRECT_URL` to the direct
+connection before running migrations:
+
+```bash
+npm run prisma:migrate:dev -- --name init
+```
+
+The initial endpoints are `GET /api/health` and `GET /api/health/database`.
+
+For Render, use `npm run build` as the build command and `npm run start:prod` as
+the start command. Add the production database and CORS environment variables.
 
 ## Compile and run the project
 

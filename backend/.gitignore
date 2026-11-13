@@ -1,6 +1,7 @@
 node_modules/
 dist/
 coverage/
+src/generated/
 
 # Local environment files
 .env
