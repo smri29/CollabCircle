@@ -65,6 +65,11 @@ export const eLearnNavigation: NavigationItem = {
   label: "eLearn",
 };
 
+export const reportsNavigation: NavigationItem = {
+  href: "/reports",
+  label: "Reports",
+};
+
 export const landingFeatures: FeatureLink[] = [
   {
     href: "/publications",

@@ -5,7 +5,7 @@ import { ChevronDown } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
 import { CollabCircleLogo } from "@/components/brand/collabcircle-logo";
-import { eLearnNavigation, moreNavigation, primaryNavigation } from "@/data/company-content";
+import { eLearnNavigation, moreNavigation, primaryNavigation, reportsNavigation } from "@/data/company-content";
 import styles from "./site-header.module.css";
 
 function isActivePath(pathname: string, href: string, matches?: string[]) {
@@ -117,6 +117,17 @@ export function SiteHeader() {
           >
             {eLearnNavigation.label}
           </Link>
+
+          <Link
+            className={isActivePath(pathname, reportsNavigation.href) ? styles.activeLink : styles.link}
+            href={reportsNavigation.href}
+            onClick={() => {
+              setIsMenuOpen(false);
+              setIsMoreOpen(false);
+            }}
+          >
+            {reportsNavigation.label}
+          </Link>
         </nav>
 
         <div className={styles.actions}>
@@ -174,6 +185,17 @@ export function SiteHeader() {
             }}
           >
             {eLearnNavigation.label}
+          </Link>
+
+          <Link
+            className={isActivePath(pathname, reportsNavigation.href) ? styles.mobileActiveLink : styles.mobileLink}
+            href={reportsNavigation.href}
+            onClick={() => {
+              setIsMenuOpen(false);
+              setIsMoreOpen(false);
+            }}
+          >
+            {reportsNavigation.label}
           </Link>
 
           <div className={styles.mobileMoreBlock}>
