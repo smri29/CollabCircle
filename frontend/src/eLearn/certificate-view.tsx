@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import { useLayoutEffect, useRef, useState } from "react";
 import type { Course } from "./course-data";
 import { createCertificatePdf } from "./certificate-pdf";
 import { useCourseEnrollment } from "./elearn-client";
@@ -11,6 +11,26 @@ export function CertificateView({ course }: { course: Course }) {
   const { enrollment, ready } = useCourseEnrollment(course.slug);
   const [isDownloading, setIsDownloading] = useState(false);
   const [downloadError, setDownloadError] = useState(false);
+  const nameRef = useRef<HTMLDivElement>(null);
+  const [nameScale, setNameScale] = useState(1);
+  const learnerName = enrollment?.name ?? "";
+
+  useLayoutEffect(() => {
+    const nameElement = nameRef.current;
+    if (!nameElement) return;
+
+    const fitName = () => {
+      const availableWidth = nameElement.clientWidth;
+      const requiredWidth = nameElement.scrollWidth;
+      setNameScale(requiredWidth > availableWidth ? availableWidth / requiredWidth : 1);
+    };
+
+    fitName();
+    const resizeObserver = new ResizeObserver(fitName);
+    resizeObserver.observe(nameElement);
+
+    return () => resizeObserver.disconnect();
+  }, [learnerName]);
 
   if (!ready || !enrollment) {
     return (
@@ -81,7 +101,13 @@ export function CertificateView({ course }: { course: Course }) {
           priority
           src="/Certificate%20Design/CollabCircle%20Certificate%20Template.png"
         />
-        <div className={`${styles.certificateField} ${styles.certificateName}`}>{certificateEnrollment.name}</div>
+        <div
+          className={`${styles.certificateField} ${styles.certificateName}`}
+          ref={nameRef}
+          style={{ transform: `scaleX(${nameScale})` }}
+        >
+          {certificateEnrollment.name}
+        </div>
         <div className={`${styles.certificateField} ${styles.certificateCourse}`}>{course.title}</div>
         <div className={`${styles.certificateField} ${styles.certificateMeta}`}>
           <span>{completedDate}</span>

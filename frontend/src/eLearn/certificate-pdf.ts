@@ -27,13 +27,9 @@ function drawCenteredText(
   y: number,
   maxWidth: number,
 ) {
-  let fontSize = size;
-  let textWidth = font.widthOfTextAtSize(text, fontSize);
-
-  while (textWidth > maxWidth && fontSize > 10) {
-    fontSize -= 0.5;
-    textWidth = font.widthOfTextAtSize(text, fontSize);
-  }
+  const initialTextWidth = font.widthOfTextAtSize(text, size);
+  const fontSize = initialTextWidth > maxWidth ? Math.max(1, size * maxWidth / initialTextWidth) : size;
+  const textWidth = font.widthOfTextAtSize(text, fontSize);
 
   page.drawText(text, {
     x: (pageWidth - textWidth) / 2,
