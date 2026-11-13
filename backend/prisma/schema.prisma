@@ -13,13 +13,13 @@ enum UserRole {
 }
 
 model User {
-  id        String   @id @default(uuid())
-  email     String   @unique
-  name      String
+  id           String   @id @default(uuid())
+  email        String   @unique
+  name         String
   passwordHash String
-  role      UserRole @default(MEMBER)
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  role         UserRole @default(MEMBER)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
 
   enrollments Enrollment[]
 
@@ -88,8 +88,8 @@ model LessonProgress {
 }
 
 model CertificateSequence {
-  id      String @id
-  nextValue Int   @default(0)
+  id        String @id
+  nextValue Int    @default(0)
 }
 
 model Certificate {
