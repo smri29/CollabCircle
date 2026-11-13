@@ -18,22 +18,26 @@ const AuthContext = createContext<AuthContextValue | null>(null);
 const tokenKey = 'collabcircle-access-token';
 
 export function AuthProvider({ children }: { children: React.ReactNode }) {
-  const [token, setToken] = useState<string | null>(null);
+  const [token, setToken] = useState<string | null>(() => {
+    if (typeof window === 'undefined') return null;
+    return window.localStorage.getItem(tokenKey);
+  });
   const [user, setUser] = useState<AuthUser | null>(null);
-  const [ready, setReady] = useState(false);
+  const [ready, setReady] = useState(() => {
+    if (typeof window === 'undefined') return false;
+    return !window.localStorage.getItem(tokenKey);
+  });
 
   useEffect(() => {
-    const savedToken = window.localStorage.getItem(tokenKey);
-    if (!savedToken) {
-      setReady(true);
-      return;
-    }
-    setToken(savedToken);
-    authRequest<AuthUser>(savedToken, '/auth/me')
+    if (!token) return;
+    authRequest<AuthUser>(token, '/auth/me')
       .then(setUser)
-      .catch(() => window.localStorage.removeItem(tokenKey))
+      .catch(() => {
+        window.localStorage.removeItem(tokenKey);
+        setToken(null);
+      })
       .finally(() => setReady(true));
-  }, []);
+  }, [token]);
 
   async function signIn(responsePromise: Promise<AuthResponse>) {
     const response = await responsePromise;

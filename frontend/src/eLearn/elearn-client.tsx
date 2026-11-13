@@ -16,24 +16,36 @@ export type Enrollment = {
 export function useCourseEnrollment(slug: string) {
   const { user, token, ready: authReady } = useAuth();
   const [enrollment, setEnrollment] = useState<Enrollment | null>(null);
-  const [ready, setReady] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
 
   useEffect(() => {
     if (!authReady) return;
-    if (!user || !token) {
-      setEnrollment(null);
-      setReady(true);
-      return;
+    let active = true;
+
+    async function loadEnrollment() {
+      setLoading(true);
+      if (!user || !token) {
+        setEnrollment(null);
+        setLoading(false);
+        return;
+      }
+
+      try {
+        const next = await authRequest<Enrollment | null>(token, `/elearn/courses/${slug}/enrollment`);
+        if (active) setEnrollment(next);
+      } catch (requestError) {
+        if (!active) return;
+        const errorResponse = requestError as ApiError;
+        if (errorResponse.status === 404) setEnrollment(null);
+        else setError(errorResponse.message);
+      } finally {
+        if (active) setLoading(false);
+      }
     }
-    setReady(false);
-    authRequest<Enrollment | null>(token, `/elearn/courses/${slug}/enrollment`)
-      .then(setEnrollment)
-      .catch((requestError: ApiError) => {
-        if (requestError.status === 404) setEnrollment(null);
-        else setError(requestError.message);
-      })
-      .finally(() => setReady(true));
+
+    void loadEnrollment();
+    return () => { active = false; };
   }, [authReady, slug, token, user]);
 
   async function enroll(name: string) {
@@ -59,5 +71,5 @@ export function useCourseEnrollment(slug: string) {
     }
   }
 
-  return { enrollment, ready: authReady && ready, error, enroll, completeLesson };
+  return { enrollment, ready: authReady && !loading, error, enroll, completeLesson };
 }

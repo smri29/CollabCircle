@@ -1,6 +1,6 @@
 'use client';
 
-import { FormEvent, useEffect, useState } from 'react';
+import { FormEvent, useState } from 'react';
 import { PageHero } from '@/components/shared/page-hero';
 import { useAuth } from '@/auth/auth-context';
 import styles from '@/eLearn/elearn-ui.module.css';
@@ -12,12 +12,11 @@ export default function AccountPage() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
-  const [next, setNext] = useState('/elearn');
-
-  useEffect(() => {
+  const [next] = useState(() => {
+    if (typeof window === 'undefined') return '/elearn';
     const destination = new URLSearchParams(window.location.search).get('next');
-    if (destination?.startsWith('/')) setNext(destination);
-  }, []);
+    return destination?.startsWith('/') ? destination : '/elearn';
+  });
 
   async function submit(event: FormEvent) {
     event.preventDefault();
