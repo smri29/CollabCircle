@@ -32,6 +32,10 @@ export const primaryNavigation: NavigationItem[] = [
     label: "Products",
   },
   {
+    href: "/case-studies",
+    label: "Case Studies",
+  },
+  {
     href: "/about-us",
     label: "About",
   },

@@ -119,6 +119,70 @@
   padding: 1.2rem 0;
 }
 
+.caseStudyGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.caseStudyCard {
+  display: grid;
+  align-content: start;
+  gap: .75rem;
+  min-height: 100%;
+  padding: 1.25rem;
+  border: 1px solid var(--border-strong);
+  border-radius: 1.5rem;
+  background: rgba(8, 18, 29, 0.2);
+  box-shadow: 0 16px 34px rgba(0, 0, 0, 0.14);
+  backdrop-filter: blur(10px);
+  transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+}
+
+.caseStudyCard:hover,
+.caseStudyCard:focus-within {
+  transform: translateY(-4px);
+  border-color: rgba(47, 155, 255, 0.3);
+  box-shadow: var(--shadow-strong);
+}
+
+.caseStudyNumber,
+.caseStudyEyebrow {
+  color: var(--accent-strong);
+  font-size: .75rem;
+  font-weight: 800;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.caseStudyEyebrow {
+  margin: .3rem 0 0;
+  color: var(--text-subtle);
+  font-size: .7rem;
+}
+
+.caseStudyCard h3 {
+  font-size: 1.2rem;
+}
+
+.caseStudyOverview {
+  color: var(--text-muted);
+  font-size: .9rem;
+  line-height: 1.65;
+}
+
+.caseStudyLink {
+  display: inline-flex;
+  align-items: center;
+  gap: .45rem;
+  width: fit-content;
+  margin-top: auto;
+  padding-top: .7rem;
+  color: var(--accent-strong);
+  font-size: .86rem;
+  font-weight: 700;
+}
+
 .sectionHeader {
   display: grid;
   gap: 0.4rem;
@@ -385,6 +449,10 @@
 @media (max-width: 960px) {
   .hero,
   .locationPanel {
+    grid-template-columns: 1fr;
+  }
+
+  .caseStudyGrid {
     grid-template-columns: 1fr;
   }
 
