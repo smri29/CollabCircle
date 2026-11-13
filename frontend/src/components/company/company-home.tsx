@@ -8,6 +8,7 @@ import servicesStyles from "./services-preview.module.css";
 import styles from "./company-home.module.css";
 
 const featuredProducts = products.slice(0, 3);
+const featuredCaseStudies = products.slice(0, 3);
 
 const solutionAreas = [
   {
@@ -161,6 +162,38 @@ export function CompanyHome() {
           <div className={productCardStyles.grid}>
             {featuredProducts.map((project, index) => (
                 <DevelopmentProjectCard index={index} key={project.slug} product={project} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section" id="case-studies" aria-labelledby="case-studies-heading">
+        <div className={servicesStyles.sectionStack}>
+          <div className={servicesStyles.servicesHeader}>
+            <div className={servicesStyles.sectionIntro}>
+              <div className={servicesStyles.sectionCopy}>
+                <h2 id="case-studies-heading">Case Studies</h2>
+                <p>Explore the thinking, systems, and outcomes behind selected CollabCircle products.</p>
+              </div>
+            </div>
+            <Link className={servicesStyles.viewAllLink} href="/products">
+              <span>Explore products</span>
+              <ArrowRight size={16} strokeWidth={2} />
+            </Link>
+          </div>
+
+          <div className={styles.caseStudyGrid}>
+            {featuredCaseStudies.map((product, index) => (
+              <article className={styles.caseStudyCard} key={product.slug}>
+                <span className={styles.caseStudyNumber}>{String(index + 1).padStart(2, "0")}</span>
+                <p className={styles.caseStudyEyebrow}>{product.eyebrow}</p>
+                <h3>{product.name}</h3>
+                <p className={styles.caseStudyOverview}>{product.overview}</p>
+                <Link className={styles.caseStudyLink} href={`/products/${product.slug}`}>
+                  <span>Read case study</span>
+                  <ArrowRight size={16} strokeWidth={2} />
+                </Link>
+              </article>
             ))}
           </div>
         </div>
