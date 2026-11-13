@@ -32,23 +32,24 @@ export const primaryNavigation: NavigationItem[] = [
     label: "Products",
   },
   {
-    href: "/case-studies",
-    label: "Case Studies",
-  },
-  {
     href: "/about-us",
     label: "About",
   },
   {
-    href: "/contact",
-    label: "Contact",
+    href: "/publications",
+    label: "Publications",
   },
 ];
 
-export const moreNavigation: NavigationItem[] = [
+export const contactNavigation: NavigationItem = {
+  href: "/contact",
+  label: "Contact",
+};
+
+export const aboutNavigation: NavigationItem[] = [
   {
-    href: "/publications",
-    label: "Publications",
+    href: "/about-us",
+    label: "About Us",
   },
   {
     href: "/team",
@@ -58,16 +59,23 @@ export const moreNavigation: NavigationItem[] = [
     href: "/campaigns",
     label: "Campaigns",
   },
+  {
+    href: "/case-studies",
+    label: "Case Studies",
+  },
+  {
+    href: "/reports",
+    label: "Reports",
+  },
+  {
+    href: "/contact",
+    label: "Contact",
+  },
 ];
 
 export const eLearnNavigation: NavigationItem = {
   href: "/elearn",
   label: "eLearn",
-};
-
-export const reportsNavigation: NavigationItem = {
-  href: "/reports",
-  label: "Reports",
 };
 
 export const landingFeatures: FeatureLink[] = [
