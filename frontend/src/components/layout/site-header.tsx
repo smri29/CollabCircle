@@ -5,7 +5,7 @@ import { ChevronDown } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
 import { CollabCircleLogo } from "@/components/brand/collabcircle-logo";
-import { eLearnNavigation, moreNavigation, primaryNavigation, reportsNavigation } from "@/data/company-content";
+import { aboutNavigation, eLearnNavigation, primaryNavigation } from "@/data/company-content";
 import styles from "./site-header.module.css";
 
 function isActivePath(pathname: string, href: string, matches?: string[]) {
@@ -15,14 +15,14 @@ function isActivePath(pathname: string, href: string, matches?: string[]) {
 export function SiteHeader() {
   const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isMoreOpen, setIsMoreOpen] = useState(false);
-  const moreMenuRef = useRef<HTMLDivElement | null>(null);
-  const isMoreActive = moreNavigation.some((item) => isActivePath(pathname, item.href, item.matches));
+  const [isAboutOpen, setIsAboutOpen] = useState(false);
+  const aboutMenuRef = useRef<HTMLDivElement | null>(null);
+  const isAboutActive = aboutNavigation.some((item) => isActivePath(pathname, item.href, item.matches));
 
   useEffect(() => {
     function handlePointerDown(event: MouseEvent) {
-      if (!moreMenuRef.current?.contains(event.target as Node)) {
-        setIsMoreOpen(false);
+      if (!aboutMenuRef.current?.contains(event.target as Node)) {
+        setIsAboutOpen(false);
       }
     }
 
@@ -38,7 +38,6 @@ export function SiteHeader() {
           href="/"
           onClick={() => {
             setIsMenuOpen(false);
-            setIsMoreOpen(false);
           }}
         >
           <CollabCircleLogo
@@ -53,6 +52,54 @@ export function SiteHeader() {
           {primaryNavigation.map((item) => {
             const isActive = isActivePath(pathname, item.href, item.matches);
 
+            if (item.label === "About") {
+              return (
+                <div
+                  className={styles.moreWrap}
+                  key={item.href}
+                  onMouseEnter={() => {
+                    setIsAboutOpen(true);
+                  }}
+                  onMouseLeave={() => setIsAboutOpen(false)}
+                  ref={aboutMenuRef}
+                >
+                  <button
+                    aria-expanded={isAboutOpen}
+                    aria-haspopup="menu"
+                    className={isAboutActive ? styles.activeMoreButton : styles.moreButton}
+                    onClick={() => {
+                      setIsAboutOpen((open) => !open);
+                    }}
+                    type="button"
+                  >
+                    <span>About</span>
+                    <ChevronDown size={15} strokeWidth={2} />
+                  </button>
+
+                  <div className={isAboutOpen ? styles.morePanelOpen : styles.morePanel} role="menu">
+                    {aboutNavigation.map((aboutItem) => {
+                      const aboutItemIsActive = isActivePath(pathname, aboutItem.href, aboutItem.matches);
+
+                      return (
+                        <Link
+                          key={aboutItem.href}
+                          className={aboutItemIsActive ? styles.moreActiveLink : styles.moreLink}
+                          href={aboutItem.href}
+                          onClick={() => {
+                            setIsMenuOpen(false);
+                            setIsAboutOpen(false);
+                          }}
+                          role="menuitem"
+                        >
+                          {aboutItem.label}
+                        </Link>
+                      );
+                    })}
+                  </div>
+                </div>
+              );
+            }
+
             return (
               <Link
                 key={item.href}
@@ -60,7 +107,7 @@ export function SiteHeader() {
                 href={item.href}
                 onClick={() => {
                   setIsMenuOpen(false);
-                  setIsMoreOpen(false);
+                  setIsAboutOpen(false);
                 }}
               >
                 {item.label}
@@ -68,66 +115,17 @@ export function SiteHeader() {
             );
           })}
 
-          <div
-            className={styles.moreWrap}
-            onMouseEnter={() => setIsMoreOpen(true)}
-            onMouseLeave={() => setIsMoreOpen(false)}
-            ref={moreMenuRef}
-          >
-            <button
-              aria-expanded={isMoreOpen}
-              aria-haspopup="menu"
-              className={isMoreActive ? styles.activeMoreButton : styles.moreButton}
-              onClick={() => setIsMoreOpen((open) => !open)}
-              type="button"
-            >
-              <span>More</span>
-              <ChevronDown size={15} strokeWidth={2} />
-            </button>
-
-            <div className={isMoreOpen ? styles.morePanelOpen : styles.morePanel} role="menu">
-              {moreNavigation.map((item) => {
-                const isActive = isActivePath(pathname, item.href, item.matches);
-
-                return (
-                  <Link
-                    key={item.href}
-                    className={isActive ? styles.moreActiveLink : styles.moreLink}
-                    href={item.href}
-                    onClick={() => {
-                      setIsMenuOpen(false);
-                      setIsMoreOpen(false);
-                    }}
-                    role="menuitem"
-                  >
-                    {item.label}
-                  </Link>
-                );
-              })}
-            </div>
-          </div>
-
           <Link
             className={isActivePath(pathname, eLearnNavigation.href) ? styles.activeLink : styles.link}
             href={eLearnNavigation.href}
             onClick={() => {
               setIsMenuOpen(false);
-              setIsMoreOpen(false);
+              setIsAboutOpen(false);
             }}
           >
             {eLearnNavigation.label}
           </Link>
 
-          <Link
-            className={isActivePath(pathname, reportsNavigation.href) ? styles.activeLink : styles.link}
-            href={reportsNavigation.href}
-            onClick={() => {
-              setIsMenuOpen(false);
-              setIsMoreOpen(false);
-            }}
-          >
-            {reportsNavigation.label}
-          </Link>
         </nav>
 
         <div className={styles.actions}>
@@ -136,7 +134,7 @@ export function SiteHeader() {
             href="/join-us"
             onClick={() => {
               setIsMenuOpen(false);
-              setIsMoreOpen(false);
+            setIsAboutOpen(false);
             }}
           >
             Careers
@@ -161,6 +159,42 @@ export function SiteHeader() {
           {primaryNavigation.map((item) => {
             const isActive = isActivePath(pathname, item.href, item.matches);
 
+            if (item.label === "About") {
+              return (
+                <div className={styles.mobileMoreBlock} key={item.href}>
+                  <button
+                    aria-expanded={isAboutOpen}
+                    className={isAboutActive ? styles.mobileMoreActiveButton : styles.mobileMoreButton}
+                    onClick={() => setIsAboutOpen((open) => !open)}
+                    type="button"
+                  >
+                    <span>About</span>
+                    <ChevronDown size={15} strokeWidth={2} />
+                  </button>
+
+                  <div className={isAboutOpen ? styles.mobileMorePanelOpen : styles.mobileMorePanel}>
+                    {aboutNavigation.map((aboutItem) => {
+                      const aboutItemIsActive = isActivePath(pathname, aboutItem.href, aboutItem.matches);
+
+                      return (
+                        <Link
+                          key={aboutItem.href}
+                          className={aboutItemIsActive ? styles.mobileActiveLink : styles.mobileLink}
+                          href={aboutItem.href}
+                          onClick={() => {
+                            setIsMenuOpen(false);
+                            setIsAboutOpen(false);
+                          }}
+                        >
+                          {aboutItem.label}
+                        </Link>
+                      );
+                    })}
+                  </div>
+                </div>
+              );
+            }
+
             return (
               <Link
                 key={item.href}
@@ -168,7 +202,7 @@ export function SiteHeader() {
                 href={item.href}
                 onClick={() => {
                   setIsMenuOpen(false);
-                  setIsMoreOpen(false);
+                  setIsAboutOpen(false);
                 }}
               >
                 {item.label}
@@ -181,61 +215,18 @@ export function SiteHeader() {
             href={eLearnNavigation.href}
             onClick={() => {
               setIsMenuOpen(false);
-              setIsMoreOpen(false);
+            setIsAboutOpen(false);
             }}
           >
             {eLearnNavigation.label}
           </Link>
 
           <Link
-            className={isActivePath(pathname, reportsNavigation.href) ? styles.mobileActiveLink : styles.mobileLink}
-            href={reportsNavigation.href}
-            onClick={() => {
-              setIsMenuOpen(false);
-              setIsMoreOpen(false);
-            }}
-          >
-            {reportsNavigation.label}
-          </Link>
-
-          <div className={styles.mobileMoreBlock}>
-            <button
-              aria-expanded={isMoreOpen}
-              className={isMoreActive ? styles.mobileMoreActiveButton : styles.mobileMoreButton}
-              onClick={() => setIsMoreOpen((open) => !open)}
-              type="button"
-            >
-              <span>More</span>
-              <ChevronDown size={15} strokeWidth={2} />
-            </button>
-
-            <div className={isMoreOpen ? styles.mobileMorePanelOpen : styles.mobileMorePanel}>
-              {moreNavigation.map((item) => {
-                const isActive = isActivePath(pathname, item.href, item.matches);
-
-                return (
-                  <Link
-                    key={item.href}
-                    className={isActive ? styles.mobileActiveLink : styles.mobileLink}
-                    href={item.href}
-                    onClick={() => {
-                      setIsMenuOpen(false);
-                      setIsMoreOpen(false);
-                    }}
-                  >
-                    {item.label}
-                  </Link>
-                );
-              })}
-            </div>
-          </div>
-
-          <Link
             className={styles.mobileJoinLink}
             href="/join-us"
             onClick={() => {
               setIsMenuOpen(false);
-              setIsMoreOpen(false);
+              setIsAboutOpen(false);
             }}
           >
             Careers
