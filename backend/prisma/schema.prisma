@@ -16,9 +16,86 @@ model User {
   id        String   @id @default(uuid())
   email     String   @unique
   name      String
+  passwordHash String
   role      UserRole @default(MEMBER)
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
+  enrollments Enrollment[]
+
   @@index([role])
+}
+
+model Course {
+  id          String       @id @default(uuid())
+  slug        String       @unique
+  title       String
+  category    String
+  level       String
+  duration    String
+  summary     String
+  description String
+  outcomes    Json
+  accent      String
+  lessons     Lesson[]
+  enrollments Enrollment[]
+  createdAt   DateTime     @default(now())
+  updatedAt   DateTime     @updatedAt
+}
+
+model Lesson {
+  id          String           @id @default(uuid())
+  courseId    String
+  externalId  String
+  title       String
+  duration    String
+  description String
+  position    Int
+  course      Course           @relation(fields: [courseId], references: [id], onDelete: Cascade)
+  progress    LessonProgress[]
+
+  @@unique([courseId, externalId])
+  @@unique([courseId, position])
+  @@index([courseId])
+}
+
+model Enrollment {
+  id          String           @id @default(uuid())
+  userId      String
+  courseId    String
+  displayName String
+  enrolledAt  DateTime         @default(now())
+  completedAt DateTime?
+  user        User             @relation(fields: [userId], references: [id], onDelete: Cascade)
+  course      Course           @relation(fields: [courseId], references: [id], onDelete: Cascade)
+  progress    LessonProgress[]
+  certificate Certificate?
+
+  @@unique([userId, courseId])
+  @@index([courseId])
+}
+
+model LessonProgress {
+  id           String     @id @default(uuid())
+  enrollmentId String
+  lessonId     String
+  completedAt  DateTime   @default(now())
+  enrollment   Enrollment @relation(fields: [enrollmentId], references: [id], onDelete: Cascade)
+  lesson       Lesson     @relation(fields: [lessonId], references: [id], onDelete: Cascade)
+
+  @@unique([enrollmentId, lessonId])
+  @@index([lessonId])
+}
+
+model CertificateSequence {
+  id      String @id
+  nextValue Int   @default(0)
+}
+
+model Certificate {
+  id           String     @id @default(uuid())
+  enrollmentId String     @unique
+  code         String     @unique
+  issuedAt     DateTime   @default(now())
+  enrollment   Enrollment @relation(fields: [enrollmentId], references: [id], onDelete: Cascade)
 }

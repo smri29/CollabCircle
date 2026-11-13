@@ -5,6 +5,7 @@ import { SiteHeader } from "@/components/layout/site-header";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { OrbitAssistant } from "@/components/orbit/orbit-assistant";
 import { RouteTheme } from "@/components/theme/route-theme";
+import { AuthProvider } from "@/auth/auth-context";
 import "./globals.css";
 
 const manrope = Manrope({
@@ -75,7 +76,7 @@ export default function RootLayout({
             <div className="siteBgOverlay" />
           </div>
           <SiteHeader />
-          <main className="siteMain">{children}</main>
+          <AuthProvider><main className="siteMain">{children}</main></AuthProvider>
           <SiteFooter />
           <OrbitAssistant />
         </div>
