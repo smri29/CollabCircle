@@ -39,6 +39,23 @@ npm run prisma:migrate:dev -- --name init
 
 The initial endpoints are `GET /api/health` and `GET /api/health/database`.
 
+## eLearn API
+
+The account-based learning system provides:
+
+- `POST /api/auth/register`
+- `POST /api/auth/login`
+- `GET /api/auth/me`
+- `GET /api/elearn/courses`
+- `GET /api/elearn/courses/:slug`
+- `GET /api/elearn/courses/:slug/enrollment`
+- `POST /api/elearn/courses/:slug/enrollment`
+- `POST /api/elearn/courses/:slug/lessons/:lessonId/complete`
+- `GET /api/elearn/courses/:slug/certificate`
+
+Run `npm run db:seed` after migrations to populate the course catalog from the
+frontend course content.
+
 For Render, use `npm run build` as the build command and `npm run start:prod` as
 the start command. Add the production database and CORS environment variables.
 

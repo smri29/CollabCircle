@@ -14,7 +14,7 @@ export function CertificateView({ course }: { course: Course }) {
   const [downloadError, setDownloadError] = useState(false);
   const nameRef = useRef<HTMLDivElement>(null);
   const [nameScale, setNameScale] = useState(1);
-  const learnerName = enrollment?.name ?? "";
+  const learnerName = enrollment?.displayName ?? "";
 
   useLayoutEffect(() => {
     const nameElement = nameRef.current;
@@ -42,9 +42,9 @@ export function CertificateView({ course }: { course: Course }) {
     );
   }
 
-  const complete = enrollment.completed.length === course.lessons.length;
+  const complete = enrollment.progress.length === course.lessons.length;
 
-  if (!complete || !enrollment.completedAt || !enrollment.certificateCode) {
+  if (!complete || !enrollment.completedAt || !enrollment.certificate?.code) {
     return (
       <div className={styles.panel}>
         <h2>Finish the course to unlock your certificate.</h2>
@@ -55,7 +55,7 @@ export function CertificateView({ course }: { course: Course }) {
 
   const certificateEnrollment = enrollment;
   const completedAt = certificateEnrollment.completedAt!;
-  const certificateCode = certificateEnrollment.certificateCode!;
+  const certificateCode = certificateEnrollment.certificate!.code;
   const completedDate = new Date(completedAt).toLocaleDateString("en-US", {
     day: "numeric",
     month: "long",
@@ -71,7 +71,7 @@ export function CertificateView({ course }: { course: Course }) {
         certificateCode,
         completedDate,
         courseName: course.title,
-        learnerName: certificateEnrollment.name,
+        learnerName: certificateEnrollment.displayName,
       });
       const pdfBuffer = new ArrayBuffer(pdfBytes.byteLength);
       new Uint8Array(pdfBuffer).set(pdfBytes);
@@ -107,7 +107,7 @@ export function CertificateView({ course }: { course: Course }) {
           ref={nameRef}
           style={{ transform: `scaleX(${nameScale})` }}
         >
-          {certificateEnrollment.name}
+          {certificateEnrollment.displayName}
         </div>
         <div className={`${styles.certificateField} ${styles.certificateCourse}`}>{course.title}</div>
         <div className={`${styles.certificateField} ${styles.certificateMeta}`}>
