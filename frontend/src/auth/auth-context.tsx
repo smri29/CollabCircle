@@ -18,15 +18,29 @@ const AuthContext = createContext<AuthContextValue | null>(null);
 const tokenKey = 'collabcircle-access-token';
 
 export function AuthProvider({ children }: { children: React.ReactNode }) {
-  const [token, setToken] = useState<string | null>(() => {
-    if (typeof window === 'undefined') return null;
-    return window.localStorage.getItem(tokenKey);
-  });
+  const [token, setToken] = useState<string | null>(null);
   const [user, setUser] = useState<AuthUser | null>(null);
-  const [ready, setReady] = useState(() => {
-    if (typeof window === 'undefined') return false;
-    return !window.localStorage.getItem(tokenKey);
-  });
+  const [ready, setReady] = useState(false);
+
+  useEffect(() => {
+    let cancelled = false;
+    const savedToken = window.localStorage.getItem(tokenKey);
+
+    // Defer browser-only state updates until after the first client render so
+    // the server and client produce identical HTML during hydration.
+    queueMicrotask(() => {
+      if (cancelled) return;
+      if (savedToken) {
+        setToken(savedToken);
+      } else {
+        setReady(true);
+      }
+    });
+
+    return () => {
+      cancelled = true;
+    };
+  }, []);
 
   useEffect(() => {
     if (!token) return;

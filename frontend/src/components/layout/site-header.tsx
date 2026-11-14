@@ -20,6 +20,7 @@ export function SiteHeader() {
   const { user, ready, logout } = useAuth();
   const aboutMenuRef = useRef<HTMLDivElement | null>(null);
   const isAboutActive = aboutNavigation.some((item) => isActivePath(pathname, item.href, item.matches));
+  const isELearnPath = isActivePath(pathname, eLearnNavigation.href);
 
   useEffect(() => {
     function handlePointerDown(event: MouseEvent) {
@@ -153,16 +154,18 @@ export function SiteHeader() {
         </div>
       </div>
 
-      <div className={styles.accountBar}>
-        {ready ? user ? (
-          <>
-            <span className={styles.accountGreeting}>Signed in as {user.name}</span>
-            <button className={styles.accountButton} onClick={logout} type="button">Sign out</button>
-          </>
-        ) : (
-          <Link className={styles.accountButton} href="/elearn/account">Sign in</Link>
-        ) : null}
-      </div>
+      {isELearnPath ? (
+        <div className={styles.accountBar}>
+          {ready ? user ? (
+            <>
+              <span className={styles.accountGreeting}>Signed in as {user.name}</span>
+              <button className={styles.accountButton} onClick={logout} type="button">Sign out</button>
+            </>
+          ) : (
+            <Link className={styles.accountButton} href="/elearn/account">Sign in/Register</Link>
+          ) : null}
+        </div>
+      ) : null}
 
       <div
         className={isMenuOpen ? styles.mobilePanelOpen : styles.mobilePanel}
