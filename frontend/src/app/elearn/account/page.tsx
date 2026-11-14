@@ -1,6 +1,7 @@
 'use client';
 
 import { FormEvent, useState } from 'react';
+import Link from 'next/link';
 import { PageHero } from '@/components/shared/page-hero';
 import { useAuth } from '@/auth/auth-context';
 import styles from '@/eLearn/elearn-ui.module.css';
@@ -46,6 +47,7 @@ export default function AccountPage() {
           <input id="account-email" onChange={(event) => setEmail(event.target.value)} required type="email" value={email} />
           <label htmlFor="account-password">Password</label>
           <input id="account-password" minLength={8} onChange={(event) => setPassword(event.target.value)} required type="password" value={password} />
+          {mode === 'login' ? <Link className={styles.back} href="/elearn/forgot-password">Forgot password?</Link> : null}
           <button className="button" type="submit">{mode === 'login' ? 'Sign in' : 'Create account'}</button>
           {error ? <p className={styles.formError} role="alert">{error}</p> : null}
         </form>
