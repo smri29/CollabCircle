@@ -8,7 +8,7 @@ import { ConfigService } from '@nestjs/config';
 import { JwtService } from '@nestjs/jwt';
 import * as bcrypt from 'bcrypt';
 import * as crypto from 'node:crypto';
-import * as nodemailer from 'nodemailer';
+import nodemailer from 'nodemailer';
 import { PrismaService } from '../prisma/prisma.service';
 import type {
   ForgotPasswordDto,
